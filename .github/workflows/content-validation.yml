@@ -1,0 +1,23 @@
+name: Content Validation
+on:
+  push:
+    paths:
+      - 'content/**'
+      - 'scripts/validate-content.ts'
+      - 'tests/content/**'
+  pull_request:
+    paths:
+      - 'content/**'
+      - 'scripts/validate-content.ts'
+      - 'tests/content/**'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npm run validate:content
+      - run: npm run test:content
