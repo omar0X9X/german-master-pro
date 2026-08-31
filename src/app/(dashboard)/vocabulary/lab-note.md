@@ -1,0 +1,1 @@
+This directory is now backed by the interactive `VocabularyLab` component. The page wiring is updated in the next product commit.
