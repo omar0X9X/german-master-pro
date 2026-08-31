@@ -1,0 +1,9 @@
+import type { AIProvider,GenerateOptions } from "./providers"; import type { PronunciationScore } from "@/types";
+export class OpenAIProvider implements AIProvider{
+ constructor(private apiKey=process.env.OPENAI_API_KEY??""){if(!apiKey)throw new Error("OPENAI_API_KEY is missing")}
+ async generateText(prompt:string,o:GenerateOptions={}){const r=await fetch("https://api.openai.com/v1/responses",{method:"POST",headers:{Authorization:`Bearer ${this.apiKey}`,"Content-Type":"application/json"},body:JSON.stringify({model:o.model??"gpt-4o-mini",input:prompt,temperature:o.temperature??.3})});if(!r.ok)throw new Error(`OpenAI ${r.status}`);const d=await r.json();return d.output_text??d.output?.flatMap((x:any)=>x.content??[]).map((x:any)=>x.text??"").join("")??""}
+ async generateJSON<T>(p:string){return JSON.parse(await this.generateText(`${p}\nReturn valid JSON only.`)) as T}
+ async transcribeAudio(audio:ArrayBuffer){const f=new FormData();f.append("file",new Blob([audio]),"audio.webm");f.append("model","gpt-4o-mini-transcribe");const r=await fetch("https://api.openai.com/v1/audio/transcriptions",{method:"POST",headers:{Authorization:`Bearer ${this.apiKey}`},body:f});if(!r.ok)throw new Error(`OpenAI transcribe ${r.status}`);return (await r.json()).text??""}
+ async scorePronunciation(_a:ArrayBuffer,targetWord:string):Promise<PronunciationScore>{return{overall:0,accuracy:0,fluency:0,completeness:0,feedbackAr:[`استخدم endpoint /api/speech/score-pronunciation لتحليل ${targetWord} عبر النسخ + خوارزمية التشابه.`]}}
+ async generateEmbedding(text:string){const r=await fetch("https://api.openai.com/v1/embeddings",{method:"POST",headers:{Authorization:`Bearer ${this.apiKey}`,"Content-Type":"application/json"},body:JSON.stringify({model:"text-embedding-3-small",input:text})});if(!r.ok)throw new Error(`OpenAI embedding ${r.status}`);return (await r.json()).data[0].embedding}
+}

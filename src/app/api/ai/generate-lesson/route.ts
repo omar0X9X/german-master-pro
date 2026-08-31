@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";import{AIManager}from"@/lib/ai";export async function POST(req:Request){const{topic="Alltag",level="A1"}=await req.json();return NextResponse.json({text:await new AIManager().generateLesson(topic,level)})}

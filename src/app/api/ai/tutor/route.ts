@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";import{AIManager}from"@/lib/ai";export async function POST(req:Request){const b=await req.json();try{return NextResponse.json({text:await new AIManager().tutorResponse(b.message??"",{level:b.level??"A1",scenario:b.scenario})})}catch(e){return NextResponse.json({error:e instanceof Error?e.message:"AI error"},{status:500})}}

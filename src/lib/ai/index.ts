@@ -1,0 +1,7 @@
+import type { AIProvider } from "./providers"; import { MockProvider } from "./mock-provider"; import { OpenAIProvider } from "./openai-provider"; import { AnthropicProvider } from "./anthropic-provider"; import { GeminiProvider } from "./gemini-provider"; import { OllamaProvider } from "./ollama-provider"; import { tutorPrompt } from "./prompt-templates";
+export class AIManager{provider:AIProvider;constructor(name=(process.env.AI_PROVIDER??"mock").toLowerCase()){this.provider=name==="openai"?new OpenAIProvider():name==="anthropic"?new AnthropicProvider():name==="gemini"?new GeminiProvider():name==="ollama"?new OllamaProvider():new MockProvider()}
+ tutorResponse(m:string,c:{level:string;scenario?:string;mistakes?:string[]}){return this.provider.generateText(tutorPrompt(m,c))}
+ checkGrammar(text:string){return this.provider.generateText(`صحح النص الألماني التالي. أعد النسخة المصححة، ثم اشرح كل خطأ بالعربية: ${text}`)}
+ generateConversation(scenario:string,level:string){return this.provider.generateText(`ابدأ محادثة ألمانية واحدة فقط لمستوى ${level} في سيناريو ${scenario}. اكتب أول دور فقط.`)}
+ generateLesson(topic:string,level:string){return this.provider.generateText(`أنشئ درس ألمانية منظم لمستوى ${level} عن ${topic}: هدف، شرح عربي، أمثلة ألمانية مترجمة، تدريب قصير.`)}
+ evaluateWriting(prompt:string,submission:string){return this.provider.generateJSON(`قيّم كتابة متعلم ألماني. المطلوب: ${prompt}. النص: ${submission}. JSON: overallScore, grammarErrors[], vocabularySuggestions[], correctedText, feedbackAr.`)} }
