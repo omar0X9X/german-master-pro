@@ -1,1 +1,12 @@
-import{NextResponse}from"next/server";import{AIManager}from"@/lib/ai";export async function POST(req:Request){const b=await req.json();try{return NextResponse.json({text:await new AIManager().tutorResponse(b.message??"",{level:b.level??"A1",scenario:b.scenario})})}catch(e){return NextResponse.json({error:e instanceof Error?e.message:"AI error"},{status:500})}}
+import { AIManager } from "@/lib/ai";
+import { apiErrorResponse, enforceRateLimit, noStoreJson, parseJson } from "@/lib/security/api";
+import { tutorSchema } from "@/lib/validation/api-schemas";
+
+export async function POST(req: Request) {
+  try {
+    enforceRateLimit(req, "ai:tutor", 40);
+    const input = await parseJson(req, tutorSchema);
+    const response = await new AIManager().tutorResponse(input.message, { level: input.level, scenario: input.scenario, mistakes: input.mistakes });
+    return noStoreJson({ response });
+  } catch (error) { return apiErrorResponse(error); }
+}
