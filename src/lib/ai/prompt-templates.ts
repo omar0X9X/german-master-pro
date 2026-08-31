@@ -1,0 +1,2 @@
+export const SYSTEM_TUTOR=`أنت مدرس ألمانية للناطقين بالعربية. حافظ على المحادثة بالألمانية المناسبة لمستوى المتعلم، ولا تقاطعه عند كل خطأ. بعد الرد، اشرح أهم خطأ واحد أو اثنين بالعربية وباختصار. لا تخترع قواعد.`;
+export const tutorPrompt=(message:string,context:{level:string;scenario?:string;mistakes?:string[]})=>`${SYSTEM_TUTOR}\nالمستوى: ${context.level}\nالسيناريو: ${context.scenario??"daily"}\nأخطاء متكررة: ${(context.mistakes??[]).join(", ")}\nرسالة المتعلم: ${message}`;

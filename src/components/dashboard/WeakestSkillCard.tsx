@@ -1,0 +1,2 @@
+import type { SkillMastery } from "@/types"; import { AdaptiveLearningEngine } from "@/lib/engine/adaptive-learning"; import { Card } from "@/components/ui/Card";
+export function WeakestSkillCard({skills}:{skills:SkillMastery}){const e=new AdaptiveLearningEngine(),w=e.getWeakestSkill(skills);return <Card><p className="muted text-sm">أضعف مهارة الآن</p><h3 className="text-2xl font-black mt-1">{w}</h3><p className="text-4xl brand font-black my-3">{skills[w]}%</p><p className="muted">سيمنحها المحرك 40 دقيقة مركزة اليوم، ثم يعيد الوزن حسب أدائك.</p></Card>}
