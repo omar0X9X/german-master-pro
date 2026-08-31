@@ -1,0 +1,1 @@
+import{PageScaffold}from"@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="TERMS" title="شروط الاستخدام" description="المحتوى التعليمي أداة مساعدة، والامتحانات داخل المنصة محاكاة تدريبية وليست شهادات رسمية."/>}

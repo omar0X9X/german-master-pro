@@ -1,0 +1,1 @@
+import{describe,it,expect}from"vitest";import{learningVelocity,predictedDaysToTarget}from"@/lib/engine/analytics-engine";describe("analytics",()=>{it("computes positive velocity",()=>expect(learningVelocity([{date:"2026-01-01",mastery:10},{date:"2026-01-11",mastery:20}])).toBe(1));it("predicts target",()=>expect(predictedDaysToTarget(50,80,1)).toBe(30))})

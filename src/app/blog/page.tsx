@@ -1,0 +1,1 @@
+import{PageScaffold}from"@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="MAGAZIN" title="المدونة التعليمية" description="مقالات حول الألمانية، النطق، FSRS، امتحانات CEFR واستراتيجيات التعلم للناطق بالعربية."/>}

@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";export async function GET(_:Request,{params}:{params:Promise<{id:string}>}){const{id}=await params;return NextResponse.json({id:Number(id),word:"das Haus",ar:"المنزل",article:"das",plural:"die Häuser",example:"Das Haus ist groß."})}

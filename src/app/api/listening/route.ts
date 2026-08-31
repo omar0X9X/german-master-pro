@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";export async function GET(){return NextResponse.json({items:[{id:"a1-bahnhof",level:"A1",title:"Am Bahnhof",durationSeconds:121,transcriptAvailable:true}]})}

@@ -1,0 +1,1 @@
+"use client";import{useMemo}from"react";import{nextStreak}from"@/lib/engine/streak-tracker";export function useStreak(last:string|null,current:number){return useMemo(()=>nextStreak(last?new Date(last):null,new Date(),current),[last,current])}

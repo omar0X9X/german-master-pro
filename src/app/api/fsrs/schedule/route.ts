@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";import{reviewCard}from"@/lib/engine/fsrs-scheduler";import type{Rating}from"@/types";export async function POST(req:Request){const{card,rating=3}=await req.json();return NextResponse.json(reviewCard({...card,due:new Date(card.due),lastReview:card.lastReview?new Date(card.lastReview):undefined},Number(rating) as Rating,new Date()))}

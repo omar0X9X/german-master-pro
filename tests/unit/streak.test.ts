@@ -1,0 +1,1 @@
+import{describe,it,expect}from"vitest";import{nextStreak}from"@/lib/engine/streak-tracker";describe("streak",()=>{it("increments consecutive UTC days",()=>expect(nextStreak(new Date("2026-08-30T12:00Z"),new Date("2026-08-31T10:00Z"),4)).toBe(5));it("resets after a gap",()=>expect(nextStreak(new Date("2026-08-28T12:00Z"),new Date("2026-08-31T10:00Z"),9)).toBe(1))})

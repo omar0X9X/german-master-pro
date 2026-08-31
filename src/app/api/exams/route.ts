@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";import{examBlueprint}from"@/lib/engine/exam-generator";export async function GET(){return NextResponse.json({exams:[examBlueprint("A1"),examBlueprint("A2"),examBlueprint("B1"),examBlueprint("B2"),examBlueprint("DTZ")]})}

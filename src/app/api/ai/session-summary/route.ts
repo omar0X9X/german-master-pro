@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";import{AIManager}from"@/lib/ai";export async function POST(req:Request){return NextResponse.json({summary:await new AIManager().summarizeSession(await req.json())})}

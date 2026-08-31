@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";import{AIManager}from"@/lib/ai";export async function POST(req:Request){const{topic="daily life",level="A1"}=await req.json();return NextResponse.json({reading:await new AIManager().generateReadingText(topic,level)})}

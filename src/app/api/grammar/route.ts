@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";export async function GET(){return NextResponse.json({items:[{id:"nominativ",level:"A1",title:"Nominativ",ar:"حالة الفاعل في الجملة الألمانية."},{id:"akkusativ",level:"A1",title:"Akkusativ",ar:"حالة المفعول المباشر."}]})}

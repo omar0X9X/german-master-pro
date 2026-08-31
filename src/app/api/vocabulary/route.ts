@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";const sample=[{id:1,word:"das Haus",ar:"المنزل",plural:"die Häuser",example:"Das Haus ist groß."},{id:2,word:"arbeiten",ar:"يعمل",example:"Ich arbeite heute."}];export async function GET(){return NextResponse.json({items:sample,total:sample.length})}
