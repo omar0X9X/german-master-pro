@@ -1,0 +1,10 @@
+{
+  "generatedAt": "2026-08-31",
+  "version": "0.2.0",
+  "fileCount": 543,
+  "apiRouteCount": 73,
+  "pageCount": 33,
+  "databaseCreateTableCount": 47,
+  "readingTextFiles": 103,
+  "note": "Counts are generated from the repository; target content volumes remain roadmap work until human-reviewed."
+}
