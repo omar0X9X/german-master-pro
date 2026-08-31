@@ -1,1 +1,3 @@
-import {PageScaffold,Metric} from "@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="ANALYTICS" title="التقدم" description="تحليل 8 مهارات، الوقت، الدقة، المفردات، الأخطاء وتوقع المستوى."><div className="grid gap-4 sm:grid-cols-3"><Metric label="إتقان عام" value="64%"/><Metric label="وقت التعلم" value="127h"/><Metric label="Streak" value="18 يوم"/></div></PageScaffold>}
+import { PageScaffold } from "@/components/PageScaffold";
+import { ProgressAnalytics } from "@/components/features/progress/ProgressAnalytics";
+export default function Page(){return <PageScaffold eyebrow="ANALYTICS" title="التقدم" description="تحليل المهارات والوقت والأخطاء بدل الاعتماد على Streak فقط."><ProgressAnalytics/></PageScaffold>}
