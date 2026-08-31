@@ -1,0 +1,10 @@
+"use client";
+import { FormEvent, useState } from "react";
+
+export function WritingLab(){
+  const prompt="Schreibe 60–80 Wörter über deinen typischen Tag.";
+  const [text,setText]=useState(""); const [feedback,setFeedback]=useState<string>(""); const [busy,setBusy]=useState(false);
+  async function submit(e:FormEvent){e.preventDefault();if(text.trim().length<20)return;setBusy(true);setFeedback("");try{const res=await fetch("/api/ai/evaluate-writing",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({prompt,submission:text,level:"A1"})});const data=await res.json();setFeedback(typeof data.feedback==="string"?data.feedback:JSON.stringify(data.feedback??data,null,2))}catch{setFeedback("Mock feedback: ابدأ الجملة بالفعل في الموضع الثاني، وراجع تصريف الأفعال مع ich/du/er.")}finally{setBusy(false)}}
+  const words=text.trim()?text.trim().split(/\s+/).length:0;
+  return <form onSubmit={submit} className="grid gap-5 lg:grid-cols-[1fr_340px]"><section className="glass rounded-2xl p-5"><p className="text-xs font-black text-blue-600">SCHREIBEN · A1</p><h2 className="mt-2 text-xl font-black" dir="ltr">{prompt}</h2><textarea value={text} onChange={e=>setText(e.target.value)} rows={12} className="mt-5 w-full rounded-2xl border bg-transparent p-4 leading-8 outline-none focus:ring-2 focus:ring-blue-500" dir="ltr" placeholder="Ich stehe jeden Tag..."/><div className="mt-3 flex items-center justify-between"><span className={`text-sm ${words>=60&&words<=80?"text-emerald-600":"muted"}`}>{words} Wörter</span><button disabled={busy||text.trim().length<20} className="rounded-xl bg-blue-600 px-5 py-3 font-black text-white disabled:opacity-40">{busy?"يتم التحليل...":"صحح كتابتي"}</button></div></section><aside className="glass rounded-2xl p-5"><h3 className="font-black">AI Feedback</h3>{feedback?<pre className="mt-4 whitespace-pre-wrap text-sm leading-7">{feedback}</pre>:<p className="muted mt-4 text-sm leading-7">بعد الإرسال سيظهر هنا التصحيح والشرح العربي واقتراحات المفردات.</p>}</aside></form>
+}
