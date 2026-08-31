@@ -1,0 +1,1 @@
+import {PageScaffold} from "@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="FSRS" title="البطاقات الذكية" description="Again / Hard / Good / Easy مع جدولة FSRS وحفظ الاستقرار والصعوبة لكل بطاقة."/>}

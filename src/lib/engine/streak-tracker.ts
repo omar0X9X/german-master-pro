@@ -1,0 +1,1 @@
+const day=(d:Date)=>Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate());export function nextStreak(last:Date|null,now=new Date(),current=0){if(!last)return 1;const diff=(day(now)-day(last))/86400000;if(diff===0)return current;if(diff===1)return current+1;return 1}

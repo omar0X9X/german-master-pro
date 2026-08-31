@@ -1,0 +1,1 @@
+import {PageScaffold} from "@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="PRICING" title="الأسعار" description="الأساس التعليمي مفتوح المصدر. يمكن إضافة خدمات مدفوعة للبنية التحتية والصوت والـAI لاحقًا."/>}

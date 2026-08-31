@@ -1,0 +1,1 @@
+import {PageScaffold} from "@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="SCHREIBEN" title="الكتابة" description="مهام كتابة مع تصحيح AI، تحليل القواعد والمفردات وبناء تمارين من الأخطاء المتكررة."/>}

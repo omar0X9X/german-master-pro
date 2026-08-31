@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";export async function GET(){return NextResponse.json({level:"A1",mastery:64,streak:18,xp:4120,skills:{vocabulary:70,grammar:61,listening:48,reading:76,writing:52,speaking:45,pronunciation:50,shadowing:55}})}

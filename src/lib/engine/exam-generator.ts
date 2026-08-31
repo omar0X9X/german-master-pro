@@ -1,0 +1,1 @@
+export type ExamLevel="A1"|"A2"|"B1"|"B2"|"DTZ";export function examBlueprint(level:ExamLevel){const scale={A1:1,A2:1.2,B1:1.5,B2:1.8,DTZ:1.5}[level];return{level,totalMinutes:Math.round(90*scale),sections:[{name:"Lesen",weight:25},{name:"Hören",weight:25},{name:"Schreiben",weight:25},{name:"Sprechen",weight:25}],passingScore:60}}

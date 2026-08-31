@@ -1,0 +1,1 @@
+import {PageScaffold} from "@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="PRÜFUNG" title="الاختبارات" description="محاكاة أصلية لقياس Lesen, Hören, Schreiben, Sprechen على مستويات A1–B2 وDTZ."/>}

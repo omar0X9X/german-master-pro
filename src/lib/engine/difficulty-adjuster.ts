@@ -1,0 +1,1 @@
+export type Difficulty="easier"|"same"|"harder";export function adjustDifficulty(accuracy:number,responseSeconds:number,streakErrors:number):Difficulty{if(streakErrors>=3||accuracy<.6)return"easier";if(accuracy>.9&&responseSeconds<12)return"harder";return"same"}

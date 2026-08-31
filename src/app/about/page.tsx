@@ -1,0 +1,1 @@
+import {PageScaffold} from "@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="GERMANMASTER PRO" title="عن المشروع" description="منصة مفتوحة المصدر تجعل الخطة تتكيف مع المتعلم بدل أن يتكيف المتعلم مع خطة جامدة."/>}

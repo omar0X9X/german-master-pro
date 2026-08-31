@@ -1,0 +1,1 @@
+import {PageScaffold} from "@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="SHADOWING" title="التظليل الصوتي" description="استمع، كرر، قارن الإيقاع والسرعة والوقفات، ثم أعد الجملة حتى تتحسن."/>}

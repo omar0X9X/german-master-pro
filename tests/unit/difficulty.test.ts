@@ -1,0 +1,1 @@
+import{describe,it,expect}from"vitest";import{adjustDifficulty}from"@/lib/engine/difficulty-adjuster";describe("difficulty",()=>{it("reduces after repeated errors",()=>expect(adjustDifficulty(.9,5,3)).toBe("easier"));it("raises for strong fast performance",()=>expect(adjustDifficulty(.95,8,0)).toBe("harder"))})

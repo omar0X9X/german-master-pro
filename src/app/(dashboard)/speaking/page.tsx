@@ -1,0 +1,1 @@
+import {PageScaffold} from "@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="SPRECHEN" title="المحادثة" description="سيناريوهات مطعم، سفر، عمل وسكن مع AI Tutor يتكيف مع CEFR ويشرح بالعربية عند الحاجة."/>}

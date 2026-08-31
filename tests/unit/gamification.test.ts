@@ -1,0 +1,1 @@
+import{describe,it,expect}from"vitest";import{awardXP,levelFromXP}from"@/lib/engine/gamification";describe("gamification",()=>{it("adds streak multiplier",()=>expect(awardXP("lesson",10)).toBeGreaterThan(40));it("levels grow with xp",()=>expect(levelFromXP(1000)).toBeGreaterThan(1))})

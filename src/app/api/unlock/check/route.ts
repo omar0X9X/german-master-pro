@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";import{canUnlockLevel}from"@/lib/engine/mastery-system";export async function POST(req:Request){const{skills}=await req.json();return NextResponse.json({unlocked:canUnlockLevel(skills)})}

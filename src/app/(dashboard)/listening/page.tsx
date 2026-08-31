@@ -1,0 +1,1 @@
+import {PageScaffold} from "@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="HÖREN" title="الاستماع" description="مسارات صوتية حسب المستوى مع Transcript، ترجمة، سرعة قابلة للتعديل وأسئلة فهم."/>}

@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";import{AIManager}from"@/lib/ai";export async function POST(req:Request){const{concept,level="A1"}=await req.json();const ai=new AIManager();return NextResponse.json({explanation:await ai.generateText(`اشرح بالعربية مفهوم ${concept} لمتعلم ${level} مع أمثلة ألمانية.`)})}

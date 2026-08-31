@@ -1,0 +1,1 @@
+import {PageScaffold} from "@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="GRAMMATIK" title="القواعد" description="شرح عربي متدرج، أمثلة ألمانية، تمارين واسترجاع أخطاء تلقائي من Mistake Bank."/>}

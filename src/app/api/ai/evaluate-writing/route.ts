@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";import{AIManager}from"@/lib/ai";export async function POST(req:Request){const{prompt,submission}=await req.json();const ai=new AIManager();const feedback=await ai.generateText(`قيّم كتابة ألمانية. المهمة: ${prompt}\nالنص: ${submission}`);return NextResponse.json({feedback})}

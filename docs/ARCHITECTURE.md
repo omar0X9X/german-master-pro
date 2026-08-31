@@ -1,0 +1,2 @@
+# Architecture
+GermanMaster Pro separates UI, learning engines, content and persistence. Next.js App Router hosts pages and API routes. Supabase owns authentication and PostgreSQL data with RLS. `src/lib/engine` contains deterministic educational logic so it can be tested independently. `src/lib/ai` hides providers behind one manager and Mock remains the zero-key baseline. The adaptive loop is: observe performance → detect weakest skill and recurring mistakes → schedule due memory → recommend next activity → score → persist → recalculate mastery/unlock state.

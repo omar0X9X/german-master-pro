@@ -1,0 +1,1 @@
+import {PageScaffold} from "@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="LESEN" title="القراءة" description="نصوص A1–B2 بترجمة متوازية، Glossary وأسئلة فهم وقياس الكلمات المعروفة."/>}

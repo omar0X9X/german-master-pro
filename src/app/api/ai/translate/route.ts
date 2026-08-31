@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";import{AIManager}from"@/lib/ai";export async function POST(req:Request){const{text,target="ar"}=await req.json();const ai=new AIManager();return NextResponse.json({translation:await ai.generateText(`Translate to ${target}: ${text}`)})}

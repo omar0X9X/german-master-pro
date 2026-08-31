@@ -1,0 +1,1 @@
+import{NextResponse}from"next/server";export async function GET(){return NextResponse.json({status:"ok",services:{web:"ok",ai:"mock-ready",database:"configuration-required"},timestamp:new Date().toISOString()})}
