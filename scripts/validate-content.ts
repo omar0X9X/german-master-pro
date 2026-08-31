@@ -23,27 +23,62 @@ function requireField(value: unknown, field: string, file: string) {
   }
 }
 
-for (const file of await files(root)) {
-  checked++;
-  let data: unknown;
-  try { data = JSON.parse(await readFile(file, "utf8")); }
-  catch (error) { console.error(`✗ ${file}: invalid JSON`, error); errors++; continue; }
-  const items = Array.isArray(data) ? data : [data];
-  if (file.includes("/vocabulary/") || file.includes("\\vocabulary\\")) {
-    for (const item of items as Record<string, unknown>[]) {
-      requireField(item.german, "german", file); requireField(item.arabic, "arabic", file); requireField(item.exampleDe, "exampleDe", file); requireField(item.exampleAr, "exampleAr", file);
+async function main() {
+  for (const file of await files(root)) {
+    checked++;
+    let data: unknown;
+    try {
+      data = JSON.parse(await readFile(file, "utf8"));
+    } catch (error) {
+      console.error(`✗ ${file}: invalid JSON`, error);
+      errors++;
+      continue;
+    }
+
+    const items = Array.isArray(data) ? data : [data];
+
+    if (file.includes("/vocabulary/") || file.includes("\\vocabulary\\")) {
+      for (const item of items as Record<string, unknown>[]) {
+        requireField(item.german, "german", file);
+        requireField(item.arabic, "arabic", file);
+        requireField(item.exampleDe, "exampleDe", file);
+        requireField(item.exampleAr, "exampleAr", file);
+      }
+    }
+
+    if (file.includes("/grammar/") || file.includes("\\grammar\\")) {
+      for (const item of items as Record<string, unknown>[]) {
+        requireField(item.title, "title", file);
+        requireField(item.explanationAr, "explanationAr", file);
+        requireField(item.examples, "examples", file);
+      }
+    }
+
+    if (file.includes("/reading-texts/") || file.includes("\\reading-texts\\")) {
+      for (const item of items as Record<string, unknown>[]) {
+        requireField(item.germanText, "germanText", file);
+        requireField(item.arabicTranslation, "arabicTranslation", file);
+        requireField(item.questions, "questions", file);
+      }
+    }
+
+    if (file.includes("/listening/") || file.includes("\\listening\\")) {
+      for (const item of items as Record<string, unknown>[]) {
+        requireField(item.transcript, "transcript", file);
+        requireField(item.arabicTranslation, "arabicTranslation", file);
+      }
     }
   }
-  if (file.includes("/grammar/") || file.includes("\\grammar\\")) {
-    for (const item of items as Record<string, unknown>[]) { requireField(item.title, "title", file); requireField(item.explanationAr, "explanationAr", file); requireField(item.examples, "examples", file); }
+
+  if (errors) {
+    console.error(`\nContent validation failed: ${errors} issue(s) in ${checked} JSON file(s).`);
+    process.exitCode = 1;
+    return;
   }
-  if (file.includes("/reading-texts/") || file.includes("\\reading-texts\\")) {
-    for (const item of items as Record<string, unknown>[]) { requireField(item.germanText, "germanText", file); requireField(item.arabicTranslation, "arabicTranslation", file); requireField(item.questions, "questions", file); }
-  }
-  if (file.includes("/listening/") || file.includes("\\listening\\")) {
-    for (const item of items as Record<string, unknown>[]) { requireField(item.transcript, "transcript", file); requireField(item.arabicTranslation, "arabicTranslation", file); }
-  }
+  console.log(`✓ Content validation passed for ${checked} JSON file(s).`);
 }
 
-if (errors) { console.error(`\nContent validation failed: ${errors} issue(s) in ${checked} JSON file(s).`); process.exit(1); }
-console.log(`✓ Content validation passed for ${checked} JSON file(s).`);
+main().catch((error) => {
+  console.error("Content validation crashed:", error);
+  process.exitCode = 1;
+});
