@@ -1,117 +1,93 @@
 <!doctype html>
 <html lang="ar" dir="rtl" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="خطة عربية تفاعلية لتعلم الألمانية من A1 إلى B2 خطوة بخطوة.">
-  <meta name="theme-color" content="#111827">
-  <title>German Path — من A1 إلى B2</title>
-  <link rel="stylesheet" href="./styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="تعلّم الألمانية: دليل عربي مرتب من A1 إلى B2 يجمع أفضل فيديوهات القواعد والمفردات والنطق والاستماع ومواقع القراءة والكتابة لكل مستوى.">
+<title>تعلّم الألمانية — A1 إلى B2</title>
+<link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <svg class="svg-sprite" aria-hidden="true">
-    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></symbol>
-    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></symbol>
-    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
-    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13Z"/><path d="M8 7h8M8 11h8"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
-    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></symbol>
-  </svg>
+<header class="topbar">
+  <a class="brand" href="#top"><span class="flag" aria-hidden="true"></span><strong>تعلّم الألمانية</strong></a>
+  <div class="top-actions">
+    <button id="themeToggle" class="icon-btn" type="button" aria-label="تبديل الوضع الليلي">☾</button>
+    <button id="resetProgress" class="ghost-btn" type="button">مسح التقدم</button>
+  </div>
+</header>
 
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="العودة إلى البداية">
-      <span class="flag" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span>German Path</span>
-    </a>
-    <nav class="top-actions" aria-label="إجراءات">
-      <button class="icon-btn" id="themeToggle" type="button" aria-label="تبديل الوضع الليلي">
-        <svg><use href="#i-moon"></use></svg>
-      </button>
-      <button class="text-btn danger" id="resetProgress" type="button">
-        <svg><use href="#i-reset"></use></svg><span>إعادة التقدم</span>
-      </button>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">خطة مكثفة • 24 أسبوعاً • A1 → B2</p>
-        <h1>تعلّم الألمانية خطوة بخطوة، بدون تشتّت.</h1>
-        <p class="hero-text">كل أسبوع عنده هدف واضح، وكل يوم عنده مهام محددة: قواعد، نطق، مفردات، استماع، محادثة ومراجعة. علّم ما أنجزته وسيُحفظ تقدمك تلقائياً على جهازك.</p>
-        <div class="hero-stats">
-          <span><strong>4</strong> مستويات</span>
-          <span><strong>24</strong> أسبوعاً</span>
-          <span><strong>6</strong> أيام دراسة/أسبوع</span>
-        </div>
+<main id="top" class="shell">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">دليل موارد مرتب • A1 → B2</p>
+      <h1>لا تحتار فين تقرا. كل مهارة عندها المصدر ديالها.</h1>
+      <p class="hero-text">
+        القواعد والمفردات من <strong>Deutsch mit Ahmad Yaghi</strong>، النطق من <strong>Easy German</strong>،
+        الاستماع من قنوات مناسبة للمستوى، والقراءة والكتابة من مواقع فيها تمارين ونصوص مصنفة حسب A1/A2/B1/B2.
+      </p>
+      <div class="hero-badges">
+        <span>قواعد</span><span>مفردات</span><span>نطق</span><span>استماع</span><span>قراءة</span><span>كتابة</span><span>اختبار</span>
       </div>
-      <div class="progress-card" aria-live="polite">
-        <div class="progress-head"><span>تقدمك الكلي</span><strong id="overallPercent">0%</strong></div>
-        <div class="progress-track"><div id="overallBar" class="progress-bar"></div></div>
-        <p id="overallMeta">0 من 144 يوماً مكتمل</p>
-        <p class="note">B2 في 24 أسبوعاً هدف مكثف جداً؛ النتيجة الفعلية تعتمد على الساعات الفعلية والممارسة خارج الفيديوهات.</p>
-      </div>
-    </section>
+    </div>
+    <aside class="progress-panel">
+      <div class="progress-head"><span>تقدمك في الموارد</span><strong id="progressPercent">0%</strong></div>
+      <div class="bar"><i id="progressBar"></i></div>
+      <p id="progressText">0 مورد مكتمل</p>
+    </aside>
+  </section>
 
-    <section class="controls" aria-label="اختيار المستوى والأسبوع">
-      <div>
-        <span class="control-label">المستوى</span>
-        <div id="levelTabs" class="level-tabs" role="tablist" aria-label="المستويات"></div>
-      </div>
-      <label class="week-select-wrap">
-        <span class="control-label">الأسبوع</span>
-        <select id="weekSelect" aria-label="اختيار الأسبوع"></select>
-      </label>
-    </section>
+  <section class="level-switch" aria-label="اختيار المستوى">
+    <button data-level="A1" class="level-btn active" type="button">A1</button>
+    <button data-level="A2" class="level-btn" type="button">A2</button>
+    <button data-level="B1" class="level-btn" type="button">B1</button>
+    <button data-level="B2" class="level-btn" type="button">B2</button>
+  </section>
 
-    <section class="week-overview">
-      <div>
-        <p id="weekBadge" class="eyebrow"></p>
-        <h2 id="weekTitle">تحميل الخطة…</h2>
-        <p id="weekGoal" class="muted"></p>
-      </div>
-      <div class="week-progress">
-        <span id="weekPercent">0%</span>
-        <div class="progress-track small"><div id="weekBar" class="progress-bar"></div></div>
-      </div>
-    </section>
+  <section class="level-intro">
+    <div>
+      <p class="eyebrow" id="levelLabel">A1 • مبتدئ</p>
+      <h2 id="levelTitle">الأساس الصحيح من الصفر</h2>
+      <p id="levelGoal" class="muted"></p>
+    </div>
+    <div class="level-stats">
+      <div><strong id="resourceCount">0</strong><span>مورد</span></div>
+      <div><strong id="categoryCount">0</strong><span>مهارة</span></div>
+    </div>
+  </section>
 
-    <section>
-      <div class="section-heading">
-        <div><p class="eyebrow">الخطة اليومية</p><h2>ماذا تدرس كل يوم؟</h2></div>
-        <p class="muted">اضغط «تم» بعد إنهاء مهام اليوم كاملة.</p>
-      </div>
-      <div id="daysGrid" class="days-grid" aria-live="polite"></div>
-    </section>
+  <section class="study-order">
+    <div class="section-title">
+      <div><p class="eyebrow">الترتيب المقترح</p><h2>شنو تدير أولاً؟</h2></div>
+      <p class="muted">هذا هو المسار، ماشي غير لائحة روابط.</p>
+    </div>
+    <div id="roadmap" class="roadmap"></div>
+  </section>
 
-    <section class="resources-section">
-      <div class="section-heading">
-        <div><p class="eyebrow">YouTube</p><h2>فيديوهات مختارة لهذا المستوى</h2></div>
-        <div class="skill-filter" id="skillFilter" aria-label="تصفية حسب المهارة"></div>
-      </div>
-      <div id="resourcesGrid" class="resources-grid"></div>
-    </section>
+  <section>
+    <div class="section-title">
+      <div><p class="eyebrow">المصادر</p><h2>موارد المستوى</h2></div>
+      <div id="filters" class="filters" aria-label="فلترة المهارات"></div>
+    </div>
+    <div id="resources" class="resource-grid" aria-live="polite"></div>
+  </section>
 
-    <section class="method-card">
-      <div>
-        <p class="eyebrow">طريقة الاستخدام</p>
-        <h2>الفيديو وحده لا يكفي.</h2>
-      </div>
-      <ol>
-        <li><strong>شاهد بنشاط:</strong> أوقف الفيديو واكتب 5–10 جمل جديدة.</li>
-        <li><strong>كرر بصوت مرتفع:</strong> Shadowing لمدة 10–15 دقيقة، خصوصاً في A1/A2.</li>
-        <li><strong>استرجع من الذاكرة:</strong> لا تراجع الكلمات بالنظر فقط؛ اختبر نفسك.</li>
-        <li><strong>أنتج اللغة:</strong> اكتب وتكلم يومياً حتى لو بجمل بسيطة.</li>
-      </ol>
-    </section>
-  </main>
+  <section class="rules-card">
+    <div>
+      <p class="eyebrow">كيف تستعمل الموقع</p>
+      <h2>كل مصدر عندو وظيفة واحدة.</h2>
+    </div>
+    <ol>
+      <li>شاهد القواعد والمفردات من المصدر الرئيسي للمستوى.</li>
+      <li>درّب النطق منفصلاً، ما تخلطوش مع حفظ الكلمات.</li>
+      <li>دير استماع كل يوم، حتى لو 20–30 دقيقة.</li>
+      <li>قرا نصوص المستوى وجاوب على أسئلة الفهم.</li>
+      <li>اكتب بالمطلوب في مستوى A1/A2/B1/B2، ثم راجع الأخطاء.</li>
+      <li>علّم المورد “مكتمل” باش يبقى التقدم محفوظ عندك.</li>
+    </ol>
+  </section>
+</main>
 
-  <footer>
-    <p>German Path — موقع شخصي Static • كل البيانات والتقدم يبقيان محلياً في متصفحك.</p>
-  </footer>
-
-  <noscript><p class="noscript">خاص JavaScript يكون مفعّل باش تشتغل الخطة والتقدم.</p></noscript>
-  <script src="./app.js" defer></script>
+<footer>مشروع شخصي: تعلّم الألمانية • يعمل بدون Backend ويحفظ التقدم محلياً</footer>
+<script src="./app.js" defer></script>
 </body>
 </html>
