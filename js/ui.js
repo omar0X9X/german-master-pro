@@ -60,13 +60,17 @@ G.ui.renderDaily=()=>{
   const program=G.dailyProgram(selected);
   if(!program)return;
 
+  if(G.runtime.speakingTimer){clearInterval(G.runtime.speakingTimer);G.runtime.speakingTimer=null;G.runtime.speakingStartedAt=null}
+  if(G.runtime.mediaRecorder?.state==="recording"){try{G.runtime.mediaRecorder.stop()}catch{}}
+  if(G.runtime.mediaStream){G.runtime.mediaStream.getTracks().forEach(t=>t.stop());G.runtime.mediaStream=null}
+
   const dayNo=G.state.dailySelected[selected]||G.nextDailyDay(selected);
   const day=G.dailyDay(selected,dayNo);
   const progress=G.dailyDayProgress(selected,dayNo);
   const levelProgress=G.dailyLevelProgress(selected);
 
   $("#dailyLevelTabs").innerHTML=levels.map(id=>'<button class="'+(id===selected?"active":"")+'" data-daily-level="'+id+'">'+id+'</button>').join("");
-  $("#dailyLevelTabs [data-daily-level]").forEach(b=>b.onclick=()=>{
+  $$("#dailyLevelTabs [data-daily-level]").forEach(b=>b.onclick=()=>{
     G.runtime.dailyLevel=b.dataset.dailyLevel;
     if(!G.state.dailySelected[b.dataset.dailyLevel])G.selectDailyDay(b.dataset.dailyLevel,G.nextDailyDay(b.dataset.dailyLevel));
     G.ui.renderDaily();
@@ -83,7 +87,7 @@ G.ui.renderDaily=()=>{
     const p=G.dailyDayProgress(selected,d.day);
     return '<button class="'+(d.day===day.day?"active ":"")+(p.complete?"done":"")+'" data-day="'+d.day+'" title="'+E(d.theme)+'">'+d.day+'</button>';
   }).join("");
-  $("#dailyDayGrid [data-day]").forEach(b=>b.onclick=()=>{G.selectDailyDay(selected,Number(b.dataset.day));G.ui.renderDaily();window.scrollTo({top:0,behavior:"smooth"})});
+  $$("#dailyDayGrid [data-day]").forEach(b=>b.onclick=()=>{G.selectDailyDay(selected,Number(b.dataset.day));G.ui.renderDaily();window.scrollTo({top:0,behavior:"smooth"})});
 
   const videos=day.videos.map(G.videoById).filter(Boolean);
   $("#dailyVideoTime").textContent=videos.reduce((n,v)=>n+(v.minutes||15),0)+" د";
@@ -91,24 +95,35 @@ G.ui.renderDaily=()=>{
     const done=G.dailyVideoDone(selected,day.day,v.id),q=v.quality||{};
     const views=fmtNumber(q.views),likes=fmtNumber(q.likes),comments=fmtNumber(q.comments);
     const strong=(q.views>=200000)||(q.likes>=5000);
-    const metrics=[
-      views?views+" مشاهدة":null,
-      likes?likes+" إعجاب":null,
-      comments?comments+" تعليق":null,
-      strong?"تفاعل قوي":null
-    ].filter(Boolean);
+    const metrics=[views?views+" مشاهدة":null,likes?likes+" إعجاب":null,comments?comments+" تعليق":null,strong?"تفاعل قوي":null].filter(Boolean);
     return '<article class="daily-video '+(done?"done":"")+'"><div><h4>'+E(v.title)+'</h4><p>'+E(v.provider)+' • '+E(v.skill)+' • ≈ '+(v.minutes||15)+' د</p><div class="video-meta">'+metrics.map((x,i)=>'<span class="'+(i===metrics.length-1&&strong?"engagement":"")+'">'+E(x)+'</span>').join("")+(q.verifiedAt?'<span>بيانات '+E(q.verifiedAt)+'</span>':'')+'</div></div><div class="daily-video-actions"><a href="'+U(v.url)+'" target="_blank" rel="noopener">▶ شاهد</a><button data-daily-video="'+E(v.id)+'">'+(done?"✓ مكتمل":"تم")+'</button></div></article>';
   }).join("");
-  $("#dailyVideos [data-daily-video]").forEach(b=>b.onclick=()=>{
+  $$("#dailyVideos [data-daily-video]").forEach(b=>b.onclick=()=>{
     const id=b.dataset.dailyVideo,v=G.videoById(id),was=G.dailyVideoDone(selected,day.day,id);
     G.setDailyDone(selected,day.day,"video::"+id,!was);
     if(!was&&v?.core&&!G.lessonDone(id)){G.state.completedLessons[id]=Date.now();G.touch();G.save()}
     G.ui.renderAll();toast(!was?"تسجل فيديو اليوم":"تلغى إنجاز الفيديو");
   });
 
+  const listenVideo=G.videoById(day.listening?.videoId||day.videos[0]);
+  const listeningDone=G.dailyDone(selected,day.day,"listening");
+  $("#dailyListeningSource").innerHTML=listenVideo?'<div class="listening-source-box"><div><b>'+E(listenVideo.title)+'</b><span>'+E(listenVideo.provider)+' • ≈ '+(day.listening?.targetMinutes||15)+' د تدريب</span></div><a href="'+U(listenVideo.url)+'" target="_blank" rel="noopener">فتح المقطع</a></div>':'';
+  $("#dailyListeningSteps").innerHTML=(day.listening?.steps||[]).map(x=>"<li>"+E(x)+"</li>").join("");
+  $(".daily-listening-card").classList.toggle("done",listeningDone);
+  $("#dailyListeningDone").textContent=listeningDone?"✓ الاستماع مكتمل":"علّم الاستماع مكتمل";
+  $("#dailyListeningDone").onclick=()=>{G.setDailyDone(selected,day.day,"listening",!listeningDone);G.ui.renderAll();toast(!listeningDone?"تسجل تدريب الاستماع":"تلغى الاستماع")};
+
   $("#dailyReadingTitle").textContent=day.reading.title;
   $("#dailyReadingText").textContent=day.reading.text;
-  $("#dailyReadingQuestions").innerHTML=day.reading.questions.map(q=>"<li>"+E(q)+"</li>").join("");
+  const checks=day.reading.checks||[];
+  $("#dailyReadingQuestions").innerHTML=(checks.length?checks.map(x=>x.q):day.reading.questions).map(q=>"<li>"+E(q)+"</li>").join("");
+  $("#dailyReadingAnswers").innerHTML=checks.map((x,i)=>'<article><b>'+(i+1)+'. '+E(x.q)+'</b><p>'+E(x.a)+'</p></article>').join("");
+  $("#dailyReadingAnswers").hidden=true;
+  $("#revealReadingAnswers").textContent="أظهر إجابات نموذجية";
+  $("#revealReadingAnswers").onclick=()=>{
+    const box=$("#dailyReadingAnswers"),show=box.hidden;box.hidden=!show;
+    $("#revealReadingAnswers").textContent=show?"إخفاء الإجابات":"أظهر إجابات نموذجية";
+  };
   const readingDone=G.dailyDone(selected,day.day,"reading");
   $("#dailyReadingDone").textContent=readingDone?"✓ القراءة مكتملة":"علّم القراءة مكتملة";
   $(".daily-reading-card").classList.toggle("done",readingDone);
@@ -119,10 +134,7 @@ G.ui.renderDaily=()=>{
   $("#dailyWritingChecklist").innerHTML=day.writing.checklist.map(x=>"<li>"+E(x)+"</li>").join("");
   const area=$("#dailyWritingArea");
   area.value=G.getDailyWriting(selected,day.day);
-  const updateWords=()=>{
-    const n=wordCount(area.value);$("#dailyWordCount").textContent=n;
-    $("#dailyWordCount").className=n>=day.writing.minWords?"good-score":"";
-  };
+  const updateWords=()=>{const n=wordCount(area.value);$("#dailyWordCount").textContent=n;$("#dailyWordCount").className=n>=day.writing.minWords?"good-score":""};
   updateWords();
   area.oninput=()=>{G.setDailyWriting(selected,day.day,area.value);updateWords()};
   const writingDone=G.dailyDone(selected,day.day,"writing");
@@ -134,9 +146,61 @@ G.ui.renderDaily=()=>{
     G.setDailyDone(selected,day.day,"writing",!writingDone);G.ui.renderAll();toast(!writingDone?"تسجلت كتابة اليوم":"تلغت علامة الكتابة");
   };
 
-  const cards=G.data.vocabulary.cards.filter(v=>v.level===selected);
-  const start=((day.day-1)*5)%Math.max(cards.length,1);
-  const dailyCards=Array.from({length:Math.min(5,cards.length)},(_,i)=>cards[(start+i)%cards.length]);
+  const sp=G.getDailySpeaking(selected,day.day),speakingDone=G.dailyDone(selected,day.day,"speaking");
+  $("#dailySpeakingTarget").textContent=day.speaking?.targetSeconds||60;
+  $("#dailySpeakingPrompt").textContent=day.speaking?.prompt||day.writing.prompt;
+  $("#dailySpeakingChecklist").innerHTML=(day.speaking?.checklist||[]).map(x=>"<li>"+E(x)+"</li>").join("");
+  const timerDisplay=$("#speakingTimerDisplay"),timerBtn=$("#speakingTimerButton");
+  const setTimerDisplay=sec=>{const m=Math.floor(sec/60),ss=String(sec%60).padStart(2,"0");timerDisplay.textContent=String(m).padStart(2,"0")+":"+ss};
+  setTimerDisplay(sp.seconds||0);
+  timerBtn.textContent="ابدأ المؤقت";
+  timerBtn.onclick=()=>{
+    if(G.runtime.speakingTimer){
+      clearInterval(G.runtime.speakingTimer);G.runtime.speakingTimer=null;
+      const seconds=Math.max(sp.seconds||0,Math.round((Date.now()-G.runtime.speakingStartedAt)/1000));
+      G.runtime.speakingStartedAt=null;G.setDailySpeaking(selected,day.day,{seconds});setTimerDisplay(seconds);timerBtn.textContent="ابدأ المؤقت";toast("تسجل وقت التحدث");
+      return;
+    }
+    G.runtime.speakingStartedAt=Date.now();
+    timerBtn.textContent="أوقف المؤقت";
+    G.runtime.speakingTimer=setInterval(()=>setTimerDisplay(Math.round((Date.now()-G.runtime.speakingStartedAt)/1000)),1000);
+  };
+
+  const recordBtn=$("#recordSpeakingButton"),playback=$("#speakingPlayback");
+  playback.hidden=true;playback.removeAttribute("src");
+  recordBtn.textContent="🎙 تسجيل صوتي";
+  recordBtn.disabled=!(navigator.mediaDevices&&window.MediaRecorder);
+  recordBtn.onclick=async()=>{
+    try{
+      if(G.runtime.mediaRecorder?.state==="recording"){G.runtime.mediaRecorder.stop();recordBtn.textContent="🎙 تسجيل صوتي";return}
+      const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+      G.runtime.mediaStream=stream;G.runtime.mediaChunks=[];
+      const rec=new MediaRecorder(stream);G.runtime.mediaRecorder=rec;
+      rec.ondataavailable=e=>{if(e.data?.size)G.runtime.mediaChunks.push(e.data)};
+      rec.onstop=()=>{
+        const blob=new Blob(G.runtime.mediaChunks,{type:rec.mimeType||"audio/webm"});
+        if(G.runtime.mediaUrl)URL.revokeObjectURL(G.runtime.mediaUrl);
+        G.runtime.mediaUrl=URL.createObjectURL(blob);playback.src=G.runtime.mediaUrl;playback.hidden=false;
+        stream.getTracks().forEach(t=>t.stop());G.runtime.mediaStream=null;
+      };
+      rec.start();recordBtn.textContent="■ أوقف التسجيل";toast("بدأ التسجيل المحلي");
+    }catch(err){console.warn(err);toast("المتصفح ما عطاش صلاحية الميكروفون")}
+  };
+
+  $$(".speaking-rating [data-speaking-rating]").forEach(b=>{
+    b.classList.toggle("active",b.dataset.speakingRating===sp.rating);
+    b.onclick=()=>{G.setDailySpeaking(selected,day.day,{rating:b.dataset.speakingRating});G.ui.renderDaily();toast("تسجل تقييم التحدث")};
+  });
+  $(".daily-speaking-card").classList.toggle("done",speakingDone);
+  $("#dailySpeakingDone").textContent=speakingDone?"✓ التحدث مكتمل":"علّم التحدث مكتمل";
+  $("#dailySpeakingDone").onclick=()=>{
+    const current=G.getDailySpeaking(selected,day.day);
+    if(!speakingDone&&!current.rating){toast("قيّم كلامك أولاً: صعب / متوسط / مرتاح");return}
+    G.setDailyDone(selected,day.day,"speaking",!speakingDone);G.ui.renderAll();toast(!speakingDone?"تسجل تدريب التحدث":"تلغى التحدث");
+  };
+
+  const ids=day.vocabIds||[];
+  const dailyCards=ids.map(id=>G.data.vocabulary.cards.find(v=>v.id===id)).filter(Boolean);
   $("#dailyVocab").innerHTML=dailyCards.map(v=>'<article class="vocab-mini"><b>'+E(v.de)+'</b><span>'+E(v.ar)+'</span><small>'+E(v.example||"")+'</small></article>').join("");
 
   $("#dailyDayStatus").textContent=progress.done+"/"+progress.total;

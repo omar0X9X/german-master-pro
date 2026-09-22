@@ -5,11 +5,11 @@ const defaults={
   profile:{level:"A1",minutes:210,goal:"general",onboarded:false},
   completedLessons:{},completedResources:{},reviewRecords:{},quizResults:[],activity:[],
   lastView:"dashboard",practiceSkill:"الكل",
-  dailyChecks:{},dailyWriting:{},dailySelected:{A1:1,A2:1,B1:1,B2:1}
+  dailyChecks:{},dailyWriting:{},dailySpeaking:{},dailySelected:{A1:1,A2:1,B1:1,B2:1}
 };
 const merge=(a,b)=>{Object.keys(b||{}).forEach(k=>{if(b[k]&&typeof b[k]==="object"&&!Array.isArray(b[k])){a[k]=merge(a[k]&&typeof a[k]==="object"?a[k]:{},b[k])}else a[k]=b[k]});return a};
 const load=()=>{try{return merge(JSON.parse(JSON.stringify(defaults)),JSON.parse(localStorage.getItem(KEY))||{})}catch{return JSON.parse(JSON.stringify(defaults))}};
-G.DAY=DAY;G.state=load();G.data={curriculum:null,quizzes:null,vocabulary:null,daily:null,videos:null};G.runtime={view:"dashboard",roadmapLevel:"A1",dailyLevel:null,toastTimer:null};
+G.DAY=DAY;G.state=load();G.data={curriculum:null,quizzes:null,vocabulary:null,daily:null,videos:null};G.runtime={view:"dashboard",roadmapLevel:"A1",dailyLevel:null,toastTimer:null,mediaRecorder:null,mediaStream:null,mediaChunks:[],mediaUrl:null,speakingTimer:null,speakingStartedAt:null};
 G.save=()=>localStorage.setItem(KEY,JSON.stringify(G.state));
 G.reset=()=>{G.state=JSON.parse(JSON.stringify(defaults));G.save()};
 G.dateKey=(d=new Date())=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
@@ -45,7 +45,7 @@ G.setDailyDone=(levelId,day,type,value=true)=>{
 G.dailyVideoDone=(levelId,day,videoId)=>G.dailyDone(levelId,day,"video::"+videoId);
 G.dailyDayProgress=(levelId=G.state.profile.level,day=null)=>{
   const d=G.dailyDay(levelId,day);if(!d)return{done:0,total:0,pct:0,complete:false};
-  const items=[...d.videos.map(id=>"video::"+id),"reading","writing"];
+  const items=[...d.videos.map(id=>"video::"+id),"listening","reading","writing","speaking"];
   const done=items.filter(type=>G.dailyDone(levelId,d.day,type)).length;
   return{done,total:items.length,pct:items.length?Math.round(done/items.length*100):0,complete:done===items.length};
 };
@@ -63,6 +63,9 @@ G.selectDailyDay=(levelId,day)=>{G.state.dailySelected[levelId]=Math.max(1,Math.
 G.dailyWritingKey=(levelId,day)=>levelId+"::"+day;
 G.getDailyWriting=(levelId,day)=>G.state.dailyWriting[G.dailyWritingKey(levelId,day)]||"";
 G.setDailyWriting=(levelId,day,text)=>{G.state.dailyWriting[G.dailyWritingKey(levelId,day)]=String(text||"").slice(0,12000);G.save()};
+G.dailySpeakingKey=(levelId,day)=>levelId+"::"+day;
+G.getDailySpeaking=(levelId,day)=>G.state.dailySpeaking[G.dailySpeakingKey(levelId,day)]||{rating:null,seconds:0,note:""};
+G.setDailySpeaking=(levelId,day,patch)=>{const k=G.dailySpeakingKey(levelId,day);G.state.dailySpeaking[k]={...G.getDailySpeaking(levelId,day),...(patch||{})};G.save()};
 
 G.escape=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
 G.url=v=>{try{const u=new URL(v);return["https:","http:"].includes(u.protocol)?u.href:"#"}catch{return"#"}};

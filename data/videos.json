@@ -1011,6 +1011,22 @@
         "source": "public video metadata mirror"
       },
       "core": false
+    },
+    {
+      "id": "eg-a1-supermarket-2",
+      "level": "A1",
+      "title": "Supermarket in Slow German — Part 2",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=W9coIzRQGh4",
+      "minutes": 16,
+      "skill": "الاستماع",
+      "core": false,
+      "quality": {
+        "views": 255760,
+        "likes": 6500,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      }
     }
   ]
 }
