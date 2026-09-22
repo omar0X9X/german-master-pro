@@ -44,6 +44,7 @@ G.ui.startTask=t=>{
   if(t.type==="quiz"){G.ui.openQuiz(t.quizId);return}
   if(t.type==="review"){G.ui.setView("review");return}
   if(t.type==="error"){G.ui.setView("errors");return}
+  if(t.type==="cartoon"){G.runtime.cartoonLevel=G.state.profile.level;G.runtime.cartoonItemId=t.cartoonId||null;G.ui.setView("cartoons");return}
   if(t.type==="zero"){G.runtime.zeroSelected=t.zeroIndex||G.state.zeroPathCurrent;G.ui.setView("grammar");return}
   if(t.type==="daily"){
     const levelId=G.state.profile.level;
@@ -541,6 +542,15 @@ G.ui.renderNotebookLab=()=>{
   $("#nbWords [data-nb-word]").forEach(input=>input.oninput=()=>{const a=[...(page.words||Array(7).fill(""))];a[Number(input.dataset.nbWord)]=input.value;save({words:a})});
   $("#nbSentences [data-nb-sentence]").forEach(input=>input.oninput=()=>{const a=[...(page.sentences||["","",""])];a[Number(input.dataset.nbSentence)]=input.value;save({sentences:a})});
   ["d1","d3","d7"].forEach(k=>{const node=el("nb"+k.toUpperCase());if(node)node.onchange=()=>save({review:{...(page.review||{}),[k]:node.checked}})});
+  $("#importTodayNotebook").onclick=()=>{
+    const day=G.dailyDay(level,G.state.dailySelected[level]||G.nextDailyDay(level));
+    if(!day){toast("ما لقيناش درس اليوم");return}
+    const rule=G.grammarTopic(day.grammarId);
+    const words=(day.vocabIds||[]).map(id=>G.data.vocabulary.cards.find(v=>v.id===id)).filter(Boolean).slice(0,7).map(v=>v.de+" = "+v.ar);
+    page={...page,theme:day.theme||"",rule:rule?(rule.title+" — "+rule.summary):page.rule,words:[...words,...Array(Math.max(0,7-words.length)).fill("")].slice(0,7)};
+    G.saveNotebookPage(level,date,page);
+    G.ui.renderNotebookLab();toast("تجاب موضوع وقاعدة وكلمات اليوم ✓");
+  };
   $("#copyNotebookLab").onclick=async()=>{
     const lines=["DEUTSCH • "+level+" • "+date,"Thema: "+(page.theme||"______"),"",
       "REGEL: "+(page.rule||"______"),"Beispiel 1: "+(page.examples?.[0]||"______"),"Beispiel 2: "+(page.examples?.[1]||"______"),"",
