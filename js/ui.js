@@ -644,7 +644,28 @@ G.ui.openQuiz=id=>{
   const quiz=G.data.quizzes.quizzes.find(q=>q.id===id);if(!quiz){toast("الاختبار غير متوفر");return}
   $("#quizTitle").textContent=quiz.title;const body=$("#quizBody");
   body.innerHTML='<form id="activeQuiz">'+quiz.questions.map((q,qi)=>'<section class="question"><h4>'+(qi+1)+'. '+E(q.prompt)+'</h4><div class="options">'+q.options.map((o,oi)=>'<label class="option"><input type="radio" name="'+E(q.id)+'" value="'+oi+'"> <span>'+E(o)+'</span></label>').join("")+'</div></section>').join("")+'<div class="quiz-submit"><button class="primary" type="submit">صحّح الاختبار</button></div></form>';
-  $("#activeQuiz").onsubmit=e=>{e.preventDefault();let correct=0,answered=0;const wrong=[];quiz.questions.forEach(q=>{const el=body.querySelector('input[name="'+CSS.escape(q.id)+'"]:checked');if(el){answered++;if(Number(el.value)===q.answer)correct++;else wrong.push(q)}});if(answered<quiz.questions.length){toast("جاوب على جميع الأسئلة");return}const score=Math.round(correct/quiz.questions.length*100);wrong.forEach(q=>G.addQuizMistake(id,{...q,level:quiz.level}));G.state.quizResults.push({quizId:id,title:quiz.title,score,correct,total:quiz.questions.length,at:Date.now()});G.touch();G.save();body.innerHTML='<div class="quiz-result"><small>'+E(quiz.level)+'</small><b class="'+(score>=80?"good-score":score>=60?"mid-score":"low-score")+'">'+score+'%</b><p>'+correct+' من '+quiz.questions.length+' صحيحة. '+(wrong.length?wrong.length+" أخطاء دخلات للمراجعة الذكية.":"ممتاز، ما كاين حتى خطأ يدخل للمراجعة.")+'</p><button class="primary" id="finishQuiz">إغلاق</button></div>';$("#finishQuiz").onclick=()=>{$("#quizDialog").close();G.ui.renderAll()};G.ui.renderDashboard();G.ui.renderStats()};
+  $("#activeQuiz").onsubmit=e=>{
+    e.preventDefault();
+    let correct=0,answered=0;const wrong=[];
+    const answers=[];
+    quiz.questions.forEach(q=>{
+      const el=body.querySelector('input[name="'+CSS.escape(q.id)+'"]:checked');
+      if(!el)return;
+      answered++;
+      const choice=Number(el.value),isCorrect=choice===q.answer,userAnswer=q.options[choice];
+      if(isCorrect)correct++;else wrong.push(q);
+      answers.push({q,userAnswer,isCorrect});
+    });
+    if(answered<quiz.questions.length){toast("جاوب على جميع الأسئلة");return}
+    const score=Math.round(correct/quiz.questions.length*100);
+    answers.forEach(x=>G.captureQuizAnswer(id,quiz,x.q,x.userAnswer,x.isCorrect));
+    wrong.forEach(q=>G.addQuizMistake(id,{...q,level:quiz.level}));
+    G.state.quizResults.push({quizId:id,title:quiz.title,score,correct,total:quiz.questions.length,at:Date.now()});
+    G.touch();G.save();
+    body.innerHTML='<div class="quiz-result"><small>'+E(quiz.level)+'</small><b class="'+(score>=80?"good-score":score>=60?"mid-score":"low-score")+'">'+score+'%</b><p>'+correct+' من '+quiz.questions.length+' صحيحة. '+(wrong.length?wrong.length+" أخطاء دخلات للمراجعة ومحرك الأخطاء.":"ممتاز، النتائج تسجلات فـMastery.")+'</p><button class="primary" id="finishQuiz">إغلاق</button></div>';
+    $("#finishQuiz").onclick=()=>{$("#quizDialog").close();G.ui.renderAll()};
+    G.ui.renderDashboard();G.ui.renderStats();G.ui.renderErrorEngine();
+  };
   $("#quizDialog").showModal();
 };
 
