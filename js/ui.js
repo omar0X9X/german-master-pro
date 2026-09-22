@@ -254,7 +254,7 @@ G.ui.renderDaily=()=>{
 const zeroVideoCard=step=>{
   const v=G.videoById(step.videoId);if(!v)return '<div class="empty">الفيديو غير موجود في المكتبة.</div>';
   const q=v.quality||{},metrics=[q.views?fmtNumber(q.views)+" مشاهدة":null,q.likes?fmtNumber(q.likes)+" إعجاب":null].filter(Boolean);
-  return '<div class="zero-video-card"><div><small>'+E(v.provider)+'</small><h3>'+E(v.title)+'</h3><p>'+E(step.body||"")+'</p><div class="video-meta">'+metrics.map(x=>'<span>'+E(x)+'</span>').join("")+'<span>مختار لأنه مناسب لهاد الخطوة</span></div></div><a href="'+U(v.url)+'" target="_blank" rel="noopener">▶ فتح الفيديو</a></div>';
+  return '<div class="zero-video-card"><div><small>'+E(v.provider)+'</small><h3>'+E(v.title)+'</h3><p>'+E(step.body||"")+'</p><div class="video-pick-reason"><b>علاش هاد الفيديو؟</b><span>'+E(v.note||step.goal||"مناسب مباشرة لهاد الخطوة وماشي فيديو عام عشوائي.")+'</span></div><div class="video-meta">'+metrics.map(x=>'<span>'+E(x)+'</span>').join("")+'<span>هذا هو الفيديو المطلوب فهاد الخطوة</span></div></div><a href="'+U(v.url)+'" target="_blank" rel="noopener">▶ فتح الفيديو</a></div>';
 };
 
 G.ui.renderZeroPath=()=>{
@@ -328,6 +328,7 @@ G.ui.renderNotebookAcademy=()=>{
   if(!active)return;
   G.runtime.notebookSource=active.id;
 
+  $("#notebookGoldenRules").innerHTML=(data.rules||[]).map((x,i)=>'<article><span>'+String(i+1).padStart(2,"0")+'</span><p>'+E(x)+'</p></article>').join("");
   $("#notebookSourceTabs").innerHTML=sources.map(x=>'<button class="'+(x.id===active.id?"active":"")+'" data-notebook-source="'+E(x.id)+'"><span>'+E(x.icon)+'</span>'+E(x.title)+'</button>').join("");
   $("#notebookSourceTabs [data-notebook-source]").forEach(b=>b.onclick=()=>{G.runtime.notebookSource=b.dataset.notebookSource;G.ui.renderNotebookAcademy()});
 
