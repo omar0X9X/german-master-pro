@@ -88,20 +88,39 @@ G.nextPractice=()=>{
   })[0]||null;
 };
 
+G.todayDaily=()=>{
+  const levelId=G.state.profile.level,dayNo=G.nextDailyDay(levelId),day=G.dailyDay(levelId,dayNo);
+  if(!day)return null;
+  const progress=G.dailyDayProgress(levelId,dayNo);
+  const vids=day.videos.map(G.videoById).filter(Boolean);
+  const videoMinutes=vids.reduce((sum,v)=>sum+(v.minutes||15),0);
+  const readingMinutes=15,writingMinutes=Math.max(15,Math.min(35,Math.round((day.writing.minWords||40)/4)));
+  return{levelId,day,progress,videos:vids,minutes:videoMinutes+readingMinutes+writingMinutes};
+};
+
 G.todayPlan=()=>{
   const target=Number(G.state.profile.minutes)||210,tasks=[];let used=0;
   const due=G.dueReviews();
   if(due.length){const n=Math.min(due.length,12),min=Math.min(25,8+n);tasks.push({type:"review",title:n+" مراجعات مستحقة",detail:"مفردات وأخطاء سابقة",minutes:min,view:"review"});used+=min}
   else if(G.newVocab(1).length){tasks.push({type:"review",title:"مفردات جديدة",detail:"ابدأ 5 بطاقات فقط",minutes:12,view:"review"});used+=12}
+
+  const daily=G.todayDaily();
+  if(daily&&!daily.progress.complete){
+    const min=Math.min(daily.minutes,Math.max(35,target-used));
+    tasks.push({type:"daily",title:"اليوم "+daily.day.day+" من 30: "+daily.day.theme,detail:daily.videos.length+" فيديو + قراءة + كتابة",minutes:min,view:"daily",dailyDay:daily.day.day});
+    used+=min;
+  }
+
   const lesson=G.nextLesson();
-  if(lesson){const min=lesson.minutes||30;tasks.push({type:"lesson",title:lesson.title,detail:lesson.skill+" • "+lesson.provider,minutes:min,url:lesson.url,lessonId:lesson.id,view:"roadmap"});used+=min}
+  const dailyUrls=new Set(daily?daily.videos.map(v=>v.url):[]);
+  if(lesson&&!dailyUrls.has(lesson.url)&&used+Math.min(lesson.minutes||30,35)<=target+15){
+    const min=lesson.minutes||30;tasks.push({type:"lesson",title:lesson.title,detail:lesson.skill+" • "+lesson.provider,minutes:min,url:lesson.url,lessonId:lesson.id,view:"roadmap"});used+=min
+  }
   const quiz=G.nextQuiz();
   if(quiz&&quiz.quiz&&used+15<=target+15){tasks.push({type:"quiz",title:"اختبار: "+quiz.module.title,detail:"قصير • يصنع مراجعات من الأخطاء",minutes:15,quizId:quiz.quiz.id,view:"roadmap"});used+=15}
   const practice=G.nextPractice();
   if(practice&&used+25<=target+20){const min=practice.skill==="اختبار"?35:practice.skill==="الكتابة"?30:25;tasks.push({type:"practice",title:practice.title,detail:practice.skill+" • "+practice.provider,minutes:min,url:practice.url,resourceId:practice.id,view:"practice"});used+=min}
-  const lessons=G.lessons().filter(x=>!G.lessonDone(x.id)&&(!lesson||x.id!==lesson.id));
-  for(const l of lessons){if(tasks.length>=6)break;const min=l.minutes||30;if(used+min>target+15)break;tasks.push({type:"lesson",title:l.title,detail:l.skill+" • "+l.provider,minutes:min,url:l.url,lessonId:l.id,view:"roadmap"});used+=min}
-  return{tasks,minutes:used,target};
+  return{tasks,minutes:used,target,daily};
 };
 
 G.coach=()=>{
@@ -115,8 +134,8 @@ G.coach=()=>{
 };
 
 G.stats=()=>{
-  const allLevels=G.data.curriculum.levels.map(level=>({id:level.id,...G.levelProgress(level)}));
+  const allLevels=G.data.curriculum.levels.map(level=>({id:level.id,...G.levelProgress(level),daily:G.dailyLevelProgress(level.id)}));
   const quizzes=G.state.quizResults;
-  return{streak:G.streak(),quizAvg:G.quizAvg(),quizCount:quizzes.length,reviewCount:Object.keys(G.state.reviewRecords).length,due:G.dueReviews().length,levels:allLevels};
+  return{streak:G.streak(),quizAvg:G.quizAvg(),quizCount:quizzes.length,reviewCount:Object.keys(G.state.reviewRecords).length,due:G.dueReviews().length,levels:allLevels,daily:G.dailyLevelProgress()};
 };
 })();
