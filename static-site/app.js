@@ -1,306 +1,74 @@
-(function () {
-  "use strict";
+(function(){
+"use strict";
+const STORE={done:"learnGerman.done.v2",theme:"learnGerman.theme.v2",level:"learnGerman.level.v2"};
+const state={data:null,level:localStorage.getItem(STORE.level)||"A1",filter:"الكل",done:new Set(JSON.parse(localStorage.getItem(STORE.done)||"[]"))};
+const $=s=>document.querySelector(s);
+const els={levels:[...document.querySelectorAll(".level-btn")],label:$("#levelLabel"),title:$("#levelTitle"),goal:$("#levelGoal"),count:$("#resourceCount"),catCount:$("#categoryCount"),roadmap:$("#roadmap"),filters:$("#filters"),resources:$("#resources"),pct:$("#progressPercent"),bar:$("#progressBar"),text:$("#progressText"),theme:$("#themeToggle"),reset:$("#resetProgress")};
 
-  var STORAGE = {
-    progress: "germanPath.progress.v1",
-    theme: "germanPath.theme.v1",
-    view: "germanPath.view.v1"
-  };
+function level(){return state.data.levels.find(x=>x.id===state.level)||state.data.levels[0]}
+function save(){localStorage.setItem(STORE.done,JSON.stringify([...state.done]));localStorage.setItem(STORE.level,state.level)}
+function key(r){return state.level+"::"+r.id}
+function applyTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem(STORE.theme,t);els.theme.textContent=t==="dark"?"☀":"☾";els.theme.setAttribute("aria-label",t==="dark"?"تفعيل الوضع الفاتح":"تفعيل الوضع الليلي")}
+function initTheme(){const saved=localStorage.getItem(STORE.theme);const dark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;applyTheme(saved||(dark?"dark":"light"))}
+function categories(){return ["الكل",...new Set(level().resources.map(r=>r.skill))]}
 
-  var app = {
-    data: null,
-    level: "A1",
-    week: 0,
-    skill: "الكل",
-    completed: new Set()
-  };
+function renderLevel(){
+ const d=level();
+ els.levels.forEach(b=>b.classList.toggle("active",b.dataset.level===state.level));
+ els.label.textContent=d.id+" • "+d.label;
+ els.title.textContent=d.title;
+ els.goal.textContent=d.goal;
+ els.count.textContent=d.resources.length;
+ els.catCount.textContent=new Set(d.resources.map(r=>r.skill)).size;
+}
 
-  var els = {
-    levelTabs: document.getElementById("levelTabs"),
-    weekSelect: document.getElementById("weekSelect"),
-    weekBadge: document.getElementById("weekBadge"),
-    weekTitle: document.getElementById("weekTitle"),
-    weekGoal: document.getElementById("weekGoal"),
-    daysGrid: document.getElementById("daysGrid"),
-    resourcesGrid: document.getElementById("resourcesGrid"),
-    skillFilter: document.getElementById("skillFilter"),
-    overallPercent: document.getElementById("overallPercent"),
-    overallBar: document.getElementById("overallBar"),
-    overallMeta: document.getElementById("overallMeta"),
-    weekPercent: document.getElementById("weekPercent"),
-    weekBar: document.getElementById("weekBar"),
-    themeToggle: document.getElementById("themeToggle"),
-    resetProgress: document.getElementById("resetProgress")
-  };
+function renderRoadmap(){
+ els.roadmap.innerHTML="";
+ level().roadmap.forEach((step,i)=>{
+  const card=document.createElement("article");card.className="step-card";
+  card.innerHTML='<div class="step-no">'+(i+1)+'</div><h3>'+step.title+'</h3><p>'+step.text+'</p>';
+  els.roadmap.appendChild(card);
+ });
+}
 
-  function safeParse(raw, fallback) {
-    try { return JSON.parse(raw); } catch (_) { return fallback; }
-  }
+function renderFilters(){
+ els.filters.innerHTML="";
+ categories().forEach(c=>{
+  const b=document.createElement("button");b.type="button";b.className="filter-btn"+(c===state.filter?" active":"");b.textContent=c;
+  b.addEventListener("click",()=>{state.filter=c;renderFilters();renderResources()});els.filters.appendChild(b);
+ });
+}
 
-  function loadLocalState() {
-    var saved = safeParse(localStorage.getItem(STORAGE.progress), []);
-    if (Array.isArray(saved)) app.completed = new Set(saved);
+function renderResources(){
+ const list=level().resources.filter(r=>state.filter==="الكل"||r.skill===state.filter);
+ els.resources.innerHTML="";
+ if(!list.length){els.resources.innerHTML='<p class="empty">لا توجد موارد في هذا التصنيف.</p>';return}
+ list.forEach(r=>{
+  const done=state.done.has(key(r));
+  const card=document.createElement("article");card.className="resource-card"+(done?" done":"");
+  card.innerHTML=
+   '<div class="resource-top"><div class="resource-provider"><span class="type-dot '+(r.type==="site"?"site":"")+'"></span><span class="provider-name">'+r.provider+'</span></div><span class="badge">'+r.skill+'</span></div>'+
+   '<h3>'+r.title+'</h3><p>'+r.note+'</p>'+
+   '<div class="resource-actions"><a class="open-link" href="'+r.url+'" target="_blank" rel="noopener noreferrer">'+(r.type==="youtube"?"فتح الفيديو":"فتح الموقع")+'</a><button type="button" class="done-btn">'+(done?"✓ مكتمل":"علّم كمكتمل")+'</button></div>';
+  card.querySelector(".done-btn").addEventListener("click",()=>{const k=key(r);state.done.has(k)?state.done.delete(k):state.done.add(k);save();renderResources();renderProgress()});
+  els.resources.appendChild(card);
+ });
+}
 
-    var view = safeParse(localStorage.getItem(STORAGE.view), null);
-    if (view && typeof view === "object") {
-      if (typeof view.level === "string") app.level = view.level;
-      if (Number.isInteger(view.week)) app.week = Math.max(0, view.week);
-    }
+function renderProgress(){
+ const all=state.data.levels.flatMap(l=>l.resources.map(r=>l.id+"::"+r.id));
+ const done=all.filter(k=>state.done.has(k)).length;const pct=all.length?Math.round(done/all.length*100):0;
+ els.pct.textContent=pct+"%";els.bar.style.width=pct+"%";els.text.textContent=done+" من "+all.length+" مورد مكتمل";
+}
 
-    var savedTheme = localStorage.getItem(STORAGE.theme);
-    var preferredDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    applyTheme(savedTheme || (preferredDark ? "dark" : "light"));
-  }
+function renderAll(){renderLevel();renderRoadmap();renderFilters();renderResources();renderProgress()}
 
-  function applyTheme(theme) {
-    var next = theme === "dark" ? "dark" : "light";
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem(STORAGE.theme, next);
-    var use = els.themeToggle.querySelector("use");
-    if (use) use.setAttribute("href", next === "dark" ? "#i-sun" : "#i-moon");
-    els.themeToggle.setAttribute("aria-label", next === "dark" ? "تفعيل الوضع الفاتح" : "تفعيل الوضع الليلي");
-  }
+els.levels.forEach(b=>b.addEventListener("click",()=>{state.level=b.dataset.level;state.filter="الكل";save();renderAll()}));
+els.theme.addEventListener("click",()=>applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark"));
+els.reset.addEventListener("click",()=>{if(!confirm("مسح جميع علامات التقدم؟"))return;state.done.clear();save();renderAll()});
+initTheme();
 
-  function saveView() {
-    localStorage.setItem(STORAGE.view, JSON.stringify({ level: app.level, week: app.week }));
-  }
-
-  function saveProgress() {
-    localStorage.setItem(STORAGE.progress, JSON.stringify(Array.from(app.completed)));
-  }
-
-  function levelData() {
-    return app.data.levels.find(function (item) { return item.id === app.level; }) || app.data.levels[0];
-  }
-
-  function currentWeek() {
-    var level = levelData();
-    return level.weeks[app.week] || level.weeks[0];
-  }
-
-  function progressKey(dayIndex) {
-    return app.level + "-w" + (app.week + 1) + "-d" + (dayIndex + 1);
-  }
-
-  function svgIcon(id) {
-    return '<svg aria-hidden="true"><use href="#' + id + '"></use></svg>';
-  }
-
-  function renderLevels() {
-    els.levelTabs.innerHTML = "";
-    app.data.levels.forEach(function (level) {
-      var button = document.createElement("button");
-      button.type = "button";
-      button.className = "level-tab";
-      button.setAttribute("role", "tab");
-      button.setAttribute("aria-selected", level.id === app.level ? "true" : "false");
-      button.textContent = level.id;
-      button.addEventListener("click", function () {
-        app.level = level.id;
-        app.week = 0;
-        app.skill = "الكل";
-        saveView();
-        renderAll();
-      });
-      els.levelTabs.appendChild(button);
-    });
-  }
-
-  function renderWeeks() {
-    var level = levelData();
-    if (app.week >= level.weeks.length) app.week = 0;
-    els.weekSelect.innerHTML = "";
-    level.weeks.forEach(function (week, index) {
-      var option = document.createElement("option");
-      option.value = String(index);
-      option.textContent = "الأسبوع " + week.number + " — " + week.title;
-      option.selected = index === app.week;
-      els.weekSelect.appendChild(option);
-    });
-  }
-
-  function renderOverview() {
-    var level = levelData();
-    var week = currentWeek();
-    els.weekBadge.textContent = level.id + " • " + level.label;
-    els.weekTitle.textContent = "الأسبوع " + week.number + ": " + week.title;
-    els.weekGoal.textContent = week.goal + " — محاور: " + week.focus.join("، ");
-  }
-
-  function renderDays() {
-    var level = levelData();
-    var week = currentWeek();
-    els.daysGrid.innerHTML = "";
-
-    level.dailyRoutine.forEach(function (day, index) {
-      var done = app.completed.has(progressKey(index));
-      var card = document.createElement("article");
-      card.className = "day-card" + (done ? " done" : "");
-
-      var focusItem = week.focus[index % week.focus.length];
-      var tasks = day.tasks.slice();
-      tasks.unshift("تطبيق محور الأسبوع: " + focusItem);
-
-      card.innerHTML =
-        '<div class="day-top">' +
-          '<div><div class="day-number">' + (index + 1) + '</div></div>' +
-          '<div><h3>' + day.title + '</h3><p class="muted">' + day.purpose + '</p></div>' +
-        '</div>' +
-        '<ul class="task-list">' +
-          tasks.map(function (task) { return "<li>" + task + "</li>"; }).join("") +
-        '</ul>' +
-        '<div class="day-footer">' +
-          '<span class="duration">' + svgIcon("i-clock") + day.minutes + ' دقيقة</span>' +
-          '<button type="button" class="complete-btn" aria-pressed="' + done + '">' +
-            svgIcon("i-check") + '<span>' + (done ? "مكتمل" : "تم") + '</span>' +
-          '</button>' +
-        '</div>';
-
-      var button = card.querySelector(".complete-btn");
-      button.addEventListener("click", function () {
-        var key = progressKey(index);
-        if (app.completed.has(key)) app.completed.delete(key);
-        else app.completed.add(key);
-        saveProgress();
-        renderDays();
-        renderProgress();
-      });
-
-      els.daysGrid.appendChild(card);
-    });
-  }
-
-  function renderSkillFilter() {
-    var level = levelData();
-    var skills = ["الكل"];
-    level.resources.forEach(function (resource) {
-      if (skills.indexOf(resource.skill) === -1) skills.push(resource.skill);
-    });
-
-    if (skills.indexOf(app.skill) === -1) app.skill = "الكل";
-    els.skillFilter.innerHTML = "";
-
-    skills.forEach(function (skill) {
-      var button = document.createElement("button");
-      button.type = "button";
-      button.className = "filter-btn" + (skill === app.skill ? " active" : "");
-      button.textContent = skill;
-      button.addEventListener("click", function () {
-        app.skill = skill;
-        renderSkillFilter();
-        renderResources();
-      });
-      els.skillFilter.appendChild(button);
-    });
-  }
-
-  function renderResources() {
-    var level = levelData();
-    var resources = level.resources.filter(function (resource) {
-      return app.skill === "الكل" || resource.skill === app.skill;
-    });
-
-    els.resourcesGrid.innerHTML = "";
-    if (!resources.length) {
-      els.resourcesGrid.innerHTML = '<p class="empty">لا توجد فيديوهات في هذا التصنيف حالياً.</p>';
-      return;
-    }
-
-    resources.forEach(function (resource) {
-      var link = document.createElement("a");
-      link.className = "resource-card";
-      link.href = resource.url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.innerHTML =
-        '<span class="resource-icon">' + svgIcon("i-play") + '</span>' +
-        '<span><h3>' + resource.title + '</h3><p>' + resource.channel + ' • ' + resource.note + '</p></span>' +
-        '<span class="resource-meta">' + resource.skill + '</span>';
-      els.resourcesGrid.appendChild(link);
-    });
-  }
-
-  function renderProgress() {
-    var total = app.data.levels.reduce(function (sum, level) {
-      return sum + level.weeks.length * level.dailyRoutine.length;
-    }, 0);
-
-    var validKeys = new Set();
-    app.data.levels.forEach(function (level) {
-      level.weeks.forEach(function (_, weekIndex) {
-        level.dailyRoutine.forEach(function (_, dayIndex) {
-          validKeys.add(level.id + "-w" + (weekIndex + 1) + "-d" + (dayIndex + 1));
-        });
-      });
-    });
-
-    var done = Array.from(app.completed).filter(function (key) { return validKeys.has(key); }).length;
-    var overall = total ? Math.round(done / total * 100) : 0;
-    els.overallPercent.textContent = overall + "%";
-    els.overallBar.style.width = overall + "%";
-    els.overallMeta.textContent = done + " من " + total + " يوماً مكتمل";
-
-    var weekDays = levelData().dailyRoutine.length;
-    var weekDone = 0;
-    for (var i = 0; i < weekDays; i += 1) if (app.completed.has(progressKey(i))) weekDone += 1;
-    var weekPct = weekDays ? Math.round(weekDone / weekDays * 100) : 0;
-    els.weekPercent.textContent = weekPct + "%";
-    els.weekBar.style.width = weekPct + "%";
-  }
-
-  function renderAll() {
-    renderLevels();
-    renderWeeks();
-    renderOverview();
-    renderDays();
-    renderSkillFilter();
-    renderResources();
-    renderProgress();
-  }
-
-  function showLoadError() {
-    els.weekTitle.textContent = "تعذر تحميل ملف الخطة";
-    els.weekGoal.textContent = "تأكد من تشغيل الموقع عبر خادم محلي أو GitHub Pages، وليس بفتح index.html مباشرة عبر file://.";
-    els.daysGrid.innerHTML = '<p class="empty">ملف data/curriculum.json لم يُحمّل.</p>';
-    els.resourcesGrid.innerHTML = '<p class="empty">لا يمكن عرض الفيديوهات قبل تحميل البيانات.</p>';
-  }
-
-  els.weekSelect.addEventListener("change", function () {
-    app.week = Math.max(0, Number(els.weekSelect.value) || 0);
-    saveView();
-    renderOverview();
-    renderDays();
-    renderProgress();
-  });
-
-  els.themeToggle.addEventListener("click", function () {
-    var current = document.documentElement.getAttribute("data-theme");
-    applyTheme(current === "dark" ? "light" : "dark");
-  });
-
-  els.resetProgress.addEventListener("click", function () {
-    if (!window.confirm("واش متأكد بغيتي تمسح جميع علامات التقدم؟")) return;
-    app.completed.clear();
-    saveProgress();
-    renderDays();
-    renderProgress();
-  });
-
-  loadLocalState();
-
-  fetch("./data/curriculum.json", { cache: "no-store" })
-    .then(function (response) {
-      if (!response.ok) throw new Error("HTTP " + response.status);
-      return response.json();
-    })
-    .then(function (data) {
-      if (!data || !Array.isArray(data.levels) || !data.levels.length) throw new Error("Invalid curriculum");
-      app.data = data;
-      if (!app.data.levels.some(function (level) { return level.id === app.level; })) app.level = app.data.levels[0].id;
-      renderAll();
-    })
-    .catch(function (error) {
-      console.error("Curriculum load failed:", error);
-      showLoadError();
-    });
+fetch("./data/curriculum.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json()}).then(data=>{
+ state.data=data;if(!data.levels.some(x=>x.id===state.level))state.level="A1";renderAll();
+}).catch(err=>{console.error(err);els.resources.innerHTML='<p class="empty">تعذر تحميل ملف الموارد.</p>'});
 })();
