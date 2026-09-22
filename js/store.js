@@ -1,10 +1,15 @@
 window.GMP=window.GMP||{};
 (()=>{
 const G=window.GMP,KEY="gmp.state.v1",THEME="gmp.theme.v1",DAY=86400000;
-const defaults={profile:{level:"A1",minutes:210,goal:"general",onboarded:false},completedLessons:{},completedResources:{},reviewRecords:{},quizResults:[],activity:[],lastView:"dashboard",practiceSkill:"الكل"};
+const defaults={
+  profile:{level:"A1",minutes:210,goal:"general",onboarded:false},
+  completedLessons:{},completedResources:{},reviewRecords:{},quizResults:[],activity:[],
+  lastView:"dashboard",practiceSkill:"الكل",
+  dailyChecks:{},dailyWriting:{},dailySelected:{A1:1,A2:1,B1:1,B2:1}
+};
 const merge=(a,b)=>{Object.keys(b||{}).forEach(k=>{if(b[k]&&typeof b[k]==="object"&&!Array.isArray(b[k])){a[k]=merge(a[k]&&typeof a[k]==="object"?a[k]:{},b[k])}else a[k]=b[k]});return a};
 const load=()=>{try{return merge(JSON.parse(JSON.stringify(defaults)),JSON.parse(localStorage.getItem(KEY))||{})}catch{return JSON.parse(JSON.stringify(defaults))}};
-G.DAY=DAY;G.state=load();G.data={curriculum:null,quizzes:null,vocabulary:null};G.runtime={view:"dashboard",roadmapLevel:"A1",toastTimer:null};
+G.DAY=DAY;G.state=load();G.data={curriculum:null,quizzes:null,vocabulary:null,daily:null,videos:null};G.runtime={view:"dashboard",roadmapLevel:"A1",dailyLevel:null,toastTimer:null};
 G.save=()=>localStorage.setItem(KEY,JSON.stringify(G.state));
 G.reset=()=>{G.state=JSON.parse(JSON.stringify(defaults));G.save()};
 G.dateKey=(d=new Date())=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
@@ -22,6 +27,43 @@ G.bestQuiz=id=>{const s=G.state.quizResults.filter(x=>x.quizId===id).map(x=>x.sc
 G.quizAvg=()=>G.state.quizResults.length?Math.round(G.state.quizResults.reduce((a,b)=>a+b.score,0)/G.state.quizResults.length):null;
 G.moduleProgress=m=>{const total=m.lessons.length,done=m.lessons.filter(l=>G.lessonDone(l.id)).length;return{total,done,pct:total?Math.round(done/total*100):0}};
 G.levelProgress=(level=G.currentLevel())=>{const ls=G.lessons(level),rs=G.resources(level),ld=ls.filter(x=>G.lessonDone(x.id)).length,rd=rs.filter(x=>G.resourceDone(x.id)).length;const lp=ls.length?ld/ls.length:0,rp=rs.length?rd/rs.length:0;const qs=level.modules.map(m=>G.bestQuiz(m.quizId)).filter(v=>v!=null);const qp=level.modules.length?qs.reduce((s,v)=>s+v/100,0)/level.modules.length:0;return{pct:Math.round((lp*.65+rp*.2+qp*.15)*100),lessonDone:ld,lessonTotal:ls.length,practiceDone:rd,practiceTotal:rs.length}};
+
+G.dailyProgram=(levelId=G.state.profile.level)=>G.data.daily?.levels?.find(x=>x.level===levelId)||null;
+G.dailyDay=(levelId=G.state.profile.level,day=null)=>{
+  const p=G.dailyProgram(levelId);if(!p)return null;
+  const d=Number(day||G.state.dailySelected[levelId]||1);
+  return p.days.find(x=>x.day===d)||p.days[0]||null;
+};
+G.videoById=id=>G.data.videos?.videos?.find(x=>x.id===id)||null;
+G.dailyKey=(levelId,day,type)=>levelId+"::"+day+"::"+type;
+G.dailyDone=(levelId,day,type)=>Boolean(G.state.dailyChecks[G.dailyKey(levelId,day,type)]);
+G.setDailyDone=(levelId,day,type,value=true)=>{
+  const k=G.dailyKey(levelId,day,type);
+  if(value)G.state.dailyChecks[k]=Date.now();else delete G.state.dailyChecks[k];
+  if(value)G.touch();G.save();
+};
+G.dailyVideoDone=(levelId,day,videoId)=>G.dailyDone(levelId,day,"video::"+videoId);
+G.dailyDayProgress=(levelId=G.state.profile.level,day=null)=>{
+  const d=G.dailyDay(levelId,day);if(!d)return{done:0,total:0,pct:0,complete:false};
+  const items=[...d.videos.map(id=>"video::"+id),"reading","writing"];
+  const done=items.filter(type=>G.dailyDone(levelId,d.day,type)).length;
+  return{done,total:items.length,pct:items.length?Math.round(done/items.length*100):0,complete:done===items.length};
+};
+G.dailyLevelProgress=(levelId=G.state.profile.level)=>{
+  const p=G.dailyProgram(levelId);if(!p)return{done:0,total:0,pct:0};
+  const done=p.days.filter(d=>G.dailyDayProgress(levelId,d.day).complete).length;
+  return{done,total:p.days.length,pct:p.days.length?Math.round(done/p.days.length*100):0};
+};
+G.nextDailyDay=(levelId=G.state.profile.level)=>{
+  const p=G.dailyProgram(levelId);if(!p)return 1;
+  const next=p.days.find(d=>!G.dailyDayProgress(levelId,d.day).complete);
+  return next?next.day:p.days.length;
+};
+G.selectDailyDay=(levelId,day)=>{G.state.dailySelected[levelId]=Math.max(1,Math.min(30,Number(day)||1));G.save()};
+G.dailyWritingKey=(levelId,day)=>levelId+"::"+day;
+G.getDailyWriting=(levelId,day)=>G.state.dailyWriting[G.dailyWritingKey(levelId,day)]||"";
+G.setDailyWriting=(levelId,day,text)=>{G.state.dailyWriting[G.dailyWritingKey(levelId,day)]=String(text||"").slice(0,12000);G.save()};
+
 G.escape=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
 G.url=v=>{try{const u=new URL(v);return["https:","http:"].includes(u.protocol)?u.href:"#"}catch{return"#"}};
 G.theme={init(){const s=localStorage.getItem(THEME),d=matchMedia?.("(prefers-color-scheme: dark)").matches;this.set(s||(d?"dark":"light"))},set(t){document.documentElement.dataset.theme=t;localStorage.setItem(THEME,t)},toggle(){this.set(document.documentElement.dataset.theme==="dark"?"light":"dark")}};

@@ -1,0 +1,3671 @@
+{
+  "version": 1,
+  "daysPerLevel": 30,
+  "totalDays": 120,
+  "levels": [
+    {
+      "level": "A1",
+      "durationDays": 30,
+      "days": [
+        {
+          "day": 1,
+          "theme": "نبدأ بأنفسنا",
+          "objective": "اليوم ركّز على نبدأ بأنفسنا مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v01"
+          ],
+          "reading": {
+            "title": "نبدأ بأنفسنا",
+            "text": "Ich heiße Sami und ich komme aus Marokko. Ich wohne in Fès und lerne jetzt Deutsch. Jeden Morgen übe ich zehn neue Wörter. Am Abend höre ich einen kurzen deutschen Dialog. Deutsch ist neu für mich, aber ich lerne gern jeden Tag.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "عرّف بنفسك: الاسم، المدينة، اللغة التي تتعلمها، وهواية واحدة.",
+            "minWords": 20,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 2,
+          "theme": "التحيات",
+          "objective": "اليوم ركّز على التحيات مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v02"
+          ],
+          "reading": {
+            "title": "التحيات",
+            "text": "Am Morgen trifft Lina ihre Nachbarin. Sie sagt: „Guten Morgen!“ Später sieht sie einen Freund und sagt: „Hallo!“ Am Abend verabschiedet sie sich mit „Tschüss“ und „Bis morgen“. Lina merkt: Die Begrüßung hängt von der Situation und der Tageszeit ab.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب حواراً من 6 أسطر فيه تحية رسمية وتحيتان غير رسميتين.",
+            "minWords": 22,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 3,
+          "theme": "العائلة",
+          "objective": "اليوم ركّز على العائلة مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v03",
+            "a1-v10"
+          ],
+          "reading": {
+            "title": "العائلة",
+            "text": "Meine Familie ist nicht sehr groß. Ich habe einen Bruder und eine Schwester. Mein Bruder arbeitet in Rabat, und meine Schwester studiert. Meine Eltern wohnen in Fès. Am Wochenende essen wir oft zusammen und sprechen über unsere Woche.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب عن عائلتك في 5–7 جمل بسيطة.",
+            "minWords": 23,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 4,
+          "theme": "العمر والأرقام",
+          "objective": "اليوم ركّز على العمر والأرقام مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v04"
+          ],
+          "reading": {
+            "title": "العمر والأرقام",
+            "text": "Youssef ist zwanzig Jahre alt. Seine Schwester ist siebzehn und sein Bruder ist fünfundzwanzig. Heute kauft Youssef drei Hefte, zwei Stifte und eine Flasche Wasser. Zusammen bezahlt er zwölf Euro.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب عمرك وأعمار 3 أشخاص، ثم استعمل 5 أرقام في جمل.",
+            "minWords": 25,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 5,
+          "theme": "غرفتي",
+          "objective": "اليوم ركّز على غرفتي مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v05"
+          ],
+          "reading": {
+            "title": "غرفتي",
+            "text": "Mein Zimmer ist klein, aber gemütlich. Neben dem Bett steht ein Tisch. Auf dem Tisch liegen ein Buch, ein Handy und eine Lampe. Der Schrank ist neben der Tür. Ich lerne jeden Abend an meinem Schreibtisch.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "صف غرفتك باستعمال neben, auf, in في 6 جمل.",
+            "minWords": 27,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 6,
+          "theme": "روتيني الصباحي",
+          "objective": "اليوم ركّز على روتيني الصباحي مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v06",
+            "a1-v13"
+          ],
+          "reading": {
+            "title": "روتيني الصباحي",
+            "text": "Ich stehe um sieben Uhr auf. Zuerst wasche ich mein Gesicht und putze meine Zähne. Dann esse ich Brot und trinke Tee. Um acht Uhr gehe ich zur Schule. Im Bus höre ich manchmal deutsche Wörter.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب روتينك الصباحي من الاستيقاظ حتى الخروج من البيت.",
+            "minWords": 29,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 7,
+          "theme": "الفطور",
+          "objective": "اليوم ركّز على الفطور مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v07"
+          ],
+          "reading": {
+            "title": "الفطور",
+            "text": "Zum Frühstück esse ich gern Brot mit Käse und ein Ei. Dazu trinke ich Tee. Meine Mutter trinkt Kaffee, aber mein Bruder mag keinen Kaffee. Am Sonntag frühstücken wir später und sitzen länger am Tisch.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب ماذا تأكل وتشرب في الفطور وماذا لا تحب.",
+            "minWords": 30,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 8,
+          "theme": "تعلم الألمانية",
+          "objective": "اليوم ركّز على تعلم الألمانية مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v08"
+          ],
+          "reading": {
+            "title": "تعلم الألمانية",
+            "text": "Mina lernt jeden Tag Deutsch. Sie sieht ein Video, schreibt fünf neue Wörter und liest einen kurzen Text. Wenn ein Wort schwer ist, wiederholt sie es am Abend. Nach einer Woche versteht sie schon mehr als am ersten Tag.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب خطة قصيرة لتعلم الألمانية في يوم واحد.",
+            "minWords": 32,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 9,
+          "theme": "الهوايات",
+          "objective": "اليوم ركّز على الهوايات مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v09",
+            "eg-a1-greetings"
+          ],
+          "reading": {
+            "title": "الهوايات",
+            "text": "In meiner Freizeit spiele ich Fußball und höre Musik. Mein Freund Karim liest gern und fährt am Wochenende Fahrrad. Manchmal gehen wir zusammen in den Park. Dort sprechen wir über Filme, Sport und unsere Pläne.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 6 جمل عن هواياتك وهوايات صديق.",
+            "minWords": 34,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 10,
+          "theme": "الساعة والمواعيد",
+          "objective": "اليوم ركّز على الساعة والمواعيد مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v10"
+          ],
+          "reading": {
+            "title": "الساعة والمواعيد",
+            "text": "Heute habe ich um neun Uhr Deutschkurs. Um halb zwölf treffe ich einen Freund. Am Nachmittag trainiere ich um vier Uhr. Mein Abendessen ist um acht Uhr. Danach habe ich noch dreißig Minuten für Deutsch.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب برنامج يومك مع 5 أوقات مختلفة.",
+            "minWords": 36,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 11,
+          "theme": "في المتجر",
+          "objective": "اليوم ركّز على في المتجر مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v11"
+          ],
+          "reading": {
+            "title": "في المتجر",
+            "text": "Sara braucht ein neues Heft und einen Stift. Im Geschäft fragt sie: „Wie viel kostet das Heft?“ Das Heft kostet drei Euro. Der Stift kostet zwei Euro. Sara bezahlt fünf Euro und nimmt eine kleine Tüte.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب حوار شراء بسيط بين زبون وبائع.",
+            "minWords": 37,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 12,
+          "theme": "في السوبرماركت",
+          "objective": "اليوم ركّز على في السوبرماركت مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v12",
+            "eg-a1-supermarket"
+          ],
+          "reading": {
+            "title": "في السوبرماركت",
+            "text": "Omar geht mit einer Einkaufsliste in den Supermarkt. Er kauft Milch, Reis, Tomaten, Eier und Äpfel. Er findet die Milch schnell, aber er sucht lange nach dem Reis. An der Kasse bezahlt er mit Karte.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب قائمة مشتريات ثم 5 جمل عما اشتريت.",
+            "minWords": 39,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 13,
+          "theme": "في المقهى",
+          "objective": "اليوم ركّز على في المقهى مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v13"
+          ],
+          "reading": {
+            "title": "في المقهى",
+            "text": "Im Café bestellt Nora einen Cappuccino und ein Stück Kuchen. Sie sagt: „Ich möchte bitte einen Cappuccino.“ Der Kellner bringt die Bestellung. Nora bedankt sich und sitzt am Fenster. Das Café ist ruhig und warm.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب حوار طلب مشروب وحلوى بطريقة مهذبة.",
+            "minWords": 41,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 14,
+          "theme": "في المخبز",
+          "objective": "اليوم ركّز على في المخبز مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v14"
+          ],
+          "reading": {
+            "title": "في المخبز",
+            "text": "Am Morgen geht Tim in eine Bäckerei. Er möchte zwei Brötchen und ein Croissant. Die Verkäuferin fragt: „Noch etwas?“ Tim nimmt auch einen Kaffee. Er bezahlt und sagt: „Danke, schönen Tag noch!“",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب ماذا ستطلب في مخبز ألماني في 6 جمل.",
+            "minWords": 42,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 15,
+          "theme": "الملابس",
+          "objective": "اليوم ركّز على الملابس مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v15",
+            "eg-a1-irregular"
+          ],
+          "reading": {
+            "title": "الملابس",
+            "text": "Heute ist es kalt. Leila trägt eine schwarze Jacke, einen roten Pullover und blaue Jeans. Ihre Schuhe sind bequem. Im Sommer trägt sie lieber leichte Kleidung. Ihre Lieblingsfarbe ist grün.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "صف ملابسك اليوم والألوان التي تحبها.",
+            "minWords": 44,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 16,
+          "theme": "الطقس",
+          "objective": "اليوم ركّز على الطقس مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "eg-a1-greetings"
+          ],
+          "reading": {
+            "title": "الطقس",
+            "text": "Heute ist das Wetter in Berlin wechselhaft. Am Morgen regnet es, am Mittag scheint die Sonne und am Abend wird es kühl. Paul nimmt deshalb eine Jacke und einen kleinen Regenschirm mit.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب تقرير طقس بسيط لمدينتك اليوم وغداً.",
+            "minWords": 46,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 17,
+          "theme": "المواصلات",
+          "objective": "اليوم ركّز على المواصلات مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "eg-a1-objects"
+          ],
+          "reading": {
+            "title": "المواصلات",
+            "text": "Nico fährt jeden Tag mit dem Bus zur Arbeit. Die Fahrt dauert zwanzig Minuten. Heute kommt der Bus fünf Minuten zu spät. Nico wartet an der Haltestelle und liest eine Nachricht auf seinem Handy.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "صف كيف تذهب إلى المدرسة أو العمل وما المدة.",
+            "minWords": 48,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 18,
+          "theme": "السؤال عن الطريق",
+          "objective": "اليوم ركّز على السؤال عن الطريق مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "eg-a1-morning",
+            "eg-a1-intro-old"
+          ],
+          "reading": {
+            "title": "السؤال عن الطريق",
+            "text": "Eine Touristin sucht den Bahnhof. Sie fragt: „Entschuldigung, wo ist der Bahnhof?“ Ein Mann sagt: „Gehen Sie geradeaus und dann links. Der Bahnhof ist neben dem Hotel.“ Die Touristin bedankt sich.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 5 تعليمات طريق باستعمال links, rechts, geradeaus, neben.",
+            "minWords": 49,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 19,
+          "theme": "عند الطبيب",
+          "objective": "اليوم ركّز على عند الطبيب مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "eg-a1-supermarket"
+          ],
+          "reading": {
+            "title": "عند الطبيب",
+            "text": "Ali fühlt sich heute nicht gut. Er hat Kopfschmerzen und ist müde. Beim Arzt sagt er: „Mein Kopf tut weh.“ Der Arzt fragt nach Fieber und gibt ihm einfache Tipps. Ali geht danach nach Hause und ruht sich aus.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 5 جمل عن أعراض بسيطة وما تفعله عندما تمرض.",
+            "minWords": 51,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 20,
+          "theme": "البيت",
+          "objective": "اليوم ركّز على البيت مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "eg-a1-100words"
+          ],
+          "reading": {
+            "title": "البيت",
+            "text": "Wir wohnen in einer Wohnung im dritten Stock. Es gibt ein Wohnzimmer, zwei Schlafzimmer, eine Küche und ein Bad. Mein Lieblingsort ist der Balkon, weil dort viel Licht ist. Abends sitzen wir manchmal dort.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "صف بيتك أو بيتاً تتمنى أن تسكن فيه.",
+            "minWords": 53,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 21,
+          "theme": "الأصدقاء",
+          "objective": "اليوم ركّز على الأصدقاء مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "eg-a1-gender",
+            "a1-v01"
+          ],
+          "reading": {
+            "title": "الأصدقاء",
+            "text": "Mein bester Freund heißt Adam. Wir kennen uns seit der Schule. Er ist freundlich und lustig. Wir spielen manchmal Fußball, trinken Tee und lernen zusammen. Wenn ich ein Problem habe, kann ich mit ihm sprechen.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "صف صديقاً جيداً في 6–8 جمل.",
+            "minWords": 54,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 22,
+          "theme": "نهاية الأسبوع",
+          "objective": "اليوم ركّز على نهاية الأسبوع مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "eg-a1-irregular"
+          ],
+          "reading": {
+            "title": "نهاية الأسبوع",
+            "text": "Am Samstag schlafe ich etwas länger. Danach helfe ich zu Hause und treffe am Nachmittag Freunde. Am Sonntag lerne ich eine Stunde Deutsch und gehe spazieren. Das Wochenende ist kurz, aber ich mag es.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب برنامج عطلة نهاية الأسبوع.",
+            "minWords": 56,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 23,
+          "theme": "مدينتي",
+          "objective": "اليوم ركّز على مدينتي مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "eg-a1-sentence"
+          ],
+          "reading": {
+            "title": "مدينتي",
+            "text": "Fès ist eine große und interessante Stadt. Es gibt alte Straßen, Märkte, Cafés und viele Menschen. Ich mag besonders die ruhigen Orte am Morgen. Wenn Freunde kommen, zeige ich ihnen gern meine Lieblingsplätze.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 7 جمل عن مدينتك وأماكن تحبها.",
+            "minWords": 58,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 24,
+          "theme": "في المكتبة",
+          "objective": "اليوم ركّز على في المكتبة مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "eg-a1-coffee",
+            "a1-v04"
+          ],
+          "reading": {
+            "title": "في المكتبة",
+            "text": "Mara geht heute in die Bibliothek. Sie sucht ein einfaches deutsches Buch. Die Mitarbeiterin zeigt ihr ein Regal für Lernende. Mara leiht ein Buch für zwei Wochen aus und setzt sich danach an einen ruhigen Tisch.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب ماذا تفعل في المكتبة وما نوع الكتب التي تريد.",
+            "minWords": 60,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 25,
+          "theme": "في المطعم",
+          "objective": "اليوم ركّز على في المطعم مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "eg-a1-intro-old"
+          ],
+          "reading": {
+            "title": "في المطعم",
+            "text": "Im Restaurant liest Karim die Speisekarte. Er bestellt Suppe, Reis mit Gemüse und Wasser. Seine Freundin nimmt Fisch. Nach dem Essen fragen sie nach der Rechnung. Das Essen war lecker und der Service freundlich.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب طلبك في مطعم من البداية حتى طلب الحساب.",
+            "minWords": 61,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 26,
+          "theme": "رحلة قصيرة",
+          "objective": "اليوم ركّز على رحلة قصيرة مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "eg-a1-regular"
+          ],
+          "reading": {
+            "title": "رحلة قصيرة",
+            "text": "Am Freitag fährt Anna mit dem Zug nach Hamburg. Sie hat einen kleinen Koffer und eine Fahrkarte auf dem Handy. Die Fahrt dauert zwei Stunden. Im Zug liest sie und hört Musik. Am Abend besucht sie eine Freundin.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب عن رحلة قصيرة: إلى أين، كيف، مع من، وماذا ستفعل.",
+            "minWords": 63,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 27,
+          "theme": "في الفندق",
+          "objective": "اليوم ركّز على في الفندق مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "eg-a1-bakery",
+            "a1-v07"
+          ],
+          "reading": {
+            "title": "في الفندق",
+            "text": "Jonas kommt am Abend im Hotel an. An der Rezeption nennt er seinen Namen und zeigt seinen Ausweis. Sein Zimmer ist im vierten Stock. Am nächsten Morgen frühstückt er um acht Uhr und fragt nach dem WLAN-Passwort.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 6–8 جمل عن تسجيل الدخول إلى فندق.",
+            "minWords": 65,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 28,
+          "theme": "رسالة قصيرة",
+          "objective": "اليوم ركّز على رسالة قصيرة مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v01"
+          ],
+          "reading": {
+            "title": "رسالة قصيرة",
+            "text": "Hallo Mia, ich komme am Samstag um 15 Uhr zu dir. Ich bringe Kuchen mit. Kann ich auch meinen Bruder mitbringen? Bitte schreib mir, ob die Uhrzeit passt. Viele Grüße, Samir.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب رسالة قصيرة لصديق لترتيب لقاء، 35–50 كلمة.",
+            "minWords": 67,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 29,
+          "theme": "تجربة A1",
+          "objective": "اليوم ركّز على تجربة A1 مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v02"
+          ],
+          "reading": {
+            "title": "تجربة A1",
+            "text": "Heute macht Lara einen kleinen Deutschtest. Zuerst hört sie kurze Gespräche, dann liest sie Anzeigen und Nachrichten. Beim Schreiben formuliert sie eine kurze E-Mail. Sie ist nervös, aber sie arbeitet langsam und kontrolliert ihre Antworten.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب كيف ستستعد لاختبار A1 هذا الأسبوع.",
+            "minWords": 68,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 30,
+          "theme": "نهاية الشهر",
+          "objective": "اليوم ركّز على نهاية الشهر مع قراءة وكتابة مناسبة لمستوى A1.",
+          "videos": [
+            "a1-v03",
+            "a1-v10"
+          ],
+          "reading": {
+            "title": "نهاية الشهر",
+            "text": "Vor einem Monat konnte ich nur wenige deutsche Wörter. Jetzt kann ich mich vorstellen, einkaufen, nach dem Weg fragen und kurze Texte lesen. Ich mache noch Fehler, aber ich verstehe viel mehr. Im nächsten Monat möchte ich jeden Tag weiterlernen.",
+            "questions": [
+              "ما موضوع النص؟ أجب بجملة ألمانية.",
+              "استخرج 3 كلمات أو تعبيرات جديدة.",
+              "اكتب جملة صحيحة واحدة تلخص أهم معلومة."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 50–70 كلمة عن تقدمك في الشهر وما ستفعله بعده.",
+            "minWords": 70,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "durationDays": 30,
+      "days": [
+        {
+          "day": 1,
+          "theme": "مراجعة الأساس",
+          "objective": "اليوم ركّز على مراجعة الأساس مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v01"
+          ],
+          "reading": {
+            "title": "مراجعة الأساس",
+            "text": "Nach einigen Wochen Deutsch kann Samir schon viele Alltagssituationen verstehen. Er stellt sich vor, fragt nach Preisen und schreibt kurze Nachrichten. Trotzdem merkt er, dass Artikel und Endungen noch schwierig sind. Deshalb wiederholt er heute die wichtigsten A1-Strukturen und schreibt eigene Beispiele.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 70 كلمة عن الأشياء التي تستطيع فعلها بالألمانية وما يزال صعباً.",
+            "minWords": 70,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 2,
+          "theme": "Akkusativ وDativ",
+          "objective": "اليوم ركّز على Akkusativ وDativ مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v02"
+          ],
+          "reading": {
+            "title": "Akkusativ وDativ",
+            "text": "Mira bringt ihrer Freundin ein Buch. Sie kauft außerdem einen Kaffee für sie und erzählt ihr von einem neuen Kurs. Im Gespräch achtet Mira bewusst auf Akkusativ und Dativ. Sie merkt, dass die Fälle leichter werden, wenn sie ganze Sätze statt einzelne Regeln lernt.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 8 جمل فيها Akkusativ وDativ من الحياة اليومية.",
+            "minWords": 72,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 3,
+          "theme": "الماضي Perfekt",
+          "objective": "اليوم ركّز على الماضي Perfekt مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v03",
+            "a2-v10"
+          ],
+          "reading": {
+            "title": "الماضي Perfekt",
+            "text": "Am Wochenende habe ich meine Großeltern besucht. Wir haben zusammen gekocht und lange gesprochen. Danach bin ich mit meinem Cousin in die Stadt gefahren. Am Abend sind wir müde nach Hause gekommen, aber der Tag hat uns sehr gefallen.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 80 كلمة عن عطلتك الماضية باستعمال Perfekt.",
+            "minWords": 73,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 4,
+          "theme": "تجربة سفر",
+          "objective": "اليوم ركّز على تجربة سفر مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v04"
+          ],
+          "reading": {
+            "title": "تجربة سفر",
+            "text": "Letzten Sommer ist Noura nach Köln gereist. Sie ist früh mit dem Zug gefahren und hat im Zentrum ein kleines Hotel gefunden. Am ersten Tag hat sie den Dom besucht. Später hat sie neue Leute kennengelernt und viele Fotos gemacht.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب تقرير سفر قصير: المكان، النقل، السكن، الأنشطة.",
+            "minWords": 75,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 5,
+          "theme": "البحث عن سكن",
+          "objective": "اليوم ركّز على البحث عن سكن مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v05"
+          ],
+          "reading": {
+            "title": "البحث عن سكن",
+            "text": "Yasin sucht eine neue Wohnung. Sie soll nicht zu weit von seiner Arbeit entfernt sein und mindestens zwei Zimmer haben. Er liest jeden Abend Anzeigen und schreibt Vermietern. Eine Wohnung gefällt ihm besonders, weil sie hell ist und einen Balkon hat.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب إعلاناً قصيراً عن السكن الذي تبحث عنه.",
+            "minWords": 77,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 6,
+          "theme": "يوم في العمل",
+          "objective": "اليوم ركّز على يوم في العمل مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v06",
+            "eg-a2-aus-von"
+          ],
+          "reading": {
+            "title": "يوم في العمل",
+            "text": "Mariam arbeitet in einem kleinen Büro. Morgens beantwortet sie E-Mails und plant Termine. Nach der Mittagspause telefoniert sie mit Kunden. Wenn viel Arbeit da ist, bleibt sie manchmal länger. Sie mag ihre Kollegen, weil das Team freundlich und hilfsbereit ist.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "صف يوم عمل أو دراسة بالتفصيل في 80–100 كلمة.",
+            "minWords": 79,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 7,
+          "theme": "تغيير موعد",
+          "objective": "اليوم ركّز على تغيير موعد مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v07"
+          ],
+          "reading": {
+            "title": "تغيير موعد",
+            "text": "Tobias hat morgen einen Arzttermin, aber er muss länger arbeiten. Deshalb ruft er in der Praxis an. Er erklärt die Situation höflich und fragt nach einem neuen Termin. Die Mitarbeiterin bietet ihm Freitagvormittag an, und Tobias bestätigt den Termin.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب رسالة أو حواراً لتغيير موعد بطريقة مهذبة.",
+            "minWords": 80,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 8,
+          "theme": "الصحة",
+          "objective": "اليوم ركّز على الصحة مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v08"
+          ],
+          "reading": {
+            "title": "الصحة",
+            "text": "Seit drei Tagen hat Elena Halsschmerzen und Husten. Sie trinkt viel Tee und schläft mehr als sonst. Weil es nicht besser wird, geht sie zum Arzt. Er untersucht sie und empfiehlt Ruhe. Elena soll außerdem genug Wasser trinken.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 80 كلمة عن مشكلة صحية بسيطة ونصيحة مناسبة.",
+            "minWords": 82,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 9,
+          "theme": "في الدوائر الرسمية",
+          "objective": "اليوم ركّز على في الدوائر الرسمية مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v09",
+            "eg-a2-bakery"
+          ],
+          "reading": {
+            "title": "في الدوائر الرسمية",
+            "text": "Für einen Antrag braucht Karim mehrere Dokumente. Er nimmt seinen Pass, ein Foto und ein Formular mit. Im Amt wartet er fast vierzig Minuten. Danach erklärt ihm die Mitarbeiterin, welche Unterlagen noch fehlen und wann er wiederkommen soll.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب ماذا تحتاج لمعاملة رسمية وكيف تسأل عن المعلومات.",
+            "minWords": 84,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 10,
+          "theme": "تأخر القطار",
+          "objective": "اليوم ركّز على تأخر القطار مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v10"
+          ],
+          "reading": {
+            "title": "تأخر القطار",
+            "text": "Der Zug nach München hat heute dreißig Minuten Verspätung. Auf dem Bahnsteig hören die Reisenden eine Durchsage. Lea muss ihren Anschlusszug erreichen und fragt einen Mitarbeiter nach einer Alternative. Er zeigt ihr eine andere Verbindung.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب رسالة لصديق تخبره أن وسيلة النقل تأخرت ومتى ستصل.",
+            "minWords": 86,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 11,
+          "theme": "خطة عطلة",
+          "objective": "اليوم ركّز على خطة عطلة مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v11"
+          ],
+          "reading": {
+            "title": "خطة عطلة",
+            "text": "Im April möchten Jana und ihre Freundin vier Tage nach Wien fahren. Sie vergleichen Hotels, Zugpreise und Sehenswürdigkeiten. Jana möchte Museen besuchen, während ihre Freundin lieber viel draußen ist. Am Ende planen sie eine Mischung aus Kultur und Spaziergängen.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب خطة عطلة 90 كلمة مع سبب اختيارك للمكان.",
+            "minWords": 87,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 12,
+          "theme": "مشكلة في الفندق",
+          "objective": "اليوم ركّز على مشكلة في الفندق مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v12",
+            "eg-a2-coffee"
+          ],
+          "reading": {
+            "title": "مشكلة في الفندق",
+            "text": "Im Hotel funktioniert die Heizung im Zimmer nicht. Außerdem ist es nachts sehr laut. Ahmed geht zur Rezeption und beschreibt das Problem ruhig. Die Mitarbeiterin entschuldigt sich und bietet ihm ein anderes Zimmer an. Ahmed nimmt das Angebot an.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب شكوى مهذبة لفندق مع طلب حل.",
+            "minWords": 89,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 13,
+          "theme": "إرجاع منتج",
+          "objective": "اليوم ركّز على إرجاع منتج مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "eg-a2-aus-von"
+          ],
+          "reading": {
+            "title": "إرجاع منتج",
+            "text": "Nina hat gestern Kopfhörer gekauft, aber zu Hause funktionieren sie nicht. Heute geht sie zurück ins Geschäft. Sie zeigt den Kassenbon und erklärt den Defekt. Der Verkäufer bietet einen Umtausch oder eine Rückerstattung an. Nina entscheidet sich für neue Kopfhörer.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب حوار إرجاع منتج: المشكلة، الدليل، والحل المطلوب.",
+            "minWords": 91,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 14,
+          "theme": "دعوة",
+          "objective": "اليوم ركّز على دعوة مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "eg-a2-hotel"
+          ],
+          "reading": {
+            "title": "دعوة",
+            "text": "Am Samstag feiert Paul seinen Geburtstag. Er lädt Freunde zu sich nach Hause ein. In der Nachricht schreibt er die Uhrzeit, die Adresse und was die Gäste mitbringen können. Einige Freunde antworten sofort, andere müssen noch prüfen, ob sie Zeit haben.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب دعوة 70–90 كلمة مع المكان والوقت والتفاصيل.",
+            "minWords": 92,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 15,
+          "theme": "الاعتذار",
+          "objective": "اليوم ركّز على الاعتذار مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "eg-a2-library",
+            "a2-v03"
+          ],
+          "reading": {
+            "title": "الاعتذار",
+            "text": "Sofia hat ein Treffen mit ihrer Freundin vergessen. Als sie es merkt, schreibt sie sofort eine Nachricht. Sie entschuldigt sich ehrlich, erklärt den Grund kurz und schlägt einen neuen Termin vor. Ihre Freundin ist zuerst enttäuscht, nimmt die Entschuldigung aber an.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب اعتذاراً مناسباً واقترح بديلاً.",
+            "minWords": 94,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 16,
+          "theme": "استخدام الهاتف",
+          "objective": "اليوم ركّز على استخدام الهاتف مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "eg-a2-bakery"
+          ],
+          "reading": {
+            "title": "استخدام الهاتف",
+            "text": "Daniel benutzt sein Handy jeden Tag, aber er versucht, weniger Zeit in sozialen Medien zu verbringen. Beim Essen legt er das Handy weg. Abends stellt er den Flugmodus ein, damit er besser schläft. Diese kleinen Regeln helfen ihm, sich besser zu konzentrieren.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب رأيك في استعمال الهاتف و3 قواعد تريد تطبيقها.",
+            "minWords": 96,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 17,
+          "theme": "وصفة بسيطة",
+          "objective": "اليوم ركّز على وصفة بسيطة مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "eg-a2-sentence"
+          ],
+          "reading": {
+            "title": "وصفة بسيطة",
+            "text": "Heute kocht Aylin eine Gemüsesuppe. Zuerst schneidet sie Zwiebeln, Karotten und Kartoffeln. Dann gibt sie alles in einen Topf und fügt Wasser und Gewürze hinzu. Nach dreißig Minuten ist die Suppe fertig. Sie serviert sie mit Brot.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب وصفة بسيطة باستعمال zuerst, dann, danach, zum Schluss.",
+            "minWords": 98,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 18,
+          "theme": "الرياضة",
+          "objective": "اليوم ركّز على الرياضة مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "eg-a2-gender",
+            "a2-v06"
+          ],
+          "reading": {
+            "title": "الرياضة",
+            "text": "Omar trainiert dreimal pro Woche. Er macht Krafttraining und geht manchmal laufen. Wenn er wenig geschlafen hat, trainiert er leichter. Für ihn sind Regelmäßigkeit, Essen und Erholung wichtiger als ein einzelnes sehr hartes Training.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 90 كلمة عن رياضتك وكيف تنظم التدريب والراحة.",
+            "minWords": 99,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 19,
+          "theme": "البيئة في الحياة اليومية",
+          "objective": "اليوم ركّز على البيئة في الحياة اليومية مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "eg-a2-coffee"
+          ],
+          "reading": {
+            "title": "البيئة في الحياة اليومية",
+            "text": "Viele Menschen möchten umweltfreundlicher leben. Lisa fährt oft mit dem Fahrrad, nimmt eine Stofftasche zum Einkaufen und kauft weniger Plastik. Sie weiß, dass kleine Schritte nicht alle Probleme lösen, aber sie findet sie trotzdem sinnvoll.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 3 أشياء تفعلها أو تريد فعلها للبيئة مع الأسباب.",
+            "minWords": 101,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 20,
+          "theme": "تعلم اللغات",
+          "objective": "اليوم ركّز على تعلم اللغات مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v01"
+          ],
+          "reading": {
+            "title": "تعلم اللغات",
+            "text": "Wer eine Sprache lernen will, braucht Geduld und regelmäßigen Kontakt mit der Sprache. Amir schaut kurze Videos, wiederholt Wörter mit Karten und schreibt jeden Abend ein paar Sätze. Besonders hilfreich findet er es, Fehler zu sammeln und später noch einmal zu üben.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب طريقتك لتعلم الألمانية وما الذي يعمل معك جيداً.",
+            "minWords": 103,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 21,
+          "theme": "العائلة والأصدقاء",
+          "objective": "اليوم ركّز على العائلة والأصدقاء مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v02",
+            "a2-v09"
+          ],
+          "reading": {
+            "title": "العائلة والأصدقاء",
+            "text": "Seit Sara in einer anderen Stadt studiert, sieht sie ihre Familie seltener. Sie telefonieren oft und schicken sich Nachrichten. Mit ihren neuen Freunden unternimmt Sara viel. Trotzdem fährt sie ungefähr einmal im Monat nach Hause, weil ihr der Kontakt wichtig ist.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب عن كيف تحافظ على علاقتك بالعائلة والأصدقاء.",
+            "minWords": 104,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 22,
+          "theme": "المدينة أم القرية",
+          "objective": "اليوم ركّز على المدينة أم القرية مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v03"
+          ],
+          "reading": {
+            "title": "المدينة أم القرية",
+            "text": "Leon ist auf dem Land aufgewachsen, lebt aber jetzt in einer Großstadt. Er mag die vielen Angebote und den öffentlichen Verkehr. Gleichzeitig vermisst er die Ruhe und die Natur. Später möchte er vielleicht in einer kleineren Stadt wohnen.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "قارن المدينة والقرية في 90–110 كلمة.",
+            "minWords": 106,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 23,
+          "theme": "حروف الجر",
+          "objective": "اليوم ركّز على حروف الجر مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v04"
+          ],
+          "reading": {
+            "title": "حروف الجر",
+            "text": "Auf dem Weg zur Arbeit fährt Klara zuerst mit dem Bus bis zum Bahnhof. Von dort nimmt sie die U-Bahn. Nach der Arbeit geht sie manchmal zu Fuß nach Hause. Sie achtet bewusst auf Präpositionen, weil sie diese oft verwechselt.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 10 جمل تستعمل in, an, auf, zu, nach, von, aus بشكل صحيح.",
+            "minWords": 108,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 24,
+          "theme": "weil / dass / wenn",
+          "objective": "اليوم ركّز على weil / dass / wenn مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v05",
+            "a2-v12"
+          ],
+          "reading": {
+            "title": "weil / dass / wenn",
+            "text": "Ich lerne Deutsch, weil ich später in Deutschland arbeiten möchte. Mein Lehrer sagt, dass regelmäßige Wiederholung sehr wichtig ist. Wenn ich einen schweren Text lese, markiere ich neue Wörter, aber ich suche nicht jedes Wort sofort im Wörterbuch.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 8 جمل باستعمال weil, dass, wenn.",
+            "minWords": 110,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 25,
+          "theme": "مكالمة هاتفية",
+          "objective": "اليوم ركّز على مكالمة هاتفية مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v06"
+          ],
+          "reading": {
+            "title": "مكالمة هاتفية",
+            "text": "Frau Berger ruft bei einer Firma an, weil sie eine Frage zu ihrer Bestellung hat. Zuerst nennt sie ihren Namen und die Bestellnummer. Dann beschreibt sie das Problem. Der Mitarbeiter prüft die Daten und verspricht, ihr noch heute eine E-Mail zu schicken.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب سيناريو مكالمة هاتفية رسمية من 8–10 أسطر.",
+            "minWords": 111,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 26,
+          "theme": "إيميل رسمي",
+          "objective": "اليوم ركّز على إيميل رسمي مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v07"
+          ],
+          "reading": {
+            "title": "إيميل رسمي",
+            "text": "Sehr geehrte Frau Klein, ich interessiere mich für Ihren Deutschkurs im Oktober. Könnten Sie mir bitte mitteilen, an welchen Tagen der Kurs stattfindet und wie hoch die Gebühr ist? Außerdem möchte ich wissen, ob es einen Einstufungstest gibt. Mit freundlichen Grüßen, Samir El Amrani.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب إيميل رسمي للاستفسار عن كورس أو خدمة، 90–110 كلمة.",
+            "minWords": 113,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 27,
+          "theme": "تدريب الاستماع",
+          "objective": "اليوم ركّز على تدريب الاستماع مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v08",
+            "eg-a2-library"
+          ],
+          "reading": {
+            "title": "تدريب الاستماع",
+            "text": "Beim Hörverstehen versucht Nora nicht mehr, jedes einzelne Wort zu verstehen. Zuerst hört sie nur auf das Thema und die wichtigsten Informationen. Beim zweiten Hören schreibt sie Zahlen, Namen und Schlüsselwörter auf. Danach prüft sie ihre Notizen.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب خطة من 4 خطوات لتحسين الاستماع وطبّقها اليوم.",
+            "minWords": 115,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 28,
+          "theme": "تدريب القراءة",
+          "objective": "اليوم ركّز على تدريب القراءة مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v09"
+          ],
+          "reading": {
+            "title": "تدريب القراءة",
+            "text": "Beim Lesen eines A2-Textes schaut Amir zuerst auf Titel und Bilder. Danach liest er den ganzen Text ohne Wörterbuch. Erst beim zweiten Lesen markiert er unbekannte Wörter. Viele Bedeutungen kann er schon aus dem Kontext erraten.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب كيف ستقرأ نصاً جديداً دون ترجمة كل كلمة.",
+            "minWords": 117,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 29,
+          "theme": "محاكاة A2",
+          "objective": "اليوم ركّز على محاكاة A2 مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v10"
+          ],
+          "reading": {
+            "title": "محاكاة A2",
+            "text": "Heute macht Elena eine A2-Probeprüfung. Beim Lesen arbeitet sie zuerst an den einfachen Aufgaben. Beim Schreiben plant sie kurz, bevor sie beginnt. Im Hörteil bleibt sie ruhig, auch wenn sie einen Satz nicht versteht. Danach analysiert sie ihre Fehler.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب خطة يوم اختبار A2 وما الذي ستفعله بعد ظهور النتيجة.",
+            "minWords": 118,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 30,
+          "theme": "نهاية A2",
+          "objective": "اليوم ركّز على نهاية A2 مع قراءة وكتابة مناسبة لمستوى A2.",
+          "videos": [
+            "a2-v11",
+            "eg-a2-gender"
+          ],
+          "reading": {
+            "title": "نهاية A2",
+            "text": "Nach dreißig Tagen kann Jonas längere Alltagstexte lesen, über Vergangenes sprechen und einfache formelle Nachrichten schreiben. Er macht noch Fehler bei Endungen und Präpositionen. Sein nächstes Ziel ist, mehr spontan zu sprechen und längere Texte zu verstehen.",
+            "questions": [
+              "لخّص الفكرة في جملتين بالألمانية.",
+              "استخرج رابطاً أو فعلاً مهماً واشرح استعماله.",
+              "اكتب سؤالاً بالألمانية يمكن الإجابة عنه من النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 100–120 كلمة عن تقدمك في A2 وأهداف B1.",
+            "minWords": 120,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "durationDays": 30,
+      "days": [
+        {
+          "day": 1,
+          "theme": "بداية B1",
+          "objective": "اليوم ركّز على بداية B1 مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v01"
+          ],
+          "reading": {
+            "title": "بداية B1",
+            "text": "Auf B1 reicht es nicht mehr, nur einzelne Sätze zu bilden. Man muss Gedanken verbinden, Erlebnisse genauer beschreiben und die eigene Meinung begründen. Lea beginnt deshalb, jeden Tag einen kurzen Text zu schreiben und beim Sprechen bewusst Konnektoren zu benutzen.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 110 كلمة عن هدفك في B1 ولماذا هو مهم.",
+            "minWords": 110,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 2,
+          "theme": "الرأي والحجة",
+          "objective": "اليوم ركّز على الرأي والحجة مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v02"
+          ],
+          "reading": {
+            "title": "الرأي والحجة",
+            "text": "Viele Menschen lernen lieber online, andere bevorzugen Unterricht im Klassenzimmer. Onlinekurse sind flexibel und oft günstiger, während Präsenzkurse direkten Kontakt bieten. Für mich hängt die beste Lösung davon ab, wie selbstständig jemand lernen kann.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب رأيك في التعلم أونلاين مقابل الحضوري مع حجتين.",
+            "minWords": 112,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 3,
+          "theme": "قصة قصيرة",
+          "objective": "اليوم ركّز على قصة قصيرة مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v03",
+            "b1-v10"
+          ],
+          "reading": {
+            "title": "قصة قصيرة",
+            "text": "Als Karim gestern zur Arbeit fuhr, bemerkte er im Bus eine Tasche unter einem Sitz. Niemand schien sie zu vermissen. Er brachte sie zum Fahrer, der später den Besitzer fand. Karim war froh, dass die Tasche zurückgegeben werden konnte.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب قصة قصيرة عن موقف غير متوقع باستعمال الماضي.",
+            "minWords": 113,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 4,
+          "theme": "Relativsätze",
+          "objective": "اليوم ركّز على Relativsätze مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v04"
+          ],
+          "reading": {
+            "title": "Relativsätze",
+            "text": "Meine Nachbarin, die seit drei Jahren in Berlin lebt, spricht inzwischen sehr gut Deutsch. Sie arbeitet in einer Firma, in der viele internationale Mitarbeiter beschäftigt sind. Ihr Kollege, mit dem sie oft Deutsch übt, hilft ihr bei schwierigen Ausdrücken.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 8 جمل موصولة بـ der/die/das/dem/den.",
+            "minWords": 115,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 5,
+          "theme": "obwohl / trotzdem",
+          "objective": "اليوم ركّز على obwohl / trotzdem مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v05"
+          ],
+          "reading": {
+            "title": "obwohl / trotzdem",
+            "text": "Obwohl es den ganzen Tag geregnet hat, sind wir wandern gegangen. Der Weg war an einigen Stellen schwierig. Trotzdem hatten wir gute Laune und machten viele Pausen. Am Abend waren wir völlig müde, aber die Aussicht war die Anstrengung wert.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 100 كلمة فيها obwohl و trotzdem ثلاث مرات على الأقل.",
+            "minWords": 117,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 6,
+          "theme": "Konjunktiv II",
+          "objective": "اليوم ركّز على Konjunktiv II مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v06",
+            "eg-b1-profession"
+          ],
+          "reading": {
+            "title": "Konjunktiv II",
+            "text": "Wenn ich ein Jahr frei hätte, würde ich mehrere Monate reisen und intensiv Deutsch lernen. Ich könnte morgens einen Kurs besuchen und nachmittags mit Einheimischen sprechen. Außerdem würde ich versuchen, in verschiedenen Städten zu leben.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب ماذا ستفعل لو كان عندك 6 أشهر حرة، باستعمال würde/könnte/hätte.",
+            "minWords": 119,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 7,
+          "theme": "السعادة اليومية",
+          "objective": "اليوم ركّز على السعادة اليومية مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v07"
+          ],
+          "reading": {
+            "title": "السعادة اليومية",
+            "text": "Glück muss nicht immer mit großen Erfolgen verbunden sein. Manche Menschen freuen sich über einen guten Kaffee, einen Anruf von Freunden oder einen ruhigen Spaziergang. Solche kleinen Momente werden leicht übersehen, obwohl sie den Alltag deutlich angenehmer machen können.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 120 كلمة عن أشياء صغيرة تجعلك سعيداً ولماذا.",
+            "minWords": 120,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 8,
+          "theme": "الأحلام",
+          "objective": "اليوم ركّز على الأحلام مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v08"
+          ],
+          "reading": {
+            "title": "الأحلام",
+            "text": "Ein persönlicher Traum kann sich im Laufe des Lebens verändern. Als Kind wollte Lara Musikerin werden. Heute arbeitet sie als Ingenieurin, spielt aber weiterhin in einer kleinen Band. Ihr Traum ist nicht verschwunden; er hat nur eine andere Form bekommen.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب عن حلم قديم وحلمك الحالي وكيف تغيّر.",
+            "minWords": 122,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 9,
+          "theme": "المهن",
+          "objective": "اليوم ركّز على المهن مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v09",
+            "eg-b1-sunday"
+          ],
+          "reading": {
+            "title": "المهن",
+            "text": "Bei der Wahl eines Berufs spielen viele Faktoren eine Rolle: Interesse, Einkommen, Arbeitszeiten und Entwicklungsmöglichkeiten. Manche Menschen möchten vor allem Sicherheit, andere suchen Abwechslung oder kreative Freiheit. Eine perfekte Arbeit gibt es wahrscheinlich nicht.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "صف مهنتك المثالية مع المزايا والعيوب.",
+            "minWords": 124,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 10,
+          "theme": "أسئلة شخصية",
+          "objective": "اليوم ركّز على أسئلة شخصية مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v10"
+          ],
+          "reading": {
+            "title": "أسئلة شخصية",
+            "text": "In Gesprächen lernt man Menschen besser kennen, wenn man offene Fragen stellt. Statt nur nach Fakten zu fragen, kann man wissen wollen, was jemand gern ändern würde oder worauf er stolz ist. Solche Fragen führen oft zu interessanteren Antworten.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 8 أسئلة مفتوحة يمكن استعمالها للتعرف على شخص.",
+            "minWords": 126,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 11,
+          "theme": "الطفولة",
+          "objective": "اليوم ركّز على الطفولة مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "eg-b1-happy"
+          ],
+          "reading": {
+            "title": "الطفولة",
+            "text": "Wenn Menschen über ihre Kindheit sprechen, erinnern sie sich häufig an Orte, Gerüche, Spiele und bestimmte Personen. Gleichzeitig sind Erinnerungen nicht immer objektiv. Was damals normal wirkte, kann man als Erwachsener ganz anders beurteilen.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 120–140 كلمة عن ذكرى طفولة مهمة.",
+            "minWords": 127,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 12,
+          "theme": "وقت الفراغ",
+          "objective": "اليوم ركّز على وقت الفراغ مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "eg-b1-dream",
+            "b1-v02"
+          ],
+          "reading": {
+            "title": "وقت الفراغ",
+            "text": "Freizeit ist nicht nur Erholung. Hobbys können soziale Kontakte schaffen, neue Fähigkeiten entwickeln und Stress reduzieren. Gleichzeitig braucht nicht jedes Hobby ein messbares Ziel. Manchmal ist es sinnvoll, etwas nur zu tun, weil es Freude macht.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "ناقش أهمية الهوايات في 120 كلمة مع مثال شخصي.",
+            "minWords": 129,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 13,
+          "theme": "يوم الأحد",
+          "objective": "اليوم ركّز على يوم الأحد مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "eg-b1-profession"
+          ],
+          "reading": {
+            "title": "يوم الأحد",
+            "text": "Der Sonntag hat in Deutschland eine besondere Rolle. Viele Geschäfte bleiben geschlossen, und in Wohngebieten wird mehr Ruhe erwartet. Für manche ist das angenehm, andere finden die Einschränkungen unpraktisch. Kulturelle Gewohnheiten beeinflussen also den Alltag deutlich.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب مقارنة بين يوم العطلة في بلدك وألمانيا.",
+            "minWords": 131,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 14,
+          "theme": "العيش في الخارج",
+          "objective": "اليوم ركّز على العيش في الخارج مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "eg-b1-personal"
+          ],
+          "reading": {
+            "title": "العيش في الخارج",
+            "text": "Ein Umzug in ein anderes Land kann spannend und anstrengend zugleich sein. Neue Regeln, Sprache und soziale Gewohnheiten müssen erst verstanden werden. Wer geduldig bleibt und aktiv Kontakte sucht, kann sich oft schneller zu Hause fühlen.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب عن أكبر 3 تحديات للعيش في بلد جديد وحلولها.",
+            "minWords": 132,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 15,
+          "theme": "الدراسة والعمل",
+          "objective": "اليوم ركّز على الدراسة والعمل مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "eg-b1-childhood",
+            "b1-v05"
+          ],
+          "reading": {
+            "title": "الدراسة والعمل",
+            "text": "Viele Studierende arbeiten neben dem Studium. Das bringt Geld und Berufserfahrung, kann aber auch Stress verursachen. Entscheidend ist, realistisch zu planen und genug Zeit für Erholung zu lassen. Dauerhafte Überlastung hilft weder Studium noch Arbeit.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "ناقش العمل بجانب الدراسة مع رأيك الشخصي.",
+            "minWords": 134,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 16,
+          "theme": "وسائل التواصل",
+          "objective": "اليوم ركّز على وسائل التواصل مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "eg-b1-sunday"
+          ],
+          "reading": {
+            "title": "وسائل التواصل",
+            "text": "Soziale Medien verbinden Menschen schnell, beeinflussen aber auch Aufmerksamkeit und Selbstbild. Wer ständig kurze Inhalte konsumiert, merkt manchmal, dass längeres Lesen schwieriger wird. Deshalb legen manche Nutzer bewusst Zeiten ohne Handy fest.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 130 كلمة عن إيجابيات وسلبيات وسائل التواصل.",
+            "minWords": 136,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 17,
+          "theme": "الصحة والنوم",
+          "objective": "اليوم ركّز على الصحة والنوم مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "eg-b1-polite"
+          ],
+          "reading": {
+            "title": "الصحة والنوم",
+            "text": "Guter Schlaf wirkt sich auf Konzentration, Stimmung und körperliche Leistung aus. Trotzdem wird Schlaf oft geopfert, wenn Arbeit oder Unterhaltung länger dauern. Eine feste Abendroutine kann helfen, aber nicht jede Methode funktioniert für jeden Menschen gleich.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب نص نصيحة عن النوم الصحي باستعمال sollte/könnte.",
+            "minWords": 138,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 18,
+          "theme": "الرياضة",
+          "objective": "اليوم ركّز على الرياضة مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v01",
+            "b1-v08"
+          ],
+          "reading": {
+            "title": "الرياضة",
+            "text": "Regelmäßige Bewegung verbessert nicht nur Fitness, sondern kann auch psychischen Stress reduzieren. Wer zu schnell zu viel trainiert, riskiert jedoch Verletzungen oder verliert die Motivation. Ein nachhaltiger Plan berücksichtigt Belastung und Erholung.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب عن كيف تصنع برنامج رياضي متوازن ولماذا.",
+            "minWords": 139,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 19,
+          "theme": "التعليم",
+          "objective": "اليوم ركّز على التعليم مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v02"
+          ],
+          "reading": {
+            "title": "التعليم",
+            "text": "Noten geben eine einfache Übersicht über Leistung, erfassen aber nicht alle Fähigkeiten. Kreativität, Ausdauer oder Zusammenarbeit lassen sich schwer in einer einzigen Zahl ausdrücken. Trotzdem brauchen Schulen Methoden, um Fortschritt vergleichbar zu machen.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "ناقش هل النقاط المدرسية عادلة أم لا، مع حجتين لكل جانب.",
+            "minWords": 141,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 20,
+          "theme": "البيئة",
+          "objective": "اليوم ركّز على البيئة مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v03"
+          ],
+          "reading": {
+            "title": "البيئة",
+            "text": "Individuelle Entscheidungen wie weniger Plastik oder öfter Fahrrad fahren sind sinnvoll, lösen globale Umweltprobleme aber nicht allein. Politik, Unternehmen und Verbraucher tragen gemeinsam Verantwortung. Die schwierigste Frage ist oft, wie Kosten gerecht verteilt werden.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب رأياً متوازناً حول مسؤولية الفرد والدولة عن البيئة.",
+            "minWords": 143,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 21,
+          "theme": "التكنولوجيا",
+          "objective": "اليوم ركّز على التكنولوجيا مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v04",
+            "eg-b1-happy"
+          ],
+          "reading": {
+            "title": "التكنولوجيا",
+            "text": "Künstliche Intelligenz verändert bereits viele Arbeitsbereiche. Sie kann Routineaufgaben beschleunigen und Informationen leichter zugänglich machen. Gleichzeitig entstehen Fragen zu Fehlern, Datenschutz und Verantwortung. Deshalb ist kritischer Umgang wichtiger als blinde Begeisterung.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 130–150 كلمة عن فرصة ومخاطر الذكاء الاصطناعي.",
+            "minWords": 144,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 22,
+          "theme": "الأخبار",
+          "objective": "اليوم ركّز على الأخبار مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v05"
+          ],
+          "reading": {
+            "title": "الأخبار",
+            "text": "Wer Nachrichten konsumiert, sollte zwischen Bericht, Kommentar und Werbung unterscheiden. Überschriften sind oft emotionaler als der eigentliche Inhalt. Es lohnt sich daher, mehrere Quellen zu vergleichen und auf Datum, Autor und Belege zu achten.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 5 قواعد للتحقق من خبر قبل مشاركته.",
+            "minWords": 146,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 23,
+          "theme": "حل المشاكل",
+          "objective": "اليوم ركّز على حل المشاكل مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v06"
+          ],
+          "reading": {
+            "title": "حل المشاكل",
+            "text": "Bei Konflikten hilft es selten, sofort nach einem Schuldigen zu suchen. Besser ist es, das konkrete Problem zu beschreiben, die Perspektive der anderen Person anzuhören und gemeinsam nach einer Lösung zu suchen. Gute Kommunikation verhindert viele Missverständnisse.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب حواراً لحل خلاف بين صديقين بطريقة هادئة.",
+            "minWords": 148,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 24,
+          "theme": "مكالمة رسمية",
+          "objective": "اليوم ركّز على مكالمة رسمية مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v07",
+            "eg-b1-personal"
+          ],
+          "reading": {
+            "title": "مكالمة رسمية",
+            "text": "Bei einem formellen Telefonat sollte man sich klar vorstellen, den Grund des Anrufs nennen und wichtige Informationen bereithalten. Wenn man etwas nicht versteht, ist es völlig in Ordnung, um Wiederholung zu bitten. Höflichkeit ist wichtiger als perfekte Grammatik.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب سيناريو مكالمة رسمية من 12 سطراً.",
+            "minWords": 150,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 25,
+          "theme": "إيميل شكوى",
+          "objective": "اليوم ركّز على إيميل شكوى مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v08"
+          ],
+          "reading": {
+            "title": "إيميل شكوى",
+            "text": "Eine gute Beschwerde bleibt sachlich. Sie beschreibt, was passiert ist, wann es passiert ist und welche Lösung erwartet wird. Übertriebene oder beleidigende Formulierungen machen es schwieriger, das Problem konstruktiv zu lösen.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب إيميل شكوى 140 كلمة عن خدمة سيئة مع حل مطلوب.",
+            "minWords": 151,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 26,
+          "theme": "عرض شفهي",
+          "objective": "اليوم ركّز على عرض شفهي مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v09"
+          ],
+          "reading": {
+            "title": "عرض شفهي",
+            "text": "Für eine kurze Präsentation braucht man eine klare Struktur: Einleitung, zwei oder drei Hauptpunkte und einen Schluss. Beispiele machen abstrakte Aussagen verständlicher. Wer langsam spricht und Blickkontakt hält, wirkt oft sicherer als jemand, der alles auswendig aufsagt.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "حضّر نص عرض شفهي دقيقتين عن موضوع تحبه.",
+            "minWords": 153,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 27,
+          "theme": "وصف صورة",
+          "objective": "اليوم ركّز على وصف صورة مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "b1-v10",
+            "eg-b1-polite"
+          ],
+          "reading": {
+            "title": "وصف صورة",
+            "text": "Beim Beschreiben eines Bildes beginnt man am besten mit dem Gesamteindruck. Danach kann man Personen, Ort und Handlung beschreiben. Vermutungen sollten als Vermutungen formuliert werden, zum Beispiel mit „vielleicht“ oder „wahrscheinlich“.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب وصفاً لصورة خيالية في 120 كلمة مع 3 تخمينات.",
+            "minWords": 155,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 28,
+          "theme": "محاكاة B1",
+          "objective": "اليوم ركّز على محاكاة B1 مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "eg-b1-happy"
+          ],
+          "reading": {
+            "title": "محاكاة B1",
+            "text": "In einer B1-Prüfung ist Zeitmanagement entscheidend. Wer an einer schwierigen Aufgabe zu lange hängen bleibt, verliert Zeit für andere Teile. Sinnvoll ist es, zuerst die Aufgabenstellung genau zu lesen und am Ende einige Minuten zum Kontrollieren einzuplanen.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب استراتيجية شخصية لامتحان B1.",
+            "minWords": 157,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 29,
+          "theme": "تحليل الأخطاء",
+          "objective": "اليوم ركّز على تحليل الأخطاء مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "eg-b1-dream"
+          ],
+          "reading": {
+            "title": "تحليل الأخطاء",
+            "text": "Fehler sind besonders wertvoll, wenn man sie systematisch analysiert. Statt nur die richtige Antwort anzusehen, sollte man verstehen, warum die eigene Lösung falsch war. Wer ähnliche Beispiele bildet und später wiederholt, reduziert die Wahrscheinlichkeit, denselben Fehler erneut zu machen.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اختر 5 أخطاء ألمانية سابقة عندك واكتب التصحيح والسبب.",
+            "minWords": 158,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 30,
+          "theme": "نهاية B1",
+          "objective": "اليوم ركّز على نهاية B1 مع قراءة وكتابة مناسبة لمستوى B1.",
+          "videos": [
+            "eg-b1-profession",
+            "b1-v03"
+          ],
+          "reading": {
+            "title": "نهاية B1",
+            "text": "Nach einem intensiven B1-Monat kann man komplexere Alltagsthemen diskutieren, Erfahrungen genauer erzählen und längere Texte strukturieren. Der nächste Schritt besteht darin, Aussagen präziser zu formulieren, feinere Unterschiede zu verstehen und mit authentischem Tempo besser umzugehen.",
+            "questions": [
+              "اكتب ملخصاً من 3 جمل بالألمانية.",
+              "حدد رأياً أو سبباً أو نتيجة في النص.",
+              "اختر تعبيرين وأعد استعمالهما في سياق جديد."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 150 كلمة عن تطورك وما تريد تحسينه في B2.",
+            "minWords": 160,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        }
+      ]
+    },
+    {
+      "level": "B2",
+      "durationDays": 30,
+      "days": [
+        {
+          "day": 1,
+          "theme": "دقة التعبير",
+          "objective": "اليوم ركّز على دقة التعبير مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v01"
+          ],
+          "reading": {
+            "title": "دقة التعبير",
+            "text": "Auf B2 geht es weniger darum, überhaupt etwas sagen zu können, sondern darum, Gedanken präzise und nachvollziehbar auszudrücken. Dazu gehören passende Konnektoren, differenzierter Wortschatz und die Fähigkeit, Aussagen einzuschränken oder zu relativieren.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 160 كلمة عن الفرق بين التواصل البسيط والتعبير الدقيق.",
+            "minWords": 160,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 2,
+          "theme": "الحجج المتوازنة",
+          "objective": "اليوم ركّز على الحجج المتوازنة مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v02"
+          ],
+          "reading": {
+            "title": "الحجج المتوازنة",
+            "text": "Eine überzeugende Argumentation berücksichtigt nicht nur die eigene Position. Wer Gegenargumente fair darstellt und anschließend erklärt, warum er trotzdem zu einem anderen Schluss kommt, wirkt glaubwürdiger. Schwarz-weiße Aussagen sind bei komplexen Themen selten hilfreich.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "ناقش موضوعاً خلافياً مع حجج مع وضد وخلاصة شخصية.",
+            "minWords": 162,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 3,
+          "theme": "Passiv",
+          "objective": "اليوم ركّز على Passiv مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v03",
+            "b2-v10"
+          ],
+          "reading": {
+            "title": "Passiv",
+            "text": "In offiziellen Texten wird das Passiv häufig verwendet, wenn die Handlung wichtiger ist als die handelnde Person. Beispielsweise wird eine Entscheidung getroffen oder ein Antrag bearbeitet. Zu viel Passiv kann einen Text jedoch unnötig schwer machen.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 10 جمل Passiv ثم حوّل 5 منها إلى Aktiv.",
+            "minWords": 164,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 4,
+          "theme": "Konjunktiv II المتقدم",
+          "objective": "اليوم ركّز على Konjunktiv II المتقدم مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v04"
+          ],
+          "reading": {
+            "title": "Konjunktiv II المتقدم",
+            "text": "Der Konjunktiv II ermöglicht es, Distanz zu Aussagen zu schaffen, hypothetische Situationen zu beschreiben und Kritik höflicher zu formulieren. Gerade in Diskussionen kann diese Form helfen, weniger absolut zu klingen und Alternativen offen zu halten.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب فقرة افتراضية تستعمل wäre/hätte/würde/könnte.",
+            "minWords": 166,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 5,
+          "theme": "لغة الإعلام",
+          "objective": "اليوم ركّز على لغة الإعلام مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v05"
+          ],
+          "reading": {
+            "title": "لغة الإعلام",
+            "text": "Medien entscheiden nicht nur, welche Themen berichtet werden, sondern auch, welche Aspekte hervorgehoben werden. Auswahl, Überschrift und Bild beeinflussen die Wahrnehmung. Deshalb ist Medienkompetenz mehr als das Erkennen eindeutig falscher Informationen.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "حلل كيف يمكن لعنوان وصورة أن يغيّرا فهم خبر واحد.",
+            "minWords": 168,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 6,
+          "theme": "العمل عن بعد",
+          "objective": "اليوم ركّز على العمل عن بعد مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v06",
+            "eg-b2-dream"
+          ],
+          "reading": {
+            "title": "العمل عن بعد",
+            "text": "Remote-Arbeit bietet Flexibilität und spart Pendelzeit, kann aber Grenzen zwischen Arbeit und Freizeit verwischen. Manche Teams kommunizieren online effizient, andere verlieren spontane Gespräche und sozialen Zusammenhalt. Die beste Lösung hängt stark von Aufgabe und Persönlichkeit ab.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب مقالة 180 كلمة عن العمل عن بعد بنبرة متوازنة.",
+            "minWords": 170,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 7,
+          "theme": "المدن المستقبلية",
+          "objective": "اليوم ركّز على المدن المستقبلية مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v07"
+          ],
+          "reading": {
+            "title": "المدن المستقبلية",
+            "text": "Städte wachsen weltweit, während Wohnraum und Infrastruktur begrenzt bleiben. Eine nachhaltige Stadtplanung muss Mobilität, Energie, Grünflächen und soziale Gerechtigkeit gleichzeitig berücksichtigen. Technische Lösungen allein reichen nicht, wenn sie für viele Menschen unbezahlbar sind.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اقترح 3 سياسات لمدينة أفضل وناقش آثارها الجانبية.",
+            "minWords": 172,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 8,
+          "theme": "الذكاء الاصطناعي والتعليم",
+          "objective": "اليوم ركّز على الذكاء الاصطناعي والتعليم مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v08"
+          ],
+          "reading": {
+            "title": "الذكاء الاصطناعي والتعليم",
+            "text": "KI-Systeme können Lernmaterial personalisieren und sofortiges Feedback geben. Gleichzeitig besteht die Gefahr, dass Lernende Ergebnisse übernehmen, ohne selbst zu denken. Sinnvoll wäre daher ein Einsatz, der Eigenleistung sichtbar macht und kritische Prüfung ausdrücklich verlangt.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 180–200 كلمة: كيف يجب استعمال AI في التعليم؟",
+            "minWords": 174,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 9,
+          "theme": "الخصوصية",
+          "objective": "اليوم ركّز على الخصوصية مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v09",
+            "b2-v02"
+          ],
+          "reading": {
+            "title": "الخصوصية",
+            "text": "Viele digitale Dienste wirken kostenlos, werden aber indirekt mit Daten bezahlt. Nutzer stimmen langen Bedingungen häufig zu, ohne sie zu lesen. Unternehmen argumentieren, Daten seien nötig für Personalisierung und Sicherheit, während Kritiker mehr Transparenz und Datensparsamkeit fordern.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "ناقش أين يجب أن تكون حدود جمع البيانات.",
+            "minWords": 177,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 10,
+          "theme": "الهجرة والاندماج",
+          "objective": "اليوم ركّز على الهجرة والاندماج مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v10"
+          ],
+          "reading": {
+            "title": "الهجرة والاندماج",
+            "text": "Integration ist ein langfristiger Prozess, an dem sowohl Zugewanderte als auch Institutionen und Gesellschaft beteiligt sind. Sprachkenntnisse erleichtern Teilhabe erheblich, lösen aber nicht automatisch Probleme wie Wohnungssuche, Anerkennung von Abschlüssen oder Diskriminierung.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب نصاً متوازناً عن عوامل نجاح الاندماج دون تعميم.",
+            "minWords": 179,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 11,
+          "theme": "الثقافة والهوية",
+          "objective": "اليوم ركّز على الثقافة والهوية مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "eg-b2-happy"
+          ],
+          "reading": {
+            "title": "الثقافة والهوية",
+            "text": "Menschen können sich gleichzeitig mehreren Orten, Sprachen oder kulturellen Traditionen verbunden fühlen. Identität ist daher nicht immer eine feste Kategorie. Migration, Familie und persönliche Erfahrungen verändern, welche Aspekte der eigenen Herkunft besonders wichtig erscheinen.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 180 كلمة عن كيف يمكن للهوية أن تكون متعددة.",
+            "minWords": 181,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 12,
+          "theme": "السعادة",
+          "objective": "اليوم ركّز على السعادة مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "eg-b2-profession",
+            "b2-v05"
+          ],
+          "reading": {
+            "title": "السعادة",
+            "text": "Gesellschaften messen Erfolg oft über Einkommen, Wachstum oder Produktivität. Diese Kennzahlen sagen jedoch wenig über Beziehungen, Gesundheit oder persönliche Zufriedenheit aus. Gleichzeitig wäre es schwierig, subjektives Glück als politisches Ziel objektiv zu messen.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "ناقش هل يجب قياس نجاح الدول بغير الاقتصاد.",
+            "minWords": 183,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 13,
+          "theme": "التعليم الجامعي",
+          "objective": "اليوم ركّز على التعليم الجامعي مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "eg-b2-dream"
+          ],
+          "reading": {
+            "title": "التعليم الجامعي",
+            "text": "Ein Studium kann fachliches Wissen, Selbstständigkeit und berufliche Chancen fördern. Dennoch ist ein Hochschulabschluss nicht für jeden Beruf notwendig. Gesellschaften brauchen auch hochwertige berufliche Ausbildung und dürfen praktische Fähigkeiten nicht als zweitklassig betrachten.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "قارن الجامعة والتكوين المهني في 180–200 كلمة.",
+            "minWords": 185,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 14,
+          "theme": "الصحة العامة",
+          "objective": "اليوم ركّز على الصحة العامة مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "eg-b2-sunday"
+          ],
+          "reading": {
+            "title": "الصحة العامة",
+            "text": "Gesundheitspolitik muss individuelle Freiheit und Schutz der Bevölkerung gegeneinander abwägen. Prävention kann langfristig Kosten reduzieren, greift aber manchmal in persönliche Entscheidungen ein. Deshalb sind transparente Begründungen und Vertrauen besonders wichtig.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب عن مثال تتعارض فيه حرية الفرد مع مصلحة المجتمع.",
+            "minWords": 187,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 15,
+          "theme": "الرياضة الاحترافية",
+          "objective": "اليوم ركّز على الرياضة الاحترافية مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v01",
+            "b2-v08"
+          ],
+          "reading": {
+            "title": "الرياضة الاحترافية",
+            "text": "Profisport begeistert Millionen Menschen und schafft wirtschaftliche Werte. Gleichzeitig werfen extrem hohe Gehälter, kommerzieller Druck und gesundheitliche Risiken ethische Fragen auf. Fans erwarten Leistung, vergessen aber leicht, dass Athleten keine Maschinen sind.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "ناقش الضغط على الرياضيين المحترفين.",
+            "minWords": 189,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 16,
+          "theme": "البيئة والاقتصاد",
+          "objective": "اليوم ركّز على البيئة والاقتصاد مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v02"
+          ],
+          "reading": {
+            "title": "البيئة والاقتصاد",
+            "text": "Klimaschutzmaßnahmen verursachen kurzfristig Kosten, können aber langfristige Schäden vermeiden. Die politische Schwierigkeit liegt darin, Belastungen gerecht zu verteilen. Wenn bestimmte Gruppen überproportional zahlen, sinkt die gesellschaftliche Akzeptanz selbst sinnvoller Maßnahmen.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 200 كلمة عن عدالة تكلفة حماية البيئة.",
+            "minWords": 191,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 17,
+          "theme": "السكن",
+          "objective": "اليوم ركّز على السكن مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v03"
+          ],
+          "reading": {
+            "title": "السكن",
+            "text": "In vielen Großstädten steigen Mieten schneller als Einkommen. Strengere Regeln können Mieter schützen, könnten aber Investitionen bremsen. Mehr Neubau hilft nur dann ausreichend, wenn Wohnungen tatsächlich in passenden Preisklassen entstehen.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "ناقش أزمة السكن وقدّم أكثر من حل مع مزايا وعيوب.",
+            "minWords": 193,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 18,
+          "theme": "النقل",
+          "objective": "اليوم ركّز على النقل مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v04",
+            "eg-b2-happy"
+          ],
+          "reading": {
+            "title": "النقل",
+            "text": "Ein guter öffentlicher Verkehr kann Staus, Emissionen und soziale Ungleichheit reduzieren. Dafür braucht es jedoch zuverlässige Verbindungen auch außerhalb großer Zentren. Verbote für Autos sind politisch leichter zu kritisieren als langfristiger Ausbau zu finanzieren.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب اقتراحاً لسياسة نقل في مدينتك مع تبرير.",
+            "minWords": 195,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 19,
+          "theme": "العمل والمعنى",
+          "objective": "اليوم ركّز على العمل والمعنى مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v05"
+          ],
+          "reading": {
+            "title": "العمل والمعنى",
+            "text": "Nicht jeder Mensch erwartet von seiner Arbeit Selbstverwirklichung. Für einige ist ein sicherer Job vor allem Mittel zum Zweck, während andere Sinn und Identifikation suchen. Problematisch wird es, wenn gesellschaftlicher Wert und Bezahlung stark auseinanderfallen.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "ناقش هل يجب أن يكون العمل مصدر معنى في الحياة.",
+            "minWords": 197,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 20,
+          "theme": "الإنتاجية",
+          "objective": "اليوم ركّز على الإنتاجية مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v06"
+          ],
+          "reading": {
+            "title": "الإنتاجية",
+            "text": "Produktivität wird oft mit möglichst vielen erledigten Aufgaben verwechselt. Bei kreativer oder analytischer Arbeit können Pausen, Ruhe und Konzentration wichtiger sein als lange Arbeitszeiten. Eine Kultur permanenter Beschäftigung erzeugt nicht automatisch bessere Ergebnisse.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 180 كلمة عن الفرق بين الانشغال والإنتاجية.",
+            "minWords": 199,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 21,
+          "theme": "اللغة والتفكير",
+          "objective": "اليوم ركّز على اللغة والتفكير مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v07",
+            "eg-b2-sunday"
+          ],
+          "reading": {
+            "title": "اللغة والتفكير",
+            "text": "Sprache beeinflusst, welche Unterschiede leicht benannt werden können, bestimmt Denken aber nicht vollständig. Mehrsprachige Menschen berichten häufig, dass bestimmte Gefühle oder Situationen in einer Sprache leichter auszudrücken sind als in einer anderen.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "ناقش العلاقة بين اللغة وطريقة التفكير مع مثال.",
+            "minWords": 201,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 22,
+          "theme": "الأخبار والخوارزميات",
+          "objective": "اليوم ركّز على الأخبار والخوارزميات مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v08"
+          ],
+          "reading": {
+            "title": "الأخبار والخوارزميات",
+            "text": "Algorithmen wählen Inhalte danach aus, was wahrscheinlich Aufmerksamkeit erzeugt. Dadurch können Nutzer immer ähnliche Perspektiven sehen. Personalisierung ist bequem, kann aber den Eindruck verstärken, die eigene Sicht sei allgemein verbreitet.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب عن مخاطر التوصيات الخوارزمية وكيف تقللها.",
+            "minWords": 203,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 23,
+          "theme": "العمل الدولي",
+          "objective": "اليوم ركّز على العمل الدولي مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v09"
+          ],
+          "reading": {
+            "title": "العمل الدولي",
+            "text": "Internationale Teams profitieren von unterschiedlichen Erfahrungen, müssen aber stärker auf Kommunikation achten. Direkte Formulierungen, Hierarchie oder Pünktlichkeit werden kulturell verschieden bewertet. Missverständnisse entstehen oft, obwohl niemand unhöflich sein wollte.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب دليلاً قصيراً للتواصل في فريق دولي.",
+            "minWords": 206,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 24,
+          "theme": "التفاوض",
+          "objective": "اليوم ركّز على التفاوض مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v10",
+            "b2-v03"
+          ],
+          "reading": {
+            "title": "التفاوض",
+            "text": "Erfolgreiches Verhandeln bedeutet nicht, die andere Seite zu besiegen. Langfristig stabile Lösungen berücksichtigen Interessen beider Parteien. Wer nur Positionen wiederholt, übersieht häufig gemeinsame Ziele oder alternative Möglichkeiten.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب حوار تفاوض حول راتب أو سعر بأسلوب مهني.",
+            "minWords": 208,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 25,
+          "theme": "عرض موقف",
+          "objective": "اليوم ركّز على عرض موقف مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "eg-b2-happy"
+          ],
+          "reading": {
+            "title": "عرض موقف",
+            "text": "Bei komplexen Themen sollte eine Präsentation zwischen Fakten, Interpretation und eigener Bewertung unterscheiden. Quellen müssen nachvollziehbar sein, während Unsicherheit offen benannt werden sollte. Glaubwürdigkeit entsteht nicht durch absolute Sicherheit, sondern durch saubere Argumentation.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "حضّر مخطط عرض 4 دقائق: مقدمة، 3 نقاط، اعتراض، خاتمة.",
+            "minWords": 210,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 26,
+          "theme": "كتابة رسمية",
+          "objective": "اليوم ركّز على كتابة رسمية مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "eg-b2-profession"
+          ],
+          "reading": {
+            "title": "كتابة رسمية",
+            "text": "Ein formeller Text braucht klare Struktur, angemessenen Ton und präzise Verweise. Lange Sätze wirken nicht automatisch professioneller. Oft ist ein kürzerer Satz verständlicher, solange Zusammenhänge durch passende Konnektoren deutlich bleiben.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب إيميل رسمي 180 كلمة مع طلب وتبرير وخاتمة.",
+            "minWords": 212,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 27,
+          "theme": "فهم الاستماع المتقدم",
+          "objective": "اليوم ركّز على فهم الاستماع المتقدم مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "eg-b2-dream",
+            "b2-v06"
+          ],
+          "reading": {
+            "title": "فهم الاستماع المتقدم",
+            "text": "Beim B2-Hören muss man nicht jedes Detail speichern. Entscheidend ist, Sprecherhaltung, Argumente und relevante Beispiele zu erkennen. Unbekannte Wörter können oft ignoriert werden, wenn die Funktion des Abschnitts trotzdem klar bleibt.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب استراتيجية من 6 خطوات لسماع مقابلة B2.",
+            "minWords": 214,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 28,
+          "theme": "محاكاة B2",
+          "objective": "اليوم ركّز على محاكاة B2 مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "eg-b2-sunday"
+          ],
+          "reading": {
+            "title": "محاكاة B2",
+            "text": "Eine B2-Prüfung verlangt sprachliche Kontrolle unter Zeitdruck. Wer nur Grammatik übt, ist deshalb nicht automatisch vorbereitet. Regelmäßiges Schreiben mit Zeitlimit, strukturiertes Sprechen und authentisches Hörmaterial sind mindestens ebenso wichtig.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب خطة أسبوع أخير قبل امتحان B2.",
+            "minWords": 216,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 29,
+          "theme": "تحليل المصادر",
+          "objective": "اليوم ركّز على تحليل المصادر مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v01"
+          ],
+          "reading": {
+            "title": "تحليل المصادر",
+            "text": "Eine Quelle ist nicht allein deshalb zuverlässig, weil sie professionell aussieht. Autor, Institution, Veröffentlichungsdatum, Belege und mögliche Interessen müssen gemeinsam betrachtet werden. Besonders bei aktuellen Themen sollte man zentrale Aussagen mit weiteren Quellen vergleichen.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "أنشئ checklist من 7 نقاط لتقييم مصدر معلومات.",
+            "minWords": 218,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        },
+        {
+          "day": 30,
+          "theme": "نهاية B2",
+          "objective": "اليوم ركّز على نهاية B2 مع قراءة وكتابة مناسبة لمستوى B2.",
+          "videos": [
+            "b2-v02",
+            "b2-v09"
+          ],
+          "reading": {
+            "title": "نهاية B2",
+            "text": "Wer B2 erreicht, kann viele anspruchsvolle Alltagsthemen verstehen und relativ spontan kommunizieren. Gleichzeitig bleibt der Weg zu wirklich sicherer, nuancierter Sprache lang. Fortschritt entsteht nun weniger durch neue Grundregeln als durch viel Lesen, Hören, Schreiben und präzises Feedback.",
+            "questions": [
+              "لخّص الحجة المركزية بالألمانية.",
+              "حدد نقطة فيها تقييد أو موازنة بين فكرتين.",
+              "اكتب اعتراضاً قصيراً أو مثالاً مضاداً على فكرة النص."
+            ]
+          },
+          "writing": {
+            "prompt": "اكتب 200–220 كلمة: ماذا يعني لك الوصول إلى B2 وما خطتك بعده؟",
+            "minWords": 220,
+            "checklist": [
+              "استعمل مفردات اليوم.",
+              "راجع ترتيب الجملة والأفعال.",
+              "صحح النص مرة واحدة قبل اعتباره مكتملًا."
+            ]
+          },
+          "review": {
+            "minutes": 15,
+            "note": "راجع البطاقات المستحقة وأخطاء الاختبارات قبل إضافة معلومات كثيرة جديدة."
+          }
+        }
+      ]
+    }
+  ]
+}
