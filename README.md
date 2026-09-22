@@ -4,10 +4,25 @@
 
 ## دورة التعلم
 
-**فيديو → Listening → Reading → Writing → Speaking → Vocabulary → Quiz → Spaced Review**
+**Zero Foundation → Grammar → Video → Listening → Reading → Writing → Speaking → Vocabulary → Smart Notebook → Spaced Review**
 
 ## الحجم الحالي
 
+- **مسار تأسيسي Zero → A1 من 18 خطوة مقفولة بالترتيب**:
+  - 30 حرفاً/رمزاً مع اسم الحرف وصوت شائع وكلمة مثال.
+  - 19 تركيب نطق مهم: sch / ch / sp / st / ei / ie / eu / au / z / w / v / j / qu / pf / tsch...
+  - زر نطق للكلمات عبر صوت ألماني في المتصفح.
+  - فيديوهات تأسيسية مختارة حسب الملاءمة + إشارات مشاهدة/إعجاب موثقة عندما تتوفر.
+  - Checkpoint للنطق وCheckpoint للجاهزية قبل فتح A1.
+  - المحرك يفرض الخطوة الحالية أولاً ولا يرمي المبتدئ مباشرة في اليوم 1.
+- **Smart Notebook** داخل كل يوم:
+  - عنوان اليوم.
+  - قاعدة في سطر + مثالان فقط.
+  - 7 كلمات.
+  - 3 جمل من المتعلم.
+  - خطأ اليوم وتصحيحه.
+  - مراجعة D+1 / D+3 / D+7.
+  - زر لنسخ قالب دفتر اليوم.
 - **Grammar Academy كاملة: 82 درساً**:
   - 12 درس الحروف والنطق.
   - 20 قاعدة A1.
@@ -115,6 +130,7 @@ Study Engine يستعمل بياناتك المحلية ليحدد:
 │   ├── vocabulary.json
 │   ├── videos.json
 │   ├── grammar.json
+│   ├── zero-path.json
 │   └── daily-plan.json
 └── .github/workflows/
     ├── validate.yml
