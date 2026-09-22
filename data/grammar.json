@@ -1,0 +1,1757 @@
+{
+  "version": 1,
+  "title": "German Grammar Academy",
+  "updatedAt": "2026-09-22",
+  "sections": [
+    {
+      "id": "alphabet",
+      "label": "الحروف والنطق",
+      "description": "من الصفر: الأبجدية، الأصوات، المقاطع والنبر.",
+      "topics": [
+        {
+          "id": "alpha-01",
+          "title": "الأبجدية الألمانية A–Z",
+          "category": "alphabet",
+          "level": "A1",
+          "summary": "الألمانية تستعمل 26 حرفاً أساسياً إضافة إلى ä, ö, ü وß.",
+          "explanation": "تعلّم اسم الحرف وصوته داخل الكلمات. أسماء الحروف مهمة عند تهجئة الاسم أو البريد.",
+          "examples": [
+            "A = Ah, B = Beh, C = Tseh, J = Yot, W = Veh"
+          ],
+          "mistake": "J يُنطق غالباً مثل y الإنجليزية، وW أقرب إلى v.",
+          "drill": {
+            "prompt": "Wie heißt der Buchstabe J?",
+            "options": [
+              "Yot",
+              "Dschot",
+              "Jay"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "alpha-02",
+          "title": "Umlaute: Ä Ö Ü",
+          "category": "pronunciation",
+          "level": "A1",
+          "summary": "الحروف ä, ö, ü تغيّر معنى الكلمة وصوتها.",
+          "explanation": "Ä قريب من e المفتوحة، Ö صوت بين o وe، Ü بين u وi مع تدوير الشفتين.",
+          "examples": [
+            "schon = بالفعل",
+            "schön = جميل; Mutter = أم",
+            "Mütter = أمهات"
+          ],
+          "mistake": "لا تعوّض Ü دائماً بـ U في النطق؛ الاختلاف صوتي ومعنوي.",
+          "drill": {
+            "prompt": "Welche Form bedeutet „schön“?",
+            "options": [
+              "schon",
+              "schön",
+              "schoen"
+            ],
+            "answer": 1
+          }
+        },
+        {
+          "id": "alpha-03",
+          "title": "الحرف ß",
+          "category": "pronunciation",
+          "level": "A1",
+          "summary": "ß يسمى Eszett ويُنطق مثل ss.",
+          "explanation": "يأتي بعد صوت طويل أو diphthong غالباً: Straße, heißen. في سويسرا يُستعمل ss بدله.",
+          "examples": [
+            "Straße, heißen, groß"
+          ],
+          "mistake": "ß ليس B ولا يُنطق b.",
+          "drill": {
+            "prompt": "Wie spricht man ß?",
+            "options": [
+              "مثل ss",
+              "مثل b",
+              "مثل z"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "alpha-04",
+          "title": "الحركات القصيرة والطويلة",
+          "category": "pronunciation",
+          "level": "A1",
+          "summary": "طول الحركة مهم في الألمانية وقد يغيّر وضوح الكلمة.",
+          "explanation": "الحركة تكون طويلة غالباً قبل h صامتة أو حرف ساكن واحد، وقصيرة غالباً قبل حرفين ساكنين.",
+          "examples": [
+            "Staat",
+            "Stadt, bieten",
+            "bitten"
+          ],
+          "mistake": "لا تقرأ كل a/e/i/o/u بنفس الطول.",
+          "drill": {
+            "prompt": "Welche Form hat einen langen i-Laut?",
+            "options": [
+              "bitten",
+              "bieten",
+              "Mitte"
+            ],
+            "answer": 1
+          }
+        },
+        {
+          "id": "alpha-05",
+          "title": "EI و IE",
+          "category": "pronunciation",
+          "level": "A1",
+          "summary": "ei وie من أكثر التركيبات التي يخلط فيها المبتدئ.",
+          "explanation": "ei تُنطق تقريباً ai، بينما ie تُنطق i طويلة.",
+          "examples": [
+            "mein, zwei",
+            "Liebe, sieben"
+          ],
+          "mistake": "لا تقرأ ie مثل الإنجليزية eye.",
+          "drill": {
+            "prompt": "Wie spricht man „mein“ ungefähr?",
+            "options": [
+              "main",
+              "mien",
+              "meen"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "alpha-06",
+          "title": "AU و EU/ÄU",
+          "category": "pronunciation",
+          "level": "A1",
+          "summary": "au ≈ ow، وeu/äu ≈ oy.",
+          "explanation": "استعمل نفس النمط في كلمات كثيرة: Haus, Auto, heute, Häuser.",
+          "examples": [
+            "Haus, Frau, heute, Leute, Häuser"
+          ],
+          "mistake": "äu وeu غالباً نفس الصوت.",
+          "drill": {
+            "prompt": "Welches Wort hat den oy-Laut?",
+            "options": [
+              "Haus",
+              "heute",
+              "Bahn"
+            ],
+            "answer": 1
+          }
+        },
+        {
+          "id": "alpha-07",
+          "title": "CH: ich-Laut و ach-Laut",
+          "category": "pronunciation",
+          "level": "A1",
+          "summary": "CH له نطقان رئيسيان حسب الحركة قبله.",
+          "explanation": "بعد i/e/ä/ö/ü غالباً صوت ناعم: ich. بعد a/o/u/au غالباً صوت حلقي: Bach.",
+          "examples": [
+            "ich, nicht",
+            "Bach, Buch, auch"
+          ],
+          "mistake": "لا تنطق ch دائماً مثل k أو sh.",
+          "drill": {
+            "prompt": "Wo hört man غالباً ach-Laut?",
+            "options": [
+              "ich",
+              "Buch",
+              "echt"
+            ],
+            "answer": 1
+          }
+        },
+        {
+          "id": "alpha-08",
+          "title": "SCH و SP/ST",
+          "category": "pronunciation",
+          "level": "A1",
+          "summary": "sch = ش تقريباً، وsp/st في بداية المقطع تُنطق shp/sht.",
+          "explanation": "Schule, sprechen, Straße",
+          "examples": [
+            "داخل الكلمة قد تختلف sp/st عن بداية المقطع."
+          ],
+          "mistake": "Wie beginnt „sprechen“ صوتياً؟",
+          "drill": {
+            "prompt": "shp",
+            "options": [
+              "sp",
+              "zb",
+              0
+            ]
+          }
+        },
+        {
+          "id": "alpha-09",
+          "title": "Z, W, V, J",
+          "category": "pronunciation",
+          "level": "A1",
+          "summary": "بعض الحروف لا تُنطق كما يتوقع متحدث العربية أو الإنجليزية.",
+          "explanation": "Z ≈ ts، W ≈ v، J ≈ y، وV قد تكون f في كلمات ألمانية أصلية أو v في بعض الدخيلة.",
+          "examples": [
+            "Zeit, Wasser, ja, Vater, Video"
+          ],
+          "mistake": "لا تنطق W مثل الإنجليزية w.",
+          "drill": {
+            "prompt": "Wie يبدأ „Zeit“؟",
+            "options": [
+              "ts",
+              "z",
+              "s"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "alpha-10",
+          "title": "R الألمانية",
+          "category": "pronunciation",
+          "level": "A1",
+          "summary": "R قد تكون حلقية أو متدحرجة حسب المنطقة، وفي نهاية -er تضعف غالباً.",
+          "explanation": "rot قد تُنطق R واضحة، Lehrer تنتهي بصوت قريب من a ضعيفة.",
+          "examples": [
+            "rot, drei, Lehrer, besser"
+          ],
+          "mistake": "ليس مطلوباً تقليد لهجة واحدة مثالية؛ الوضوح أهم.",
+          "drill": {
+            "prompt": "Was ist صحيح؟",
+            "options": [
+              "هناك نطق واحد فقط لـR",
+              "توجد تنويعات إقليمية",
+              "R لا تُنطق أبداً"
+            ],
+            "answer": 1
+          }
+        },
+        {
+          "id": "alpha-11",
+          "title": "النبر Wortakzent",
+          "category": "pronunciation",
+          "level": "A2",
+          "summary": "كل كلمة لها مقطع بارز، والنبر الخاطئ يجعل الفهم أصعب.",
+          "explanation": "في كثير من الكلمات الأصلية النبر مبكر، بينما بعض اللواحق الأجنبية تحمل أنماطاً مختلفة.",
+          "examples": [
+            "ARbeiten, verSTEHen, UniverSI tät"
+          ],
+          "mistake": "احفظ الكلمة بصوتها لا بحروفها فقط.",
+          "drill": {
+            "prompt": "Was sollte man مع كلمة جديدة؟",
+            "options": [
+              "حفظ الكتابة فقط",
+              "حفظ النبر معها",
+              "تجاهل الصوت"
+            ],
+            "answer": 1
+          }
+        },
+        {
+          "id": "alpha-12",
+          "title": "نغمة الجملة Intonation",
+          "category": "pronunciation",
+          "level": "A2",
+          "summary": "النغمة تساعد المستمع يميز السؤال والخبر والمعلومة الجديدة.",
+          "explanation": "أسئلة نعم/لا غالباً ترتفع نغمتها، بينما W-Fragen والخبر تميل للهبوط.",
+          "examples": [
+            "Kommst du? ↗",
+            "Wo wohnst du? ↘"
+          ],
+          "mistake": "النغمة ليست زخرفة؛ تؤثر في الفهم الطبيعي.",
+          "drill": {
+            "prompt": "Welche Frage steigt غالباً؟",
+            "options": [
+              "W-Frage",
+              "Ja/Nein-Frage",
+              "كل الجمل"
+            ],
+            "answer": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "A1",
+      "label": "قواعد A1",
+      "description": "أساس الجملة الألمانية: الأفعال، الحالات، الأسئلة والضمائر.",
+      "topics": [
+        {
+          "id": "a1-g01",
+          "title": "الضمائر الشخصية",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "ich, du, er, sie, es, wir, ihr, Sie هي فواعل الجملة الأساسية.",
+          "explanation": "الفعل يتغير حسب الضمير، وSie الرسمية تبدأ بحرف كبير.",
+          "examples": [
+            "Ich lerne. Du lernst. Sie lernen."
+          ],
+          "mistake": "sie = هي/هم حسب السياق، Sie = حضرتك/حضراتكم.",
+          "drill": {
+            "prompt": "Formell: ___ kommen aus Berlin.",
+            "options": [
+              "Sie",
+              "sie",
+              "du"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g02",
+          "title": "sein",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "sein فعل غير منتظم ومعناه يكون.",
+          "explanation": "ich bin, du bist, er/sie/es ist, wir sind, ihr seid, Sie/sie sind.",
+          "examples": [
+            "Ich bin müde. Wir sind hier."
+          ],
+          "mistake": "لا تستعمل sein بنفس نهايات الأفعال المنتظمة.",
+          "drill": {
+            "prompt": "Wir ___ Studenten.",
+            "options": [
+              "sind",
+              "seid",
+              "ist"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g03",
+          "title": "haben",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "haben = يملك/لديه ويستعمل أيضاً كمساعد في Perfekt لاحقاً.",
+          "explanation": "ich habe, du hast, er hat, wir haben, ihr habt, sie haben.",
+          "examples": [
+            "Ich habe Zeit. Er hat Hunger."
+          ],
+          "mistake": "du hast وليس du habst.",
+          "drill": {
+            "prompt": "Du ___ eine Frage.",
+            "options": [
+              "hast",
+              "habt",
+              "habe"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g04",
+          "title": "Präsens للأفعال المنتظمة",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "نأخذ جذر الفعل ونضيف النهايات -e, -st, -t, -en, -t, -en.",
+          "explanation": "lernen → ich lerne, du lernst, er lernt, wir lernen.",
+          "examples": [
+            "Wir lernen Deutsch."
+          ],
+          "mistake": "الأفعال المنتهية بـ-d/-t قد تحتاج e إضافية: du arbeitest.",
+          "drill": {
+            "prompt": "Er ___ in Berlin.",
+            "options": [
+              "wohnt",
+              "wohnen",
+              "wohne"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g05",
+          "title": "Präsens للأفعال المتغيرة",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "بعض الأفعال تغيّر حركة الجذر مع du وer/sie/es.",
+          "explanation": "fahren → du fährst; lesen → du liest; sprechen → er spricht.",
+          "examples": [
+            "Er liest ein Buch."
+          ],
+          "mistake": "التغيير غالباً لا يحدث مع wir وSie.",
+          "drill": {
+            "prompt": "Du ___ nach Hause. (fahren)",
+            "options": [
+              "fährst",
+              "fahrt",
+              "fahren"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g06",
+          "title": "ترتيب الجملة: الفعل في المركز الثاني",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "في الجملة الخبرية المصرفة، الفعل يأتي في الموقع الثاني.",
+          "explanation": "فاعل + فعل + ... أو عنصر آخر + فعل + فاعل.",
+          "examples": [
+            "Ich lerne heute. Heute lerne ich."
+          ],
+          "mistake": "الموقع الثاني يعني وحدة نحوية، لا ثاني كلمة دائماً.",
+          "drill": {
+            "prompt": "Heute ___ ich Deutsch.",
+            "options": [
+              "lerne",
+              "ich lerne",
+              "Deutsch lerne"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g07",
+          "title": "Ja/Nein-Fragen",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "في سؤال نعم/لا يأتي الفعل المصرف أولاً.",
+          "explanation": "Verb + Subjekt + ... ?",
+          "examples": [
+            "Kommst du heute? Hast du Zeit?"
+          ],
+          "mistake": "لا تحتاج أداة سؤال W.",
+          "drill": {
+            "prompt": "___ du Deutsch?",
+            "options": [
+              "Lernst",
+              "Du lernst",
+              "Warum"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g08",
+          "title": "W-Fragen",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "أداة السؤال تأتي أولاً ثم الفعل ثم الفاعل.",
+          "explanation": "wer, was, wo, wohin, woher, wann, warum, wie, wie viel.",
+          "examples": [
+            "Wo wohnst du? Wann beginnt der Kurs?"
+          ],
+          "mistake": "wo = أين، wohin = إلى أين، woher = من أين.",
+          "drill": {
+            "prompt": "___ kommst du? — Aus Marokko.",
+            "options": [
+              "Woher",
+              "Wohin",
+              "Wann"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g09",
+          "title": "أدوات التعريف der/die/das",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "كل اسم له جنس نحوي يجب تعلمه معه.",
+          "explanation": "der للمذكر، die للمؤنث، das للمحايد في Nominativ المفرد.",
+          "examples": [
+            "der Mann, die Frau, das Kind"
+          ],
+          "mistake": "لا تعتمد على المعنى الطبيعي فقط؛ احفظ المقال مع الاسم.",
+          "drill": {
+            "prompt": "___ Kind spielt.",
+            "options": [
+              "Das",
+              "Der",
+              "Den"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g10",
+          "title": "ein/eine وأداة النكرة",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "ein يستعمل للمذكر والمحايد، eine للمؤنث في Nominativ.",
+          "explanation": "ein Mann, eine Frau, ein Kind.",
+          "examples": [
+            "Das ist ein Buch."
+          ],
+          "mistake": "لا توجد صيغة جمع مباشرة لـein.",
+          "drill": {
+            "prompt": "___ Tasche ist neu.",
+            "options": [
+              "Eine",
+              "Ein",
+              "Einen"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g11",
+          "title": "الجمع Plural",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "للجمع أنماط متعددة ولا توجد قاعدة واحدة تكفي.",
+          "explanation": "-e, -er, -en/-n, -s أو بدون تغيير؛ المقال دائماً die في Nominativ/Akkusativ.",
+          "examples": [
+            "das Kind → die Kinder; die Frau → die Frauen."
+          ],
+          "mistake": "احفظ الجمع مع كل اسم جديد.",
+          "drill": {
+            "prompt": "Plural von „Kind“?",
+            "options": [
+              "Kinder",
+              "Kinds",
+              "Kinden"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g12",
+          "title": "Nominativ",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "Nominativ هو حالة الفاعل ومن يأتي بعد sein غالباً.",
+          "explanation": "der/ein Mann, die/eine Frau, das/ein Kind.",
+          "examples": [
+            "Der Mann arbeitet. Er ist Lehrer."
+          ],
+          "mistake": "لا تغيّر der إلى den ما دام الاسم فاعلاً.",
+          "drill": {
+            "prompt": "___ Hund schläft.",
+            "options": [
+              "Der",
+              "Den",
+              "Dem"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g13",
+          "title": "Akkusativ",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "Akkusativ غالباً للمفعول المباشر.",
+          "explanation": "فقط المذكر يتغير بوضوح: der→den, ein→einen.",
+          "examples": [
+            "Ich sehe den Mann. Ich kaufe einen Kaffee."
+          ],
+          "mistake": "die/das لا يتغيران في Akkusativ.",
+          "drill": {
+            "prompt": "Ich habe ___ Bruder.",
+            "options": [
+              "einen",
+              "ein",
+              "einem"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g14",
+          "title": "kein و nicht",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "kein ينفي الأسماء مع ein/بدون مقال، nicht ينفي أفعالاً وصفات أو عناصر أخرى.",
+          "explanation": "Ich habe kein Auto. Ich komme heute nicht. Das ist nicht teuer.",
+          "examples": [
+            "اختيار موضع nicht يتغير حسب ما تريد نفيه."
+          ],
+          "mistake": "Ich habe ___ Zeit.",
+          "drill": {
+            "prompt": "keine",
+            "options": [
+              "nicht",
+              "kein",
+              0
+            ]
+          }
+        },
+        {
+          "id": "a1-g15",
+          "title": "ضمائر الملكية",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "mein, dein, sein, ihr, unser, euer, Ihr تتصرف مثل ein.",
+          "explanation": "mein Bruder, meine Schwester, mein Kind.",
+          "examples": [
+            "Das ist unsere Wohnung."
+          ],
+          "mistake": "اختيار الجذر حسب المالك ثم النهاية حسب الاسم والحالة.",
+          "drill": {
+            "prompt": "Das ist ___ Mutter. (ich)",
+            "options": [
+              "meine",
+              "mein",
+              "meinen"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g16",
+          "title": "Modalverben",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "können, müssen, wollen, dürfen, sollen, mögen تغيّر معنى الفعل الرئيسي.",
+          "explanation": "المودال يُصرف في المركز الثاني، والمصدر يذهب لنهاية الجملة.",
+          "examples": [
+            "Ich kann Deutsch sprechen. Wir müssen lernen."
+          ],
+          "mistake": "لا تصرف الفعل الرئيسي مرتين.",
+          "drill": {
+            "prompt": "Ich ___ heute arbeiten. (müssen)",
+            "options": [
+              "muss",
+              "müsse",
+              "arbeiten muss"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g17",
+          "title": "الأفعال المنفصلة",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "بعض الأفعال لها بادئة تنفصل في الجملة الرئيسية.",
+          "explanation": "aufstehen → Ich stehe um 7 Uhr auf.",
+          "examples": [
+            "Der Kurs fängt um 9 Uhr an."
+          ],
+          "mistake": "في المصدر وNebensatz تبقى الكلمة مجتمعة.",
+          "drill": {
+            "prompt": "Ich ___ um 7 Uhr ___.",
+            "options": [
+              "stehe / auf",
+              "auf / stehe",
+              "stehen / auf"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g18",
+          "title": "الأمر Imperativ",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "الأمر يختلف مع du, ihr, Sie.",
+          "explanation": "Komm! Kommt! Kommen Sie!",
+          "examples": [
+            "Lies bitte den Text! Gehen Sie geradeaus!"
+          ],
+          "mistake": "صيغة Sie تحتفظ بالضمير بعد الفعل.",
+          "drill": {
+            "prompt": "Formell: ___ Sie bitte hier!",
+            "options": [
+              "Warten",
+              "Wartet",
+              "Warte"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g19",
+          "title": "es gibt",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "es gibt = يوجد/هناك ويتطلب Akkusativ بعده.",
+          "explanation": "Es gibt einen Park. Es gibt viele Cafés.",
+          "examples": [
+            "In der Stadt gibt es ein Museum."
+          ],
+          "mistake": "لا تستعمل der بعد gibt إذا كان مذكراً مفرداً.",
+          "drill": {
+            "prompt": "Es gibt ___ Bahnhof.",
+            "options": [
+              "einen",
+              "ein",
+              "einem"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a1-g20",
+          "title": "الوقت والتاريخ",
+          "category": "grammar",
+          "level": "A1",
+          "summary": "التعبير عن الوقت يستعمل um، الأيام am، الأشهر/الفصول im.",
+          "explanation": "um 8 Uhr, am Montag, im Mai, im Sommer.",
+          "examples": [
+            "Der Kurs ist am Dienstag um neun Uhr."
+          ],
+          "mistake": "um للساعة، am لليوم، im للشهر/الفصل.",
+          "drill": {
+            "prompt": "___ Montag habe ich Kurs.",
+            "options": [
+              "Am",
+              "Um",
+              "Im"
+            ],
+            "answer": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "label": "قواعد A2",
+      "description": "Dativ، الماضي، الجمل الفرعية، الصفات وحروف الجر.",
+      "topics": [
+        {
+          "id": "a2-g01",
+          "title": "Dativ",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "Dativ يستعمل للمفعول غير المباشر وبعد حروف وأفعال معينة.",
+          "explanation": "der→dem, die→der, das→dem, plural→den + n غالباً.",
+          "examples": [
+            "Ich helfe dem Mann. Ich gebe der Frau das Buch."
+          ],
+          "mistake": "جمع Dativ غالباً يحتاج -n إذا لم يكن موجوداً.",
+          "drill": {
+            "prompt": "Ich spreche mit ___ Lehrer.",
+            "options": [
+              "dem",
+              "den",
+              "der"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a2-g02",
+          "title": "أفعال Dativ",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "بعض الأفعال تأخذ Dativ مباشرة بدون مفعول Akkusativ.",
+          "explanation": "helfen, danken, gefallen, gehören, schmecken, antworten.",
+          "examples": [
+            "Das gefällt mir. Ich danke dir."
+          ],
+          "mistake": "gefallen: الشيء هو الفاعل والشخص Dativ.",
+          "drill": {
+            "prompt": "Das Buch gefällt ___. (ich)",
+            "options": [
+              "mir",
+              "mich",
+              "mein"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a2-g03",
+          "title": "حروف جر Dativ",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "aus, bei, mit, nach, seit, von, zu دائماً مع Dativ.",
+          "explanation": "mit dem Bus, bei der Arbeit, zum Arzt, zur Schule.",
+          "examples": [
+            "Ich komme aus der Stadt."
+          ],
+          "mistake": "zu dem→zum، zu der→zur.",
+          "drill": {
+            "prompt": "Ich fahre ___ Arzt.",
+            "options": [
+              "zum",
+              "zu den",
+              "zur"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a2-g04",
+          "title": "Wechselpräpositionen",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "an, auf, hinter, in, neben, über, unter, vor, zwischen تأخذ Akk أو Dat.",
+          "explanation": "اتجاه/حركة نحو مكان = Akkusativ؛ موقع ثابت = Dativ.",
+          "examples": [
+            "Ich gehe in die Küche. Ich bin in der Küche."
+          ],
+          "mistake": "السؤال wohin؟ غالباً Akk؛ wo؟ غالباً Dat.",
+          "drill": {
+            "prompt": "Das Buch liegt auf ___ Tisch.",
+            "options": [
+              "dem",
+              "den",
+              "der"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a2-g05",
+          "title": "Perfekt مع haben/sein",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "Perfekt زمن الماضي الأكثر شيوعاً في الكلام.",
+          "explanation": "haben/sein مصروف + Partizip II في آخر الجملة.",
+          "examples": [
+            "Ich habe gearbeitet. Ich bin gefahren."
+          ],
+          "mistake": "sein غالباً مع حركة/تغير حالة وبعض الأفعال الخاصة.",
+          "drill": {
+            "prompt": "Wir ___ nach Berlin gefahren.",
+            "options": [
+              "sind",
+              "haben",
+              "werden"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a2-g06",
+          "title": "Partizip II",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "للأفعال المنتظمة: ge- + جذر + -t غالباً.",
+          "explanation": "machen→gemacht, lernen→gelernt. غير المنتظمة تحفظ: sehen→gesehen.",
+          "examples": [
+            "Ich habe viel gelernt."
+          ],
+          "mistake": "الأفعال بـbe-, ver-, er-, ent-, zer- لا تأخذ ge غالباً.",
+          "drill": {
+            "prompt": "Partizip von „besuchen“?",
+            "options": [
+              "besucht",
+              "gebesucht",
+              "besuchen"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a2-g07",
+          "title": "Präteritum لـ sein/haben/modal",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "في الكلام يستعمل Präteritum كثيراً مع sein/haben والمودال.",
+          "explanation": "war, hatte, konnte, musste, wollte, durfte, sollte.",
+          "examples": [
+            "Ich war müde. Wir mussten warten."
+          ],
+          "mistake": "هذه الصيغ شائعة حتى في المحادثة.",
+          "drill": {
+            "prompt": "Gestern ___ ich krank. (sein)",
+            "options": [
+              "war",
+              "bin",
+              "gewesen"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a2-g08",
+          "title": "الأفعال الانعكاسية",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "بعض الأفعال تستعمل sich وتحتاج ضميراً انعكاسياً.",
+          "explanation": "mich, dich, sich, uns, euch, sich.",
+          "examples": [
+            "Ich interessiere mich für Musik."
+          ],
+          "mistake": "الضمير يتغير مع الفاعل.",
+          "drill": {
+            "prompt": "Wir treffen ___ um acht.",
+            "options": [
+              "uns",
+              "sich",
+              "euch"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a2-g09",
+          "title": "weil و dass",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "weil يعطي سبباً، dass يقدّم جملة مضمون؛ الفعل المصرف في النهاية.",
+          "explanation": "Ich bleibe zu Hause, weil ich krank bin. Ich glaube, dass er kommt.",
+          "examples": [
+            "في Nebensatz يذهب الجزء المنفصل أيضاً للنهاية متحداً."
+          ],
+          "mistake": "الفعل في نهاية weil/dass.",
+          "drill": {
+            "prompt": "..., weil ich heute keine Zeit ___.",
+            "options": [
+              "habe",
+              "hast",
+              "bin haben"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a2-g10",
+          "title": "wenn",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "wenn = إذا أو عندما للحاضر/المستقبل والتكرار.",
+          "explanation": "Wenn ich Zeit habe, lerne ich. Wenn es regnet, bleibe ich zu Hause.",
+          "examples": [
+            "إذا بدأت بـwenn، تأتي الجملة الرئيسية بفعل ثم فاعل."
+          ],
+          "mistake": "Wenn ich Zeit habe, ___ ich Deutsch.",
+          "drill": {
+            "prompt": "lerne",
+            "options": [
+              "ich lerne",
+              "lernen",
+              0
+            ]
+          }
+        },
+        {
+          "id": "a2-g11",
+          "title": "obwohl",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "obwohl يقدم تناقضاً: رغم أن.",
+          "explanation": "Obwohl es regnet, gehen wir spazieren.",
+          "examples": [
+            "الفعل في نهاية جملة obwohl."
+          ],
+          "mistake": "___ ich müde bin, lerne ich.",
+          "drill": {
+            "prompt": "Obwohl",
+            "options": [
+              "Trotzdem",
+              "Denn",
+              0
+            ]
+          }
+        },
+        {
+          "id": "a2-g12",
+          "title": "trotzdem / deshalb",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "كلاهما adverbs ويربطان جملتين مع بقاء الفعل في الموقع الثاني.",
+          "explanation": "Es regnet. Trotzdem gehe ich raus. Ich bin krank. Deshalb bleibe ich zu Hause.",
+          "examples": [
+            "بعد Trotzdem/Deshalb يأتي الفعل مباشرة غالباً."
+          ],
+          "mistake": "Ich bin müde. Deshalb ___ ich früh.",
+          "drill": {
+            "prompt": "schlafe",
+            "options": [
+              "ich schlafe",
+              "schlafen",
+              0
+            ]
+          }
+        },
+        {
+          "id": "a2-g13",
+          "title": "Komparativ و Superlativ",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "المقارنة غالباً -er، والأعلى am ...sten أو der/die/das ...ste.",
+          "explanation": "schnell→schneller→am schnellsten; gut→besser→am besten.",
+          "examples": [
+            "Berlin ist größer als Bonn."
+          ],
+          "mistake": "als مع المقارنة، wie مع المساواة.",
+          "drill": {
+            "prompt": "Er ist größer ___ ich.",
+            "options": [
+              "als",
+              "wie",
+              "dass"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a2-g14",
+          "title": "نهايات الصفات الأساسية",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "نهاية الصفة تعتمد على المقال والجنس والحالة.",
+          "explanation": "ein guter Kaffee, eine gute Idee, der gute Film, einen guten Film.",
+          "examples": [
+            "Ich kaufe einen roten Pullover."
+          ],
+          "mistake": "ابدأ بحفظ أن Akk المذكر بعد ein/der يحتاج -en.",
+          "drill": {
+            "prompt": "einen ___ Kaffee",
+            "options": [
+              "heißen",
+              "heißer",
+              "heiße"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a2-g15",
+          "title": "حروف الجر الزمنية",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "seit, vor, in, für, ab, bis تحدد الزمن بطرق مختلفة.",
+          "explanation": "seit zwei Jahren, vor einer Woche, in drei Tagen, für einen Monat.",
+          "examples": [
+            "Ich lerne seit einem Jahr Deutsch."
+          ],
+          "mistake": "seit من الماضي ومستمر حتى الآن.",
+          "drill": {
+            "prompt": "Ich wohne hier ___ 2024.",
+            "options": [
+              "seit",
+              "vor",
+              "für"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "a2-g16",
+          "title": "Infinitiv mit zu",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "بعد أفعال/تعابير معينة نستعمل zu + المصدر.",
+          "explanation": "Ich versuche, Deutsch zu lernen. Es ist wichtig, genug zu schlafen.",
+          "examples": [
+            "مع الأفعال المنفصلة: anzufangen, aufzustehen."
+          ],
+          "mistake": "Ich versuche, früher ___.",
+          "drill": {
+            "prompt": "aufzustehen",
+            "options": [
+              "zu aufstehen",
+              "aufstehen zu",
+              0
+            ]
+          }
+        },
+        {
+          "id": "a2-g17",
+          "title": "الأسئلة غير المباشرة",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "نسأل بطريقة ألطف باستخدام ob أو أداة W، والفعل في النهاية.",
+          "explanation": "Können Sie mir sagen, wo der Bahnhof ist? Ich weiß nicht, ob er kommt.",
+          "examples": [
+            "ob لأسئلة نعم/لا."
+          ],
+          "mistake": "Ich weiß nicht, ___ der Kurs heute stattfindet.",
+          "drill": {
+            "prompt": "ob",
+            "options": [
+              "dass",
+              "denn",
+              0
+            ]
+          }
+        },
+        {
+          "id": "a2-g18",
+          "title": "أفعال مع حروف جر",
+          "category": "grammar",
+          "level": "A2",
+          "summary": "كثير من الأفعال تُحفظ مع حرف الجر وحالته.",
+          "explanation": "warten auf + Akk, sprechen mit + Dat, denken an + Akk, sich interessieren für + Akk.",
+          "examples": [
+            "Ich warte auf den Bus."
+          ],
+          "mistake": "احفظ الفعل + حرف الجر كوحدة واحدة.",
+          "drill": {
+            "prompt": "Ich interessiere mich ___ Deutsch.",
+            "options": [
+              "für",
+              "mit",
+              "von"
+            ],
+            "answer": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "B1",
+      "label": "قواعد B1",
+      "description": "ربط متقدم، المبني للمجهول، Konjunktiv II وبنى أكثر طبيعية.",
+      "topics": [
+        {
+          "id": "b1-g01",
+          "title": "Relativsätze Nominativ/Akkusativ",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "الجملة الموصولة تصف اسماً، والضمير النسبي يأخذ جنسه من الاسم وحالته من دوره داخل الجملة.",
+          "explanation": "Der Mann, der dort steht... / Der Mann, den ich sehe...",
+          "examples": [
+            "Das Buch, das ich lese, ist gut."
+          ],
+          "mistake": "لا تختار الضمير فقط من المقال السابق؛ حدد الوظيفة داخل relative clause.",
+          "drill": {
+            "prompt": "Der Mann, ___ ich kenne, kommt.",
+            "options": [
+              "den",
+              "der",
+              "dem"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b1-g02",
+          "title": "Relativsätze Dativ",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "إذا كان الضمير داخل الجملة الموصولة Dativ نستعمل dem/der/denen.",
+          "explanation": "Die Frau, mit der ich spreche... Der Kollege, dem ich helfe...",
+          "examples": [
+            "Die Leute, mit denen ich arbeite..."
+          ],
+          "mistake": "جمع Dativ relative = denen.",
+          "drill": {
+            "prompt": "Die Frau, ___ ich danke...",
+            "options": [
+              "der",
+              "die",
+              "den"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b1-g03",
+          "title": "Passiv Präsens",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "المبني للمجهول يركز على الفعل/النتيجة لا الفاعل.",
+          "explanation": "werden مصروف + Partizip II.",
+          "examples": [
+            "Das Haus wird gebaut. Die E-Mails werden beantwortet."
+          ],
+          "mistake": "لا تخلط wird + Partizip مع Zustandspassiv ist + Partizip.",
+          "drill": {
+            "prompt": "Die Tür ___ geöffnet.",
+            "options": [
+              "wird",
+              "hat",
+              "werden ist"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b1-g04",
+          "title": "Passiv Präteritum/Perfekt",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "الماضي المبني للمجهول: wurde + Partizip، أو ist + Partizip + worden.",
+          "explanation": "Das Haus wurde gebaut. Das Haus ist gebaut worden.",
+          "examples": [
+            "worden وليس geworden في Perfekt Passiv."
+          ],
+          "mistake": "Die E-Mail ist gestern geschickt ___.",
+          "drill": {
+            "prompt": "worden",
+            "options": [
+              "geworden",
+              "werden",
+              0
+            ]
+          }
+        },
+        {
+          "id": "b1-g05",
+          "title": "Konjunktiv II: würde",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "würde + Infinitiv للتخيل واللباقة والافتراض.",
+          "explanation": "Ich würde gern reisen. Was würdest du tun?",
+          "examples": [
+            "Wenn ich Zeit hätte, würde ich kommen."
+          ],
+          "mistake": "مع sein/haben/modal غالباً نفضّل hätte/wäre/könnte مباشرة.",
+          "drill": {
+            "prompt": "Ich ___ gern mehr lesen.",
+            "options": [
+              "würde",
+              "werde",
+              "wurde"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b1-g06",
+          "title": "hätte / wäre / könnte / müsste",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "أشكال Konjunktiv II الشائعة تُستعمل بدلاً من würde + sein/haben/modal.",
+          "explanation": "Ich hätte Zeit. Ich wäre gern dort. Ich könnte helfen.",
+          "examples": [
+            "Diese Form wirkt natürlicher."
+          ],
+          "mistake": "Wenn ich Geld ___, würde ich reisen.",
+          "drill": {
+            "prompt": "hätte",
+            "options": [
+              "habe",
+              "hatte",
+              0
+            ]
+          }
+        },
+        {
+          "id": "b1-g07",
+          "title": "Irreale Konditionalsätze",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "شرط غير واقعي في الحاضر: wenn + Konjunktiv II، والنتيجة Konjunktiv II.",
+          "explanation": "Wenn ich mehr Zeit hätte, würde ich mehr lernen.",
+          "examples": [
+            "Ohne Arbeit wäre ich entspannter."
+          ],
+          "mistake": "لا تستعمل Präsens إذا تقصد حالة افتراضية غير واقعية.",
+          "drill": {
+            "prompt": "Wenn ich reich wäre, ___ ich reisen.",
+            "options": [
+              "würde",
+              "werde",
+              "bin"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b1-g08",
+          "title": "Plusquamperfekt",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "ماضٍ قبل ماضٍ آخر: hatte/war + Partizip II.",
+          "explanation": "Nachdem ich gegessen hatte, ging ich raus.",
+          "examples": [
+            "Er war schon gegangen, als ich ankam."
+          ],
+          "mistake": "يستعمل لترتيب حدثين في الماضي.",
+          "drill": {
+            "prompt": "Nachdem sie angekommen ___, rief sie an.",
+            "options": [
+              "war",
+              "ist",
+              "hat"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b1-g09",
+          "title": "um...zu / ohne...zu / statt...zu",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "هذه التراكيب تختصر جملة عندما الفاعل نفسه.",
+          "explanation": "Ich lerne, um die Prüfung zu bestehen. Er ging, ohne etwas zu sagen.",
+          "examples": [
+            "Statt zu arbeiten, spielt er."
+          ],
+          "mistake": "إذا اختلف الفاعل نحتاج جملة بـdamit بدلاً من um...zu.",
+          "drill": {
+            "prompt": "Ich lerne viel, ___ die Prüfung zu bestehen.",
+            "options": [
+              "um",
+              "damit",
+              "weil"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b1-g10",
+          "title": "damit",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "damit يعبر عن الهدف ويمكن أن يكون الفاعل مختلفاً.",
+          "explanation": "Ich spreche langsam, damit du mich verstehst.",
+          "examples": [
+            "Sie schreibt es auf, damit niemand es vergisst."
+          ],
+          "mistake": "الفعل في نهاية جملة damit.",
+          "drill": {
+            "prompt": "Ich erkläre es, damit ihr es ___.",
+            "options": [
+              "versteht",
+              "verstehen ihr",
+              "verstanden"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b1-g11",
+          "title": "wegen / trotz / während",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "wegen = بسبب، trotz = رغم، während = أثناء/بينما؛ رسمياً غالباً مع Genitiv.",
+          "explanation": "wegen des Wetters, trotz des Regens, während der Reise.",
+          "examples": [
+            "Trotz des Problems machen wir weiter."
+          ],
+          "mistake": "في الكلام قد تسمع Dativ، لكن تعلّم Genitiv القياسي.",
+          "drill": {
+            "prompt": "___ des Regens bleiben wir zu Hause.",
+            "options": [
+              "Wegen",
+              "Mit",
+              "Aus"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b1-g12",
+          "title": "Genitiv",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "Genitiv يعبر عن الملكية ويأتي بعد بعض حروف الجر.",
+          "explanation": "das Auto des Mannes; die Farbe der Tasche.",
+          "examples": [
+            "Das Ende des Films war überraschend."
+          ],
+          "mistake": "المذكر والمحايد غالباً الاسم يأخذ -s/-es.",
+          "drill": {
+            "prompt": "die Tür ___ Hauses",
+            "options": [
+              "des",
+              "dem",
+              "den"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b1-g13",
+          "title": "Pronominaladverbien: da-/wo-",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "مع الأشياء نستعمل worauf, daran, damit... بدل حرف الجر + es غالباً.",
+          "explanation": "Worauf wartest du? — Darauf. Ich denke daran.",
+          "examples": [
+            "Bei Personen: Auf wen wartest du?"
+          ],
+          "mistake": "لا تستعمل worauf عادة للشخص.",
+          "drill": {
+            "prompt": "___ denkst du? — An die Prüfung.",
+            "options": [
+              "Woran",
+              "An wen",
+              "Womit"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b1-g14",
+          "title": "N-Deklination",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "بعض الأسماء المذكرة تأخذ -n/-en في كل الحالات عدا Nominativ المفرد.",
+          "explanation": "der Student → den Studenten, mit dem Studenten.",
+          "examples": [
+            "Ich spreche mit dem Kollegen."
+          ],
+          "mistake": "احفظ مجموعات مثل Student, Mensch, Junge, Kollege.",
+          "drill": {
+            "prompt": "Ich sehe den ___.",
+            "options": [
+              "Studenten",
+              "Student",
+              "Students"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b1-g15",
+          "title": "lassen",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "lassen يعني يترك/يدع أو يجعل خدمة تُنفذ.",
+          "explanation": "Ich lasse mein Auto reparieren. Lass mich in Ruhe.",
+          "examples": [
+            "Er lässt die Haare schneiden."
+          ],
+          "mistake": "بعد lassen يأتي المصدر بلا zu.",
+          "drill": {
+            "prompt": "Ich lasse das Handy ___.",
+            "options": [
+              "reparieren",
+              "zu reparieren",
+              "repariert"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b1-g16",
+          "title": "ترتيب Mittelfeld: TeKaMoLo",
+          "category": "grammar",
+          "level": "B1",
+          "summary": "قاعدة مفيدة لترتيب الظروف: temporal, kausal, modal, lokal.",
+          "explanation": "Ich fahre morgen wegen eines Termins mit dem Zug nach Berlin.",
+          "examples": [
+            "ليست قانوناً مطلقاً لكنها ترتيب محايد شائع."
+          ],
+          "mistake": "Ich fahre ___ ___ ___ nach Berlin.",
+          "drill": {
+            "prompt": "morgen / mit dem Zug / wegen...",
+            "options": [
+              "morgen / wegen... / mit dem Zug",
+              "mit dem Zug / morgen / wegen...",
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "B2",
+      "label": "قواعد B2",
+      "description": "الأسلوب الرسمي، الكلام المنقول، بدائل المبني للمجهول وبنى متقدمة.",
+      "topics": [
+        {
+          "id": "b2-g01",
+          "title": "Konjunktiv I للكلام المنقول",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "يستعمل في الصحافة والكلام المنقول لإظهار أن المعلومة منقولة.",
+          "explanation": "Er sagt, er sei krank. Die Firma erklärt, sie habe keine Daten verloren.",
+          "examples": [
+            "إذا تطابقت الصيغة مع Indikativ قد نستعمل Konjunktiv II."
+          ],
+          "mistake": "الكلام المنقول لا يعني أن المتكلم يؤكد الحقيقة.",
+          "drill": {
+            "prompt": "Er sagt, er ___ müde.",
+            "options": [
+              "sei",
+              "ist",
+              "wäre gewesen"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b2-g02",
+          "title": "Indirekte Rede مع Modalverben",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "المودال في Konjunktiv I يُستعمل داخل التقرير المنقول.",
+          "explanation": "Er sagt, er könne kommen. Sie meint, man müsse handeln.",
+          "examples": [
+            "könne, müsse, dürfe, solle, wolle."
+          ],
+          "mistake": "لا تغيّر زمن الجملة بلا سبب.",
+          "drill": {
+            "prompt": "Sie sagt, sie ___ helfen.",
+            "options": [
+              "könne",
+              "kann",
+              "konnte"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b2-g03",
+          "title": "Zustandspassiv",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "sein + Partizip II يصف الحالة الناتجة، بينما werden + Partizip يصف العملية.",
+          "explanation": "Die Tür ist geöffnet. / Die Tür wird geöffnet.",
+          "examples": [
+            "Das Problem ist gelöst."
+          ],
+          "mistake": "اسأل: هل أصف العملية أم الحالة؟",
+          "drill": {
+            "prompt": "Die Tür ___ geschlossen. (الحالة)",
+            "options": [
+              "ist",
+              "wird",
+              "hat"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b2-g04",
+          "title": "Passiv مع Modalverben",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "Modalverb مصروف + Partizip II + werden في النهاية.",
+          "explanation": "Das Problem muss gelöst werden. Die Daten dürfen nicht veröffentlicht werden.",
+          "examples": [
+            "Im Perfekt يصبح التركيب أثقل ويستعمل بحذر."
+          ],
+          "mistake": "Die Aufgabe muss heute ___ werden.",
+          "drill": {
+            "prompt": "erledigt",
+            "options": [
+              "erledigen",
+              "zu erledigen",
+              0
+            ]
+          }
+        },
+        {
+          "id": "b2-g05",
+          "title": "بدائل Passiv",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "يمكن التعبير عن معنى قابلية/ضرورة بدون Passiv مباشر.",
+          "explanation": "sich lassen + Infinitiv، sein + zu + Infinitiv، -bar adjectives.",
+          "examples": [
+            "Das Problem lässt sich lösen. Das ist zu beachten. lösbar."
+          ],
+          "mistake": "تفيد في الأسلوب الرسمي لتجنب تكرار werden.",
+          "drill": {
+            "prompt": "Das lässt sich leicht ___.",
+            "options": [
+              "erklären",
+              "erklärt",
+              "zu erklärt"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b2-g06",
+          "title": "haben/sein + zu + Infinitiv",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "haben + zu = على الفاعل أن يفعل؛ sein + zu = يجب/يمكن أن يُفعل.",
+          "explanation": "Wir haben viel zu tun. Die Regeln sind zu beachten.",
+          "examples": [
+            "المعنى يعتمد على السياق: واجب أو قابلية."
+          ],
+          "mistake": "Die Aufgabe ist bis morgen ___.",
+          "drill": {
+            "prompt": "zu erledigen",
+            "options": [
+              "erledigt zu",
+              "erledigen muss",
+              0
+            ]
+          }
+        },
+        {
+          "id": "b2-g07",
+          "title": "als ob / als wenn",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "للمقارنة غير الواقعية نستخدم als ob + Konjunktiv II.",
+          "explanation": "Er tut so, als ob er alles wüsste.",
+          "examples": [
+            "Sie sieht aus, als hätte sie nicht geschlafen."
+          ],
+          "mistake": "الفعل في نهاية جملة als ob.",
+          "drill": {
+            "prompt": "Er spricht, als ob er Experte ___.",
+            "options": [
+              "wäre",
+              "ist",
+              "sein"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b2-g08",
+          "title": "Partizip I/II كصفات",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "Partizip I يعطي معنى نشط/مستمر، Partizip II غالباً مكتمل/مبني للمجهول.",
+          "explanation": "die steigenden Preise; die geschlossenen Geschäfte.",
+          "examples": [
+            "ein überzeugendes Argument; die veröffentlichten Daten."
+          ],
+          "mistake": "تأخذ نهايات الصفات العادية.",
+          "drill": {
+            "prompt": "die ___ Preise (steigen)",
+            "options": [
+              "steigenden",
+              "gestiegenen",
+              "steigen"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b2-g09",
+          "title": "Erweiterte Attribute",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "في الأسلوب الرسمي يمكن وضع معلومات طويلة قبل الاسم كصفة موسعة.",
+          "explanation": "die gestern vom Parlament beschlossene Reform.",
+          "examples": [
+            "der seit Jahren in Berlin lebende Autor."
+          ],
+          "mistake": "هذه البنية كثيفة؛ في الكلام يفضّل Relative clause.",
+          "drill": {
+            "prompt": "die gestern ___ Entscheidung",
+            "options": [
+              "getroffene",
+              "treffende worden",
+              "zu treffen"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b2-g10",
+          "title": "Nominalisierung",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "الأسلوب الرسمي يحول الأفعال/الصفات إلى أسماء.",
+          "explanation": "entscheiden → die Entscheidung; analysieren → die Analyse; verbessern → die Verbesserung.",
+          "examples": [
+            "Nach der Prüfung der Daten..."
+          ],
+          "mistake": "لا تفرط فيه لأن النص يصبح ثقيلاً.",
+          "drill": {
+            "prompt": "Verb „entscheiden“ → Nomen?",
+            "options": [
+              "Entscheidung",
+              "Entscheidungung",
+              "Entscheidenheit"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b2-g11",
+          "title": "Nomen-Verb-Verbindungen",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "تراكيب اسم + فعل شائعة في الأسلوب الأكاديمي/الرسمي.",
+          "explanation": "eine Entscheidung treffen, Maßnahmen ergreifen, Einfluss nehmen, zur Verfügung stehen.",
+          "examples": [
+            "Wir treffen eine Entscheidung."
+          ],
+          "mistake": "تعلم التركيب كوحدة وليس ترجمة كل كلمة.",
+          "drill": {
+            "prompt": "Man ___ Maßnahmen.",
+            "options": [
+              "ergreift",
+              "macht immer",
+              "nimmt Maßnahmen an"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b2-g12",
+          "title": "zweiteilige Konnektoren",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "روابط مزدوجة تنظم الحجة والمقارنة.",
+          "explanation": "sowohl...als auch; weder...noch; entweder...oder; nicht nur...sondern auch; je...desto.",
+          "examples": [
+            "Je mehr ich lese, desto leichter schreibe ich."
+          ],
+          "mistake": "حافظ على التوازي بين الجزأين.",
+          "drill": {
+            "prompt": "___ mehr man übt, ___ sicherer wird man.",
+            "options": [
+              "Je / desto",
+              "Obwohl / trotzdem",
+              "Wenn / dann nur"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b2-g13",
+          "title": "indem / dadurch dass",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "لشرح الطريقة أو الوسيلة: indem أو dadurch, dass.",
+          "explanation": "Man verbessert sich, indem man täglich spricht.",
+          "examples": [
+            "Dadurch, dass sie früh plant, spart sie Zeit."
+          ],
+          "mistake": "الفعل في نهاية indem-clause.",
+          "drill": {
+            "prompt": "Er lernt, ___ er viel liest.",
+            "options": [
+              "indem",
+              "obwohl",
+              "damit dass"
+            ],
+            "answer": 0
+          }
+        },
+        {
+          "id": "b2-g14",
+          "title": "sodass / so...dass",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "تعبّر عن النتيجة.",
+          "explanation": "Es regnete stark, sodass wir zu Hause blieben. Er spricht so leise, dass ich ihn kaum höre.",
+          "examples": [
+            "sodass يربط سبباً بنتيجة."
+          ],
+          "mistake": "Es war spät, ___ wir gingen.",
+          "drill": {
+            "prompt": "sodass",
+            "options": [
+              "damit",
+              "ob",
+              0
+            ]
+          }
+        },
+        {
+          "id": "b2-g15",
+          "title": "sofern / falls",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "sofern/falls يقدمان شرطاً بصيغة أكثر رسمية أو احتمالية.",
+          "explanation": "Sofern keine Probleme auftreten, starten wir morgen. Falls du Zeit hast, ruf an.",
+          "examples": [
+            "الفعل في نهاية الجملة الفرعية."
+          ],
+          "mistake": "___ alles klappt, beginnen wir um neun.",
+          "drill": {
+            "prompt": "Sofern",
+            "options": [
+              "Trotz",
+              "Denn",
+              0
+            ]
+          }
+        },
+        {
+          "id": "b2-g16",
+          "title": "Subjektive Modalverben",
+          "category": "grammar",
+          "level": "B2",
+          "summary": "المودال قد يعبر عن درجة اليقين حسب ما يُنقل.",
+          "explanation": "Er muss krank sein = على الأرجح. Er soll reich sein = يُقال. Er will es gesehen haben = يدّعي.",
+          "examples": [
+            "هذه ليست معاني القدرة/الواجب العادية فقط."
+          ],
+          "mistake": "Er ___ sehr reich sein. (يُقال)",
+          "drill": {
+            "prompt": "soll",
+            "options": [
+              "muss",
+              "darf",
+              0
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "totalTopics": 82
+}
