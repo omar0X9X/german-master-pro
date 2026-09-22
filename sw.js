@@ -1,5 +1,5 @@
-const CACHE="gmp-shell-v4";
-const ASSETS=["./","./index.html","./styles/base.css","./styles/components.css","./styles/responsive.css","./js/store.js","./js/engine.js","./js/ui.js","./js/app.js","./data/curriculum.json","./data/quizzes.json","./data/vocabulary.json","./data/daily-plan.json","./data/videos.json","./data/grammar.json","./data/zero-path.json","./manifest.webmanifest","./assets/icon.svg"];
+const CACHE="gmp-shell-v5";
+const ASSETS=["./","./index.html","./styles/base.css","./styles/components.css","./styles/responsive.css","./js/store.js","./js/engine.js","./js/ui.js","./js/app.js","./data/curriculum.json","./data/quizzes.json","./data/vocabulary.json","./data/daily-plan.json","./data/videos.json","./data/grammar.json","./data/zero-path.json","./data/study-method.json","./manifest.webmanifest","./assets/icon.svg"];
 self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener("activate",event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener("fetch",event=>{

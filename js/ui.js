@@ -254,7 +254,7 @@ G.ui.renderDaily=()=>{
 const zeroVideoCard=step=>{
   const v=G.videoById(step.videoId);if(!v)return '<div class="empty">الفيديو غير موجود في المكتبة.</div>';
   const q=v.quality||{},metrics=[q.views?fmtNumber(q.views)+" مشاهدة":null,q.likes?fmtNumber(q.likes)+" إعجاب":null].filter(Boolean);
-  return '<div class="zero-video-card"><div><small>'+E(v.provider)+'</small><h3>'+E(v.title)+'</h3><p>'+E(step.body||"")+'</p><div class="video-meta">'+metrics.map(x=>'<span>'+E(x)+'</span>').join("")+'<span>مختار لأنه مناسب لهاد الخطوة</span></div></div><a href="'+U(v.url)+'" target="_blank" rel="noopener">▶ فتح الفيديو</a></div>';
+  return '<div class="zero-video-card"><div><small>'+E(v.provider)+'</small><h3>'+E(v.title)+'</h3><p>'+E(step.body||"")+'</p><div class="video-pick-reason"><b>علاش هاد الفيديو؟</b><span>'+E(v.note||step.goal||"مناسب مباشرة لهاد الخطوة وماشي فيديو عام عشوائي.")+'</span></div><div class="video-meta">'+metrics.map(x=>'<span>'+E(x)+'</span>').join("")+'<span>هذا هو الفيديو المطلوب فهاد الخطوة</span></div></div><a href="'+U(v.url)+'" target="_blank" rel="noopener">▶ فتح الفيديو</a></div>';
 };
 
 G.ui.renderZeroPath=()=>{
@@ -270,7 +270,7 @@ G.ui.renderZeroPath=()=>{
     const n=i+1,done=G.zeroDone(x.id),locked=n>currentMax;
     return '<button class="zero-step '+(done?"done ":"")+(selected===n?"active ":"")+(locked?"locked":"")+'" data-zero-index="'+n+'" '+(locked?"disabled":"")+'><span>'+String(n).padStart(2,"0")+'</span><div><b>'+E(x.title)+'</b><small>'+E(x.goal||"")+'</small></div><em>'+(done?"✓":locked?"🔒":"→")+'</em></button>';
   }).join("");
-  $("#zeroStepList [data-zero-index]").forEach(b=>b.onclick=()=>{G.runtime.zeroSelected=Number(b.dataset.zeroIndex);G.ui.renderZeroPath()});
+  $$("#zeroStepList [data-zero-index]").forEach(b=>b.onclick=()=>{G.runtime.zeroSelected=Number(b.dataset.zeroIndex);G.ui.renderZeroPath()});
 
   let body='';
   if(step.type==="orientation"){
@@ -300,7 +300,7 @@ G.ui.renderZeroPath=()=>{
   }else body='<div class="zero-explain"><p>'+E(step.body||"")+'</p></div>';
 
   $("#zeroStepContent").innerHTML='<header class="zero-step-head"><div><small>الخطوة '+selected+' من '+steps.length+' • ≈ '+(step.minutes||15)+' د</small><h2>'+E(step.title)+'</h2><p>'+E(step.goal||"")+'</p></div><span class="zero-type">'+E(step.type)+'</span></header>'+body+'<footer class="zero-step-footer"><button class="ghost" id="zeroPrev" '+(selected<=1?"disabled":"")+'>→ السابق</button><button class="primary" id="zeroComplete">'+(G.zeroDone(step.id)?"✓ مكتملة — التالي":"كملت هاد الخطوة ←")+'</button></footer>';
-  $("#zeroStepContent [data-speak]").forEach(b=>b.onclick=()=>G.ui.speakGerman(b.dataset.speak));
+  $$("#zeroStepContent [data-speak]").forEach(b=>b.onclick=()=>G.ui.speakGerman(b.dataset.speak));
   const prev=$("#zeroPrev");if(prev)prev.onclick=()=>{if(selected>1){G.runtime.zeroSelected=selected-1;G.ui.renderZeroPath()}};
   const complete=$("#zeroComplete");
   if(complete)complete.onclick=()=>{
@@ -320,8 +320,77 @@ G.ui.renderZeroPath=()=>{
   const unlock=$("#unlockA1Now");if(unlock)unlock.onclick=()=>{G.completeZeroStep(step.id);G.state.dailySelected.A1=1;G.save();G.ui.setView("daily");toast("بدأنا A1 • اليوم 1")};
 };
 
+
+G.ui.renderNotebookAcademy=()=>{
+  const data=G.data.studyMethod;if(!data)return;
+  const sources=data.sources||[];
+  const active=sources.find(x=>x.id===G.runtime.notebookSource)||sources[0];
+  if(!active)return;
+  G.runtime.notebookSource=active.id;
+
+  $("#notebookGoldenRules").innerHTML=(data.rules||[]).map((x,i)=>'<article><span>'+String(i+1).padStart(2,"0")+'</span><p>'+E(x)+'</p></article>').join("");
+  $("#notebookSourceTabs").innerHTML=sources.map(x=>'<button class="'+(x.id===active.id?"active":"")+'" data-notebook-source="'+E(x.id)+'"><span>'+E(x.icon)+'</span>'+E(x.title)+'</button>').join("");
+  $$("#notebookSourceTabs [data-notebook-source]").forEach(b=>b.onclick=()=>{G.runtime.notebookSource=b.dataset.notebookSource;G.ui.renderNotebookAcademy()});
+
+  const phase=(title,items)=>'<section><small>'+E(title)+'</small><ol>'+items.map(x=>'<li>'+E(x)+'</li>').join("")+'</ol></section>';
+  $("#notebookSourceContent").innerHTML=
+    '<div class="notebook-source-title"><span>'+E(active.icon)+'</span><div><h4>'+E(active.title)+'</h4><p>'+E(active.goal)+'</p></div></div>'+
+    '<div class="notebook-phases">'+
+      phase("قبل ما تبدأ",active.before||[])+
+      phase("أثناء الدراسة",active.during||[])+
+      phase("من بعد",active.after||[])+
+    '</div>'+
+    '<div class="notebook-template-box"><div><small>شنو تكتب فالدفتر؟</small><pre>'+E((active.template||[]).join("\n"))+'</pre></div><div class="notebook-avoid"><small>ما تديرش هاد الغلطة</small><p>'+E(active.avoid||"")+'</p></div></div>';
+
+  $("#notebookExampleTitle").textContent=data.pageExample?.title||"مثال";
+  $("#notebookExample").innerHTML=(data.pageExample?.lines||[]).map(x=>'<code>'+E(x)+'</code>').join("");
+  $("#notebookWeeklyTitle").textContent=data.weekly?.title||"نهاية الأسبوع";
+  $("#notebookWeeklyTasks").innerHTML=(data.weekly?.tasks||[]).map(x=>'<li>'+E(x)+'</li>').join("");
+
+  $("#copyMasterNotebookTemplate").onclick=async()=>{
+    const lines=[
+      "DEUTSCH — TAGESSEITE",
+      "Datum: ______   Tag: ______   Thema: ______",
+      "",
+      "1) REGEL / MUSTER",
+      "قاعدة في سطر: ______",
+      "Beispiel 1: ______",
+      "Beispiel 2: ______",
+      "",
+      "2) 7 WÖRTER",
+      "1. ______ = ______",
+      "2. ______ = ______",
+      "3. ______ = ______",
+      "4. ______ = ______",
+      "5. ______ = ______",
+      "6. ______ = ______",
+      "7. ______ = ______",
+      "",
+      "3) VIDEO / HÖREN",
+      "الفكرة العامة: ______",
+      "سمعت/لاحظت: ______",
+      "Shadowing-Satz: ______",
+      "",
+      "4) MEINE 3 SÄTZE",
+      "1. ______",
+      "2. ______",
+      "3. ______",
+      "",
+      "5) FEHLER DES TAGES",
+      "✕ ______",
+      "✓ ______",
+      "Warum? ______",
+      "",
+      "6) REVIEW",
+      "D+1 □   D+3 □   D+7 □"
+    ].join("\n");
+    try{await navigator.clipboard.writeText(lines);toast("تنسخ نموذج صفحة الدفتر ✓")}catch{toast("المتصفح منع النسخ التلقائي")}
+  };
+};
+
 G.ui.renderGrammar=()=>{
-  G.ui.renderZeroPath();
+  try{G.ui.renderZeroPath()}catch(err){console.error(err);const box=$("#zeroStepContent");if(box)box.innerHTML='<div class="empty"><b>وقع خطأ فإظهار الخطوة</b>حدّث الصفحة مرة واحدة. إذا بقى المشكل، الخطأ مسجل فالكونسول.</div>'}
+  G.ui.renderNotebookAcademy();
   const sections=G.data.grammar?.sections||[];
   const current=sections.find(x=>x.id===G.runtime.grammarSection)||sections[0];
   if(!current)return;
@@ -329,7 +398,7 @@ G.ui.renderGrammar=()=>{
   $("#grammarOverallPct").textContent=overall.pct+"%";
   $("#grammarOverallDone").textContent=overall.done+"/"+overall.total+" قاعدة";
   $("#grammarTabs").innerHTML=sections.map(sec=>'<button class="'+(sec.id===current.id?"active":"")+'" data-grammar-tab="'+E(sec.id)+'">'+E(sec.label)+' <small>'+sec.topics.length+'</small></button>').join("");
-  $("#grammarTabs [data-grammar-tab]").forEach(b=>b.onclick=()=>{G.runtime.grammarSection=b.dataset.grammarTab;G.runtime.grammarSearch="";G.ui.renderGrammar()});
+  $$("#grammarTabs [data-grammar-tab]").forEach(b=>b.onclick=()=>{G.runtime.grammarSection=b.dataset.grammarTab;G.runtime.grammarSearch="";G.ui.renderGrammar()});
 
   const input=$("#grammarSearch");
   if(document.activeElement!==input)input.value=G.runtime.grammarSearch||"";
@@ -363,12 +432,12 @@ G.ui.renderGrammarTopics=()=>{
     '</article>';
   }).join(""):'<div class="empty"><b>ما لقيناش هاد الموضوع</b>جرّب كلمة أخرى مثل Dativ أو Perfekt أو weil.</div>';
 
-  $("#grammarTopics [data-expand-grammar]").forEach(b=>b.onclick=()=>{
+  $$("#grammarTopics [data-expand-grammar]").forEach(b=>b.onclick=()=>{
     const detail=$("#grammar-detail-"+CSS.escape(b.dataset.expandGrammar));
     if(detail){detail.hidden=!detail.hidden;b.textContent=detail.hidden?"شرح":"إغلاق"}
   });
-  $("#grammarTopics [data-complete-grammar]").forEach(b=>b.onclick=()=>{G.toggleGrammar(b.dataset.completeGrammar);G.ui.renderGrammar();toast(G.grammarDone(b.dataset.completeGrammar)?"تسجلت القاعدة":"تلغى الإنجاز")});
-  $("#grammarTopics [data-grammar-answer]").forEach(b=>b.onclick=()=>{
+  $$("#grammarTopics [data-complete-grammar]").forEach(b=>b.onclick=()=>{G.toggleGrammar(b.dataset.completeGrammar);G.ui.renderGrammar();toast(G.grammarDone(b.dataset.completeGrammar)?"تسجلت القاعدة":"تلغى الإنجاز")});
+  $$("#grammarTopics [data-grammar-answer]").forEach(b=>b.onclick=()=>{
     const id=b.dataset.grammarId,t=G.grammarTopic(id),choice=Number(b.dataset.grammarAnswer);
     if(!t)return;
     G.saveGrammarDrill(id,choice===t.drill.answer,choice);
