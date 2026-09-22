@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="ar" dir="rtl" data-theme="light">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="تعلّم الألمانية: دليل عربي مرتب من A1 إلى B2 يجمع أفضل فيديوهات القواعد والمفردات والنطق والاستماع ومواقع القراءة والكتابة لكل مستوى.">
-<title>تعلّم الألمانية — A1 إلى B2</title>
-<link rel="stylesheet" href="./styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="تعلّم الألمانية: دليل عربي مرتب من A1 إلى B2 للقواعد والمفردات والنطق والاستماع والقراءة والكتابة.">
+  <title>تعلّم الألمانية — A1 إلى B2</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 <header class="topbar">
@@ -20,20 +20,64 @@
   <section class="hero">
     <div>
       <p class="eyebrow">دليل موارد مرتب • A1 → B2</p>
-      <h1>لا تحتار فين تقرا. كل مهارة عندها المصدر ديالها.</h1>
-      <p class="hero-text">
-        القواعد والمفردات من <strong>Deutsch mit Ahmad Yaghi</strong>، النطق من <strong>Easy German</strong>،
-        الاستماع من قنوات مناسبة للمستوى، والقراءة والكتابة من مواقع فيها تمارين ونصوص مصنفة حسب A1/A2/B1/B2.
-      </p>
-      <div class="hero-badges">
-        <span>قواعد</span><span>مفردات</span><span>نطق</span><span>استماع</span><span>قراءة</span><span>كتابة</span><span>اختبار</span>
-      </div>
+      <h1>كل مهارة عندها المصدر ديالها.</h1>
+      <p class="hero-text">القواعد والمفردات من <strong>Deutsch mit Ahmad Yaghi</strong>، النطق من <strong>Easy German</strong>، والاستماع والقراءة والكتابة من مصادر مناسبة لكل مستوى.</p>
+      <div class="hero-badges"><span>قواعد</span><span>مفردات</span><span>نطق</span><span>استماع</span><span>قراءة</span><span>كتابة</span><span>اختبار</span></div>
     </div>
     <aside class="progress-panel">
-      <div class="progress-head"><span>تقدمك في الموارد</span><strong id="progressPercent">0%</strong></div>
+      <div class="progress-head"><span>تقدمك</span><strong id="progressPercent">0%</strong></div>
       <div class="bar"><i id="progressBar"></i></div>
       <p id="progressText">0 مورد مكتمل</p>
     </aside>
+  </section>
+
+
+  <section class="smart-hub" id="smartHub">
+    <div class="smart-head">
+      <div>
+        <p class="eyebrow">Study Engine</p>
+        <h2>شنو خاصك تقرا اليوم؟</h2>
+        <p class="muted">المحرك كيبني الخطة من الدروس اللي مازال ما كملتيهاش، المراجعات المستحقة، وتوازن المهارات.</p>
+      </div>
+      <label class="minutes-control">
+        <span>وقت الدراسة اليومي</span>
+        <select id="dailyMinutes">
+          <option value="60">1 ساعة</option>
+          <option value="90">1س 30د</option>
+          <option value="120">2 ساعات</option>
+          <option value="180">3 ساعات</option>
+          <option value="210">3س 30د</option>
+          <option value="240">4 ساعات</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="smart-stats">
+      <article><span>الدرس التالي</span><strong id="nextLessonStat">—</strong></article>
+      <article><span>مراجعات اليوم</span><strong id="dueReviewsStat">0</strong></article>
+      <article><span>سلسلة الدراسة</span><strong id="streakStat">0 يوم</strong></article>
+      <article><span>إنجاز المستوى</span><strong id="levelCompletionStat">0%</strong></article>
+    </div>
+
+    <div class="smart-grid">
+      <div class="today-card">
+        <div class="today-head">
+          <div>
+            <p class="eyebrow">خطة اليوم</p>
+            <h3 id="todayPlanTitle">نبني لك الخطة…</h3>
+          </div>
+          <span id="todayMinutes" class="time-pill">0 دقيقة</span>
+        </div>
+        <div id="todayPlan" class="today-plan"></div>
+      </div>
+
+      <aside class="coach-card">
+        <p class="eyebrow">تشخيص المسار</p>
+        <h3 id="coachTitle">كنحلل تقدمك…</h3>
+        <p id="coachText" class="muted"></p>
+        <div id="skillCoverage" class="skill-coverage"></div>
+      </aside>
+    </div>
   </section>
 
   <section class="level-switch" aria-label="اختيار المستوى">
@@ -50,44 +94,51 @@
       <p id="levelGoal" class="muted"></p>
     </div>
     <div class="level-stats">
-      <div><strong id="resourceCount">0</strong><span>مورد</span></div>
+      <div><strong id="videoCount">0</strong><span>فيديو مرتب</span></div>
+      <div><strong id="resourceCount">0</strong><span>مورد إضافي</span></div>
       <div><strong id="categoryCount">0</strong><span>مهارة</span></div>
     </div>
   </section>
 
-  <section class="study-order">
-    <div class="section-title">
-      <div><p class="eyebrow">الترتيب المقترح</p><h2>شنو تدير أولاً؟</h2></div>
-      <p class="muted">هذا هو المسار، ماشي غير لائحة روابط.</p>
-    </div>
+  <section>
+    <div class="section-title"><div><p class="eyebrow">الترتيب المقترح</p><h2>شنو تدير أولاً؟</h2></div></div>
     <div id="roadmap" class="roadmap"></div>
+  </section>
+
+  <section class="lesson-section">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">المسار الأساسي</p>
+        <h2>الفيديوهات بالترتيب</h2>
+        <p class="muted">امشِ من درس 01 إلى الأخير. الفيديوهات الطويلة موسومة كمراجعة وليست بديلاً عن الدروس الفردية.</p>
+      </div>
+      <div class="lesson-progress"><strong id="lessonProgress">0/0</strong><span>فيديو مكتمل</span></div>
+    </div>
+    <div id="lessons" class="lesson-list" aria-live="polite"></div>
   </section>
 
   <section>
     <div class="section-title">
-      <div><p class="eyebrow">المصادر</p><h2>موارد المستوى</h2></div>
-      <div id="filters" class="filters" aria-label="فلترة المهارات"></div>
+      <div><p class="eyebrow">التطبيق والمصادر</p><h2>قراءة، كتابة، اختبارات ومراجع</h2></div>
+      <div id="filters" class="filters"></div>
     </div>
     <div id="resources" class="resource-grid" aria-live="polite"></div>
   </section>
 
   <section class="rules-card">
-    <div>
-      <p class="eyebrow">كيف تستعمل الموقع</p>
-      <h2>كل مصدر عندو وظيفة واحدة.</h2>
-    </div>
+    <div><p class="eyebrow">طريقة الاستخدام</p><h2>المسار قبل الروابط.</h2></div>
     <ol>
-      <li>شاهد القواعد والمفردات من المصدر الرئيسي للمستوى.</li>
-      <li>درّب النطق منفصلاً، ما تخلطوش مع حفظ الكلمات.</li>
-      <li>دير استماع كل يوم، حتى لو 20–30 دقيقة.</li>
-      <li>قرا نصوص المستوى وجاوب على أسئلة الفهم.</li>
-      <li>اكتب بالمطلوب في مستوى A1/A2/B1/B2، ثم راجع الأخطاء.</li>
-      <li>علّم المورد “مكتمل” باش يبقى التقدم محفوظ عندك.</li>
+      <li>ابدأ بالقواعد والمفردات.</li>
+      <li>درّب النطق بشكل منفصل.</li>
+      <li>استمع يومياً.</li>
+      <li>اقرأ نصوص المستوى وجاوب على أسئلة الفهم.</li>
+      <li>اكتب ثم راجع الأخطاء.</li>
+      <li>علّم كل مورد كمكتمل باش يتحفظ تقدمك.</li>
     </ol>
   </section>
 </main>
 
-<footer>مشروع شخصي: تعلّم الألمانية • يعمل بدون Backend ويحفظ التقدم محلياً</footer>
+<footer>تعلّم الألمانية • مشروع شخصي Static بدون Backend</footer>
 <script src="./app.js" defer></script>
 </body>
 </html>
