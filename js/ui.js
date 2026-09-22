@@ -2,7 +2,7 @@ window.GMP=window.GMP||{};
 (()=>{
 const G=window.GMP,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const E=G.escape,U=G.url;
-const titles={dashboard:["مسارك اليوم","الرئيسية"],daily:["120 يوم","30 يوم"],grammar:["82 درساً","القواعد والحروف"],errors:["PERSONAL ERROR ENGINE","محرك الأخطاء"],roadmap:["A1 → B2","المسار"],review:["Spaced Review","المراجعة"],practice:["المهارات","التطبيق"],stats:["Progress","الإحصائيات"]};
+const titles={dashboard:["مسارك اليوم","الرئيسية"],daily:["120 يوم","30 يوم"],grammar:["82 درساً","القواعد والحروف"],notebook:["SMART NOTEBOOK LAB","الدفتر الذكي"],cartoons:["GERMAN IMMERSION","كرتون ألماني"],errors:["PERSONAL ERROR ENGINE","محرك الأخطاء"],roadmap:["A1 → B2","المسار"],review:["Spaced Review","المراجعة"],practice:["المهارات","التطبيق"],stats:["Progress","الإحصائيات"]};
 const toast=msg=>{const el=$("#toast");el.textContent=msg;el.classList.add("show");clearTimeout(G.runtime.toastTimer);G.runtime.toastTimer=setTimeout(()=>el.classList.remove("show"),1900)};
 G.ui={toast};
 G.ui.speakGerman=text=>{
@@ -485,6 +485,113 @@ G.ui.renderPractice=()=>{
 const errorSkillName=(level,id)=>G.errorSkills(level).find(x=>x.id===id)?.title||(id==="general"?"عام":id);
 const errorTypeName=t=>({cloze:"املأ الفراغ",reorder:"رتب الجملة",correct:"صحح الخطأ",dictation:"Dictation",quiz:"Quiz"}[t]||t);
 
+
+G.ui.renderNotebookLab=()=>{
+  const level=G.state.profile.level,date=G.dateKey(),data=G.data.studyMethod;if(!data)return;
+  let page=G.getNotebookPage(level,date);
+  const el=id=>$("#"+id);
+  const fields={theme:"nbTheme",rule:"nbRule",mistakeWrong:"nbWrong",mistakeRight:"nbRight",mistakeWhy:"nbWhy",recall:"nbRecall",summary:"nbSummary"};
+  Object.entries(fields).forEach(([key,id])=>{const node=el(id);if(node)node.value=page[key]||""});
+  if(el("nbEx1"))el("nbEx1").value=page.examples?.[0]||"";
+  if(el("nbEx2"))el("nbEx2").value=page.examples?.[1]||"";
+  if(el("nbD1"))el("nbD1").checked=Boolean(page.review?.d1);
+  if(el("nbD3"))el("nbD3").checked=Boolean(page.review?.d3);
+  if(el("nbD7"))el("nbD7").checked=Boolean(page.review?.d7);
+
+  $("#nbWords").innerHTML=Array.from({length:7},(_,i)=>'<label><span>'+(i+1)+'</span><input data-nb-word="'+i+'" placeholder="Wort = المعنى" value="'+E(page.words?.[i]||"")+'"></label>').join("");
+  $("#nbSentences").innerHTML=Array.from({length:3},(_,i)=>'<label><span>'+(i+1)+'</span><input data-nb-sentence="'+i+'" placeholder="Mein Satz..." value="'+E(page.sentences?.[i]||"")+'"></label>').join("");
+
+  $("#professionalNotebookRules").innerHTML=(data.rules||[]).map((x,i)=>'<article><span>'+String(i+1).padStart(2,"0")+'</span><p>'+E(x)+'</p></article>').join("");
+
+  const sources=data.sources||[],active=sources.find(x=>x.id===G.runtime.notebookSource)||sources[0];
+  if(active){
+    G.runtime.notebookSource=active.id;
+    $("#notebookLabTabs").innerHTML=sources.map(x=>'<button class="'+(x.id===active.id?"active":"")+'" data-nblab-source="'+E(x.id)+'">'+E(x.icon)+' '+E(x.title)+'</button>').join("");
+    $("#notebookLabTabs [data-nblab-source]").forEach(b=>b.onclick=()=>{G.runtime.notebookSource=b.dataset.nblabSource;G.ui.renderNotebookLab()});
+    $("#notebookLabMethod").innerHTML='<h4>'+E(active.goal)+'</h4>'+
+      '<div class="nblab-method-grid"><section><small>قبل</small><ol>'+(active.before||[]).map(x=>'<li>'+E(x)+'</li>').join("")+'</ol></section>'+
+      '<section><small>أثناء</small><ol>'+(active.during||[]).map(x=>'<li>'+E(x)+'</li>').join("")+'</ol></section>'+
+      '<section><small>بعد</small><ol>'+(active.after||[]).map(x=>'<li>'+E(x)+'</li>').join("")+'</ol></section></div>'+
+      '<div class="nblab-avoid"><b>ما تديرش:</b> '+E(active.avoid||"")+'</div>';
+  }
+
+  const score=()=>{
+    const vals=[
+      page.theme,page.rule,page.examples?.[0],page.examples?.[1],
+      ...(page.words||[]),...(page.sentences||[]),
+      page.mistakeWrong,page.mistakeRight,page.mistakeWhy,page.recall,page.summary
+    ];
+    const filled=vals.filter(x=>String(x||"").trim()).length;
+    return Math.round(filled/vals.length*100);
+  };
+  const preview=()=>{
+    $("#notebookPageScore").textContent=score()+"%";
+    $("#notebookPaperPreview").innerHTML=
+      '<div class="paper-head"><b>DEUTSCH • '+E(level)+'</b><span>'+E(date)+'</span><strong>'+E(page.theme||"Thema...")+'</strong></div>'+
+      '<div class="paper-cornell"><aside><small>RECALL / CUES</small><p>'+E(page.recall||"اكتب هنا شنو تتذكر بلا ما تشوف المصدر.")+'</p><small>FEHLER</small><p class="paper-wrong">✕ '+E(page.mistakeWrong||"______")+'</p><p class="paper-right">✓ '+E(page.mistakeRight||"______")+'</p></aside>'+
+      '<main><section><small>REGEL / MUSTER</small><p>'+E(page.rule||"قاعدة اليوم في سطر واحد.")+'</p><code>'+E(page.examples?.[0]||"Beispiel 1")+'</code><code>'+E(page.examples?.[1]||"Beispiel 2")+'</code></section>'+
+      '<section><small>7 WÖRTER</small><div class="paper-words">'+(page.words||[]).map(x=>'<span>'+E(x||"______")+'</span>').join("")+'</div></section>'+
+      '<section><small>MEINE 3 SÄTZE</small>'+(page.sentences||[]).map((x,i)=>'<p>'+(i+1)+'. '+E(x||"______")+'</p>').join("")+'</section></main></div>'+
+      '<div class="paper-summary"><small>ZUSAMMENFASSUNG</small><p>'+E(page.summary||"3–5 أسطر من راسك.")+'</p><div><span>D+1 '+(page.review?.d1?"☑":"□")+'</span><span>D+3 '+(page.review?.d3?"☑":"□")+'</span><span>D+7 '+(page.review?.d7?"☑":"□")+'</span></div></div>';
+  };
+  const save=patch=>{page={...page,...patch};G.saveNotebookPage(level,date,page);preview()};
+  Object.entries(fields).forEach(([key,id])=>{const node=el(id);if(node)node.oninput=()=>save({[key]:node.value})});
+  if(el("nbEx1"))el("nbEx1").oninput=()=>save({examples:[el("nbEx1").value,page.examples?.[1]||""]});
+  if(el("nbEx2"))el("nbEx2").oninput=()=>save({examples:[page.examples?.[0]||"",el("nbEx2").value]});
+  $("#nbWords [data-nb-word]").forEach(input=>input.oninput=()=>{const a=[...(page.words||Array(7).fill(""))];a[Number(input.dataset.nbWord)]=input.value;save({words:a})});
+  $("#nbSentences [data-nb-sentence]").forEach(input=>input.oninput=()=>{const a=[...(page.sentences||["","",""])];a[Number(input.dataset.nbSentence)]=input.value;save({sentences:a})});
+  ["d1","d3","d7"].forEach(k=>{const node=el("nb"+k.toUpperCase());if(node)node.onchange=()=>save({review:{...(page.review||{}),[k]:node.checked}})});
+  $("#copyNotebookLab").onclick=async()=>{
+    const lines=["DEUTSCH • "+level+" • "+date,"Thema: "+(page.theme||"______"),"",
+      "REGEL: "+(page.rule||"______"),"Beispiel 1: "+(page.examples?.[0]||"______"),"Beispiel 2: "+(page.examples?.[1]||"______"),"",
+      "7 WÖRTER",...(page.words||[]).map((x,i)=>(i+1)+". "+(x||"______")),"",
+      "MEINE 3 SÄTZE",...(page.sentences||[]).map((x,i)=>(i+1)+". "+(x||"______")),"",
+      "FEHLER: ✕ "+(page.mistakeWrong||"______"),"✓ "+(page.mistakeRight||"______"),"Warum? "+(page.mistakeWhy||"______"),"",
+      "ACTIVE RECALL: "+(page.recall||"______"),"SUMMARY: "+(page.summary||"______"),"",
+      "REVIEW: D+1 "+(page.review?.d1?"☑":"□")+"  D+3 "+(page.review?.d3?"☑":"□")+"  D+7 "+(page.review?.d7?"☑":"□")];
+    try{await navigator.clipboard.writeText(lines.join("\n"));toast("تنسخت صفحة الدفتر ✓")}catch{toast("المتصفح منع النسخ")}
+  };
+  preview();
+};
+
+G.ui.renderCartoons=()=>{
+  const data=G.data.cartoons;if(!data)return;
+  const levels=data.levels.map(x=>x.level);
+  const selected=levels.includes(G.runtime.cartoonLevel)?G.runtime.cartoonLevel:G.state.profile.level;
+  G.runtime.cartoonLevel=levels.includes(selected)?selected:"A1";
+  const pack=G.cartoonLevelData(G.runtime.cartoonLevel);if(!pack)return;
+  const progress=G.cartoonProgressForLevel(pack.level);
+  $("#cartoonLevelTabs").innerHTML=levels.map(id=>'<button class="'+(id===pack.level?"active":"")+'" data-cartoon-level="'+id+'">'+id+' <small>'+G.cartoonProgressForLevel(id).done+'/'+G.cartoonProgressForLevel(id).total+'</small></button>').join("");
+  $("#cartoonLevelTabs [data-cartoon-level]").forEach(b=>b.onclick=()=>{G.runtime.cartoonLevel=b.dataset.cartoonLevel;G.runtime.cartoonItemId=null;G.ui.renderCartoons()});
+  $("#cartoonLevelIntro").innerHTML='<div><small>'+E(pack.level)+' • '+progress.pct+'%</small><h3>'+E(pack.goal)+'</h3></div><div><b>'+progress.done+'/'+progress.total+'</b><span>مكتمل</span></div>';
+  $("#cartoonMethodSteps").innerHTML=(data.method?.steps||[]).map(x=>'<li>'+E(x)+'</li>').join("");
+
+  if(!G.runtime.cartoonItemId||!pack.items.some(x=>x.id===G.runtime.cartoonItemId))G.runtime.cartoonItemId=pack.items[0]?.id||null;
+  const current=G.cartoonItem(G.runtime.cartoonItemId);
+  $("#cartoonCards").innerHTML=pack.items.map(item=>{
+    const done=G.cartoonDone(item.id);
+    return '<article class="cartoon-card '+(done?"done":"")+'">'+
+      '<div class="cartoon-card-top"><span>'+E(item.source)+'</span><span>'+E(item.subtitles)+'</span></div>'+
+      '<h3>'+E(item.title)+'</h3><p>'+E(item.arabicSummary)+'</p>'+
+      '<div class="cartoon-why"><b>علاش مناسب؟</b><span>'+E(item.why)+'</span></div>'+
+      '<div class="cartoon-vocab">'+(item.vocab||[]).map(v=>'<span><b>'+E(v[0])+'</b> '+E(v[1])+'</span>').join("")+'</div>'+
+      '<footer><a href="'+U(item.url)+'" target="_blank" rel="noopener">▶ شاهد من المصدر الرسمي</a><button data-cartoon-train="'+E(item.id)+'">تدريب الحلقة</button><button data-cartoon-done="'+E(item.id)+'">'+(done?"✓ مكتمل":"علّم مكتمل")+'</button></footer>'+
+    '</article>';
+  }).join("");
+  $("#cartoonCards [data-cartoon-train]").forEach(b=>b.onclick=()=>{G.runtime.cartoonItemId=b.dataset.cartoonTrain;G.ui.renderCartoons()});
+  $("#cartoonCards [data-cartoon-done]").forEach(b=>b.onclick=()=>{const id=b.dataset.cartoonDone;G.setCartoonDone(id,!G.cartoonDone(id));G.ui.renderCartoons();toast(G.cartoonDone(id)?"تسجلت الحلقة":"تلغى الإنجاز")});
+
+  if(!current){$("#cartoonSelectedTraining").innerHTML="";return}
+  const n=G.getCartoonNotes(current.id),t=current.task||{};
+  $("#cartoonSelectedTraining").innerHTML='<div class="cartoon-training-head"><small>'+E(current.series)+'</small><h4>'+E(current.title)+'</h4><p>'+E(current.subtitles)+'</p></div>'+
+    '<div class="cartoon-task-grid"><article><b>👂 Listen</b><p>'+E(t.listen||"")+'</p></article><article><b>📖 Read</b><p>'+E(t.read||"")+'</p></article><article><b>🎙 Speak</b><p>'+E(t.speak||"")+'</p></article><article><b>✎ Write</b><p>'+E(t.write||"")+'</p></article></div>'+
+    '<div class="cartoon-notes"><label>ملخصك<textarea id="cartoonSummary" rows="3" placeholder="بالألمانية...">'+E(n.summary||"")+'</textarea></label>'+
+    '<label>5 كلمات<textarea id="cartoonWords" rows="2" placeholder="Wort = معنى">'+E(n.words||"")+'</textarea></label>'+
+    '<label>جمل Shadowing<textarea id="cartoonSentences" rows="2">'+E(n.sentences||"")+'</textarea></label>'+
+    '<label>شنو كان صعيب؟<textarea id="cartoonReflection" rows="2">'+E(n.reflection||"")+'</textarea></label></div>';
+  [["cartoonSummary","summary"],["cartoonWords","words"],["cartoonSentences","sentences"],["cartoonReflection","reflection"]].forEach(([id,key])=>{const node=$("#"+id);if(node)node.oninput=()=>G.setCartoonNotes(current.id,{[key]:node.value})});
+};
+
 G.ui.renderErrorEngine=()=>{
   const global=G.errorUnlockStatus("A1");
   const lock=$("#errorLockPanel"),content=$("#errorAcademyContent"),badge=$("#errorLockBadge");
@@ -670,6 +777,6 @@ G.ui.openQuiz=id=>{
   $("#quizDialog").showModal();
 };
 
-G.ui.renderView=v=>({dashboard:G.ui.renderDashboard,daily:G.ui.renderDaily,grammar:G.ui.renderGrammar,errors:G.ui.renderErrorEngine,roadmap:G.ui.renderRoadmap,review:G.ui.renderReview,practice:G.ui.renderPractice,stats:G.ui.renderStats}[v]||(()=>{}))();
-G.ui.renderAll=()=>{G.ui.renderDashboard();G.ui.renderDaily();G.ui.renderGrammar();G.ui.renderErrorEngine();G.ui.renderRoadmap();G.ui.renderReview();G.ui.renderPractice();G.ui.renderStats();$("#levelChip").textContent=G.state.profile.level};
+G.ui.renderView=v=>({dashboard:G.ui.renderDashboard,daily:G.ui.renderDaily,grammar:G.ui.renderGrammar,notebook:G.ui.renderNotebookLab,cartoons:G.ui.renderCartoons,errors:G.ui.renderErrorEngine,roadmap:G.ui.renderRoadmap,review:G.ui.renderReview,practice:G.ui.renderPractice,stats:G.ui.renderStats}[v]||(()=>{}))();
+G.ui.renderAll=()=>{G.ui.renderDashboard();G.ui.renderDaily();G.ui.renderGrammar();G.ui.renderNotebookLab();G.ui.renderCartoons();G.ui.renderErrorEngine();G.ui.renderRoadmap();G.ui.renderReview();G.ui.renderPractice();G.ui.renderStats();$("#levelChip").textContent=G.state.profile.level};
 })();
