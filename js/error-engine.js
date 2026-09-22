@@ -98,6 +98,10 @@ G.recordErrorAttempt=(exercise,userAnswer,correct,source="engine")=>{
     }
     note.wrongCount=(note.wrongCount||0)+1;note.correctStreak=0;note.resolved=false;
     note.userAnswer=String(userAnswer||"");note.answer=exercise.answer;note.lastAt=Date.now();
+    const reviewId="errorfix::"+exercise.id;
+    if(!G.state.reviewRecords[reviewId]){
+      G.state.reviewRecords[reviewId]={id:reviewId,type:"mistake",level:exercise.level,prompt:exercise.prompt,answer:exercise.answer,explain:exercise.explain||"",dueAt:Date.now()+G.DAY,interval:1,reps:0,last:null};
+    }
   }else if(note&&!note.resolved){
     note.correctStreak=(note.correctStreak||0)+1;note.lastAt=Date.now();
     if(note.correctStreak>=2){note.resolved=true;note.resolvedAt=Date.now()}
@@ -169,7 +173,9 @@ G.addManualError=(level,skill,wrong,correct,note="")=>{
     answer:String(correct||""),explain:String(note||""),wrongCount:1,correctStreak:0,resolved:false,
     createdAt:Date.now(),lastAt:Date.now()};
   G.state.errorManual.push({id,level,skill,wrong:String(wrong||""),correct:String(correct||""),note:String(note||""),at:Date.now()});
-  G.state.errorNotebook.push(item);G.touch();G.save();return item;
+  G.state.errorNotebook.push(item);
+  G.state.reviewRecords["errorfix::"+id]={id:"errorfix::"+id,type:"mistake",level,prompt:String(wrong||""),answer:String(correct||""),explain:String(note||""),dueAt:Date.now()+G.DAY,interval:1,reps:0,last:null};
+  G.touch();G.save();return item;
 };
 
 G.toggleErrorResolved=id=>{
