@@ -85,10 +85,18 @@
             <div id="dailyVideos" class="daily-videos"></div>
           </section>
 
+          <section class="card daily-listening-card">
+            <header><div><small>LISTEN</small><h3>استماع 3 مراحل</h3></div><button id="dailyListeningDone" class="ghost">علّم الاستماع مكتمل</button></header>
+            <div id="dailyListeningSource" class="listening-source"></div>
+            <ol id="dailyListeningSteps" class="listening-steps"></ol>
+          </section>
+
           <section class="card daily-reading-card">
             <header><div><small>READ</small><h3 id="dailyReadingTitle">نص اليوم</h3></div><button id="dailyReadingDone" class="ghost">علّم القراءة مكتملة</button></header>
             <article id="dailyReadingText" class="reading-text" lang="de"></article>
             <div class="reading-questions"><b>بعد القراءة</b><ol id="dailyReadingQuestions"></ol></div>
+            <button id="revealReadingAnswers" class="ghost reading-answer-toggle">أظهر إجابات نموذجية</button>
+            <div id="dailyReadingAnswers" class="reading-answers" hidden></div>
           </section>
 
           <section class="card daily-writing-card">
@@ -99,8 +107,28 @@
             <ul id="dailyWritingChecklist" class="checklist"></ul>
           </section>
 
+          <section class="card daily-speaking-card">
+            <header><div><small>SPEAK</small><h3>تحدث اليوم</h3></div><span class="time"><b id="dailySpeakingTarget">0</b> ث</span></header>
+            <p id="dailySpeakingPrompt" class="speaking-prompt"></p>
+            <ul id="dailySpeakingChecklist" class="checklist"></ul>
+            <div class="speaking-controls">
+              <button id="speakingTimerButton" class="secondary-btn">ابدأ المؤقت</button>
+              <span id="speakingTimerDisplay" class="speaking-timer">00:00</span>
+              <button id="recordSpeakingButton" class="ghost">🎙 تسجيل صوتي</button>
+            </div>
+            <audio id="speakingPlayback" controls hidden></audio>
+            <p class="note">التسجيل يبقى محلياً في المتصفح ولا يُرفع لأي خادم.</p>
+            <div class="speaking-rating">
+              <span>قيّم كلامك:</span>
+              <button data-speaking-rating="hard">صعب</button>
+              <button data-speaking-rating="good">متوسط</button>
+              <button data-speaking-rating="easy">مرتاح</button>
+            </div>
+            <button id="dailySpeakingDone" class="primary full">علّم التحدث مكتمل</button>
+          </section>
+
           <section class="card daily-vocab-card">
-            <header><div><small>VOCAB</small><h3>5 كلمات لليوم</h3></div><button class="link-btn" data-go="review">فتح المراجعة ←</button></header>
+            <header><div><small>VOCAB</small><h3>7 كلمات لليوم</h3></div><button class="link-btn" data-go="review">فتح المراجعة ←</button></header>
             <div id="dailyVocab" class="daily-vocab"></div>
           </section>
         </div>
