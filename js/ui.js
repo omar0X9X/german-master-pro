@@ -61,6 +61,8 @@ G.ui.renderDaily=()=>{
   if(!program)return;
 
   if(G.runtime.speakingTimer){clearInterval(G.runtime.speakingTimer);G.runtime.speakingTimer=null;G.runtime.speakingStartedAt=null}
+  if(G.runtime.mediaRecorder?.state==="recording"){try{G.runtime.mediaRecorder.stop()}catch{}}
+  if(G.runtime.mediaStream){G.runtime.mediaStream.getTracks().forEach(t=>t.stop());G.runtime.mediaStream=null}
 
   const dayNo=G.state.dailySelected[selected]||G.nextDailyDay(selected);
   const day=G.dailyDay(selected,dayNo);
