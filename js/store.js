@@ -50,7 +50,7 @@ G.setDailyDone=(levelId,day,type,value=true)=>{
 G.dailyVideoDone=(levelId,day,videoId)=>G.dailyDone(levelId,day,"video::"+videoId);
 G.dailyDayProgress=(levelId=G.state.profile.level,day=null)=>{
   const d=G.dailyDay(levelId,day);if(!d)return{done:0,total:0,pct:0,complete:false};
-  const items=[...d.videos.map(id=>"video::"+id),"listening","reading","writing","speaking"];
+  const items=[...d.videos.map(id=>"video::"+id),"grammar","listening","reading","writing","speaking"];
   const done=items.filter(type=>G.dailyDone(levelId,d.day,type)).length;
   return{done,total:items.length,pct:items.length?Math.round(done/items.length*100):0,complete:done===items.length};
 };
