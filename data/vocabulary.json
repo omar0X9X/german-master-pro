@@ -2023,6 +2023,223 @@
       "de": "die Umsetzung",
       "ar": "التنفيذ",
       "example": "Die Umsetzung des Plans dauert mehrere Jahre."
+    },
+    {
+      "id": "a1-vocab-076",
+      "level": "A1",
+      "de": "der Markt",
+      "ar": "السوق",
+      "example": "Am Samstag gehe ich auf den Markt."
+    },
+    {
+      "id": "a1-vocab-077",
+      "level": "A1",
+      "de": "die Apotheke",
+      "ar": "الصيدلية",
+      "example": "Die Apotheke ist neben dem Supermarkt."
+    },
+    {
+      "id": "a1-vocab-078",
+      "level": "A1",
+      "de": "der Termin",
+      "ar": "الموعد",
+      "example": "Ich habe morgen einen Termin."
+    },
+    {
+      "id": "a1-vocab-079",
+      "level": "A1",
+      "de": "die Fahrkarte",
+      "ar": "تذكرة النقل",
+      "example": "Ich kaufe eine Fahrkarte."
+    },
+    {
+      "id": "a1-vocab-080",
+      "level": "A1",
+      "de": "der Koffer",
+      "ar": "الحقيبة",
+      "example": "Mein Koffer ist schwer."
+    },
+    {
+      "id": "a1-vocab-081",
+      "level": "A1",
+      "de": "der Schlüssel",
+      "ar": "المفتاح",
+      "example": "Wo ist mein Schlüssel?"
+    },
+    {
+      "id": "a1-vocab-082",
+      "level": "A1",
+      "de": "die Nachricht",
+      "ar": "الرسالة",
+      "example": "Ich schreibe eine Nachricht."
+    },
+    {
+      "id": "a1-vocab-083",
+      "level": "A1",
+      "de": "die Adresse",
+      "ar": "العنوان",
+      "example": "Wie ist deine Adresse?"
+    },
+    {
+      "id": "a2-vocab-072",
+      "level": "A2",
+      "de": "die Beschwerde",
+      "ar": "الشكوى",
+      "example": "Ich schreibe eine Beschwerde."
+    },
+    {
+      "id": "a2-vocab-073",
+      "level": "A2",
+      "de": "die Erstattung",
+      "ar": "الاسترجاع المالي",
+      "example": "Ich möchte eine Erstattung."
+    },
+    {
+      "id": "a2-vocab-074",
+      "level": "A2",
+      "de": "die Einladung",
+      "ar": "الدعوة",
+      "example": "Danke für die Einladung."
+    },
+    {
+      "id": "a2-vocab-075",
+      "level": "A2",
+      "de": "die Bestätigung",
+      "ar": "التأكيد",
+      "example": "Ich habe eine Bestätigung bekommen."
+    },
+    {
+      "id": "a2-vocab-076",
+      "level": "A2",
+      "de": "die Abfahrt",
+      "ar": "موعد الانطلاق",
+      "example": "Die Abfahrt ist um 10 Uhr."
+    },
+    {
+      "id": "a2-vocab-077",
+      "level": "A2",
+      "de": "die Ankunft",
+      "ar": "الوصول",
+      "example": "Die Ankunft ist um 12 Uhr."
+    },
+    {
+      "id": "a2-vocab-078",
+      "level": "A2",
+      "de": "die Änderung",
+      "ar": "التغيير",
+      "example": "Es gibt eine Änderung im Fahrplan."
+    },
+    {
+      "id": "b1-vocab-072",
+      "level": "B1",
+      "de": "die Rücksicht",
+      "ar": "مراعاة الآخرين",
+      "example": "Man sollte Rücksicht auf andere nehmen."
+    },
+    {
+      "id": "b1-vocab-073",
+      "level": "B1",
+      "de": "die Voraussetzung",
+      "ar": "الشرط",
+      "example": "Sprachkenntnisse sind eine wichtige Voraussetzung."
+    },
+    {
+      "id": "b1-vocab-074",
+      "level": "B1",
+      "de": "die Auswirkung",
+      "ar": "الأثر",
+      "example": "Die Entscheidung hat große Auswirkungen."
+    },
+    {
+      "id": "b1-vocab-075",
+      "level": "B1",
+      "de": "die Gelegenheit",
+      "ar": "الفرصة",
+      "example": "Ich hatte die Gelegenheit, viel zu sprechen."
+    },
+    {
+      "id": "b1-vocab-076",
+      "level": "B1",
+      "de": "der Fortschritt",
+      "ar": "التقدم",
+      "example": "Mein Fortschritt motiviert mich."
+    },
+    {
+      "id": "b1-vocab-077",
+      "level": "B1",
+      "de": "die Rückmeldung",
+      "ar": "التغذية الراجعة",
+      "example": "Gute Rückmeldung hilft beim Lernen."
+    },
+    {
+      "id": "b1-vocab-078",
+      "level": "B1",
+      "de": "die Begründung",
+      "ar": "التبرير",
+      "example": "Die Begründung ist nachvollziehbar."
+    },
+    {
+      "id": "b1-vocab-079",
+      "level": "B1",
+      "de": "die Einstellung",
+      "ar": "الموقف / التوجه",
+      "example": "Seine Einstellung hat sich verändert."
+    },
+    {
+      "id": "b2-vocab-073",
+      "level": "B2",
+      "de": "die Einordnung",
+      "ar": "وضع الشيء في سياقه",
+      "example": "Eine sachliche Einordnung ist notwendig."
+    },
+    {
+      "id": "b2-vocab-074",
+      "level": "B2",
+      "de": "die Tragweite",
+      "ar": "حجم التأثير",
+      "example": "Die Tragweite der Entscheidung ist noch unklar."
+    },
+    {
+      "id": "b2-vocab-075",
+      "level": "B2",
+      "de": "der Interessenkonflikt",
+      "ar": "تضارب المصالح",
+      "example": "Ein Interessenkonflikt muss transparent gemacht werden."
+    },
+    {
+      "id": "b2-vocab-076",
+      "level": "B2",
+      "de": "die Verhältnismäßigkeit",
+      "ar": "التناسب",
+      "example": "Die Verhältnismäßigkeit der Maßnahme wird diskutiert."
+    },
+    {
+      "id": "b2-vocab-077",
+      "level": "B2",
+      "de": "die Belastbarkeit",
+      "ar": "الموثوقية / المتانة",
+      "example": "Die Belastbarkeit der Daten ist begrenzt."
+    },
+    {
+      "id": "b2-vocab-078",
+      "level": "B2",
+      "de": "der Handlungsspielraum",
+      "ar": "هامش التصرف",
+      "example": "Der Handlungsspielraum ist klein."
+    },
+    {
+      "id": "b2-vocab-079",
+      "level": "B2",
+      "de": "die Wechselwirkung",
+      "ar": "التأثير المتبادل",
+      "example": "Zwischen beiden Faktoren besteht eine Wechselwirkung."
+    },
+    {
+      "id": "b2-vocab-080",
+      "level": "B2",
+      "de": "die Rahmenbedingung",
+      "ar": "الشرط المحيط",
+      "example": "Die Rahmenbedingungen haben sich verändert."
     }
   ],
   "updatedAt": "2026-09-22"
