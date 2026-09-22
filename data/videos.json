@@ -1,0 +1,1016 @@
+{
+  "version": 1,
+  "verifiedAt": "2026-09-22",
+  "policy": "Prioritize relevant CEFR-level videos from trusted channels; display public view/like snapshots only when independently verified. Comment sentiment is not claimed unless directly available.",
+  "videos": [
+    {
+      "id": "a1-v01",
+      "level": "A1",
+      "title": "الأبجدية والنطق الألماني",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=hAkxKMlYUI4",
+      "minutes": 30,
+      "skill": "النطق",
+      "core": true,
+      "quality": {
+        "views": 955959,
+        "likes": 21000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      }
+    },
+    {
+      "id": "a1-v02",
+      "level": "A1",
+      "title": "Der / Die / Das — أدوات التعريف",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=GryBXoFhF50",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a1-v03",
+      "level": "A1",
+      "title": "الأرقام + الأعداد الترتيبية",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=2zDXUpcFkAA",
+      "minutes": 30,
+      "skill": "المفردات",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a1-v04",
+      "level": "A1",
+      "title": "التحيات الأساسية",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=zvqyYvY8bBY",
+      "minutes": 30,
+      "skill": "المفردات",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a1-v05",
+      "level": "A1",
+      "title": "Personalpronomen — الضمائر الشخصية",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=VvOO5mIPAwA",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a1-v06",
+      "level": "A1",
+      "title": "Sich vorstellen — التعريف بالنفس",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=HI6fMXcDsQQ",
+      "minutes": 30,
+      "skill": "المحادثة",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a1-v07",
+      "level": "A1",
+      "title": "الأفعال المنتظمة في Präsens",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=RnAjqnwYZ3w",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a1-v08",
+      "level": "A1",
+      "title": "Der Nominativ",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=2nvLU2h5A9M",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a1-v09",
+      "level": "A1",
+      "title": "قراءة الساعة بالألمانية",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=WTLPMj59xGE",
+      "minutes": 30,
+      "skill": "المفردات",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a1-v10",
+      "level": "A1",
+      "title": "300 كلمة أساسية A1 — الجزء الثاني",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=IlO0Kt4-jaY",
+      "minutes": 30,
+      "skill": "المفردات",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a1-v11",
+      "level": "A1",
+      "title": "أهم 100 جملة ألمانية",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=7XDHKxtP9yY",
+      "minutes": 30,
+      "skill": "المحادثة",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a1-v12",
+      "level": "A1",
+      "title": "Introduce Yourself in Slow German",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=huwi-cjPPXU",
+      "minutes": 35,
+      "skill": "الاستماع",
+      "core": true,
+      "quality": {
+        "views": 2767290,
+        "likes": 60000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      }
+    },
+    {
+      "id": "a1-v13",
+      "level": "A1",
+      "title": "5 Tips to Improve German Pronunciation",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=JE3LKSUFFTQ",
+      "minutes": 25,
+      "skill": "النطق",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a1-v14",
+      "level": "A1",
+      "title": "Nicos Weg A1 — تدريب الاستماع",
+      "provider": "DW Deutsch lernen",
+      "url": "https://www.youtube.com/watch?v=4-eDoThe6qo",
+      "minutes": 35,
+      "skill": "الاستماع",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a1-v15",
+      "level": "A1",
+      "title": "شرح امتحان A1 — Goethe + ÖSD",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=RQGwsfumEik",
+      "minutes": 45,
+      "skill": "اختبار",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a2-v01",
+      "level": "A2",
+      "title": "All German Cases Explained",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=_F_zkRPRX6A",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a2-v02",
+      "level": "A2",
+      "title": "12 Verbs + Accusative",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=aZTUJm8O2Ds",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a2-v03",
+      "level": "A2",
+      "title": "Akkusativ und Dativ — شرح مبسط",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=chwkSIN-rw8",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a2-v04",
+      "level": "A2",
+      "title": "Das Perfekt — Hilfsverb + Partizip II",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=_NB97-EEPQ8",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a2-v05",
+      "level": "A2",
+      "title": "German Word Order",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=xoDpAtfnrAc",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a2-v06",
+      "level": "A2",
+      "title": "400 كلمة أساسية A2",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=aVBXjc8JsXw",
+      "minutes": 30,
+      "skill": "المفردات",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a2-v07",
+      "level": "A2",
+      "title": "أهم 100 فعل A1–A2 مع أمثلة",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=LcVYhOqNp-Y",
+      "minutes": 30,
+      "skill": "المفردات",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a2-v08",
+      "level": "A2",
+      "title": "How to pronounce R in German",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=3aJOsLVJp8U",
+      "minutes": 25,
+      "skill": "النطق",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a2-v09",
+      "level": "A2",
+      "title": "Pronunciation Training",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=JE3LKSUFFTQ",
+      "minutes": 25,
+      "skill": "النطق",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a2-v10",
+      "level": "A2",
+      "title": "My Daily Routine — A2/B1 Listening",
+      "provider": "Easy Podcasts",
+      "url": "https://www.youtube.com/watch?v=y5pSgCUQrD8",
+      "minutes": 35,
+      "skill": "الاستماع",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a2-v11",
+      "level": "A2",
+      "title": "Nicos Weg A2 — Listening",
+      "provider": "DW Deutsch lernen",
+      "url": "https://www.youtube.com/watch?v=Lg5P2w_Ro1c",
+      "minutes": 35,
+      "skill": "الاستماع",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "a2-v12",
+      "level": "A2",
+      "title": "مراجعة قواعد A2",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=AYVxtWFqwf4",
+      "minutes": 35,
+      "skill": "مراجعة",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b1-v01",
+      "level": "B1",
+      "title": "أهم 100 كلمة B1",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=rXizCXxA9FQ",
+      "minutes": 30,
+      "skill": "المفردات",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b1-v02",
+      "level": "B1",
+      "title": "100 جملة أساسية B1 — الجزء الأول",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=vPtr4DdjdS0",
+      "minutes": 30,
+      "skill": "المحادثة",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b1-v03",
+      "level": "B1",
+      "title": "Relativsätze — بناء جمل أطول",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=XchW3E0kTPk",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b1-v04",
+      "level": "B1",
+      "title": "OBWOHL vs. TROTZDEM",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=X6XwtaL_4fE",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b1-v05",
+      "level": "B1",
+      "title": "Konjunktiv II",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=uMlagwZP9dw",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": {
+        "views": 77973,
+        "likes": 2600,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      }
+    },
+    {
+      "id": "b1-v06",
+      "level": "B1",
+      "title": "Real German Conversations — Stories & Humor",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=gw_BUDk610w",
+      "minutes": 35,
+      "skill": "الاستماع",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b1-v07",
+      "level": "B1",
+      "title": "Understand Fast Spoken German",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=nOAg4xyScmI",
+      "minutes": 35,
+      "skill": "الاستماع",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b1-v08",
+      "level": "B1",
+      "title": "B1 — وصف الصورة في الامتحان",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=tl2pyL6eua4",
+      "minutes": 45,
+      "skill": "اختبار",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b1-v09",
+      "level": "B1",
+      "title": "Nicos Weg B1 — Listening",
+      "provider": "DW Deutsch lernen",
+      "url": "https://www.youtube.com/watch?v=LkufozluseI",
+      "minutes": 35,
+      "skill": "الاستماع",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b1-v10",
+      "level": "B1",
+      "title": "B1.1 كامل — للمراجعة",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=7daah6irrGs",
+      "minutes": 35,
+      "skill": "مراجعة",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b2-v01",
+      "level": "B2",
+      "title": "OBWOHL vs. TROTZDEM — تثبيت الربط",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=X6XwtaL_4fE",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b2-v02",
+      "level": "B2",
+      "title": "Relative Clauses — Relativsätze",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=XchW3E0kTPk",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b2-v03",
+      "level": "B2",
+      "title": "Werden: Futur, Passiv & Konjunktiv",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=2axHWzwne34",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b2-v04",
+      "level": "B2",
+      "title": "Konjunktiv II — Advanced Use",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=uMlagwZP9dw",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": {
+        "views": 77973,
+        "likes": 2600,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      }
+    },
+    {
+      "id": "b2-v05",
+      "level": "B2",
+      "title": "All German Cases — Advanced Review",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=_F_zkRPRX6A",
+      "minutes": 30,
+      "skill": "القواعد",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b2-v06",
+      "level": "B2",
+      "title": "Real Stories from Berlin — B2",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=PkuuMLiItWQ",
+      "minutes": 35,
+      "skill": "الاستماع",
+      "core": true,
+      "quality": {
+        "views": 200538,
+        "likes": 4600,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      }
+    },
+    {
+      "id": "b2-v07",
+      "level": "B2",
+      "title": "7 Tips to Understand Fast Spoken German",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=nOAg4xyScmI",
+      "minutes": 35,
+      "skill": "الاستماع",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b2-v08",
+      "level": "B2",
+      "title": "Pronunciation Strategy",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=JE3LKSUFFTQ",
+      "minutes": 25,
+      "skill": "النطق",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b2-v09",
+      "level": "B2",
+      "title": "قواعد A1–C1 — استخدم فقط فصول B1/B2",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=hMEnKT_aLCs",
+      "minutes": 35,
+      "skill": "مراجعة",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "b2-v10",
+      "level": "B2",
+      "title": "تحدث بالألمانية — قسم B2 فقط",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=VfYjoM1T9a8",
+      "minutes": 35,
+      "skill": "مراجعة",
+      "core": true,
+      "quality": null
+    },
+    {
+      "id": "eg-a1-greetings",
+      "level": "A1",
+      "title": "Learn Basic German Greetings & Farewells in Slow German",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=aRlakaPVrEw",
+      "minutes": 18,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 486500,
+        "likes": 12000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a1-objects",
+      "level": "A1",
+      "title": "Top 50 Everyday Objects in Slow German",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=eKLtI48rvtw",
+      "minutes": 17,
+      "skill": "المفردات",
+      "quality": {
+        "views": 773307,
+        "likes": 19000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a1-morning",
+      "level": "A1",
+      "title": "Our Morning Routine in Slow German",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=LQiHX6OY_BI",
+      "minutes": 9,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 941158,
+        "likes": 21000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a1-supermarket",
+      "level": "A1",
+      "title": "Supermarket in Slow German (for Beginners)",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=D91icSuPYQ4",
+      "minutes": 16,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 1445600,
+        "likes": 34000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a1-100words",
+      "level": "A1",
+      "title": "100 Words You Should Know When Coming to Germany",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=r8HiWsBe5ko",
+      "minutes": 15,
+      "skill": "المفردات",
+      "quality": {
+        "views": 3363370,
+        "likes": 109000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a1-gender",
+      "level": "A1",
+      "title": "How to know a word's gender",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=cyRDSqopIyA",
+      "minutes": 9,
+      "skill": "القواعد",
+      "quality": {
+        "views": 1611114,
+        "likes": 57000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a1-irregular",
+      "level": "A1",
+      "title": "Irregular Verbs in German: Haben, Sein, Gehen",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=tj_YhY2RMxs",
+      "minutes": 8,
+      "skill": "القواعد",
+      "quality": {
+        "views": 384417,
+        "likes": 7000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a1-sentence",
+      "level": "A1",
+      "title": "German Sentence Structure Explained in 10 Minutes",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=qDrgJz9V2Yk",
+      "minutes": 11,
+      "skill": "القواعد",
+      "quality": {
+        "views": 704789,
+        "likes": 12000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a1-coffee",
+      "level": "A1",
+      "title": "How to order Coffee in Germany?",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=jUOvnHOsvXM",
+      "minutes": 5,
+      "skill": "المحادثة",
+      "quality": {
+        "views": 745864,
+        "likes": 22000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a1-intro-old",
+      "level": "A1",
+      "title": "Introduce yourself in German (for absolute beginners)",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=Yaelm87PTvg",
+      "minutes": 5,
+      "skill": "المحادثة",
+      "quality": null,
+      "core": false
+    },
+    {
+      "id": "eg-a1-regular",
+      "level": "A1",
+      "title": "Conjugation of regular verbs: Sagen, Machen, Hören",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=9h8p08qziG0",
+      "minutes": 7,
+      "skill": "القواعد",
+      "quality": null,
+      "core": false
+    },
+    {
+      "id": "eg-a1-bakery",
+      "level": "A1",
+      "title": "At the Bakery in Slow German",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=1bFgK6wtuNY",
+      "minutes": 15,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 388540,
+        "likes": 11000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a2-aus-von",
+      "level": "A2",
+      "title": "When to Use 'aus' vs. 'von'",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=iog_s5I6idA",
+      "minutes": 9,
+      "skill": "القواعد",
+      "quality": {
+        "views": 834357,
+        "likes": 26000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a2-hotel",
+      "level": "A2",
+      "title": "At the Hotel in Slow German",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=_dddL1ddmXQ",
+      "minutes": 15,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 265946,
+        "likes": 7200,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a2-library",
+      "level": "A2",
+      "title": "At the Library in Slow German",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=zdRUMMSK0do",
+      "minutes": 16,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 167309,
+        "likes": 4900,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a2-bakery",
+      "level": "A2",
+      "title": "At the Bakery in Slow German",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=1bFgK6wtuNY",
+      "minutes": 15,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 388540,
+        "likes": 11000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a2-sentence",
+      "level": "A2",
+      "title": "German Sentence Structure Explained in 10 Minutes",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=qDrgJz9V2Yk",
+      "minutes": 11,
+      "skill": "القواعد",
+      "quality": {
+        "views": 704789,
+        "likes": 12000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a2-gender",
+      "level": "A2",
+      "title": "How to know a word's gender",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=cyRDSqopIyA",
+      "minutes": 9,
+      "skill": "القواعد",
+      "quality": {
+        "views": 1611114,
+        "likes": 57000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-a2-coffee",
+      "level": "A2",
+      "title": "How to order Coffee in Germany?",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=jUOvnHOsvXM",
+      "minutes": 5,
+      "skill": "المحادثة",
+      "quality": {
+        "views": 745864,
+        "likes": 22000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-b1-happy",
+      "level": "B1",
+      "title": "Small Things That Make Germans Happy",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=G-WTBhyoK7o",
+      "minutes": 15,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 739277,
+        "likes": 14000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-b1-dream",
+      "level": "B1",
+      "title": "What Is Your Dream?",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=TaXWJuiITqM",
+      "minutes": 15,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 283331,
+        "likes": 6200,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-b1-profession",
+      "level": "B1",
+      "title": "Germans Describe Their Profession",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=xvqPIUXCUQo",
+      "minutes": 15,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 676206,
+        "likes": 14000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-b1-personal",
+      "level": "B1",
+      "title": "Germans Answer 6 Personal Questions",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=JgDYckZCvAQ",
+      "minutes": 14,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 313326,
+        "likes": 8400,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-b1-childhood",
+      "level": "B1",
+      "title": "What's Childhood in Germany Like?",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=eFXS0qZ6SFc",
+      "minutes": 15,
+      "skill": "الاستماع",
+      "quality": null,
+      "core": false
+    },
+    {
+      "id": "eg-b1-sunday",
+      "level": "B1",
+      "title": "What do Germans Do on a Sunday?",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=XJBdJmA78xI",
+      "minutes": 13,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 518000,
+        "likes": null,
+        "comments": 400,
+        "verifiedAt": "2026-09-22",
+        "source": "public video metadata mirror"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-b1-polite",
+      "level": "B1",
+      "title": "How to Make Polite Requests in Everyday German",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=_H4MRuUUJs8",
+      "minutes": 16,
+      "skill": "المحادثة",
+      "quality": {
+        "views": 208300,
+        "likes": null,
+        "verifiedAt": "2026-09-22",
+        "source": "public transcript metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-b2-happy",
+      "level": "B2",
+      "title": "Small Things That Make Germans Happy",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=G-WTBhyoK7o",
+      "minutes": 15,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 739277,
+        "likes": 14000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-b2-profession",
+      "level": "B2",
+      "title": "Germans Describe Their Profession",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=xvqPIUXCUQo",
+      "minutes": 15,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 676206,
+        "likes": 14000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-b2-dream",
+      "level": "B2",
+      "title": "What Is Your Dream?",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=TaXWJuiITqM",
+      "minutes": 15,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 283331,
+        "likes": 6200,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "core": false
+    },
+    {
+      "id": "eg-b2-sunday",
+      "level": "B2",
+      "title": "What do Germans Do on a Sunday?",
+      "provider": "Easy German",
+      "url": "https://www.youtube.com/watch?v=XJBdJmA78xI",
+      "minutes": 13,
+      "skill": "الاستماع",
+      "quality": {
+        "views": 518000,
+        "likes": null,
+        "comments": 400,
+        "verifiedAt": "2026-09-22",
+        "source": "public video metadata mirror"
+      },
+      "core": false
+    }
+  ]
+}
