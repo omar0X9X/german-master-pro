@@ -1,0 +1,758 @@
+{
+  "meta": {
+    "title": "German Path A1–B2",
+    "language": "ar",
+    "direction": "rtl",
+    "weeks": 24,
+    "studyDaysPerWeek": 6,
+    "note": "هذه خطة مكثفة وليست ضماناً زمنياً للوصول إلى B2."
+  },
+  "levels": [
+    {
+      "id": "A1",
+      "label": "مبتدئ",
+      "summary": "الأساس: الأصوات، التعارف، الجملة البسيطة، الحاضر، المقالات والحالات الأولى.",
+      "weeks": [
+        {
+          "number": 1,
+          "title": "الأبجدية والنطق والبدايات",
+          "goal": "تمييز الأصوات الألمانية وقراءة الكلمات الأساسية والتعريف بالنفس.",
+          "focus": [
+            "Alphabet & Buchstabieren",
+            "ä / ö / ü / ch / r",
+            "Begrüßung",
+            "Ich heiße… / Ich komme aus…"
+          ]
+        },
+        {
+          "number": 2,
+          "title": "الجملة والحاضر",
+          "goal": "بناء جملة خبرية وسؤال بسيط مع تصريف أفعال شائعة.",
+          "focus": [
+            "Verbposition 2",
+            "W-Fragen",
+            "sein / haben",
+            "Präsens"
+          ]
+        },
+        {
+          "number": 3,
+          "title": "الأسماء والمقالات",
+          "goal": "استعمال der/die/das وein/eine مع مفردات الحياة اليومية.",
+          "focus": [
+            "Artikel",
+            "Plural",
+            "Familie",
+            "Alltag"
+          ]
+        },
+        {
+          "number": 4,
+          "title": "Akkusativ والاحتياجات",
+          "goal": "استعمال المفعول المباشر في الطلب والشراء والطعام.",
+          "focus": [
+            "Akkusativ",
+            "haben/brauchen/kaufen",
+            "Essen",
+            "Einkaufen"
+          ]
+        },
+        {
+          "number": 5,
+          "title": "الأفعال القابلة للفصل والوقت",
+          "goal": "التحدث عن الروتين والساعة والمواعيد.",
+          "focus": [
+            "Trennbare Verben",
+            "Uhrzeit",
+            "Tagesablauf",
+            "Modalverben basics"
+          ]
+        },
+        {
+          "number": 6,
+          "title": "مراجعة A1 ومشروع صغير",
+          "goal": "دمج المهارات في تقديم النفس وروتينك وموقف يومي كامل.",
+          "focus": [
+            "A1 Wiederholung",
+            "Mini-Dialoge",
+            "Kurztext",
+            "Hören & Sprechen"
+          ]
+        }
+      ],
+      "dailyRoutine": [
+        {
+          "title": "قواعد + بناء الجملة",
+          "purpose": "افهم النمط ثم كوّن جملك",
+          "minutes": 190,
+          "tasks": [
+            "45د شرح قواعد مع تدوين 5 أمثلة",
+            "40د مفردات واسترجاع نشط",
+            "30د تمارين جمل مكتوبة",
+            "30د استماع بطيء",
+            "30د Shadowing بصوت مرتفع",
+            "15د مراجعة أخطاء اليوم"
+          ]
+        },
+        {
+          "title": "نطق + استماع",
+          "purpose": "درّب الأذن واللسان معاً",
+          "minutes": 190,
+          "tasks": [
+            "35د أصوات ونطق الكلمات الصعبة",
+            "45د استماع مع النص",
+            "30د إعادة المقاطع دون ترجمة",
+            "35د مفردات من التسجيل",
+            "30د Shadowing",
+            "15د اختبار ذاتي"
+          ]
+        },
+        {
+          "title": "مفردات + محادثة",
+          "purpose": "حوّل الكلمات إلى عبارات قابلة للاستعمال",
+          "minutes": 190,
+          "tasks": [
+            "45د مفردات حسب الموضوع",
+            "35د جمل قصيرة من الذاكرة",
+            "30د حوار ذاتي سؤال/جواب",
+            "30د فيديو محادثة",
+            "35د تكرار وتقليد",
+            "15د مراجعة"
+          ]
+        },
+        {
+          "title": "قراءة + قواعد",
+          "purpose": "لاحظ القواعد داخل نص حقيقي",
+          "minutes": 190,
+          "tasks": [
+            "40د قراءة نص مناسب للمستوى",
+            "35د استخراج التراكيب",
+            "40د تمارين قواعد",
+            "30د تلخيص شفهي بسيط",
+            "30د مفردات",
+            "15د تصحيح الأخطاء"
+          ]
+        },
+        {
+          "title": "إنتاج اللغة",
+          "purpose": "الكتابة والكلام بدون اعتماد كامل على الترجمة",
+          "minutes": 190,
+          "tasks": [
+            "35د كتابة 80–120 كلمة",
+            "35د تصحيح ذاتي بالقواعد المدروسة",
+            "40د حديث مسجل عن نفس الموضوع",
+            "30د استماع ومقارنة",
+            "35د مفردات ضعيفة",
+            "15د إعادة أفضل نسخة"
+          ]
+        },
+        {
+          "title": "اختبار + تثبيت",
+          "purpose": "ثبّت الأسبوع قبل الانتقال",
+          "minutes": 180,
+          "tasks": [
+            "40د اختبار مفردات وقواعد",
+            "35د إعادة أصعب درس",
+            "30د استماع بدون نص",
+            "30د محادثة ذاتية",
+            "30د مراجعة متباعدة",
+            "15د تحديد نقاط الضعف للأسبوع المقبل"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "skill": "النطق",
+          "title": "الأبجدية والنطق للمبتدئين — بحث موجّه",
+          "channel": "YouTube / Learn German",
+          "note": "ابدأ بالحروف ثم الأصوات الخاصة",
+          "url": "https://www.youtube.com/results?search_query=German+alphabet+pronunciation+A1+Learn+German+with+Anja"
+        },
+        {
+          "skill": "المحادثة",
+          "title": "14 Simple Dialogues about Greetings (A1–A2)",
+          "channel": "GermanTalks",
+          "note": "تحيات وتعريف بالنفس",
+          "url": "https://www.youtube.com/watch?v=YFJq8gL_QC8"
+        },
+        {
+          "skill": "القواعد",
+          "title": "Still stuck on German Word Order? Watch This.",
+          "channel": "Speak Fluent German",
+          "note": "ترتيب الجملة وقاعدة الفعل في الموقع الثاني",
+          "url": "https://www.youtube.com/watch?v=xoDpAtfnrAc"
+        },
+        {
+          "skill": "القواعد",
+          "title": "12 Verbs + Accusative Beginners Should Know",
+          "channel": "Easy German",
+          "note": "Akkusativ بأمثلة استعمالية",
+          "url": "https://www.youtube.com/watch?v=aZTUJm8O2Ds"
+        },
+        {
+          "skill": "الاستماع",
+          "title": "Nicos Weg A1 — whole movie",
+          "channel": "DW Deutsch lernen",
+          "note": "قصة طويلة بلغة بسيطة مع ترجمة",
+          "url": "https://www.youtube.com/watch?v=4-eDoThe6qo"
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "label": "مبتدئ متقدم",
+      "summary": "توسيع الأزمنة والحالات والروابط، وفهم محادثات يومية أطول.",
+      "weeks": [
+        {
+          "number": 7,
+          "title": "Dativ في الحياة اليومية",
+          "goal": "تمييز Dativ عن Akkusativ في الجمل الأساسية.",
+          "focus": [
+            "Dativ Artikel",
+            "Verben mit Dativ",
+            "Personen",
+            "Geschenke & Hilfe"
+          ]
+        },
+        {
+          "number": 8,
+          "title": "الماضي Perfekt",
+          "goal": "حكي أحداث يومية حصلت في الماضي.",
+          "focus": [
+            "Perfekt mit haben",
+            "Perfekt mit sein",
+            "Partizip II",
+            "Wochenende"
+          ]
+        },
+        {
+          "number": 9,
+          "title": "حروف الجر والمكان",
+          "goal": "وصف المكان والحركة بدقة أكبر.",
+          "focus": [
+            "Wechselpräpositionen",
+            "Wo/Wohin",
+            "Stadt",
+            "Wegbeschreibung"
+          ]
+        },
+        {
+          "number": 10,
+          "title": "الجمل التابعة",
+          "goal": "ربط فكرتين باستعمال weil/dass/wenn.",
+          "focus": [
+            "weil",
+            "dass",
+            "wenn",
+            "Verb am Ende"
+          ]
+        },
+        {
+          "number": 11,
+          "title": "الصفات والمقارنة",
+          "goal": "الوصف والمقارنة وإبداء تفضيلات واضحة.",
+          "focus": [
+            "Komparativ",
+            "Superlativ",
+            "Adjektive",
+            "Meinung basics"
+          ]
+        },
+        {
+          "number": 12,
+          "title": "مراجعة A2",
+          "goal": "محادثات أطول وكتابة رسائل قصيرة وفهم نصوص يومية.",
+          "focus": [
+            "A2 Wiederholung",
+            "E-Mail",
+            "Dialog",
+            "Hörtraining"
+          ]
+        }
+      ],
+      "dailyRoutine": [
+        {
+          "title": "قواعد تطبيقية",
+          "purpose": "استخدم القاعدة في نصوص حقيقية",
+          "minutes": 195,
+          "tasks": [
+            "45د قاعدة جديدة بأمثلة",
+            "35د تحويل جمل وصياغات",
+            "35د قراءة مركزة",
+            "35د استماع",
+            "25د استرجاع مفردات",
+            "15د سجل الأخطاء"
+          ]
+        },
+        {
+          "title": "استماع نشط",
+          "purpose": "ارفع سرعة الفهم تدريجياً",
+          "minutes": 195,
+          "tasks": [
+            "45د استماع أول بدون نص",
+            "35د استماع مع نص وتحديد الروابط",
+            "30د إملاء انتقائي",
+            "35د Shadowing",
+            "30د مفردات وتراكيب",
+            "15د تلخيص شفهي"
+          ]
+        },
+        {
+          "title": "محادثة",
+          "purpose": "تكلم 4–6 دقائق حول موضوع يومي",
+          "minutes": 195,
+          "tasks": [
+            "30د تحضير نقاط فقط",
+            "45د حديث مسجل أو تبادل لغوي",
+            "30د إعادة الصياغة بشكل طبيعي",
+            "35د فيديو محادثة",
+            "35د عبارات وظيفية",
+            "15د تصحيح"
+          ]
+        },
+        {
+          "title": "قراءة وتحليل",
+          "purpose": "افهم الفكرة والحجة لا الكلمات فقط",
+          "minutes": 195,
+          "tasks": [
+            "45د قراءة نص",
+            "35د تحديد الفكرة والحجج",
+            "35د قواعد من النص",
+            "30د تلخيص",
+            "30د مفردات في سياق",
+            "15د مراجعة"
+          ]
+        },
+        {
+          "title": "كتابة",
+          "purpose": "اكتب 120–160 كلمة مع روابط بسيطة",
+          "minutes": 195,
+          "tasks": [
+            "45د كتابة المسودة",
+            "30د تحسين الربط وترتيب الأفكار",
+            "35د تدقيق القواعد",
+            "30د قراءة بصوت مرتفع",
+            "35د استخراج أخطاء متكررة",
+            "15د إعادة كتابة فقرة"
+          ]
+        },
+        {
+          "title": "اختبار أسبوعي",
+          "purpose": "قِس الأداء قبل رفع الصعوبة",
+          "minutes": 180,
+          "tasks": [
+            "40د قواعد ومفردات",
+            "35د قراءة بأسئلة",
+            "35د استماع بأسئلة",
+            "30د كتابة قصيرة",
+            "25د حديث مرتجل",
+            "15د خطة تصحيح للأسبوع القادم"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "skill": "القواعد",
+          "title": "All German Cases Explained",
+          "channel": "Easy German",
+          "note": "صورة شاملة Nominativ/Akkusativ/Dativ/Genitiv",
+          "url": "https://www.youtube.com/watch?v=_F_zkRPRX6A"
+        },
+        {
+          "skill": "الاستماع",
+          "title": "Nicos Weg A2 — بحث موجّه",
+          "channel": "DW Deutsch lernen",
+          "note": "تابع قصة Nico في مستوى A2",
+          "url": "https://www.youtube.com/results?search_query=DW+Nicos+Weg+A2+Deutsch+lernen"
+        },
+        {
+          "skill": "القواعد",
+          "title": "Dativ للمستوى A2 — بحث موجّه",
+          "channel": "Easy German",
+          "note": "أمثلة واقعية على Dativ",
+          "url": "https://www.youtube.com/results?search_query=Easy+German+Dativ+A2"
+        },
+        {
+          "skill": "المحادثة",
+          "title": "German A2 conversations — بحث موجّه",
+          "channel": "Easy German",
+          "note": "استماع ومحادثة للمبتدئ المتقدم",
+          "url": "https://www.youtube.com/results?search_query=Easy+German+A2+conversation"
+        }
+      ]
+    },
+    {
+      "id": "B1",
+      "label": "متوسط",
+      "summary": "الانتقال من الجمل اليومية إلى الشرح والسرد والرأي وفهم الألمانية الطبيعية بشكل أفضل.",
+      "weeks": [
+        {
+          "number": 13,
+          "title": "السرد وربط الأحداث",
+          "goal": "سرد قصة مترابطة باستعمال روابط زمنية ومنطقية.",
+          "focus": [
+            "Präteritum häufige Verben",
+            "Perfekt vs Präteritum",
+            "zuerst/dann/danach",
+            "Erzählung"
+          ]
+        },
+        {
+          "number": 14,
+          "title": "الجمل الموصولة",
+          "goal": "إضافة معلومات عن الأشخاص والأشياء بطريقة طبيعية.",
+          "focus": [
+            "Relativsätze",
+            "Relativpronomen",
+            "Kasus im Relativsatz",
+            "Beschreibung"
+          ]
+        },
+        {
+          "number": 15,
+          "title": "إبداء الرأي والحجة",
+          "goal": "عرض موقف مع أسباب وأمثلة ومقارنة.",
+          "focus": [
+            "Meiner Meinung nach",
+            "weil/denn/deshalb",
+            "Pro & Contra",
+            "Diskussion"
+          ]
+        },
+        {
+          "number": 16,
+          "title": "Konjunktiv II الأساسي",
+          "goal": "التعبير عن الرغبات والاقتراحات والافتراض.",
+          "focus": [
+            "würde",
+            "hätte/wäre",
+            "könnte/sollte",
+            "Wünsche & Ratschläge"
+          ]
+        },
+        {
+          "number": 17,
+          "title": "الاستماع الطبيعي",
+          "goal": "فهم الكلام السريع تدريجياً والتقاط الاختصارات.",
+          "focus": [
+            "Reduktionen",
+            "Umgangssprache",
+            "Schlüsselwörter",
+            "Shadowing"
+          ]
+        },
+        {
+          "number": 18,
+          "title": "مراجعة B1",
+          "goal": "إنتاج نص ومحادثة متماسكة حول موضوع مألوف.",
+          "focus": [
+            "B1 Wiederholung",
+            "Präsentation",
+            "Schreiben",
+            "Hören"
+          ]
+        }
+      ],
+      "dailyRoutine": [
+        {
+          "title": "قواعد تطبيقية",
+          "purpose": "استخدم القاعدة في نصوص حقيقية",
+          "minutes": 200,
+          "tasks": [
+            "45د قاعدة جديدة بأمثلة",
+            "35د تحويل جمل وصياغات",
+            "35د قراءة مركزة",
+            "35د استماع",
+            "25د استرجاع مفردات",
+            "15د سجل الأخطاء"
+          ]
+        },
+        {
+          "title": "استماع نشط",
+          "purpose": "ارفع سرعة الفهم تدريجياً",
+          "minutes": 200,
+          "tasks": [
+            "45د استماع أول بدون نص",
+            "35د استماع مع نص وتحديد الروابط",
+            "30د إملاء انتقائي",
+            "35د Shadowing",
+            "30د مفردات وتراكيب",
+            "15د تلخيص شفهي"
+          ]
+        },
+        {
+          "title": "محادثة",
+          "purpose": "تكلم 6–8 دقائق مع تبرير الرأي",
+          "minutes": 200,
+          "tasks": [
+            "30د تحضير نقاط فقط",
+            "45د حديث مسجل أو تبادل لغوي",
+            "30د إعادة الصياغة بشكل طبيعي",
+            "35د فيديو محادثة",
+            "35د عبارات وظيفية",
+            "15د تصحيح"
+          ]
+        },
+        {
+          "title": "قراءة وتحليل",
+          "purpose": "افهم الفكرة والحجة لا الكلمات فقط",
+          "minutes": 200,
+          "tasks": [
+            "45د قراءة نص",
+            "35د تحديد الفكرة والحجج",
+            "35د قواعد من النص",
+            "30د تلخيص",
+            "30د مفردات في سياق",
+            "15د مراجعة"
+          ]
+        },
+        {
+          "title": "كتابة",
+          "purpose": "اكتب 160–200 كلمة مع مقدمة وفقرات وخاتمة",
+          "minutes": 200,
+          "tasks": [
+            "45د كتابة المسودة",
+            "30د تحسين الربط وترتيب الأفكار",
+            "35د تدقيق القواعد",
+            "30د قراءة بصوت مرتفع",
+            "35د استخراج أخطاء متكررة",
+            "15د إعادة كتابة فقرة"
+          ]
+        },
+        {
+          "title": "اختبار أسبوعي",
+          "purpose": "قِس الأداء قبل رفع الصعوبة",
+          "minutes": 180,
+          "tasks": [
+            "40د قواعد ومفردات",
+            "35د قراءة بأسئلة",
+            "35د استماع بأسئلة",
+            "30د كتابة قصيرة",
+            "25د حديث مرتجل",
+            "15د خطة تصحيح للأسبوع القادم"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "skill": "المحادثة",
+          "title": "Real German Conversations: Funny Stories & Everyday Humor (B1)",
+          "channel": "Easy German",
+          "note": "لغة شارع حقيقية بمستوى B1",
+          "url": "https://www.youtube.com/watch?v=gw_BUDk610w"
+        },
+        {
+          "skill": "الاستماع",
+          "title": "7 Tips to Better Understand Fast Spoken German",
+          "channel": "Easy German",
+          "note": "اختصارات ونطق الكلام الطبيعي",
+          "url": "https://www.youtube.com/watch?v=nOAg4xyScmI"
+        },
+        {
+          "skill": "القواعد",
+          "title": "Konjunktiv II is Easier Than You Think!",
+          "channel": "Easy German",
+          "note": "مفيد لبداية B1 ثم تعميق B2",
+          "url": "https://www.youtube.com/watch?v=uMlagwZP9dw"
+        },
+        {
+          "skill": "الاستماع",
+          "title": "Nicos Weg B1 — بحث موجّه",
+          "channel": "DW Deutsch lernen",
+          "note": "قصة وتمارين مناسبة لـ B1",
+          "url": "https://www.youtube.com/results?search_query=DW+Nicos+Weg+B1+Deutsch+lernen"
+        }
+      ]
+    },
+    {
+      "id": "B2",
+      "label": "فوق المتوسط",
+      "summary": "دقة أعلى في التعبير، حجج أطول، نصوص أصعب، وفهم الحديث الطبيعي والمواضيع المجردة.",
+      "weeks": [
+        {
+          "number": 19,
+          "title": "تركيب الجملة المتقدم",
+          "goal": "التحكم في الجمل الطويلة والروابط المتقدمة.",
+          "focus": [
+            "obwohl/während/indem",
+            "Nebensätze",
+            "Satzklammer",
+            "Konnektoren"
+          ]
+        },
+        {
+          "number": 20,
+          "title": "Konjunktiv II المتقدم",
+          "goal": "الافتراض والندم والنصيحة بصياغات أدق.",
+          "focus": [
+            "Irreale Bedingungen",
+            "Vergangenheit",
+            "als ob",
+            "Höflichkeit"
+          ]
+        },
+        {
+          "number": 21,
+          "title": "Passiv واللغة الرسمية",
+          "goal": "فهم وصياغة الجمل الرسمية والمعلوماتية.",
+          "focus": [
+            "Vorgangspassiv",
+            "Zustandspassiv",
+            "werden + Partizip II",
+            "Sachtexte"
+          ]
+        },
+        {
+          "number": 22,
+          "title": "الكتابة الحجاجية",
+          "goal": "بناء نص رأي منظم مع حجج واعتراضات.",
+          "focus": [
+            "Erörterung",
+            "Pro/Contra",
+            "Einwand",
+            "Schlussfolgerung"
+          ]
+        },
+        {
+          "number": 23,
+          "title": "استماع وقراءة متقدمة",
+          "goal": "التعامل مع سرعة طبيعية ومواضيع أقل مألوفية.",
+          "focus": [
+            "Interviews",
+            "Nachrichten",
+            "Abstrakte Themen",
+            "Notizen"
+          ]
+        },
+        {
+          "number": 24,
+          "title": "مراجعة B2 ومحاكاة اختبار",
+          "goal": "جمع المهارات في مهام قريبة من اختبارات B2.",
+          "focus": [
+            "B2 Simulation",
+            "Schreiben",
+            "Sprechen",
+            "Lesen & Hören"
+          ]
+        }
+      ],
+      "dailyRoutine": [
+        {
+          "title": "قواعد تطبيقية",
+          "purpose": "استخدم القاعدة في نصوص حقيقية",
+          "minutes": 210,
+          "tasks": [
+            "45د قاعدة جديدة بأمثلة",
+            "35د تحويل جمل وصياغات",
+            "35د قراءة مركزة",
+            "35د استماع",
+            "25د استرجاع مفردات",
+            "15د سجل الأخطاء"
+          ]
+        },
+        {
+          "title": "استماع نشط",
+          "purpose": "ارفع سرعة الفهم تدريجياً",
+          "minutes": 210,
+          "tasks": [
+            "45د استماع أول بدون نص",
+            "35د استماع مع نص وتحديد الروابط",
+            "30د إملاء انتقائي",
+            "35د Shadowing",
+            "30د مفردات وتراكيب",
+            "15د تلخيص شفهي"
+          ]
+        },
+        {
+          "title": "محادثة",
+          "purpose": "تكلم 8–10 دقائق مع حجة واعتراض وخلاصة",
+          "minutes": 210,
+          "tasks": [
+            "30د تحضير نقاط فقط",
+            "45د حديث مسجل أو تبادل لغوي",
+            "30د إعادة الصياغة بشكل طبيعي",
+            "35د فيديو محادثة",
+            "35د عبارات وظيفية",
+            "15د تصحيح"
+          ]
+        },
+        {
+          "title": "قراءة وتحليل",
+          "purpose": "افهم الفكرة والحجة لا الكلمات فقط",
+          "minutes": 210,
+          "tasks": [
+            "45د قراءة نص",
+            "35د تحديد الفكرة والحجج",
+            "35د قواعد من النص",
+            "30د تلخيص",
+            "30د مفردات في سياق",
+            "15د مراجعة"
+          ]
+        },
+        {
+          "title": "كتابة",
+          "purpose": "اكتب 200–260 كلمة بحجة واضحة وروابط متنوعة",
+          "minutes": 210,
+          "tasks": [
+            "45د كتابة المسودة",
+            "30د تحسين الربط وترتيب الأفكار",
+            "35د تدقيق القواعد",
+            "30د قراءة بصوت مرتفع",
+            "35د استخراج أخطاء متكررة",
+            "15د إعادة كتابة فقرة"
+          ]
+        },
+        {
+          "title": "اختبار أسبوعي",
+          "purpose": "قِس الأداء قبل رفع الصعوبة",
+          "minutes": 180,
+          "tasks": [
+            "40د قواعد ومفردات",
+            "35د قراءة بأسئلة",
+            "35د استماع بأسئلة",
+            "30د كتابة قصيرة",
+            "25د حديث مرتجل",
+            "15د خطة تصحيح للأسبوع القادم"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "skill": "القواعد",
+          "title": "Konjunktiv II is Easier Than You Think!",
+          "channel": "Easy German",
+          "note": "تكوين واستعمالات متقدمة مع الشروط غير الواقعية",
+          "url": "https://www.youtube.com/watch?v=uMlagwZP9dw"
+        },
+        {
+          "skill": "الاستماع",
+          "title": "7 Tips to Better Understand Fast Spoken German",
+          "channel": "Easy German",
+          "note": "مهم للانتقال إلى الاستماع الطبيعي",
+          "url": "https://www.youtube.com/watch?v=nOAg4xyScmI"
+        },
+        {
+          "skill": "القواعد",
+          "title": "All German Cases Explained",
+          "channel": "Easy German",
+          "note": "مراجعة دقيقة للحالات قبل الكتابة المتقدمة",
+          "url": "https://www.youtube.com/watch?v=_F_zkRPRX6A"
+        },
+        {
+          "skill": "القواعد",
+          "title": "German Passive Voice B2 — بحث موجّه",
+          "channel": "YouTube / Deutsch lernen",
+          "note": "Passive + أسلوب رسمي",
+          "url": "https://www.youtube.com/results?search_query=German+Passive+Voice+B2+Deutsch+lernen"
+        },
+        {
+          "skill": "المحادثة",
+          "title": "German B2 conversations — بحث موجّه",
+          "channel": "Easy German",
+          "note": "مواضيع وحوارات أقرب للسرعة الطبيعية",
+          "url": "https://www.youtube.com/results?search_query=Easy+German+B2+conversation"
+        }
+      ]
+    }
+  ]
+}
