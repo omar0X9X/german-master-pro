@@ -508,7 +508,7 @@ G.ui.renderErrorEngine=()=>{
     const u=G.errorUnlockStatus(id),gp=G.grammarProgress(id);
     return '<button class="'+(id===level?"active":"")+'" data-error-level="'+id+'" '+(!u.levelUnlocked?"disabled":"")+'>'+id+(u.levelUnlocked?"":" 🔒")+'<small>'+(id==="A1"?"":gp.pct+"% قواعد")+'</small></button>';
   }).join("");
-  $("#errorLevelTabs [data-error-level]").forEach(b=>b.onclick=()=>{
+  $$("#errorLevelTabs [data-error-level]").forEach(b=>b.onclick=()=>{
     if(!G.errorUnlockStatus(b.dataset.errorLevel).levelUnlocked)return;
     G.runtime.errorLevel=b.dataset.errorLevel;G.runtime.errorSkill="all";G.runtime.errorExerciseId=null;G.runtime.errorLastResult=null;G.runtime.errorReorder=[];G.ui.renderErrorEngine();
   });
@@ -529,7 +529,7 @@ G.ui.renderErrorEngine=()=>{
       '<small>'+x.accuracy+'% دقة • '+x.unique+'/'+x.totalExercises+' تغطية • '+x.open+' أخطاء</small>'+
     '</button>'
   ).join("");
-  $("#errorSkillGrid [data-error-skill]").forEach(b=>b.onclick=()=>{
+  $$("#errorSkillGrid [data-error-skill]").forEach(b=>b.onclick=()=>{
     G.runtime.errorSkill=b.dataset.errorSkill;G.runtime.errorExerciseId=null;G.runtime.errorLastResult=null;G.runtime.errorReorder=[];G.ui.renderErrorEngine();
   });
 
@@ -561,7 +561,7 @@ G.ui.renderErrorEngine=()=>{
 
     if(ex.type==="dictation")$("#errorDictationPlay").onclick=()=>G.ui.speakGerman(ex.audio||ex.answer);
     if(ex.type==="reorder"){
-      $("#errorExerciseArea [data-reorder-index]").forEach(b=>b.onclick=()=>{
+      $$("#errorExerciseArea [data-reorder-index]").forEach(b=>b.onclick=()=>{
         const word=ex.words[Number(b.dataset.reorderIndex)];
         if(!(G.runtime.errorReorder||[]).includes(word))G.runtime.errorReorder.push(word);
         G.ui.renderErrorEngine();
@@ -597,7 +597,7 @@ G.ui.renderErrorEngine=()=>{
   };
 
   const filter=G.runtime.errorNotebookFilter||"open";
-  $(".error-notebook-tools [data-error-filter]").forEach(b=>{
+  $$(".error-notebook-tools [data-error-filter]").forEach(b=>{
     b.classList.toggle("active",b.dataset.errorFilter===filter);
     b.onclick=()=>{G.runtime.errorNotebookFilter=b.dataset.errorFilter;G.ui.renderErrorEngine()};
   });
@@ -613,7 +613,7 @@ G.ui.renderErrorEngine=()=>{
       '<footer><span>تكرر '+(n.wrongCount||1)+'× • صحيح متتالي '+(n.correctStreak||0)+'/2</span><button data-error-note="'+E(n.id)+'">'+(n.resolved?"رجّعها مفتوحة":"علّمها مصلحة")+'</button></footer>'+
     '</article>'
   ).join(""):'<div class="empty"><b>'+(filter==="open"?"ما عندك حتى خطأ مفتوح 🎉":"ما كايناش عناصر هنا")+'</b>'+(filter==="open"?"أي خطأ جديد غادي يدخل هنا تلقائياً.":"")+'</div>';
-  $("#errorNotebookList [data-error-note]").forEach(b=>b.onclick=()=>{G.toggleErrorResolved(b.dataset.errorNote);G.ui.renderErrorEngine()});
+  $$("#errorNotebookList [data-error-note]").forEach(b=>b.onclick=()=>{G.toggleErrorResolved(b.dataset.errorNote);G.ui.renderErrorEngine()});
 
   const lvlSelect=$("#manualErrorLevel"),skillSelect=$("#manualErrorSkill");
   lvlSelect.value=level;
