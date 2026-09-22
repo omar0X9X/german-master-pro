@@ -1,0 +1,580 @@
+{
+  "version": 1,
+  "updatedAt": "2026-09-23",
+  "note": "تصنيف A1-B2 هنا تقدير تدريبي داخل German Master Pro، وليس تصنيف CEFR رسمي من أصحاب البرامج.",
+  "method": {
+    "title": "طريقة 3 مشاهدات",
+    "steps": [
+      "المشاهدة 1: بلا ترجمة. ركز فقط على القصة: شكون؟ فين؟ شنو وقع؟",
+      "المشاهدة 2: استعمل Untertitel ألمانية إذا كانت متوفرة. وقف فقط عند جملة مهمة أو كلمة متكررة.",
+      "المشاهدة 3: بلا ترجمة. اختار 3–5 جمل/أفكار وعاودهم بصوتك Shadowing.",
+      "من بعد: كتب ملخص قصير حسب مستواك واستخرج 5 كلمات فقط."
+    ]
+  },
+  "levels": [
+    {
+      "level": "A1",
+      "goal": "جمل قصيرة، أفعال يومية، العائلة، الأشياء، الروتين.",
+      "items": [
+        {
+          "id": "toon-a1-peppa-1",
+          "title": "Peppa Wutz — Volle Episoden",
+          "series": "Peppa Wutz",
+          "provider": "Peppa Pig Deutsch – Offizieller Kanal",
+          "url": "https://www.youtube.com/watch?v=chK3LhVvbK4",
+          "minutes": 25,
+          "official": true,
+          "subtitles": "ترجمة YouTube حسب توفرها",
+          "source": "YouTube",
+          "why": "حوارات قصيرة ومتكررة وسياق بصري واضح؛ مناسب لأول احتكاك بالكلام الطبيعي.",
+          "arabicSummary": "مواقف يومية بسيطة مع العائلة واللعب والأشياء حول الطفل.",
+          "vocab": [
+            [
+              "Familie",
+              "العائلة"
+            ],
+            [
+              "spielen",
+              "يلعب"
+            ],
+            [
+              "Haus",
+              "البيت"
+            ],
+            [
+              "kommen",
+              "يأتي"
+            ],
+            [
+              "gehen",
+              "يذهب"
+            ],
+            [
+              "heute",
+              "اليوم"
+            ]
+          ],
+          "task": {
+            "listen": "حاول تلتقط 5 أفعال فقط.",
+            "read": "إذا ظهرت Untertitel ألمانية، اقرأ جملة قصيرة ثم اخفها.",
+            "speak": "قل 3 جمل عن شنو وقع.",
+            "write": "اكتب 3–4 جمل بسيطة."
+          }
+        },
+        {
+          "id": "toon-a1-peppa-shop",
+          "title": "Peppa Wutz — Einkaufen",
+          "series": "Peppa Wutz",
+          "provider": "Peppa Pig Deutsch – Offizieller Kanal",
+          "url": "https://www.youtube.com/watch?v=-Zro_MYnckw",
+          "minutes": 20,
+          "official": true,
+          "subtitles": "ترجمة YouTube حسب توفرها",
+          "source": "YouTube",
+          "why": "موضوع التسوق يعطي كلمات عملية جداً: أكل، أرقام، طلبات وأشياء يومية.",
+          "arabicSummary": "حلقة/مجموعة حول التسوق ومواقف يومية سهلة الفهم بصرياً.",
+          "vocab": [
+            [
+              "kaufen",
+              "يشتري"
+            ],
+            [
+              "brauchen",
+              "يحتاج"
+            ],
+            [
+              "Geld",
+              "المال"
+            ],
+            [
+              "Apfel",
+              "تفاحة"
+            ],
+            [
+              "viel",
+              "كثير"
+            ],
+            [
+              "bitte",
+              "من فضلك"
+            ]
+          ],
+          "task": {
+            "listen": "سمع أسماء الأشياء والأرقام.",
+            "read": "التقط عبارتين قصيرتين.",
+            "speak": "قل شنو غادي تشري بالألمانية.",
+            "write": "لائحة مشتريات من 5 أشياء."
+          }
+        },
+        {
+          "id": "toon-a1-pocoyo",
+          "title": "Pocoyo Deutsch — Der Kinderpark",
+          "series": "Pocoyo",
+          "provider": "Pocoyo Deutsch – Offizieller Kanal",
+          "url": "https://www.youtube.com/watch?v=n0hIh9WdGrY",
+          "minutes": 18,
+          "official": true,
+          "subtitles": "ترجمة YouTube حسب توفرها",
+          "source": "YouTube",
+          "why": "السياق البصري قوي والجمل مرتبطة بالحركة والأشياء، وهذا يخدم المبتدئ.",
+          "arabicSummary": "مواقف لعب بسيطة وأشياء ملموسة وحركات واضحة.",
+          "vocab": [
+            [
+              "Ball",
+              "كرة"
+            ],
+            [
+              "Freund",
+              "صديق"
+            ],
+            [
+              "laufen",
+              "يجري"
+            ],
+            [
+              "sehen",
+              "يرى"
+            ],
+            [
+              "klein",
+              "صغير"
+            ],
+            [
+              "groß",
+              "كبير"
+            ]
+          ],
+          "task": {
+            "listen": "ركز على الكلمات اللي كتوافق شي حاجة كتشوفها.",
+            "read": "ما توقفش على كل كلمة.",
+            "speak": "وصف شخصية أو فعل بـ3 جمل.",
+            "write": "3 كلمات + مثال لكل وحدة."
+          }
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "goal": "قصص قصيرة، وصف، الماضي البسيط في السياق، روابط سهلة.",
+      "items": [
+        {
+          "id": "toon-a2-maja-blume",
+          "title": "Die Biene Maja — Majas Blume",
+          "series": "Die Biene Maja",
+          "provider": "ZDFtivi",
+          "url": "https://www.zdf.de/video/animation/die-biene-maja-110/majas-blume-102",
+          "minutes": 13,
+          "official": true,
+          "subtitles": "UT ألمانية متوفرة",
+          "source": "ZDFtivi",
+          "why": "13 دقيقة فقط، قصة واضحة وUntertitel ألمانية رسمية؛ ممتازة لربط السمع بالقراءة.",
+          "arabicSummary": "مايا تريد أن تفهم كيف تتعامل النحلات مع الزهور وتحاول زراعة زهرة.",
+          "vocab": [
+            [
+              "Blume",
+              "زهرة"
+            ],
+            [
+              "Biene",
+              "نحلة"
+            ],
+            [
+              "pflanzen",
+              "يزرع"
+            ],
+            [
+              "erklären",
+              "يشرح"
+            ],
+            [
+              "wollen",
+              "يريد"
+            ],
+            [
+              "helfen",
+              "يساعد"
+            ]
+          ],
+          "task": {
+            "listen": "Pass 1 بلا UT.",
+            "read": "Pass 2 بـUT وخذ 5 كلمات.",
+            "speak": "لخص القصة في 4 جمل.",
+            "write": "اكتب: Was wollte Maja?"
+          }
+        },
+        {
+          "id": "toon-a2-maja-willi",
+          "title": "Die Biene Maja — Willi zieht aus",
+          "series": "Die Biene Maja",
+          "provider": "ZDFtivi",
+          "url": "https://www.zdf.de/video/animation/die-biene-maja-110/willi-zieht-aus-102",
+          "minutes": 13,
+          "official": true,
+          "subtitles": "UT ألمانية متوفرة",
+          "source": "ZDFtivi",
+          "why": "قصة يومية مفهومة وتكرار لأفعال الحركة والسكن والقرار.",
+          "arabicSummary": "ويلي خاصو ينتقل لمكان آخر، ومايا وويلي ما عاجبهمش القرار.",
+          "vocab": [
+            [
+              "umziehen",
+              "ينتقل للسكن"
+            ],
+            [
+              "Stock",
+              "خلية/طابق حسب السياق"
+            ],
+            [
+              "Idee",
+              "فكرة"
+            ],
+            [
+              "finden",
+              "يجد/يرى"
+            ],
+            [
+              "leben",
+              "يعيش"
+            ],
+            [
+              "neu",
+              "جديد"
+            ]
+          ],
+          "task": {
+            "listen": "استخرج أفعال الحركة.",
+            "read": "حدد جملة فيها weil أو سبب إذا سمعتها.",
+            "speak": "قل علاش ويلي ما بغاوش يمشي.",
+            "write": "5 جمل باستعمال Perfekt أو Präsens."
+          }
+        },
+        {
+          "id": "toon-a2-heidi-lesen",
+          "title": "Heidi — Heidi soll lesen lernen",
+          "series": "Heidi",
+          "provider": "ZDFtivi",
+          "url": "https://www.zdf.de/video/animation/heidi-114/heidi-soll-lesen-lernen-104",
+          "minutes": 23,
+          "official": true,
+          "subtitles": "UT ألمانية متوفرة",
+          "source": "ZDFtivi",
+          "why": "موضوع التعلم والقراءة قريب من المتعلم نفسه، واللغة فيها وصف وحوار أطول من A1.",
+          "arabicSummary": "هايدي تتعلم القراءة بطريقة لعب وتمثيل مع الجدة وكلارا.",
+          "vocab": [
+            [
+              "lesen",
+              "يقرأ"
+            ],
+            [
+              "lernen",
+              "يتعلم"
+            ],
+            [
+              "üben",
+              "يتدرب"
+            ],
+            [
+              "Besuch",
+              "زيارة"
+            ],
+            [
+              "spielen",
+              "يمثل/يلعب"
+            ],
+            [
+              "Geschichte",
+              "قصة"
+            ]
+          ],
+          "task": {
+            "listen": "قسم الحلقة لمقاطع 3–5 دقائق.",
+            "read": "خذ تعبيرين ماشي كلمات مفردة فقط.",
+            "speak": "اشرح كيف تعلمت هايدي.",
+            "write": "فقرة 60–80 كلمة."
+          }
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "goal": "فهم قصة كاملة، أسباب ونتائج، وصف أحداث، مفردات أوسع.",
+      "items": [
+        {
+          "id": "toon-b1-robin",
+          "title": "Robin Hood — Das weiße Ross",
+          "series": "Robin Hood – Schlitzohr von Sherwood",
+          "provider": "ZDFtivi",
+          "url": "https://www.zdf.de/video/animation/robin-hood-140/folge48-das-weisse-ross-100",
+          "minutes": 12,
+          "official": true,
+          "subtitles": "UT ألمانية متوفرة",
+          "source": "ZDFtivi",
+          "why": "حوار أسرع وقصة فيها هدف ومشكلة وحل؛ مناسب للتلخيص والروابط.",
+          "arabicSummary": "روبن يحاول حماية حصان أبيض وسط مشكلة فيها الأمير جون والسحر.",
+          "vocab": [
+            [
+              "retten",
+              "ينقذ"
+            ],
+            [
+              "fangen",
+              "يمسك"
+            ],
+            [
+              "verwandeln",
+              "يحوّل"
+            ],
+            [
+              "Gefahr",
+              "خطر"
+            ],
+            [
+              "verdächtig",
+              "مشبوه"
+            ],
+            [
+              "gelingen",
+              "ينجح"
+            ]
+          ],
+          "task": {
+            "listen": "حدد المشكلة والحل.",
+            "read": "سجل 3 روابط أو أفعال قوية.",
+            "speak": "لخص القصة 60–90 ثانية.",
+            "write": "100 كلمة مع weil/obwohl/deshalb."
+          }
+        },
+        {
+          "id": "toon-b1-bibi",
+          "title": "Bibi Blocksberg — Der Berggeist",
+          "series": "Bibi Blocksberg",
+          "provider": "ZDFtivi",
+          "url": "https://www.zdf.de/video/animation/bibi-blocksberg-110/der-berggeist-100",
+          "minutes": 26,
+          "official": true,
+          "subtitles": "UT ألمانية متوفرة",
+          "source": "ZDFtivi",
+          "why": "حوارات أطول، لغز، وصف أحداث وآراء؛ يعطي تدريب B1 أحسن من فيديوهات تعليمية بطيئة.",
+          "arabicSummary": "بيبي مع القسم في الجبال، وكيبدأو يوقعو أحداث غامضة خاصها تفسير.",
+          "vocab": [
+            [
+              "verschwinden",
+              "يختفي"
+            ],
+            [
+              "Vorräte",
+              "المؤن"
+            ],
+            [
+              "mysteriös",
+              "غامض"
+            ],
+            [
+              "Spur",
+              "أثر"
+            ],
+            [
+              "verdächtigen",
+              "يشتبه"
+            ],
+            [
+              "aufklären",
+              "يكشف الحقيقة"
+            ]
+          ],
+          "task": {
+            "listen": "كتب 5 تفاصيل بلا subtitles.",
+            "read": "Pass 2 بـUT وصحح التفاصيل.",
+            "speak": "شرح شكون شكيت فيه وعلاش.",
+            "write": "ملخص 100–120 كلمة."
+          }
+        },
+        {
+          "id": "toon-b1-maus",
+          "title": "Die Sendung mit der Maus — Folgen mit UT",
+          "series": "Die Sendung mit der Maus",
+          "provider": "KiKA / WDR",
+          "url": "https://www.kika.de/die-sendung-mit-der-maus/videos/alle-folgen-854",
+          "minutes": 29,
+          "official": true,
+          "subtitles": "UT متوفرة في حلقات كثيرة",
+          "source": "KiKA",
+          "why": "يمزج قصصاً كرتونية وشرحاً حقيقياً؛ ممتاز لفهم الألمانية التفسيرية والمفردات اليومية.",
+          "arabicSummary": "قصص ومقاطع تشرح كيف تعمل أشياء من الحياة اليومية، مع أجزاء كرتونية.",
+          "vocab": [
+            [
+              "erklären",
+              "يشرح"
+            ],
+            [
+              "entstehen",
+              "ينشأ"
+            ],
+            [
+              "funktionieren",
+              "يعمل"
+            ],
+            [
+              "Unterschied",
+              "فرق"
+            ],
+            [
+              "Beispiel",
+              "مثال"
+            ],
+            [
+              "deshalb",
+              "لذلك"
+            ]
+          ],
+          "task": {
+            "listen": "اختار مقطع واحد 5–10 دقائق.",
+            "read": "استعمل UT فقط فالمشاهدة الثانية.",
+            "speak": "شرح المعلومة لشخص آخر.",
+            "write": "5 نقاط + ملخص 100 كلمة."
+          }
+        }
+      ]
+    },
+    {
+      "level": "B2",
+      "goal": "استماع طبيعي، استنتاج المعنى، تلخيص دقيق، أسلوب وحجاج.",
+      "items": [
+        {
+          "id": "toon-b2-bibi-pendel",
+          "title": "Bibi Blocksberg — Das magische Pendel",
+          "series": "Bibi Blocksberg",
+          "provider": "ZDFtivi",
+          "url": "https://www.zdf.de/video/animation/bibi-blocksberg-110/das-magische-pendel-100",
+          "minutes": 26,
+          "official": true,
+          "subtitles": "UT ألمانية متوفرة",
+          "source": "ZDFtivi",
+          "why": "مدة أطول وحوار مستمر؛ نستعملها في B2 بتقليل الاعتماد على UT وزيادة التلخيص الدقيق.",
+          "arabicSummary": "الوقت يتوقف فجأة وبيبي تحاول تفهم السبب وتحل المشكلة.",
+          "vocab": [
+            [
+              "festfrieren",
+              "يتجمد/يتوقف"
+            ],
+            [
+              "plötzlich",
+              "فجأة"
+            ],
+            [
+              "Ursache",
+              "سبب"
+            ],
+            [
+              "vermutlich",
+              "على الأرجح"
+            ],
+            [
+              "lösen",
+              "يحل"
+            ],
+            [
+              "Zusammenhang",
+              "ترابط"
+            ]
+          ],
+          "task": {
+            "listen": "أول 10 دقائق بلا UT نهائياً.",
+            "read": "استعمل UT فقط للتحقق من عبارات ما فهمتيهاش.",
+            "speak": "لخص القصة مع رأيك.",
+            "write": "150–180 كلمة باستعمال روابط B2."
+          }
+        },
+        {
+          "id": "toon-b2-robin-drache",
+          "title": "Robin Hood — Der Drachenmacher",
+          "series": "Robin Hood – Schlitzohr von Sherwood",
+          "provider": "ZDFtivi",
+          "url": "https://www.zdf.de/video/animation/robin-hood-140/folge42-der-drachenmacher-100",
+          "minutes": 12,
+          "official": true,
+          "subtitles": "UT ألمانية متوفرة",
+          "source": "ZDFtivi",
+          "why": "قصير لكن يسمح بتدريب متقدم: inference، إعادة صياغة، وربط السبب بالنتيجة.",
+          "arabicSummary": "روبن وماريان يبحثان عن حل لتعويذة مرتبطة بتحويل دركي إلى تنين.",
+          "vocab": [
+            [
+              "Fluch",
+              "لعنة"
+            ],
+            [
+              "dauerhaft",
+              "بشكل دائم"
+            ],
+            [
+              "mächtig",
+              "قوي"
+            ],
+            [
+              "brechen",
+              "يكسر/يبطل"
+            ],
+            [
+              "verwandeln",
+              "يحوّل"
+            ],
+            [
+              "möglicherweise",
+              "ربما"
+            ]
+          ],
+          "task": {
+            "listen": "دوّن فقط الكلمات المفتاحية.",
+            "read": "استخرج 3 تراكيب كاملة.",
+            "speak": "أعد القصة بصياغتك بلا نفس الكلمات.",
+            "write": "ملخص + رأي 150 كلمة."
+          }
+        },
+        {
+          "id": "toon-b2-heidi-frankfurt",
+          "title": "Heidi — Ankunft in Frankfurt",
+          "series": "Heidi",
+          "provider": "ZDFtivi",
+          "url": "https://www.zdf.de/video/animation/heidi-114/ankunft-in-frankfurt-102",
+          "minutes": 23,
+          "official": true,
+          "subtitles": "UT ألمانية متوفرة",
+          "source": "ZDFtivi",
+          "why": "حوار اجتماعي أطول وعلاقات بين شخصيات؛ مناسب لتحليل النبرة والموقف واللغة غير المباشرة.",
+          "arabicSummary": "هايدي تصل إلى فرانكفورت وتبدأ علاقة جديدة مع كلارا وتواجه بيئة مختلفة.",
+          "vocab": [
+            [
+              "ankommen",
+              "يصل"
+            ],
+            [
+              "Erziehung",
+              "تربية"
+            ],
+            [
+              "streng",
+              "صارم"
+            ],
+            [
+              "erwarten",
+              "ينتظر/يتوقع"
+            ],
+            [
+              "sich verstehen",
+              "ينسجم"
+            ],
+            [
+              "Umgebung",
+              "بيئة"
+            ]
+          ],
+          "task": {
+            "listen": "لاحظ النبرة والعلاقة بين الشخصيات.",
+            "read": "استخرج 3 جمل فيها موقف/شعور.",
+            "speak": "قارن بين الشخصيات.",
+            "write": "180 كلمة: Zusammenfassung + Bewertung."
+          }
+        }
+      ]
+    }
+  ]
+}
