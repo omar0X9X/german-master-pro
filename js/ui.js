@@ -2,7 +2,7 @@ window.GMP=window.GMP||{};
 (()=>{
 const G=window.GMP,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const E=G.escape,U=G.url;
-const titles={dashboard:["مسارك اليوم","الرئيسية"],roadmap:["A1 → B2","المسار"],review:["Spaced Review","المراجعة"],practice:["المهارات","التطبيق"],stats:["Progress","الإحصائيات"]};
+const titles={dashboard:["مسارك اليوم","الرئيسية"],daily:["120 يوم","30 يوم"],roadmap:["A1 → B2","المسار"],review:["Spaced Review","المراجعة"],practice:["المهارات","التطبيق"],stats:["Progress","الإحصائيات"]};
 const toast=msg=>{const el=$("#toast");el.textContent=msg;el.classList.add("show");clearTimeout(G.runtime.toastTimer);G.runtime.toastTimer=setTimeout(()=>el.classList.remove("show"),1900)};
 G.ui={toast};
 
@@ -32,10 +32,118 @@ G.ui.renderDashboard=()=>{
 };
 
 G.ui.startTask=t=>{
-  if(!t)return;if(t.type==="quiz"){G.ui.openQuiz(t.quizId);return}
+  if(!t)return;
+  if(t.type==="quiz"){G.ui.openQuiz(t.quizId);return}
   if(t.type==="review"){G.ui.setView("review");return}
+  if(t.type==="daily"){
+    const levelId=G.state.profile.level;
+    G.runtime.dailyLevel=levelId;
+    G.selectDailyDay(levelId,t.dailyDay||G.nextDailyDay(levelId));
+    G.ui.setView("daily");
+    return;
+  }
   if(t.url)window.open(U(t.url),"_blank","noopener");
   if(t.view&&t.view!=="dashboard")G.ui.setView(t.view);
+};
+
+
+const fmtNumber=n=>{
+  if(!Number.isFinite(n))return null;
+  return new Intl.NumberFormat("en",{notation:"compact",maximumFractionDigits:1}).format(n);
+};
+const wordCount=text=>String(text||"").trim()?String(text).trim().split(/\s+/).filter(Boolean).length:0;
+
+G.ui.renderDaily=()=>{
+  const levels=G.data.daily.levels.map(x=>x.level);
+  const selected=levels.includes(G.runtime.dailyLevel)?G.runtime.dailyLevel:G.state.profile.level;
+  G.runtime.dailyLevel=selected;
+  const program=G.dailyProgram(selected);
+  if(!program)return;
+
+  const dayNo=G.state.dailySelected[selected]||G.nextDailyDay(selected);
+  const day=G.dailyDay(selected,dayNo);
+  const progress=G.dailyDayProgress(selected,dayNo);
+  const levelProgress=G.dailyLevelProgress(selected);
+
+  $("#dailyLevelTabs").innerHTML=levels.map(id=>'<button class="'+(id===selected?"active":"")+'" data-daily-level="'+id+'">'+id+'</button>').join("");
+  $("#dailyLevelTabs [data-daily-level]").forEach(b=>b.onclick=()=>{
+    G.runtime.dailyLevel=b.dataset.dailyLevel;
+    if(!G.state.dailySelected[b.dataset.dailyLevel])G.selectDailyDay(b.dataset.dailyLevel,G.nextDailyDay(b.dataset.dailyLevel));
+    G.ui.renderDaily();
+  });
+
+  $("#dailyLevelLabel").textContent=selected+" • اليوم "+day.day+" من 30";
+  $("#dailyTheme").textContent=day.theme;
+  $("#dailyObjective").textContent=day.objective;
+  $("#dailyLevelPct").textContent=levelProgress.pct+"%";
+  $(".daily-progress-ring").style.setProperty("--p",(levelProgress.pct*3.6)+"deg");
+  $("#dailyDaysDone").textContent=levelProgress.done+"/"+levelProgress.total;
+
+  $("#dailyDayGrid").innerHTML=program.days.map(d=>{
+    const p=G.dailyDayProgress(selected,d.day);
+    return '<button class="'+(d.day===day.day?"active ":"")+(p.complete?"done":"")+'" data-day="'+d.day+'" title="'+E(d.theme)+'">'+d.day+'</button>';
+  }).join("");
+  $("#dailyDayGrid [data-day]").forEach(b=>b.onclick=()=>{G.selectDailyDay(selected,Number(b.dataset.day));G.ui.renderDaily();window.scrollTo({top:0,behavior:"smooth"})});
+
+  const videos=day.videos.map(G.videoById).filter(Boolean);
+  $("#dailyVideoTime").textContent=videos.reduce((n,v)=>n+(v.minutes||15),0)+" د";
+  $("#dailyVideos").innerHTML=videos.map(v=>{
+    const done=G.dailyVideoDone(selected,day.day,v.id),q=v.quality||{};
+    const views=fmtNumber(q.views),likes=fmtNumber(q.likes),comments=fmtNumber(q.comments);
+    const strong=(q.views>=200000)||(q.likes>=5000);
+    const metrics=[
+      views?views+" مشاهدة":null,
+      likes?likes+" إعجاب":null,
+      comments?comments+" تعليق":null,
+      strong?"تفاعل قوي":null
+    ].filter(Boolean);
+    return '<article class="daily-video '+(done?"done":"")+'"><div><h4>'+E(v.title)+'</h4><p>'+E(v.provider)+' • '+E(v.skill)+' • ≈ '+(v.minutes||15)+' د</p><div class="video-meta">'+metrics.map((x,i)=>'<span class="'+(i===metrics.length-1&&strong?"engagement":"")+'">'+E(x)+'</span>').join("")+(q.verifiedAt?'<span>بيانات '+E(q.verifiedAt)+'</span>':'')+'</div></div><div class="daily-video-actions"><a href="'+U(v.url)+'" target="_blank" rel="noopener">▶ شاهد</a><button data-daily-video="'+E(v.id)+'">'+(done?"✓ مكتمل":"تم")+'</button></div></article>';
+  }).join("");
+  $("#dailyVideos [data-daily-video]").forEach(b=>b.onclick=()=>{
+    const id=b.dataset.dailyVideo,v=G.videoById(id),was=G.dailyVideoDone(selected,day.day,id);
+    G.setDailyDone(selected,day.day,"video::"+id,!was);
+    if(!was&&v?.core&&!G.lessonDone(id)){G.state.completedLessons[id]=Date.now();G.touch();G.save()}
+    G.ui.renderAll();toast(!was?"تسجل فيديو اليوم":"تلغى إنجاز الفيديو");
+  });
+
+  $("#dailyReadingTitle").textContent=day.reading.title;
+  $("#dailyReadingText").textContent=day.reading.text;
+  $("#dailyReadingQuestions").innerHTML=day.reading.questions.map(q=>"<li>"+E(q)+"</li>").join("");
+  const readingDone=G.dailyDone(selected,day.day,"reading");
+  $("#dailyReadingDone").textContent=readingDone?"✓ القراءة مكتملة":"علّم القراءة مكتملة";
+  $(".daily-reading-card").classList.toggle("done",readingDone);
+  $("#dailyReadingDone").onclick=()=>{G.setDailyDone(selected,day.day,"reading",!readingDone);G.ui.renderAll();toast(!readingDone?"ممتاز، تسجلت القراءة":"تلغت القراءة")};
+
+  $("#dailyWordTarget").textContent=day.writing.minWords;
+  $("#dailyWritingPrompt").textContent=day.writing.prompt;
+  $("#dailyWritingChecklist").innerHTML=day.writing.checklist.map(x=>"<li>"+E(x)+"</li>").join("");
+  const area=$("#dailyWritingArea");
+  area.value=G.getDailyWriting(selected,day.day);
+  const updateWords=()=>{
+    const n=wordCount(area.value);$("#dailyWordCount").textContent=n;
+    $("#dailyWordCount").className=n>=day.writing.minWords?"good-score":"";
+  };
+  updateWords();
+  area.oninput=()=>{G.setDailyWriting(selected,day.day,area.value);updateWords()};
+  const writingDone=G.dailyDone(selected,day.day,"writing");
+  $("#dailyWritingDone").textContent=writingDone?"✓ الكتابة مكتملة":"علّم الكتابة مكتملة";
+  $(".daily-writing-card").classList.toggle("done",writingDone);
+  $("#dailyWritingDone").onclick=()=>{
+    const n=wordCount(area.value);
+    if(!writingDone&&n<day.writing.minWords){toast("باقي خاصك توصل على الأقل لـ "+day.writing.minWords+" كلمة");area.focus();return}
+    G.setDailyDone(selected,day.day,"writing",!writingDone);G.ui.renderAll();toast(!writingDone?"تسجلت كتابة اليوم":"تلغت علامة الكتابة");
+  };
+
+  const cards=G.data.vocabulary.cards.filter(v=>v.level===selected);
+  const start=((day.day-1)*5)%Math.max(cards.length,1);
+  const dailyCards=Array.from({length:Math.min(5,cards.length)},(_,i)=>cards[(start+i)%cards.length]);
+  $("#dailyVocab").innerHTML=dailyCards.map(v=>'<article class="vocab-mini"><b>'+E(v.de)+'</b><span>'+E(v.ar)+'</span><small>'+E(v.example||"")+'</small></article>').join("");
+
+  $("#dailyDayStatus").textContent=progress.done+"/"+progress.total;
+  $("#prevDailyDay").disabled=day.day<=1;
+  $("#nextDailyDay").disabled=day.day>=30;
+  $("#prevDailyDay").onclick=()=>{if(day.day>1){G.selectDailyDay(selected,day.day-1);G.ui.renderDaily();window.scrollTo({top:0,behavior:"smooth"})}};
+  $("#nextDailyDay").onclick=()=>{if(day.day<30){G.selectDailyDay(selected,day.day+1);G.ui.renderDaily();window.scrollTo({top:0,behavior:"smooth"})}};
 };
 
 G.ui.renderRoadmap=()=>{
@@ -75,7 +183,7 @@ G.ui.renderPractice=()=>{
 G.ui.renderStats=()=>{
   const s=G.stats(),current=G.levelProgress();
   $("#statsGrid").innerHTML='<article><small>إنجاز '+E(G.state.profile.level)+'</small><b>'+current.pct+'%</b><span>دروس + تطبيق + اختبارات</span></article><article><small>Streak</small><b>'+s.streak+'</b><span>أيام</span></article><article><small>متوسط الاختبارات</small><b>'+(s.quizAvg==null?"—":s.quizAvg+"%")+'</b><span>'+s.quizCount+' محاولة</span></article><article><small>بطاقات مراجعة</small><b>'+s.reviewCount+'</b><span>'+s.due+' مستحقة</span></article>';
-  $("#levelStats").innerHTML=s.levels.map(x=>'<div class="level-stat"><b>'+x.id+'</b><div class="track"><i style="width:'+x.pct+'%"></i></div><span>'+x.pct+'%</span></div>').join("");
+  $("#levelStats").innerHTML=s.levels.map(x=>'<div class="level-stat"><b>'+x.id+'</b><div><div class="track"><i style="width:'+x.pct+'%"></i></div><small class="muted">30 يوم: '+x.daily.done+'/'+x.daily.total+'</small></div><span>'+x.pct+'%</span></div>').join("");
   const hist=[...G.state.quizResults].reverse().slice(0,12);
   $("#quizHistory").innerHTML=hist.length?hist.map(x=>'<div class="history"><div><b>'+E(x.title||x.quizId)+'</b><small>'+new Date(x.at).toLocaleDateString("ar-MA")+'</small></div><b class="'+(x.score>=80?"good-score":x.score>=60?"mid-score":"low-score")+'">'+x.score+'%</b></div>').join(""):'<div class="empty">ما درتي حتى اختبار بعد.</div>';
 };
@@ -88,6 +196,6 @@ G.ui.openQuiz=id=>{
   $("#quizDialog").showModal();
 };
 
-G.ui.renderView=v=>({dashboard:G.ui.renderDashboard,roadmap:G.ui.renderRoadmap,review:G.ui.renderReview,practice:G.ui.renderPractice,stats:G.ui.renderStats}[v]||(()=>{}))();
-G.ui.renderAll=()=>{G.ui.renderDashboard();G.ui.renderRoadmap();G.ui.renderReview();G.ui.renderPractice();G.ui.renderStats();$("#levelChip").textContent=G.state.profile.level};
+G.ui.renderView=v=>({dashboard:G.ui.renderDashboard,daily:G.ui.renderDaily,roadmap:G.ui.renderRoadmap,review:G.ui.renderReview,practice:G.ui.renderPractice,stats:G.ui.renderStats}[v]||(()=>{}))();
+G.ui.renderAll=()=>{G.ui.renderDashboard();G.ui.renderDaily();G.ui.renderRoadmap();G.ui.renderReview();G.ui.renderPractice();G.ui.renderStats();$("#levelChip").textContent=G.state.profile.level};
 })();
