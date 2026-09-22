@@ -167,18 +167,21 @@
           "category": "pronunciation",
           "level": "A1",
           "summary": "sch = ش تقريباً، وsp/st في بداية المقطع تُنطق shp/sht.",
-          "explanation": "Schule, sprechen, Straße",
+          "explanation": "SCH يُنطق قريباً من ش. أما SP وST في بداية الكلمة أو المقطع فغالباً يبدأان بصوت sh: sprechen ≈ shprechen، Straße ≈ shtrasse.",
           "examples": [
-            "داخل الكلمة قد تختلف sp/st عن بداية المقطع."
+            "Schule",
+            "sprechen",
+            "Straße"
           ],
-          "mistake": "Wie beginnt „sprechen“ صوتياً؟",
+          "mistake": "لا تطبق نطق shp/sht على كل sp/st داخل الكلمة؛ الموقع داخل المقطع مهم.",
           "drill": {
-            "prompt": "shp",
+            "prompt": "كيف يبدأ نطق كلمة „sprechen“ تقريباً؟",
             "options": [
+              "shp",
               "sp",
-              "zb",
-              0
-            ]
+              "zb"
+            ],
+            "answer": 0
           }
         },
         {
@@ -552,18 +555,21 @@
           "category": "grammar",
           "level": "A1",
           "summary": "kein ينفي الأسماء مع ein/بدون مقال، nicht ينفي أفعالاً وصفات أو عناصر أخرى.",
-          "explanation": "Ich habe kein Auto. Ich komme heute nicht. Das ist nicht teuer.",
+          "explanation": "استعمل kein مع الأسماء التي يمكن أن تأتي مع ein أو بدون أداة: kein Auto, keine Zeit. واستعمل nicht لنفي الفعل أو الصفة أو جزء آخر من الجملة.",
           "examples": [
-            "اختيار موضع nicht يتغير حسب ما تريد نفيه."
+            "Ich habe kein Auto.",
+            "Ich komme heute nicht.",
+            "Das ist nicht teuer."
           ],
-          "mistake": "Ich habe ___ Zeit.",
+          "mistake": "موضع nicht يعتمد على الجزء الذي تريد نفيه، لذلك لا توجد قاعدة مكان واحدة تكفي لكل الجمل.",
           "drill": {
-            "prompt": "keine",
+            "prompt": "Ich habe ___ Zeit.",
             "options": [
+              "keine",
               "nicht",
-              "kein",
-              0
-            ]
+              "kein"
+            ],
+            "answer": 0
           }
         },
         {
@@ -894,18 +900,20 @@
           "category": "grammar",
           "level": "A2",
           "summary": "wenn = إذا أو عندما للحاضر/المستقبل والتكرار.",
-          "explanation": "Wenn ich Zeit habe, lerne ich. Wenn es regnet, bleibe ich zu Hause.",
+          "explanation": "wenn تستعمل للشرط أو للأحداث المتكررة/الحاضرة. داخل جملة wenn يأتي الفعل المصرف في النهاية.",
           "examples": [
-            "إذا بدأت بـwenn، تأتي الجملة الرئيسية بفعل ثم فاعل."
+            "Wenn ich Zeit habe, lerne ich.",
+            "Wenn es regnet, bleibe ich zu Hause."
           ],
-          "mistake": "Wenn ich Zeit habe, ___ ich Deutsch.",
+          "mistake": "إذا بدأت الجملة بـwenn، تبدأ الجملة الرئيسية بعدها بالفعل: Wenn ich Zeit habe, lerne ich.",
           "drill": {
-            "prompt": "lerne",
+            "prompt": "Wenn ich Zeit habe, ___ ich Deutsch.",
             "options": [
+              "lerne",
               "ich lerne",
-              "lernen",
-              0
-            ]
+              "lernen"
+            ],
+            "answer": 0
           }
         },
         {
@@ -914,18 +922,20 @@
           "category": "grammar",
           "level": "A2",
           "summary": "obwohl يقدم تناقضاً: رغم أن.",
-          "explanation": "Obwohl es regnet, gehen wir spazieren.",
+          "explanation": "obwohl يقدم معلومة متناقضة مع النتيجة. وهو رابط لجملة فرعية، لذلك يذهب الفعل المصرف إلى النهاية.",
           "examples": [
-            "الفعل في نهاية جملة obwohl."
+            "Obwohl es regnet, gehen wir spazieren.",
+            "Obwohl ich müde bin, lerne ich."
           ],
-          "mistake": "___ ich müde bin, lerne ich.",
+          "mistake": "لا تستعمل trotzdem داخل نفس البنية كأنه رابط فرعي؛ trotzdem يبدأ جملة رئيسية والفعل يبقى ثانياً.",
           "drill": {
-            "prompt": "Obwohl",
+            "prompt": "___ ich müde bin, lerne ich.",
             "options": [
+              "Obwohl",
               "Trotzdem",
-              "Denn",
-              0
-            ]
+              "Denn"
+            ],
+            "answer": 0
           }
         },
         {
@@ -934,18 +944,20 @@
           "category": "grammar",
           "level": "A2",
           "summary": "كلاهما adverbs ويربطان جملتين مع بقاء الفعل في الموقع الثاني.",
-          "explanation": "Es regnet. Trotzdem gehe ich raus. Ich bin krank. Deshalb bleibe ich zu Hause.",
+          "explanation": "trotzdem = مع ذلك، deshalb = لذلك. كلاهما ظرف رابط داخل جملة رئيسية؛ عندما يأتي أولاً يأتي الفعل بعده مباشرة.",
           "examples": [
-            "بعد Trotzdem/Deshalb يأتي الفعل مباشرة غالباً."
+            "Es regnet. Trotzdem gehe ich raus.",
+            "Ich bin krank. Deshalb bleibe ich zu Hause."
           ],
-          "mistake": "Ich bin müde. Deshalb ___ ich früh.",
+          "mistake": "بعد trotzdem/deshalb لا تقل Trotzdem ich gehe؛ الصحيح Trotzdem gehe ich.",
           "drill": {
-            "prompt": "schlafe",
+            "prompt": "Ich bin müde. Deshalb ___ ich früh.",
             "options": [
+              "schlafe",
               "ich schlafe",
-              "schlafen",
-              0
-            ]
+              "schlafen"
+            ],
+            "answer": 0
           }
         },
         {
@@ -1017,18 +1029,20 @@
           "category": "grammar",
           "level": "A2",
           "summary": "بعد أفعال/تعابير معينة نستعمل zu + المصدر.",
-          "explanation": "Ich versuche, Deutsch zu lernen. Es ist wichtig, genug zu schlafen.",
+          "explanation": "مع أفعال وتعابير كثيرة يأتي مصدر مع zu: versuchen zu..., hoffen zu..., wichtig sein zu.... مع الفعل المنفصل تدخل zu بين البادئة والجذر.",
           "examples": [
-            "مع الأفعال المنفصلة: anzufangen, aufzustehen."
+            "Ich versuche, Deutsch zu lernen.",
+            "Ich versuche, früher aufzustehen."
           ],
-          "mistake": "Ich versuche, früher ___.",
+          "mistake": "مع الأفعال المنفصلة لا نقول zu aufstehen؛ الصحيح aufzustehen.",
           "drill": {
-            "prompt": "aufzustehen",
+            "prompt": "Ich versuche, früher ___.",
             "options": [
+              "aufzustehen",
               "zu aufstehen",
-              "aufstehen zu",
-              0
-            ]
+              "aufstehen zu"
+            ],
+            "answer": 0
           }
         },
         {
@@ -1037,18 +1051,20 @@
           "category": "grammar",
           "level": "A2",
           "summary": "نسأل بطريقة ألطف باستخدام ob أو أداة W، والفعل في النهاية.",
-          "explanation": "Können Sie mir sagen, wo der Bahnhof ist? Ich weiß nicht, ob er kommt.",
+          "explanation": "السؤال غير المباشر يبدأ بأداة W أو بـob لأسئلة نعم/لا، ويذهب الفعل المصرف إلى نهاية الجملة الفرعية.",
           "examples": [
-            "ob لأسئلة نعم/لا."
+            "Können Sie mir sagen, wo der Bahnhof ist?",
+            "Ich weiß nicht, ob er kommt."
           ],
-          "mistake": "Ich weiß nicht, ___ der Kurs heute stattfindet.",
+          "mistake": "لا تستخدم ترتيب السؤال المباشر داخل الجملة غير المباشرة.",
           "drill": {
-            "prompt": "ob",
+            "prompt": "Ich weiß nicht, ___ der Kurs heute stattfindet.",
             "options": [
+              "ob",
               "dass",
-              "denn",
-              0
-            ]
+              "denn"
+            ],
+            "answer": 0
           }
         },
         {
@@ -1148,18 +1164,20 @@
           "category": "grammar",
           "level": "B1",
           "summary": "الماضي المبني للمجهول: wurde + Partizip، أو ist + Partizip + worden.",
-          "explanation": "Das Haus wurde gebaut. Das Haus ist gebaut worden.",
+          "explanation": "Präteritum Passiv = wurde/wurden + Partizip II. Perfekt Passiv = ist/sind + Partizip II + worden.",
           "examples": [
-            "worden وليس geworden في Perfekt Passiv."
+            "Das Haus wurde gebaut.",
+            "Das Haus ist gebaut worden."
           ],
-          "mistake": "Die E-Mail ist gestern geschickt ___.",
+          "mistake": "في Perfekt Passiv نستعمل worden وليس geworden.",
           "drill": {
-            "prompt": "worden",
+            "prompt": "Die E-Mail ist gestern geschickt ___.",
             "options": [
+              "worden",
               "geworden",
-              "werden",
-              0
-            ]
+              "werden"
+            ],
+            "answer": 0
           }
         },
         {
@@ -1189,18 +1207,21 @@
           "category": "grammar",
           "level": "B1",
           "summary": "أشكال Konjunktiv II الشائعة تُستعمل بدلاً من würde + sein/haben/modal.",
-          "explanation": "Ich hätte Zeit. Ich wäre gern dort. Ich könnte helfen.",
+          "explanation": "الأشكال hätte, wäre, könnte, müsste, dürfte... هي Konjunktiv II شائعة وغالباً أ自然 من würde مع sein/haben/modal.",
           "examples": [
-            "Diese Form wirkt natürlicher."
+            "Ich hätte Zeit.",
+            "Ich wäre gern dort.",
+            "Ich könnte helfen."
           ],
-          "mistake": "Wenn ich Geld ___, würde ich reisen.",
+          "mistake": "لا تقل würde haben في كل موقف؛ hätte غالباً أبسط وأكثر طبيعية.",
           "drill": {
-            "prompt": "hätte",
+            "prompt": "Wenn ich Geld ___, würde ich reisen.",
             "options": [
+              "hätte",
               "habe",
-              "hatte",
-              0
-            ]
+              "hatte"
+            ],
+            "answer": 0
           }
         },
         {
@@ -1398,18 +1419,19 @@
           "category": "grammar",
           "level": "B1",
           "summary": "قاعدة مفيدة لترتيب الظروف: temporal, kausal, modal, lokal.",
-          "explanation": "Ich fahre morgen wegen eines Termins mit dem Zug nach Berlin.",
+          "explanation": "TeKaMoLo ترتيب محايد مفيد للظروف: Temporal (متى) → Kausal (لماذا) → Modal (كيف) → Lokal (أين).",
           "examples": [
-            "ليست قانوناً مطلقاً لكنها ترتيب محايد شائع."
+            "Ich fahre morgen wegen eines Termins mit dem Zug nach Berlin."
           ],
-          "mistake": "Ich fahre ___ ___ ___ nach Berlin.",
+          "mistake": "TeKaMoLo ليس قانوناً مطلقاً؛ يمكن تغيير الترتيب للتأكيد، لكنه مفيد كبداية آمنة.",
           "drill": {
-            "prompt": "morgen / mit dem Zug / wegen...",
+            "prompt": "ما الترتيب المحايد الأفضل؟",
             "options": [
+              "morgen / mit dem Zug / wegen...",
               "morgen / wegen... / mit dem Zug",
-              "mit dem Zug / morgen / wegen...",
-              1
-            ]
+              "mit dem Zug / morgen / wegen..."
+            ],
+            "answer": 1
           }
         }
       ]
@@ -1488,18 +1510,20 @@
           "category": "grammar",
           "level": "B2",
           "summary": "Modalverb مصروف + Partizip II + werden في النهاية.",
-          "explanation": "Das Problem muss gelöst werden. Die Daten dürfen nicht veröffentlicht werden.",
+          "explanation": "في Passiv مع Modalverb: المودال في المركز الثاني، ثم Partizip II، ثم werden في نهاية المجموعة.",
           "examples": [
-            "Im Perfekt يصبح التركيب أثقل ويستعمل بحذر."
+            "Das Problem muss gelöst werden.",
+            "Die Daten dürfen nicht veröffentlicht werden."
           ],
-          "mistake": "Die Aufgabe muss heute ___ werden.",
+          "mistake": "لا تستعمل zu قبل werden هنا.",
           "drill": {
-            "prompt": "erledigt",
+            "prompt": "Die Aufgabe muss heute ___ werden.",
             "options": [
+              "erledigt",
               "erledigen",
-              "zu erledigen",
-              0
-            ]
+              "zu erledigen"
+            ],
+            "answer": 0
           }
         },
         {
@@ -1529,18 +1553,21 @@
           "category": "grammar",
           "level": "B2",
           "summary": "haben + zu = على الفاعل أن يفعل؛ sein + zu = يجب/يمكن أن يُفعل.",
-          "explanation": "Wir haben viel zu tun. Die Regeln sind zu beachten.",
+          "explanation": "haben + zu + Infinitiv يعطي واجباً على الفاعل، وsein + zu + Infinitiv يعطي معنى يجب/يمكن أن يُفعل حسب السياق.",
           "examples": [
-            "المعنى يعتمد على السياق: واجب أو قابلية."
+            "Wir haben viel zu tun.",
+            "Die Regeln sind zu beachten.",
+            "Die Aufgabe ist bis morgen zu erledigen."
           ],
-          "mistake": "Die Aufgabe ist bis morgen ___.",
+          "mistake": "لا تخلطها مع Perfekt؛ هذه بنية مستقلة ذات معنى إلزام/إمكانية.",
           "drill": {
-            "prompt": "zu erledigen",
+            "prompt": "Die Aufgabe ist bis morgen ___.",
             "options": [
+              "zu erledigen",
               "erledigt zu",
-              "erledigen muss",
-              0
-            ]
+              "erledigen muss"
+            ],
+            "answer": 0
           }
         },
         {
@@ -1696,18 +1723,20 @@
           "category": "grammar",
           "level": "B2",
           "summary": "تعبّر عن النتيجة.",
-          "explanation": "Es regnete stark, sodass wir zu Hause blieben. Er spricht so leise, dass ich ihn kaum höre.",
+          "explanation": "sodass أو so ... dass يقدمان نتيجة ناتجة عن الجملة الأولى.",
           "examples": [
-            "sodass يربط سبباً بنتيجة."
+            "Es regnete stark, sodass wir zu Hause blieben.",
+            "Er spricht so leise, dass ich ihn kaum höre."
           ],
-          "mistake": "Es war spät, ___ wir gingen.",
+          "mistake": "damit يعبّر عادة عن الهدف، أما sodass فعن النتيجة.",
           "drill": {
-            "prompt": "sodass",
+            "prompt": "Es war spät, ___ wir gingen.",
             "options": [
+              "sodass",
               "damit",
-              "ob",
-              0
-            ]
+              "ob"
+            ],
+            "answer": 0
           }
         },
         {
@@ -1716,18 +1745,20 @@
           "category": "grammar",
           "level": "B2",
           "summary": "sofern/falls يقدمان شرطاً بصيغة أكثر رسمية أو احتمالية.",
-          "explanation": "Sofern keine Probleme auftreten, starten wir morgen. Falls du Zeit hast, ruf an.",
+          "explanation": "sofern وfalls يقدمان شرطاً. sofern يبدو أكثر رسمية ويعني تقريباً بشرط أن، وfalls أقرب إلى في حال.",
           "examples": [
-            "الفعل في نهاية الجملة الفرعية."
+            "Sofern keine Probleme auftreten, starten wir morgen.",
+            "Falls du Zeit hast, ruf an."
           ],
-          "mistake": "___ alles klappt, beginnen wir um neun.",
+          "mistake": "كلاهما يدخل جملة فرعية، لذلك الفعل المصرف في النهاية.",
           "drill": {
-            "prompt": "Sofern",
+            "prompt": "___ alles klappt, beginnen wir um neun.",
             "options": [
+              "Sofern",
               "Trotz",
-              "Denn",
-              0
-            ]
+              "Denn"
+            ],
+            "answer": 0
           }
         },
         {
@@ -1736,18 +1767,21 @@
           "category": "grammar",
           "level": "B2",
           "summary": "المودال قد يعبر عن درجة اليقين حسب ما يُنقل.",
-          "explanation": "Er muss krank sein = على الأرجح. Er soll reich sein = يُقال. Er will es gesehen haben = يدّعي.",
+          "explanation": "Modalverben قد تعبّر عن تقييم المتكلم للمعلومة: muss = استنتاج قوي، soll = يُقال، will = يدّعي عن نفسه.",
           "examples": [
-            "هذه ليست معاني القدرة/الواجب العادية فقط."
+            "Er muss krank sein.",
+            "Er soll sehr reich sein.",
+            "Er will es gesehen haben."
           ],
-          "mistake": "Er ___ sehr reich sein. (يُقال)",
+          "mistake": "هذه المعاني تختلف عن المعاني الأساسية مثل يجب/يريد، والسياق هو الذي يحدد.",
           "drill": {
-            "prompt": "soll",
+            "prompt": "Er ___ sehr reich sein. (يُقال)",
             "options": [
+              "soll",
               "muss",
-              "darf",
-              0
-            ]
+              "darf"
+            ],
+            "answer": 0
           }
         }
       ]
