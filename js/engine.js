@@ -113,6 +113,16 @@ G.todayPlan=()=>{
   if(due.length){const n=Math.min(due.length,12),min=Math.min(25,8+n);tasks.push({type:"review",title:n+" مراجعات مستحقة",detail:"مفردات وأخطاء سابقة",minutes:min,view:"review"});used+=min}
   else if(G.newVocab(1).length){tasks.push({type:"review",title:"مفردات جديدة",detail:"ابدأ 5 بطاقات فقط",minutes:12,view:"review"});used+=12}
 
+  const errUnlock=G.errorUnlockStatus?.(G.state.profile.level);
+  if(errUnlock?.levelUnlocked){
+    const err=G.errorLevelStats(G.state.profile.level),weak=G.errorWeakSkills(G.state.profile.level)[0];
+    if(err.open>0||err.mastery<85){
+      const min=err.open>0?15:10;
+      tasks.push({type:"error",title:err.open>0?("إصلاح "+err.open+" أخطاء"):"تشخيص الأخطاء",detail:(weak?.title||"تدريب شخصي")+" • Mastery "+err.mastery+"%",minutes:min,view:"errors"});
+      used+=min;
+    }
+  }
+
   const daily=G.todayDaily();
   if(daily&&!daily.progress.complete){
     const min=Math.min(daily.minutes,Math.max(35,target-used));

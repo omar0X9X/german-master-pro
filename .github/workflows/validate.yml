@@ -18,6 +18,7 @@ jobs:
         run: |
           node --check js/store.js
           node --check js/engine.js
+          node --check js/error-engine.js
           node --check js/ui.js
           node --check js/app.js
           node --check sw.js
@@ -34,6 +35,7 @@ jobs:
           const grammar=JSON.parse(fs.readFileSync("data/grammar.json","utf8"));
           const zero=JSON.parse(fs.readFileSync("data/zero-path.json","utf8"));
           const studyMethod=JSON.parse(fs.readFileSync("data/study-method.json","utf8"));
+          const errorEngine=JSON.parse(fs.readFileSync("data/error-engine.json","utf8"));
           const expected=["A1","A2","B1","B2"];
 
           if(c.levels.map(x=>x.id).join(",")!==expected.join(",")) throw new Error("Bad curriculum level order");
@@ -117,6 +119,35 @@ jobs:
             }
           });
 
+          if(errorEngine.levels.map(x=>x.level).join(",")!==expected.join(",")) throw new Error("Bad Error Engine level order");
+          const errorSkillIds=new Map();
+          for(const level of errorEngine.levels){
+            if(!Array.isArray(level.skills)||level.skills.length<8) throw new Error(level.level+" needs 8 error skills");
+            const ids=new Set();
+            for(const skill of level.skills){
+              if(!skill.id||!skill.title||!skill.description) throw new Error("Incomplete error skill "+level.level);
+              if(ids.has(skill.id)) throw new Error("Duplicate error skill "+level.level+" "+skill.id);
+              ids.add(skill.id);
+            }
+            errorSkillIds.set(level.level,ids);
+          }
+          const exerciseIds=new Set(),types=new Set(["cloze","reorder","correct","dictation"]);
+          for(const ex of errorEngine.exercises){
+            if(exerciseIds.has(ex.id)) throw new Error("Duplicate error exercise "+ex.id);
+            exerciseIds.add(ex.id);
+            if(!expected.includes(ex.level)) throw new Error("Bad error exercise level "+ex.id);
+            if(!errorSkillIds.get(ex.level)?.has(ex.skill)) throw new Error("Unknown error skill "+ex.id);
+            if(!types.has(ex.type)) throw new Error("Bad error exercise type "+ex.id);
+            if(!ex.prompt||!ex.answer||!ex.hint||!ex.explain) throw new Error("Incomplete error exercise "+ex.id);
+            if(ex.type==="reorder"&&(!Array.isArray(ex.words)||ex.words.length<3)) throw new Error("Reorder missing words "+ex.id);
+            if(ex.type==="dictation"&&!ex.audio) throw new Error("Dictation missing audio "+ex.id);
+          }
+          if(errorEngine.exercises.length<96) throw new Error("Error Engine exercise bank too small");
+          for(const level of expected){
+            const count=errorEngine.exercises.filter(x=>x.level===level).length;
+            if(count<24) throw new Error(level+" needs at least 24 error exercises");
+          }
+
           if(!Array.isArray(studyMethod.sources)||studyMethod.sources.length<8) throw new Error("Smart notebook needs at least 8 source methods");
           const requiredMethods=["video","grammar","reading","listening","vocab","writing","speaking","review"];
           for(const id of requiredMethods){
@@ -190,8 +221,16 @@ jobs:
           test -f data/grammar.json
           test -f data/zero-path.json
           test -f data/study-method.json
+          test -f data/error-engine.json
+          test -f js/error-engine.js
           grep -q 'data-panel="daily"' index.html
           grep -q 'data-panel="grammar"' index.html
+          grep -q 'data-panel="errors"' index.html
+          grep -q 'id="errorLockPanel"' index.html
+          grep -q 'id="errorSkillGrid"' index.html
+          grep -q 'id="errorExerciseArea"' index.html
+          grep -q 'id="errorNotebookList"' index.html
+          grep -q 'id="manualErrorForm"' index.html
           grep -q 'id="dailyGrammarDone"' index.html
           grep -q 'id="grammarSearch"' index.html
           grep -q 'id="grammarTopics"' index.html
@@ -204,17 +243,27 @@ jobs:
           grep -q 'id="copyMasterNotebookTemplate"' index.html
           grep -q 'G.grammarProgress' js/store.js
           grep -q 'G.ui.renderGrammar' js/ui.js
+          grep -q 'G.ui.renderErrorEngine' js/ui.js
+          grep -q 'G.captureQuizAnswer' js/ui.js
           grep -q 'G.ui.renderZeroPath' js/ui.js
           grep -q 'G.ui.renderNotebookAcademy' js/ui.js
           grep -q 'speechSynthesis' js/ui.js
           grep -q 'G.zeroProgress' js/store.js
+          grep -q 'G.errorUnlockStatus' js/error-engine.js
+          grep -q 'G.errorLevelStats' js/error-engine.js
+          grep -q 'G.recordErrorAttempt' js/error-engine.js
+          grep -q 'G.addManualError' js/error-engine.js
+          grep -q 'globalUnlocked=zero.total>0&&zero.pct===100&&a1.total>0&&a1.pct===100' js/error-engine.js
           grep -q 'G.ui.renderDaily' js/ui.js
           grep -q 'grammar.json' js/app.js
           grep -q 'zero-path.json' js/app.js
           grep -q 'study-method.json' js/app.js
+          grep -q 'error-engine.json' js/app.js
           grep -q 'grammar.json' sw.js
           grep -q 'zero-path.json' sw.js
           grep -q 'study-method.json' sw.js
+          grep -q 'error-engine.json' sw.js
+          grep -q 'error-engine.js' sw.js
           grep -q 'serviceWorker' js/app.js
           node - <<'NODE'
           const fs=require("fs");

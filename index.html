@@ -20,6 +20,7 @@
       <button class="nav active" data-view="dashboard">⌂ <span>الرئيسية</span></button>
       <button class="nav" data-view="daily">▦ <span>30 يوم</span></button>
       <button class="nav" data-view="grammar">Aa <span>القواعد والحروف</span></button>
+      <button class="nav" data-view="errors">⚠ <span>محرك الأخطاء</span><em id="errorLockBadge">🔒</em></button>
       <button class="nav" data-view="roadmap">▤ <span>المسار</span></button>
       <button class="nav" data-view="review">↻ <span>المراجعة</span><em id="reviewBadge" hidden>0</em></button>
       <button class="nav" data-view="practice">▣ <span>التطبيق</span></button>
@@ -227,6 +228,96 @@
         <div id="grammarTopics" class="grammar-topic-list"></div>
       </section>
 
+
+      <section class="view" data-panel="errors">
+        <section id="errorLockPanel" class="error-lock-panel">
+          <div class="error-lock-icon">🔒</div>
+          <small>LOCKED • ERROR ENGINE</small>
+          <h2>محرك الأخطاء مقفول حالياً</h2>
+          <p id="errorLockReason">كمّل الحروف وقواعد A1 أولاً، ومن بعد يتحل لك التدريب الشخصي المبني على أخطائك.</p>
+          <div class="unlock-requirements">
+            <article><span>01</span><div><b>Zero → A1</b><p id="unlockZeroText">0/18</p></div><div class="track"><i id="unlockZeroBar"></i></div></article>
+            <article><span>02</span><div><b>قواعد A1</b><p id="unlockA1Text">0/20</p></div><div class="track"><i id="unlockA1Bar"></i></div></article>
+          </div>
+          <button class="primary" data-go="grammar">كمّل القواعد والحروف</button>
+        </section>
+
+        <div id="errorAcademyContent" hidden>
+          <section class="error-hero">
+            <div>
+              <span class="kicker">PERSONAL ERROR ENGINE</span>
+              <h2>تعلم من أخطائك، ماشي غير من الدروس.</h2>
+              <p>الموقع كيتتبع أخطاءك، يصنفها، ويرجع لك تمارين من نفس الثغرة حتى تبان علامات الإتقان الحقيقي.</p>
+            </div>
+            <div class="error-hero-score">
+              <b id="errorMasteryPct">0%</b>
+              <span>Mastery</span>
+            </div>
+          </section>
+
+          <div id="errorLevelTabs" class="tabs error-level-tabs"></div>
+
+          <section class="error-metrics">
+            <article><small>أخطاء مفتوحة</small><b id="errorOpenCount">0</b><span>خاصها إصلاح</span></article>
+            <article><small>محاولات</small><b id="errorAttemptsCount">0</b><span>أجوبة مسجلة</span></article>
+            <article><small>تمارين مختلفة</small><b id="errorCoverageCount">0</b><span>Coverage</span></article>
+            <article><small>المهارة الأضعف</small><b id="errorWeakSkill">—</b><span>الأولوية دابا</span></article>
+          </section>
+
+          <section class="card error-mastery-card">
+            <header><div><small>MASTERY MAP</small><h3>فين خاصك تخدم أكثر؟</h3></div><span class="note">اضغط على أي مهارة باش تبدأ تدريبها</span></header>
+            <div id="errorSkillGrid" class="error-skill-grid"></div>
+          </section>
+
+          <div class="error-main-grid">
+            <section class="card error-trainer-card">
+              <header>
+                <div><small>ADAPTIVE TRAINER</small><h3 id="errorTrainTitle">التمرين المقترح</h3></div>
+                <span id="errorTrainMeta" class="time">—</span>
+              </header>
+              <div id="errorExerciseArea" class="error-exercise-area"></div>
+              <div id="errorFeedback" class="error-feedback" hidden></div>
+              <div class="error-trainer-actions">
+                <button id="errorNewExercise" class="ghost">بدّل التمرين</button>
+                <button id="errorRecommendedExercise" class="primary">أعطني الأهم دابا</button>
+              </div>
+            </section>
+
+            <section class="card error-notebook-card">
+              <header><div><small>FEHLERBUCH</small><h3>دفتر أخطائي</h3></div><span id="errorNotebookCount" class="time">0</span></header>
+              <div class="error-notebook-tools">
+                <button class="active" data-error-filter="open">مفتوحة</button>
+                <button data-error-filter="all">الكل</button>
+                <button data-error-filter="resolved">مصلحة ✓</button>
+              </div>
+              <div id="errorNotebookList" class="error-notebook-list"></div>
+            </section>
+          </div>
+
+          <section class="card manual-error-card">
+            <header><div><small>ADD MANUALLY</small><h3>زيد خطأ من الدفتر أو من حياتك</h3></div></header>
+            <form id="manualErrorForm" class="manual-error-form">
+              <label>المستوى<select id="manualErrorLevel"><option>A1</option><option>A2</option><option>B1</option><option>B2</option></select></label>
+              <label>المهارة<select id="manualErrorSkill"></select></label>
+              <label class="wide">شنو كتبت/قلتي غلط؟<textarea id="manualErrorWrong" rows="3" required placeholder="مثال: Ich Deutsch lerne."></textarea></label>
+              <label class="wide">التصحيح<textarea id="manualErrorCorrect" rows="3" required placeholder="Ich lerne Deutsch."></textarea></label>
+              <label class="wide">ملاحظة قصيرة<input id="manualErrorNote" placeholder="الفعل خاصو يكون فالمركز الثاني"></label>
+              <button class="primary" type="submit">زيد لدفتر الأخطاء</button>
+            </form>
+          </section>
+
+          <section class="card error-how-card">
+            <header><div><small>HOW IT WORKS</small><h3>كيفاش كيقرر الموقع شنو يعطيك؟</h3></div></header>
+            <div class="error-how-grid">
+              <article><span>1</span><b>كيجمع الأخطاء</b><p>من Quiz، من التدريب، أو كتزيدهم بيدك.</p></article>
+              <article><span>2</span><b>كيصنفهم</b><p>Artikel، Dativ، Wortstellung، Passiv… حسب المستوى.</p></article>
+              <article><span>3</span><b>كيحسب Mastery</b><p>الدقة + عدد التمارين المختلفة اللي جربتي.</p></article>
+              <article><span>4</span><b>كيعاود الضعف</b><p>Cloze، ترتيب، تصحيح، Dictation حتى يثبت.</p></article>
+            </div>
+          </section>
+        </div>
+      </section>
+
       <section class="view" data-panel="roadmap">
         <div class="page-head"><div><small>A1 → B2</small><h2>المسار الكامل</h2><p>فيديوهات منفصلة مرتبة داخل وحدات، ومع كل وحدة اختبار قصير.</p></div><div id="levelTabs" class="tabs"></div></div>
         <section id="levelOverview" class="level-overview"></section>
@@ -259,6 +350,7 @@
   <button class="active" data-view="dashboard">⌂<span>الرئيسية</span></button>
   <button data-view="daily">▦<span>30 يوم</span></button>
   <button data-view="grammar">Aa<span>قواعد</span></button>
+  <button data-view="errors">⚠<span>أخطائي</span></button>
   <button data-view="roadmap">▤<span>المسار</span></button>
   <button data-view="review">↻<span>مراجعة</span></button>
   <button data-view="practice">▣<span>تطبيق</span></button>
@@ -290,6 +382,7 @@
 
 <script src="./js/store.js" defer></script>
 <script src="./js/engine.js" defer></script>
+<script src="./js/error-engine.js" defer></script>
 <script src="./js/ui.js" defer></script>
 <script src="./js/app.js" defer></script>
 </body>
