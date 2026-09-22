@@ -2,7 +2,7 @@ window.GMP=window.GMP||{};
 (()=>{
 const G=window.GMP,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const E=G.escape,U=G.url;
-const titles={dashboard:["مسارك اليوم","الرئيسية"],daily:["120 يوم","30 يوم"],roadmap:["A1 → B2","المسار"],review:["Spaced Review","المراجعة"],practice:["المهارات","التطبيق"],stats:["Progress","الإحصائيات"]};
+const titles={dashboard:["مسارك اليوم","الرئيسية"],daily:["120 يوم","30 يوم"],grammar:["82 درساً","القواعد والحروف"],roadmap:["A1 → B2","المسار"],review:["Spaced Review","المراجعة"],practice:["المهارات","التطبيق"],stats:["Progress","الإحصائيات"]};
 const toast=msg=>{const el=$("#toast");el.textContent=msg;el.classList.add("show");clearTimeout(G.runtime.toastTimer);G.runtime.toastTimer=setTimeout(()=>el.classList.remove("show"),1900)};
 G.ui={toast};
 
@@ -104,6 +104,20 @@ G.ui.renderDaily=()=>{
     if(!was&&v?.core&&!G.lessonDone(id)){G.state.completedLessons[id]=Date.now();G.touch();G.save()}
     G.ui.renderAll();toast(!was?"تسجل فيديو اليوم":"تلغى إنجاز الفيديو");
   });
+
+  const grammar=G.grammarTopic(day.grammarId);
+  const grammarDone=G.dailyDone(selected,day.day,"grammar");
+  if(grammar){
+    $("#dailyGrammarContent").innerHTML='<div class="daily-rule"><span>'+E(grammar.level)+' • '+E(grammar.category==="pronunciation"||grammar.category==="alphabet"?"النطق والحروف":"القواعد")+'</span><h4>'+E(grammar.title)+'</h4><p>'+E(grammar.summary)+'</p><div class="daily-rule-actions"><button class="ghost" id="openDailyGrammar">فتح الشرح الكامل</button></div></div>';
+    $("#openDailyGrammar").onclick=()=>{G.runtime.grammarSection=grammar.id.startsWith("alpha-")?"alphabet":grammar.level;G.runtime.grammarSearch=grammar.title;G.ui.setView("grammar")};
+  }else $("#dailyGrammarContent").innerHTML='<div class="empty">ما كايناش قاعدة مرتبطة بهذا اليوم.</div>';
+  $(".daily-grammar-card").classList.toggle("done",grammarDone);
+  $("#dailyGrammarDone").textContent=grammarDone?"✓ القاعدة مكتملة":"علّم القاعدة مكتملة";
+  $("#dailyGrammarDone").onclick=()=>{
+    if(grammar&&!G.grammarDone(grammar.id))G.toggleGrammar(grammar.id);
+    G.setDailyDone(selected,day.day,"grammar",!grammarDone);
+    G.ui.renderAll();toast(!grammarDone?"تسجلت قاعدة اليوم":"تلغت علامة القاعدة");
+  };
 
   const listenVideo=G.videoById(day.listening?.videoId||day.videos[0]);
   const listeningDone=G.dailyDone(selected,day.day,"listening");
@@ -210,6 +224,63 @@ G.ui.renderDaily=()=>{
   $("#nextDailyDay").onclick=()=>{if(day.day<30){G.selectDailyDay(selected,day.day+1);G.ui.renderDaily();window.scrollTo({top:0,behavior:"smooth"})}};
 };
 
+
+G.ui.renderGrammar=()=>{
+  const sections=G.data.grammar?.sections||[];
+  const current=sections.find(x=>x.id===G.runtime.grammarSection)||sections[0];
+  if(!current)return;
+  const overall=G.grammarProgress();
+  $("#grammarOverallPct").textContent=overall.pct+"%";
+  $("#grammarOverallDone").textContent=overall.done+"/"+overall.total+" قاعدة";
+  $("#grammarTabs").innerHTML=sections.map(sec=>'<button class="'+(sec.id===current.id?"active":"")+'" data-grammar-tab="'+E(sec.id)+'">'+E(sec.label)+' <small>'+sec.topics.length+'</small></button>').join("");
+  $("#grammarTabs [data-grammar-tab]").forEach(b=>b.onclick=()=>{G.runtime.grammarSection=b.dataset.grammarTab;G.runtime.grammarSearch="";G.ui.renderGrammar()});
+
+  const input=$("#grammarSearch");
+  if(document.activeElement!==input)input.value=G.runtime.grammarSearch||"";
+  input.oninput=()=>{G.runtime.grammarSearch=input.value;G.ui.renderGrammarTopics()};
+
+  const progress=G.grammarProgress(current.id);
+  $("#grammarSectionIntro").innerHTML='<div><small>'+E(current.label)+'</small><h3>'+E(current.description)+'</h3></div><div class="grammar-section-progress"><b>'+progress.pct+'%</b><span>'+progress.done+'/'+progress.total+' مكتمل</span></div>';
+  G.ui.renderGrammarTopics();
+};
+
+G.ui.renderGrammarTopics=()=>{
+  const sections=G.data.grammar?.sections||[];
+  const current=sections.find(x=>x.id===G.runtime.grammarSection)||sections[0];
+  if(!current)return;
+  const q=(G.runtime.grammarSearch||"").trim().toLowerCase();
+  let list=current.topics;
+  if(q){
+    const all=sections.flatMap(s=>s.topics);
+    list=all.filter(t=>[t.title,t.summary,t.explanation,t.level,t.category,...(t.examples||[])].join(" ").toLowerCase().includes(q));
+  }
+  $("#grammarTopics").innerHTML=list.length?list.map((t,i)=>{
+    const done=G.grammarDone(t.id),drill=G.state.grammarDrills[t.id];
+    return '<article class="grammar-topic '+(done?"done":"")+'" data-grammar-topic="'+E(t.id)+'">'+
+      '<div class="grammar-topic-head"><span class="grammar-index">'+String(i+1).padStart(2,"0")+'</span><div><div class="tags"><span>'+E(t.level)+'</span><span>'+E(t.category==="alphabet"?"حروف":t.category==="pronunciation"?"نطق":"قواعد")+'</span></div><h3>'+E(t.title)+'</h3><p>'+E(t.summary)+'</p></div><div class="grammar-topic-actions"><button class="ghost" data-expand-grammar="'+E(t.id)+'">شرح</button><button class="done-btn '+(done?"done":"")+'" data-complete-grammar="'+E(t.id)+'">'+(done?"✓ مكتمل":"مكتمل")+'</button></div></div>'+
+      '<div class="grammar-detail" id="grammar-detail-'+E(t.id)+'" hidden>'+
+        '<section><small>كيف تستعملها؟</small><p>'+E(t.explanation)+'</p></section>'+
+        '<section><small>أمثلة</small><div class="grammar-examples">'+(t.examples||[]).map(x=>'<code>'+E(x)+'</code>').join("")+'</div></section>'+
+        '<section class="grammar-warning"><small>خطأ شائع / ملاحظة</small><p>'+E(t.mistake)+'</p></section>'+
+        '<section class="grammar-drill"><small>تمرين سريع</small><h4>'+E(t.drill.prompt)+'</h4><div class="grammar-options">'+t.drill.options.map((o,oi)=>'<button data-grammar-answer="'+oi+'" data-grammar-id="'+E(t.id)+'" class="'+(drill&&drill.choice===oi?(drill.correct?"correct":"wrong"):"")+'">'+E(o)+'</button>').join("")+'</div><p class="grammar-feedback">'+(drill?(drill.correct?"✓ جواب صحيح":"✕ حاول مرة أخرى"):"اختر جواباً.")+'</p></section>'+
+      '</div>'+
+    '</article>';
+  }).join(""):'<div class="empty"><b>ما لقيناش هاد الموضوع</b>جرّب كلمة أخرى مثل Dativ أو Perfekt أو weil.</div>';
+
+  $("#grammarTopics [data-expand-grammar]").forEach(b=>b.onclick=()=>{
+    const detail=$("#grammar-detail-"+CSS.escape(b.dataset.expandGrammar));
+    if(detail){detail.hidden=!detail.hidden;b.textContent=detail.hidden?"شرح":"إغلاق"}
+  });
+  $("#grammarTopics [data-complete-grammar]").forEach(b=>b.onclick=()=>{G.toggleGrammar(b.dataset.completeGrammar);G.ui.renderGrammar();toast(G.grammarDone(b.dataset.completeGrammar)?"تسجلت القاعدة":"تلغى الإنجاز")});
+  $("#grammarTopics [data-grammar-answer]").forEach(b=>b.onclick=()=>{
+    const id=b.dataset.grammarId,t=G.grammarTopic(id),choice=Number(b.dataset.grammarAnswer);
+    if(!t)return;
+    G.saveGrammarDrill(id,choice===t.drill.answer,choice);
+    G.ui.renderGrammarTopics();
+    toast(choice===t.drill.answer?"جواب صحيح ✓":"الجواب ماشي صحيح، راجع الشرح");
+  });
+};
+
 G.ui.renderRoadmap=()=>{
   const levels=G.data.curriculum.levels,selected=G.level(G.runtime.roadmapLevel||G.state.profile.level);G.runtime.roadmapLevel=selected.id;
   $("#levelTabs").innerHTML=levels.map(l=>'<button class="'+(l.id===selected.id?"active":"")+'" data-level-tab="'+l.id+'">'+l.id+'</button>').join("");
@@ -246,7 +317,8 @@ G.ui.renderPractice=()=>{
 
 G.ui.renderStats=()=>{
   const s=G.stats(),current=G.levelProgress();
-  $("#statsGrid").innerHTML='<article><small>إنجاز '+E(G.state.profile.level)+'</small><b>'+current.pct+'%</b><span>دروس + تطبيق + اختبارات</span></article><article><small>Streak</small><b>'+s.streak+'</b><span>أيام</span></article><article><small>متوسط الاختبارات</small><b>'+(s.quizAvg==null?"—":s.quizAvg+"%")+'</b><span>'+s.quizCount+' محاولة</span></article><article><small>بطاقات مراجعة</small><b>'+s.reviewCount+'</b><span>'+s.due+' مستحقة</span></article>';
+  const gp=G.grammarProgress();
+  $("#statsGrid").innerHTML='<article><small>إنجاز '+E(G.state.profile.level)+'</small><b>'+current.pct+'%</b><span>دروس + تطبيق + اختبارات</span></article><article><small>القواعد والحروف</small><b>'+gp.pct+'%</b><span>'+gp.done+'/'+gp.total+' قاعدة</span></article><article><small>Streak</small><b>'+s.streak+'</b><span>أيام</span></article><article><small>متوسط الاختبارات</small><b>'+(s.quizAvg==null?"—":s.quizAvg+"%")+'</b><span>'+s.quizCount+' محاولة</span></article>';
   $("#levelStats").innerHTML=s.levels.map(x=>'<div class="level-stat"><b>'+x.id+'</b><div><div class="track"><i style="width:'+x.pct+'%"></i></div><small class="muted">30 يوم: '+x.daily.done+'/'+x.daily.total+'</small></div><span>'+x.pct+'%</span></div>').join("");
   const hist=[...G.state.quizResults].reverse().slice(0,12);
   $("#quizHistory").innerHTML=hist.length?hist.map(x=>'<div class="history"><div><b>'+E(x.title||x.quizId)+'</b><small>'+new Date(x.at).toLocaleDateString("ar-MA")+'</small></div><b class="'+(x.score>=80?"good-score":x.score>=60?"mid-score":"low-score")+'">'+x.score+'%</b></div>').join(""):'<div class="empty">ما درتي حتى اختبار بعد.</div>';
@@ -260,6 +332,6 @@ G.ui.openQuiz=id=>{
   $("#quizDialog").showModal();
 };
 
-G.ui.renderView=v=>({dashboard:G.ui.renderDashboard,daily:G.ui.renderDaily,roadmap:G.ui.renderRoadmap,review:G.ui.renderReview,practice:G.ui.renderPractice,stats:G.ui.renderStats}[v]||(()=>{}))();
-G.ui.renderAll=()=>{G.ui.renderDashboard();G.ui.renderDaily();G.ui.renderRoadmap();G.ui.renderReview();G.ui.renderPractice();G.ui.renderStats();$("#levelChip").textContent=G.state.profile.level};
+G.ui.renderView=v=>({dashboard:G.ui.renderDashboard,daily:G.ui.renderDaily,grammar:G.ui.renderGrammar,roadmap:G.ui.renderRoadmap,review:G.ui.renderReview,practice:G.ui.renderPractice,stats:G.ui.renderStats}[v]||(()=>{}))();
+G.ui.renderAll=()=>{G.ui.renderDashboard();G.ui.renderDaily();G.ui.renderGrammar();G.ui.renderRoadmap();G.ui.renderReview();G.ui.renderPractice();G.ui.renderStats();$("#levelChip").textContent=G.state.profile.level};
 })();
