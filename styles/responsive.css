@@ -12,3 +12,6 @@
 
 @media(max-width:1050px){.notebook-source-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}.notebook-phases{grid-template-columns:1fr}.notebook-template-box{grid-template-columns:1fr}}
 @media(max-width:700px){.notebook-source-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.notebook-bottom-grid{grid-template-columns:1fr}.notebook-academy-head{display:grid}.notebook-academy-head button{width:100%}}
+
+@media(max-width:900px){.notebook-golden-rules{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.notebook-golden-rules{grid-template-columns:1fr}}
