@@ -20,6 +20,8 @@
       <button class="nav active" data-view="dashboard">⌂ <span>الرئيسية</span></button>
       <button class="nav" data-view="daily">▦ <span>30 يوم</span></button>
       <button class="nav" data-view="grammar">Aa <span>القواعد والحروف</span></button>
+      <button class="nav" data-view="notebook">✎ <span>الدفتر الذكي</span></button>
+      <button class="nav" data-view="cartoons">▶ <span>كرتون ألماني</span></button>
       <button class="nav" data-view="errors">⚠ <span>محرك الأخطاء</span><em id="errorLockBadge">🔒</em></button>
       <button class="nav" data-view="roadmap">▤ <span>المسار</span></button>
       <button class="nav" data-view="review">↻ <span>المراجعة</span><em id="reviewBadge" hidden>0</em></button>
@@ -229,6 +231,89 @@
       </section>
 
 
+
+      <section class="view" data-panel="notebook">
+        <section class="notebook-lab-hero">
+          <div>
+            <span class="kicker">SMART NOTEBOOK LAB</span>
+            <h2>دفتر يخليك تتعلم، ماشي تنسخ.</h2>
+            <p>قسّم صفحة اليوم باحتراف: قاعدة صغيرة، أمثلة، 7 كلمات، إنتاج من راسك، خطأ اليوم، ثم مراجعة D+1 / D+3 / D+7.</p>
+          </div>
+          <div class="notebook-score-box"><b id="notebookPageScore">0%</b><span>اكتمال صفحة اليوم</span></div>
+        </section>
+
+        <div class="notebook-lab-grid">
+          <section class="card notebook-builder-card">
+            <header><div><small>PAGE BUILDER</small><h3>بنِ صفحة اليوم</h3></div><button id="copyNotebookLab" class="ghost">نسخ الصفحة</button></header>
+            <div class="notebook-builder-form">
+              <label>الموضوع<input id="nbTheme" placeholder="مثال: Sich vorstellen"></label>
+              <label>قاعدة اليوم<textarea id="nbRule" rows="2" placeholder="سطر واحد فقط"></textarea></label>
+              <div class="notebook-two">
+                <label>مثال 1<input id="nbEx1" placeholder="Ich lerne heute Deutsch."></label>
+                <label>مثال 2<input id="nbEx2" placeholder="Heute lerne ich Deutsch."></label>
+              </div>
+              <fieldset><legend>7 كلمات اليوم</legend><div id="nbWords" class="nb-word-grid"></div></fieldset>
+              <fieldset><legend>3 جمل من راسك</legend><div id="nbSentences" class="nb-sentence-grid"></div></fieldset>
+              <fieldset class="nb-error-box"><legend>Fehler des Tages</legend>
+                <label>✕ الخطأ<input id="nbWrong"></label>
+                <label>✓ التصحيح<input id="nbRight"></label>
+                <label>Warum?<input id="nbWhy" placeholder="مثال: Verb Position 2"></label>
+              </fieldset>
+              <label>Active Recall — شنو تقدر تكتب بلا ما تشوف؟<textarea id="nbRecall" rows="4" placeholder="سد المصدر وجاوب من الذاكرة..."></textarea></label>
+              <label>ملخص اليوم<textarea id="nbSummary" rows="3" placeholder="3–5 أسطر بالألمانية حسب المستوى"></textarea></label>
+              <div class="nb-review-checks">
+                <label><input id="nbD1" type="checkbox"> D+1</label>
+                <label><input id="nbD3" type="checkbox"> D+3</label>
+                <label><input id="nbD7" type="checkbox"> D+7</label>
+              </div>
+            </div>
+          </section>
+
+          <aside class="notebook-side-stack">
+            <section class="card notebook-professional-card">
+              <header><div><small>PRO PAGE</small><h3>كيف تكون الصفحة الاحترافية؟</h3></div></header>
+              <div id="professionalNotebookRules" class="professional-rules"></div>
+            </section>
+
+            <section class="card notebook-source-mini">
+              <header><div><small>حسب المصدر</small><h3>طريقة الكتابة كتبدل</h3></div></header>
+              <div id="notebookLabTabs" class="notebook-lab-tabs"></div>
+              <div id="notebookLabMethod"></div>
+            </section>
+          </aside>
+        </div>
+
+        <section class="card notebook-preview-card">
+          <header><div><small>PREVIEW</small><h3>شكل الصفحة فالدّفتر</h3></div><span class="note">الألمانية كبيرة • العربية صغيرة</span></header>
+          <div id="notebookPaperPreview" class="notebook-paper-preview"></div>
+        </section>
+      </section>
+
+      <section class="view" data-panel="cartoons">
+        <section class="cartoon-hero">
+          <div>
+            <span class="kicker">GERMAN IMMERSION</span>
+            <h2>كرتون ألماني حسب مستواك.</h2>
+            <p>ماشي فرجة فقط: 3 مشاهدات → Untertitel ألمانية عند توفرها → Shadowing → 5 كلمات → تلخيص.</p>
+          </div>
+          <div class="cartoon-hero-note">المستويات هنا تقدير تدريبي داخل الموقع، ماشي تصنيف CEFR رسمي من أصحاب البرامج.</div>
+        </section>
+
+        <div id="cartoonLevelTabs" class="tabs cartoon-level-tabs"></div>
+        <section id="cartoonLevelIntro" class="cartoon-level-intro"></section>
+
+        <div class="cartoon-layout">
+          <section>
+            <div id="cartoonCards" class="cartoon-cards"></div>
+          </section>
+          <aside class="card cartoon-study-card">
+            <header><div><small>3-PASS METHOD</small><h3>كيفاش تشاهد باش تتعلم؟</h3></div></header>
+            <ol id="cartoonMethodSteps" class="cartoon-method-steps"></ol>
+            <div id="cartoonSelectedTraining" class="cartoon-selected-training"></div>
+          </aside>
+        </div>
+      </section>
+
       <section class="view" data-panel="errors">
         <section id="errorLockPanel" class="error-lock-panel">
           <div class="error-lock-icon">🔒</div>
@@ -350,6 +435,8 @@
   <button class="active" data-view="dashboard">⌂<span>الرئيسية</span></button>
   <button data-view="daily">▦<span>30 يوم</span></button>
   <button data-view="grammar">Aa<span>قواعد</span></button>
+  <button data-view="notebook">✎<span>دفتر</span></button>
+  <button data-view="cartoons">▶<span>كرتون</span></button>
   <button data-view="errors">⚠<span>أخطائي</span></button>
   <button data-view="roadmap">▤<span>المسار</span></button>
   <button data-view="review">↻<span>مراجعة</span></button>
