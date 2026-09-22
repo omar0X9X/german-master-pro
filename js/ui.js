@@ -2,7 +2,7 @@ window.GMP=window.GMP||{};
 (()=>{
 const G=window.GMP,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const E=G.escape,U=G.url;
-const titles={dashboard:["مسارك اليوم","الرئيسية"],daily:["120 يوم","30 يوم"],grammar:["82 درساً","القواعد والحروف"],roadmap:["A1 → B2","المسار"],review:["Spaced Review","المراجعة"],practice:["المهارات","التطبيق"],stats:["Progress","الإحصائيات"]};
+const titles={dashboard:["مسارك اليوم","الرئيسية"],daily:["120 يوم","30 يوم"],grammar:["82 درساً","القواعد والحروف"],errors:["PERSONAL ERROR ENGINE","محرك الأخطاء"],roadmap:["A1 → B2","المسار"],review:["Spaced Review","المراجعة"],practice:["المهارات","التطبيق"],stats:["Progress","الإحصائيات"]};
 const toast=msg=>{const el=$("#toast");el.textContent=msg;el.classList.add("show");clearTimeout(G.runtime.toastTimer);G.runtime.toastTimer=setTimeout(()=>el.classList.remove("show"),1900)};
 G.ui={toast};
 G.ui.speakGerman=text=>{
@@ -480,6 +480,157 @@ G.ui.renderPractice=()=>{
   $$("#practiceGrid [data-resource]").forEach(b=>b.onclick=()=>{G.toggleResource(b.dataset.resource);G.ui.renderAll();toast("تحدث تقدم التطبيق")});
 };
 
+
+const errorSkillName=(level,id)=>G.errorSkills(level).find(x=>x.id===id)?.title||(id==="general"?"عام":id);
+const errorTypeName=t=>({cloze:"املأ الفراغ",reorder:"رتب الجملة",correct:"صحح الخطأ",dictation:"Dictation",quiz:"Quiz"}[t]||t);
+
+G.ui.renderErrorEngine=()=>{
+  const global=G.errorUnlockStatus("A1");
+  const lock=$("#errorLockPanel"),content=$("#errorAcademyContent"),badge=$("#errorLockBadge");
+  $("#unlockZeroText").textContent=global.zero.done+"/"+global.zero.total;
+  $("#unlockA1Text").textContent=global.a1.done+"/"+global.a1.total;
+  $("#unlockZeroBar").style.width=global.zero.pct+"%";
+  $("#unlockA1Bar").style.width=global.a1.pct+"%";
+  $("#errorLockReason").textContent=global.reason;
+
+  if(!global.globalUnlocked){
+    lock.hidden=false;content.hidden=true;if(badge){badge.hidden=false;badge.textContent="🔒"};return;
+  }
+  lock.hidden=true;content.hidden=false;if(badge)badge.hidden=true;
+
+  const levels=["A1","A2","B1","B2"];
+  let level=levels.includes(G.runtime.errorLevel)?G.runtime.errorLevel:"A1";
+  if(!G.errorUnlockStatus(level).levelUnlocked)level="A1";
+  G.runtime.errorLevel=level;
+
+  $("#errorLevelTabs").innerHTML=levels.map(id=>{
+    const u=G.errorUnlockStatus(id),gp=G.grammarProgress(id);
+    return '<button class="'+(id===level?"active":"")+'" data-error-level="'+id+'" '+(!u.levelUnlocked?"disabled":"")+'>'+id+(u.levelUnlocked?"":" 🔒")+'<small>'+(id==="A1"?"":gp.pct+"% قواعد")+'</small></button>';
+  }).join("");
+  $("#errorLevelTabs [data-error-level]").forEach(b=>b.onclick=()=>{
+    if(!G.errorUnlockStatus(b.dataset.errorLevel).levelUnlocked)return;
+    G.runtime.errorLevel=b.dataset.errorLevel;G.runtime.errorSkill="all";G.runtime.errorExerciseId=null;G.runtime.errorLastResult=null;G.runtime.errorReorder=[];G.ui.renderErrorEngine();
+  });
+
+  const stats=G.errorLevelStats(level),weak=G.errorWeakSkills(level)[0];
+  const unique=stats.skills.reduce((n,x)=>n+x.unique,0);
+  $("#errorMasteryPct").textContent=stats.mastery+"%";
+  $("#errorOpenCount").textContent=stats.open;
+  $("#errorAttemptsCount").textContent=stats.attempts;
+  $("#errorCoverageCount").textContent=unique+"/"+G.errorExercises(level).length;
+  $("#errorWeakSkill").textContent=weak?.title||"—";
+
+  $("#errorSkillGrid").innerHTML=stats.skills.map(x=>
+    '<button class="error-skill '+(G.runtime.errorSkill===x.id?"active":"")+'" data-error-skill="'+E(x.id)+'">'+
+      '<div><b>'+E(x.title)+'</b><span>'+E(x.description)+'</span></div>'+
+      '<strong>'+x.mastery+'%</strong>'+
+      '<div class="track"><i style="width:'+x.mastery+'%"></i></div>'+
+      '<small>'+x.accuracy+'% دقة • '+x.unique+'/'+x.totalExercises+' تغطية • '+x.open+' أخطاء</small>'+
+    '</button>'
+  ).join("");
+  $("#errorSkillGrid [data-error-skill]").forEach(b=>b.onclick=()=>{
+    G.runtime.errorSkill=b.dataset.errorSkill;G.runtime.errorExerciseId=null;G.runtime.errorLastResult=null;G.runtime.errorReorder=[];G.ui.renderErrorEngine();
+  });
+
+  let ex=G.runtime.errorExerciseId?G.errorExercise(G.runtime.errorExerciseId):null;
+  if(!ex||ex.level!==level||(G.runtime.errorSkill!=="all"&&ex.skill!==G.runtime.errorSkill)){
+    ex=G.errorRecommended(level,G.runtime.errorSkill||"all");
+    G.runtime.errorExerciseId=ex?.id||null;G.runtime.errorReorder=[];
+  }
+  const area=$("#errorExerciseArea"),feedback=$("#errorFeedback");
+  if(!ex){
+    area.innerHTML='<div class="empty"><b>ما لقيناش تمرين</b>اختار مهارة أخرى.</div>';
+    feedback.hidden=true;
+  }else{
+    const skillName=errorSkillName(level,ex.skill),st=G.errorAttemptStats(ex.id);
+    $("#errorTrainTitle").textContent=skillName;
+    $("#errorTrainMeta").textContent=errorTypeName(ex.type)+" • "+st.attempts+" محاولة";
+    let control='';
+    if(ex.type==="dictation"){
+      control='<button class="dictation-play" id="errorDictationPlay">🔊 اسمع الجملة</button><label class="error-answer-label">كتب اللي سمعتي<input id="errorAnswerInput" autocomplete="off" spellcheck="false" placeholder="اكتب بالألمانية..."></label>';
+    }else if(ex.type==="reorder"){
+      const selected=G.runtime.errorReorder||[];
+      control='<div class="reorder-answer" id="reorderAnswer">'+(selected.length?E(selected.join(" ")):'اضغط الكلمات بالترتيب الصحيح')+'</div>'+
+        '<div class="reorder-chips">'+(ex.words||[]).map((w,i)=>'<button type="button" data-reorder-index="'+i+'" '+(selected.includes(w)?"disabled":"")+'>'+E(w)+'</button>').join("")+'</div>'+
+        '<button type="button" class="link-btn" id="resetReorder">إعادة الترتيب</button>';
+    }else{
+      control='<label class="error-answer-label">'+(ex.type==="correct"?"كتب الجملة المصححة":"جوابك")+'<input id="errorAnswerInput" autocomplete="off" spellcheck="false" placeholder="اكتب الجواب هنا..."></label>';
+    }
+    area.innerHTML='<article class="error-question"><div class="error-question-top"><span>'+E(level)+'</span><span>'+E(skillName)+'</span><span>'+E(errorTypeName(ex.type))+'</span></div><h4>'+E(ex.prompt)+'</h4><p class="hint">💡 '+E(ex.hint||"")+'</p>'+control+'<button class="primary full" id="submitErrorAnswer">صحّح جوابي</button></article>';
+
+    if(ex.type==="dictation")$("#errorDictationPlay").onclick=()=>G.ui.speakGerman(ex.audio||ex.answer);
+    if(ex.type==="reorder"){
+      $("#errorExerciseArea [data-reorder-index]").forEach(b=>b.onclick=()=>{
+        const word=ex.words[Number(b.dataset.reorderIndex)];
+        if(!(G.runtime.errorReorder||[]).includes(word))G.runtime.errorReorder.push(word);
+        G.ui.renderErrorEngine();
+      });
+      $("#resetReorder").onclick=()=>{G.runtime.errorReorder=[];G.runtime.errorLastResult=null;G.ui.renderErrorEngine()};
+    }
+    $("#submitErrorAnswer").onclick=()=>{
+      const answer=ex.type==="reorder"?(G.runtime.errorReorder||[]).join(" "):($("#errorAnswerInput")?.value||"");
+      if(!answer.trim()){toast("كتب أو كوّن الجواب أولاً");return}
+      const correct=G.checkErrorAnswer(ex,answer);
+      G.recordErrorAttempt(ex,answer,correct,"engine");
+      G.runtime.errorLastResult={exerciseId:ex.id,correct,userAnswer:answer,answer:ex.answer,explain:ex.explain};
+      G.ui.renderErrorEngine();
+    };
+
+    const last=G.runtime.errorLastResult;
+    if(last&&last.exerciseId===ex.id){
+      feedback.hidden=false;
+      feedback.className="error-feedback "+(last.correct?"success":"fail");
+      feedback.innerHTML='<b>'+(last.correct?"✓ صحيح":"✕ مازال خاصها تصحيح")+'</b><p><strong>الجواب:</strong> '+E(last.answer)+'</p><p>'+E(last.explain||"")+'</p>'+(last.correct?'<small>إلى كان هاد الخطأ مسجل، خاص جوابين صحيحين باش يتعلّم كمصلوح.</small>':'<small>تسجل الخطأ تلقائياً فـFehlerbuch.</small>');
+    }else feedback.hidden=true;
+  }
+
+  $("#errorNewExercise").onclick=()=>{
+    const bank=G.errorExercises(level,G.runtime.errorSkill||"all");
+    if(!bank.length)return;
+    const i=Math.max(0,bank.findIndex(x=>x.id===G.runtime.errorExerciseId));
+    const next=bank[(i+1)%bank.length];
+    G.runtime.errorExerciseId=next.id;G.runtime.errorLastResult=null;G.runtime.errorReorder=[];G.ui.renderErrorEngine();
+  };
+  $("#errorRecommendedExercise").onclick=()=>{
+    G.runtime.errorSkill="all";G.runtime.errorExerciseId=G.errorRecommended(level,"all")?.id||null;G.runtime.errorLastResult=null;G.runtime.errorReorder=[];G.ui.renderErrorEngine();
+  };
+
+  const filter=G.runtime.errorNotebookFilter||"open";
+  $(".error-notebook-tools [data-error-filter]").forEach(b=>{
+    b.classList.toggle("active",b.dataset.errorFilter===filter);
+    b.onclick=()=>{G.runtime.errorNotebookFilter=b.dataset.errorFilter;G.ui.renderErrorEngine()};
+  });
+  let notes=G.errorNotebookList(level,false);
+  if(filter==="open")notes=notes.filter(x=>!x.resolved);
+  if(filter==="resolved")notes=notes.filter(x=>x.resolved);
+  $("#errorNotebookCount").textContent=notes.length;
+  $("#errorNotebookList").innerHTML=notes.length?notes.slice(0,30).map(n=>
+    '<article class="error-note '+(n.resolved?"resolved":"")+'">'+
+      '<div class="error-note-head"><span>'+E(errorSkillName(n.level,n.skill))+'</span><small>'+new Date(n.lastAt||n.createdAt).toLocaleDateString("ar-MA")+'</small></div>'+
+      '<p class="wrong">✕ '+E(n.userAnswer||n.prompt)+'</p><p class="right">✓ '+E(n.answer)+'</p>'+
+      (n.explain?'<p class="why">'+E(n.explain)+'</p>':'')+
+      '<footer><span>تكرر '+(n.wrongCount||1)+'× • صحيح متتالي '+(n.correctStreak||0)+'/2</span><button data-error-note="'+E(n.id)+'">'+(n.resolved?"رجّعها مفتوحة":"علّمها مصلحة")+'</button></footer>'+
+    '</article>'
+  ).join(""):'<div class="empty"><b>'+(filter==="open"?"ما عندك حتى خطأ مفتوح 🎉":"ما كايناش عناصر هنا")+'</b>'+(filter==="open"?"أي خطأ جديد غادي يدخل هنا تلقائياً.":"")+'</div>';
+  $("#errorNotebookList [data-error-note]").forEach(b=>b.onclick=()=>{G.toggleErrorResolved(b.dataset.errorNote);G.ui.renderErrorEngine()});
+
+  const lvlSelect=$("#manualErrorLevel"),skillSelect=$("#manualErrorSkill");
+  lvlSelect.value=level;
+  [...lvlSelect.options].forEach(o=>o.disabled=!G.errorUnlockStatus(o.value).levelUnlocked);
+  const fillManualSkills=()=>{
+    const lv=lvlSelect.value;skillSelect.innerHTML=G.errorSkills(lv).map(x=>'<option value="'+E(x.id)+'">'+E(x.title)+'</option>').join("");
+  };
+  fillManualSkills();lvlSelect.onchange=fillManualSkills;
+  $("#manualErrorForm").onsubmit=e=>{
+    e.preventDefault();
+    const lv=lvlSelect.value,skill=skillSelect.value,wrong=$("#manualErrorWrong").value.trim(),correct=$("#manualErrorCorrect").value.trim(),note=$("#manualErrorNote").value.trim();
+    if(!wrong||!correct)return;
+    G.addManualError(lv,skill,wrong,correct,note);
+    $("#manualErrorWrong").value="";$("#manualErrorCorrect").value="";$("#manualErrorNote").value="";
+    G.runtime.errorLevel=lv;G.ui.renderErrorEngine();toast("تزاد الخطأ لدفتر الأخطاء");
+  };
+};
+
 G.ui.renderStats=()=>{
   const s=G.stats(),current=G.levelProgress();
   const gp=G.grammarProgress();
@@ -497,6 +648,6 @@ G.ui.openQuiz=id=>{
   $("#quizDialog").showModal();
 };
 
-G.ui.renderView=v=>({dashboard:G.ui.renderDashboard,daily:G.ui.renderDaily,grammar:G.ui.renderGrammar,roadmap:G.ui.renderRoadmap,review:G.ui.renderReview,practice:G.ui.renderPractice,stats:G.ui.renderStats}[v]||(()=>{}))();
-G.ui.renderAll=()=>{G.ui.renderDashboard();G.ui.renderDaily();G.ui.renderGrammar();G.ui.renderRoadmap();G.ui.renderReview();G.ui.renderPractice();G.ui.renderStats();$("#levelChip").textContent=G.state.profile.level};
+G.ui.renderView=v=>({dashboard:G.ui.renderDashboard,daily:G.ui.renderDaily,grammar:G.ui.renderGrammar,errors:G.ui.renderErrorEngine,roadmap:G.ui.renderRoadmap,review:G.ui.renderReview,practice:G.ui.renderPractice,stats:G.ui.renderStats}[v]||(()=>{}))();
+G.ui.renderAll=()=>{G.ui.renderDashboard();G.ui.renderDaily();G.ui.renderGrammar();G.ui.renderErrorEngine();G.ui.renderRoadmap();G.ui.renderReview();G.ui.renderPractice();G.ui.renderStats();$("#levelChip").textContent=G.state.profile.level};
 })();
