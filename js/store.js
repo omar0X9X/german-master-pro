@@ -3,13 +3,13 @@ window.GMP=window.GMP||{};
 const G=window.GMP,KEY="gmp.state.v1",THEME="gmp.theme.v1",DAY=86400000;
 const defaults={
   profile:{level:"A1",minutes:210,goal:"general",onboarded:false},
-  completedLessons:{},completedResources:{},reviewRecords:{},quizResults:[],activity:[],
+  completedLessons:{},completedResources:{},completedGrammar:{},grammarDrills:{},reviewRecords:{},quizResults:[],activity:[],
   lastView:"dashboard",practiceSkill:"الكل",
   dailyChecks:{},dailyWriting:{},dailySpeaking:{},dailySelected:{A1:1,A2:1,B1:1,B2:1}
 };
 const merge=(a,b)=>{Object.keys(b||{}).forEach(k=>{if(b[k]&&typeof b[k]==="object"&&!Array.isArray(b[k])){a[k]=merge(a[k]&&typeof a[k]==="object"?a[k]:{},b[k])}else a[k]=b[k]});return a};
 const load=()=>{try{return merge(JSON.parse(JSON.stringify(defaults)),JSON.parse(localStorage.getItem(KEY))||{})}catch{return JSON.parse(JSON.stringify(defaults))}};
-G.DAY=DAY;G.state=load();G.data={curriculum:null,quizzes:null,vocabulary:null,daily:null,videos:null};G.runtime={view:"dashboard",roadmapLevel:"A1",dailyLevel:null,toastTimer:null,mediaRecorder:null,mediaStream:null,mediaChunks:[],mediaUrl:null,speakingTimer:null,speakingStartedAt:null};
+G.DAY=DAY;G.state=load();G.data={curriculum:null,quizzes:null,vocabulary:null,daily:null,videos:null,grammar:null};G.runtime={view:"dashboard",roadmapLevel:"A1",dailyLevel:null,grammarSection:"alphabet",grammarSearch:"",toastTimer:null,mediaRecorder:null,mediaStream:null,mediaChunks:[],mediaUrl:null,speakingTimer:null,speakingStartedAt:null};
 G.save=()=>localStorage.setItem(KEY,JSON.stringify(G.state));
 G.reset=()=>{G.state=JSON.parse(JSON.stringify(defaults));G.save()};
 G.dateKey=(d=new Date())=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
@@ -20,6 +20,11 @@ G.currentLevel=()=>G.level(G.state.profile.level);
 G.lessons=(level=G.currentLevel())=>level.modules.flatMap(m=>m.lessons.map(l=>({...l,moduleId:m.id,moduleTitle:m.title,quizId:m.quizId})));
 G.resources=(level=G.currentLevel())=>level.resources||[];
 G.lessonDone=id=>Boolean(G.state.completedLessons[id]);G.resourceDone=id=>Boolean(G.state.completedResources[id]);
+G.grammarTopic=id=>G.data.grammar?.sections?.flatMap(s=>s.topics).find(x=>x.id===id)||null;
+G.grammarDone=id=>Boolean(G.state.completedGrammar[id]);
+G.toggleGrammar=id=>{if(G.grammarDone(id))delete G.state.completedGrammar[id];else{G.state.completedGrammar[id]=Date.now();G.touch()}G.save()};
+G.saveGrammarDrill=(id,correct,choice)=>{G.state.grammarDrills[id]={correct:Boolean(correct),choice,at:Date.now()};if(correct&&!G.grammarDone(id))G.state.completedGrammar[id]=Date.now();G.touch();G.save()};
+G.grammarProgress=(sectionId=null)=>{const sections=G.data.grammar?.sections||[];const topics=sectionId?(sections.find(s=>s.id===sectionId)?.topics||[]):sections.flatMap(s=>s.topics);const done=topics.filter(t=>G.grammarDone(t.id)).length;return{done,total:topics.length,pct:topics.length?Math.round(done/topics.length*100):0}};
 G.toggleLesson=id=>{if(G.lessonDone(id))delete G.state.completedLessons[id];else{G.state.completedLessons[id]=Date.now();G.touch()}G.save()};
 G.toggleResource=id=>{if(G.resourceDone(id))delete G.state.completedResources[id];else{G.state.completedResources[id]=Date.now();G.touch()}G.save()};
 G.nextLesson=(level=G.currentLevel())=>G.lessons(level).find(l=>!G.lessonDone(l.id))||null;
