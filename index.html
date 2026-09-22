@@ -18,6 +18,7 @@
     <a class="brand" href="#" data-go="dashboard"><span class="flag"><i></i><i></i><i></i></span><span><b>German Master Pro</b><small>تعلّم الألمانية بذكاء</small></span></a>
     <nav>
       <button class="nav active" data-view="dashboard">⌂ <span>الرئيسية</span></button>
+      <button class="nav" data-view="daily">▦ <span>30 يوم</span></button>
       <button class="nav" data-view="roadmap">▤ <span>المسار</span></button>
       <button class="nav" data-view="review">↻ <span>المراجعة</span><em id="reviewBadge" hidden>0</em></button>
       <button class="nav" data-view="practice">▣ <span>التطبيق</span></button>
@@ -57,6 +58,60 @@
         <section class="card continue"><header><div><small>أكمل من هنا</small><h3>الدرس التالي</h3></div><button class="link-btn" data-go="roadmap">كل الدروس ←</button></header><div id="continueLesson"></div></section>
       </section>
 
+
+      <section class="view" data-panel="daily">
+        <div class="page-head daily-page-head">
+          <div><small>30-DAY PROGRAM</small><h2>برنامج يوم بيوم</h2><p>30 يوماً لكل مستوى: فيديوهات + قراءة متدرجة + كتابة يومية + مفردات ومراجعة.</p></div>
+          <div id="dailyLevelTabs" class="tabs"></div>
+        </div>
+
+        <section class="daily-overview">
+          <div>
+            <small id="dailyLevelLabel">A1 • اليوم 1 من 30</small>
+            <h3 id="dailyTheme">موضوع اليوم</h3>
+            <p id="dailyObjective" class="muted"></p>
+          </div>
+          <div class="daily-overview-side">
+            <div class="daily-progress-ring"><b id="dailyLevelPct">0%</b><span>30 يوم</span></div>
+            <div><b id="dailyDaysDone">0/30</b><small>أيام مكتملة</small></div>
+          </div>
+        </section>
+
+        <div id="dailyDayGrid" class="day-grid" aria-label="أيام البرنامج"></div>
+
+        <div class="daily-grid">
+          <section class="card daily-videos-card">
+            <header><div><small>WATCH</small><h3>فيديوهات اليوم</h3></div><span class="time" id="dailyVideoTime">0 د</span></header>
+            <div id="dailyVideos" class="daily-videos"></div>
+          </section>
+
+          <section class="card daily-reading-card">
+            <header><div><small>READ</small><h3 id="dailyReadingTitle">نص اليوم</h3></div><button id="dailyReadingDone" class="ghost">علّم القراءة مكتملة</button></header>
+            <article id="dailyReadingText" class="reading-text" lang="de"></article>
+            <div class="reading-questions"><b>بعد القراءة</b><ol id="dailyReadingQuestions"></ol></div>
+          </section>
+
+          <section class="card daily-writing-card">
+            <header><div><small>WRITE</small><h3>كتابة اليوم</h3></div><span class="time"><b id="dailyWordTarget">0</b> كلمة+</span></header>
+            <p id="dailyWritingPrompt" class="writing-prompt"></p>
+            <textarea id="dailyWritingArea" class="writing-area" rows="10" placeholder="اكتب هنا بالألمانية... يتم الحفظ تلقائياً."></textarea>
+            <div class="writing-footer"><span><b id="dailyWordCount">0</b> كلمة</span><button id="dailyWritingDone" class="primary">علّم الكتابة مكتملة</button></div>
+            <ul id="dailyWritingChecklist" class="checklist"></ul>
+          </section>
+
+          <section class="card daily-vocab-card">
+            <header><div><small>VOCAB</small><h3>5 كلمات لليوم</h3></div><button class="link-btn" data-go="review">فتح المراجعة ←</button></header>
+            <div id="dailyVocab" class="daily-vocab"></div>
+          </section>
+        </div>
+
+        <section class="daily-footer-nav">
+          <button id="prevDailyDay" class="ghost">→ اليوم السابق</button>
+          <div><b id="dailyDayStatus">0/0</b><span>مهام اليوم</span></div>
+          <button id="nextDailyDay" class="primary">اليوم التالي ←</button>
+        </section>
+      </section>
+
       <section class="view" data-panel="roadmap">
         <div class="page-head"><div><small>A1 → B2</small><h2>المسار الكامل</h2><p>فيديوهات منفصلة مرتبة داخل وحدات، ومع كل وحدة اختبار قصير.</p></div><div id="levelTabs" class="tabs"></div></div>
         <section id="levelOverview" class="level-overview"></section>
@@ -87,6 +142,7 @@
 
 <nav class="mobile-nav">
   <button class="active" data-view="dashboard">⌂<span>الرئيسية</span></button>
+  <button data-view="daily">▦<span>30 يوم</span></button>
   <button data-view="roadmap">▤<span>المسار</span></button>
   <button data-view="review">↻<span>مراجعة</span></button>
   <button data-view="practice">▣<span>تطبيق</span></button>
