@@ -1,8 +1,31 @@
-# German Path — Static A1 → B2
+# تعلّم الألمانية 🇩🇪
 
-نسخة Static مستقلة داخل مشروع `german-master-pro`، بدون React أو Next.js أو Backend.
+مشروع Static عربي (RTL) لتنظيم رحلة تعلم الألمانية من A1 إلى B2 حسب **المهارة والمصدر**، وليس مجرد قائمة دروس.
 
-## هيكل الملفات
+## فكرة المشروع
+
+كل مستوى يحتوي على مسار واضح:
+
+1. **القواعد والمفردات** — المصدر الأساسي: Deutsch mit Ahmad Yaghi.
+2. **النطق** — المصدر الأساسي: Easy German.
+3. **الاستماع** — DW Deutsch lernen / Easy German / Natürlich German / Slow German حسب المستوى.
+4. **القراءة** — German.net وLingua بنصوص مصنفة A1/A2/B1/B2.
+5. **الكتابة** — LangCorrect وVHS-Lernportal وDeutschAkademie وGoethe بحسب المستوى.
+6. **الاختبار** — مواد Goethe الرسمية/التفاعلية لقياس الجاهزية للانتقال.
+
+## المزايا
+
+- A1 / A2 / B1 / B2.
+- عشرات الموارد المرتبة حسب المهارة.
+- روابط فيديوهات محددة وروابط مواقع تعليمية متخصصة.
+- فلترة حسب: قواعد، مفردات، نطق، استماع، قراءة، كتابة، اختبار.
+- حفظ التقدم عبر localStorage.
+- Dark Mode.
+- Responsive للموبايل والتابلت والديسكتوب.
+- Vanilla HTML/CSS/JavaScript فقط.
+- ملف JSON واحد سهل تعديل الموارد من خلاله.
+
+## الملفات
 
 ```text
 static-site/
@@ -12,36 +35,29 @@ static-site/
 ├── README.md
 └── data/
     └── curriculum.json
-
-.github/workflows/
-└── pages-static.yml
 ```
 
-## المزايا
+## إضافة مورد جديد
 
-- واجهة عربية RTL.
-- Responsive للموبايل والتابلت والديسكتوب.
-- A1 / A2 / B1 / B2 في 24 أسبوعاً.
-- 6 أيام دراسة لكل أسبوع.
-- روابط YouTube مرتبة حسب المستوى والمهارة.
-- حفظ التقدم محلياً عبر `localStorage`.
-- Dark Mode محفوظ محلياً.
-- SVG icons مدمجة داخل HTML.
-- لا يوجد Backend ولا مفاتيح API ولا مكتبات JavaScript خارجية.
-
-## تعديل المحتوى
-
-كل المحتوى التعليمي موجود في:
+أضف عنصراً داخل `resources` للمستوى المطلوب في:
 
 `static-site/data/curriculum.json`
 
-يمكن إضافة أسبوع، تغيير هدف، تعديل مهام اليوم أو استبدال روابط الفيديو بدون لمس منطق JavaScript.
+البنية:
 
-## تشغيل محلي
+```json
+{
+  "id": "unique-id",
+  "skill": "الاستماع",
+  "type": "youtube",
+  "provider": "اسم القناة",
+  "title": "عنوان المورد",
+  "note": "متى ولماذا تستخدمه",
+  "url": "https://..."
+}
+```
 
-لا تفتح `index.html` مباشرة عبر `file://` لأن المتصفح قد يمنع تحميل JSON.
-
-من جذر المستودع:
+## التشغيل المحلي
 
 ```bash
 python -m http.server 8080
@@ -51,13 +67,4 @@ python -m http.server 8080
 
 `http://localhost:8080/static-site/`
 
-## GitHub Pages
-
-الـ workflow الموجود في `.github/workflows/pages-static.yml` يرفع مجلد `static-site` إلى GitHub Pages بعد كل Push إلى `main` يمس ملفات النسخة Static.
-
-إذا كانت Pages غير مفعلة للمستودع، اختر في GitHub:
-Settings → Pages → Source → GitHub Actions.
-
-## ملاحظة تعليمية
-
-الخطة مكثفة. الوصول الفعلي إلى B2 خلال 24 أسبوعاً ليس ضماناً؛ يعتمد على عدد الساعات الفعلية، الاستمرارية، جودة الممارسة، والتعرض للغة خارج الموقع.
+> ملاحظة: بعض الموارد المجانية قد تحتوي على ميزات إضافية مدفوعة، لذلك وصفنا المورد حسب ما يمكن التحقق منه حالياً ولم نفترض أن كل ميزة مجانية.
