@@ -43,6 +43,7 @@ G.ui.startTask=t=>{
   if(!t)return;
   if(t.type==="quiz"){G.ui.openQuiz(t.quizId);return}
   if(t.type==="review"){G.ui.setView("review");return}
+  if(t.type==="error"){G.ui.setView("errors");return}
   if(t.type==="zero"){G.runtime.zeroSelected=t.zeroIndex||G.state.zeroPathCurrent;G.ui.setView("grammar");return}
   if(t.type==="daily"){
     const levelId=G.state.profile.level;
