@@ -1,1 +1,0 @@
-import{NextResponse}from"next/server";export async function GET(){return NextResponse.json({due:42,learning:18,review:1240,relearning:7,retentionTarget:.9})}

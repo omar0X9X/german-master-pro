@@ -1,1 +1,0 @@
-import {PageScaffold} from "@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="ERFOLGE" title="الإنجازات" description="شارات مرتبطة بالاستمرارية والإتقان والمحادثة والامتحانات، لا بالنقر العشوائي."/>}

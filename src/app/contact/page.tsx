@@ -1,1 +1,0 @@
-import{PageScaffold}from"@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="KONTAKT" title="اتصل بنا" description="قناة مخصصة لأخطاء المحتوى، الاقتراحات والمساهمات التقنية عبر GitHub Issues."/>}

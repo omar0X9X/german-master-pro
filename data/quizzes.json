@@ -1,0 +1,327 @@
+{
+  "A1": {
+    "title": "اختبار A1",
+    "questions": [
+      {
+        "q": "اختر الضمير المناسب: ___ komme aus Marokko.",
+        "options": [
+          "Ich",
+          "Du",
+          "Er",
+          "Wir"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "الأداة الصحيحة لكلمة Mann:",
+        "options": [
+          "die",
+          "das",
+          "der",
+          "den"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Wir ___ Deutsch.",
+        "options": [
+          "lernt",
+          "lerne",
+          "lernen",
+          "lernst"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Was ist richtig?",
+        "options": [
+          "Ich wohne in Fès.",
+          "Ich in Fès wohne.",
+          "Wohne ich Fès in.",
+          "Ich Fès wohnen."
+        ],
+        "answer": 0
+      },
+      {
+        "q": "العدد 20 بالألمانية:",
+        "options": [
+          "zwölf",
+          "zwanzig",
+          "zwei",
+          "zweihundert"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "A2": {
+    "title": "اختبار A2",
+    "questions": [
+      {
+        "q": "Ich habe ___ Mann gesehen.",
+        "options": [
+          "der",
+          "den",
+          "dem",
+          "des"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Ich helfe ___ Mann.",
+        "options": [
+          "den",
+          "dem",
+          "der",
+          "des"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Perfekt von machen:",
+        "options": [
+          "hat gemacht",
+          "ist gemacht",
+          "hat machen",
+          "ist machen"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Weil ich krank bin, ___ ich zu Hause.",
+        "options": [
+          "bleibe",
+          "ich bleibe",
+          "bleiben",
+          "bleibt"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "صح: Ich fahre ___ dem Bus.",
+        "options": [
+          "mit",
+          "für",
+          "ohne",
+          "durch"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  "B1": {
+    "title": "اختبار B1",
+    "questions": [
+      {
+        "q": "Ich kenne den Mann, ___ dort steht.",
+        "options": [
+          "der",
+          "den",
+          "dem",
+          "dessen"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "___ es regnet, gehe ich spazieren.",
+        "options": [
+          "Obwohl",
+          "Trotzdem",
+          "Denn",
+          "Oder"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Ich ___ gern mehr reisen, wenn ich Zeit hätte.",
+        "options": [
+          "würde",
+          "werde",
+          "wurde",
+          "war"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "اختر الأفضل للرأي:",
+        "options": [
+          "Meiner Meinung nach…",
+          "Ich Name…",
+          "Guten Tag…",
+          "Wie alt…"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Trotz des Regens ___ wir raus.",
+        "options": [
+          "gehen",
+          "weil",
+          "obwohl",
+          "dass"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  "B2": {
+    "title": "اختبار B2",
+    "questions": [
+      {
+        "q": "Die Aufgabe ___ morgen erledigt.",
+        "options": [
+          "wird",
+          "hat",
+          "ist werden",
+          "würde hat"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Wenn ich das gewusst hätte, ___ ich anders gehandelt.",
+        "options": [
+          "hätte",
+          "würde",
+          "wäre",
+          "werde"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "اختر الرابط الأنسب: Er lernt viel, ___ er die Prüfung besteht.",
+        "options": [
+          "damit",
+          "obwohl",
+          "trotzdem",
+          "während"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Der Kollege, mit ___ ich gesprochen habe…",
+        "options": [
+          "dem",
+          "den",
+          "der",
+          "dessen"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "الأسلوب الأكثر رسمية:",
+        "options": [
+          "Es wird empfohlen, dass…",
+          "Ich sag dir…",
+          "Na ja…",
+          "Mach mal…"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  "placement": {
+    "title": "تحديد المستوى",
+    "questions": [
+      {
+        "q": "Ich ___ Omar.",
+        "options": [
+          "heiße",
+          "heißt",
+          "heißen",
+          "bist"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Ich sehe ___ Hund.",
+        "options": [
+          "der",
+          "den",
+          "dem",
+          "des"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Gestern ___ ich gearbeitet.",
+        "options": [
+          "habe",
+          "bin",
+          "werde",
+          "würde"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Weil ich müde bin, ___ ich früh schlafen.",
+        "options": [
+          "gehe",
+          "ich gehe",
+          "gehen",
+          "ginge ich"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Der Mann, ___ dort wartet, ist mein Lehrer.",
+        "options": [
+          "der",
+          "den",
+          "dem",
+          "dessen"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Ich ___ gern mehr Zeit haben.",
+        "options": [
+          "würde",
+          "werde",
+          "wurde",
+          "bin"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Die Dokumente ___ gestern geschickt.",
+        "options": [
+          "wurden",
+          "haben",
+          "würden",
+          "sind schicken"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Wenn ich mehr gelernt hätte, ___ ich bestanden.",
+        "options": [
+          "hätte",
+          "werde",
+          "bin",
+          "wurde"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "اختر الرابط الأنسب للغرض:",
+        "options": [
+          "damit",
+          "obwohl",
+          "trotzdem",
+          "denn"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "الأسلوب الرسمي الأنسب:",
+        "options": [
+          "Es lässt sich feststellen, dass…",
+          "Na klar!",
+          "Mach das!",
+          "Was geht?"
+        ],
+        "answer": 0
+      }
+    ]
+  }
+}

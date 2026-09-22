@@ -1,1 +1,0 @@
-import {PageScaffold} from "@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="FAQ" title="الأسئلة الشائعة" description="إجابات حول المستويات، FSRS، الذكاء الاصطناعي، الخصوصية والامتحانات."/>}

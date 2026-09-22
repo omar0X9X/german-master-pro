@@ -1,1 +1,0 @@
-import{NextResponse}from"next/server";export async function GET(){return NextResponse.json({items:[{id:"a1-mein-tag",level:"A1",title:"Mein Tag",estimatedMinutes:3}]})}

@@ -1,1 +1,0 @@
-import{PageScaffold}from"@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="API" title="توثيق API" description="واجهات AI، FSRS، المحتوى، التقدم، الاختبارات والفتح التدريجي. راجع docs/API.md للتفاصيل."/>}

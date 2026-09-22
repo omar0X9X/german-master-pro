@@ -1,1 +1,0 @@
-import {PageScaffold} from "@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="PROFIL" title="الملف الشخصي" description="الهدف اليومي، المستوى المستهدف، تفضيلات التعلم وبيانات الحساب."/>}

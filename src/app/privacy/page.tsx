@@ -1,1 +1,0 @@
-import{PageScaffold}from"@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="PRIVACY" title="سياسة الخصوصية" description="مبدأ المنصة: أقل قدر ممكن من البيانات، RLS افتراضي، وعدم مشاركة تقدم المتعلم دون إذنه."/>}

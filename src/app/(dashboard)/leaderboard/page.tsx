@@ -1,1 +1,0 @@
-import {PageScaffold} from "@/components/PageScaffold";export default function Page(){return <PageScaffold eyebrow="RANGLISTE" title="لوحة الصدارة" description="ترتيب أسبوعي اختياري حسب XP مع حماية الخصوصية وإمكانية تعطيله بالكامل."/>}

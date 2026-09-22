@@ -1,0 +1,36 @@
+name: Validate site
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: JavaScript syntax
+        run: node --check js/app.js
+      - name: Validate JSON and curriculum
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const c=JSON.parse(fs.readFileSync('data/curriculum.json','utf8'));
+          const q=JSON.parse(fs.readFileSync('data/quizzes.json','utf8'));
+          if(c.levels.map(x=>x.id).join(',')!=='A1,A2,B1,B2') throw new Error('levels');
+          for(const l of c.levels){
+            if(!l.modules?.length||!l.lessons?.length||!l.resources?.length) throw new Error('empty '+l.id);
+            l.lessons.forEach((x,i)=>{if(x.order!==i+1) throw new Error('order '+l.id); if(!/^https:/.test(x.url)) throw new Error('url')});
+            if(!q[l.id]) throw new Error('quiz '+l.id);
+          }
+          if(!q.placement) throw new Error('placement');
+          console.log('OK',c.levels.map(l=>[l.id,l.lessons.length,l.resources.length]));
+          NODE
+      - name: Required files
+        run: |
+          test -f index.html
+          test -f assets/styles.css
+          test -f js/app.js
+          test -f data/curriculum.json
+          test -f data/quizzes.json

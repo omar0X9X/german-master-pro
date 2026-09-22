@@ -1,0 +1,678 @@
+{
+  "meta": {
+    "title": "Deutsch Road",
+    "version": 1,
+    "levels": [
+      "A1",
+      "A2",
+      "B1",
+      "B2"
+    ]
+  },
+  "levels": [
+    {
+      "id": "A1",
+      "label": "مبتدئ",
+      "title": "أساس قوي من الصفر",
+      "goal": "النطق، الجمل الأساسية، Präsens، Nominativ/Akkusativ، مفردات الحياة اليومية والاستماع البطيء.",
+      "modules": [
+        {
+          "id": "a1m1",
+          "order": 1,
+          "title": "الأصوات والبدايات",
+          "goal": "الحروف، النطق، التحيات والتعريف بالنفس."
+        },
+        {
+          "id": "a1m2",
+          "order": 2,
+          "title": "بناء الجملة",
+          "goal": "الضمائر، الأفعال في الحاضر وترتيب الجملة."
+        },
+        {
+          "id": "a1m3",
+          "order": 3,
+          "title": "الأسماء والحالات",
+          "goal": "der/die/das وNominativ/Akkusativ."
+        },
+        {
+          "id": "a1m4",
+          "order": 4,
+          "title": "الوقت والحياة اليومية",
+          "goal": "الساعة، الروتين، الأسئلة والجمل الجاهزة."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "a1-01",
+          "module": "a1m1",
+          "order": 1,
+          "title": "الأبجدية والنطق الألماني",
+          "provider": "Easy German",
+          "skill": "النطق",
+          "kind": "pronunciation",
+          "minutes": 30,
+          "note": "الحروف، Umlaute، ß، CH وR.",
+          "url": "https://www.youtube.com/watch?v=hAkxKMlYUI4"
+        },
+        {
+          "id": "a1-02",
+          "module": "a1m1",
+          "order": 2,
+          "title": "Der / Die / Das",
+          "provider": "Deutsch mit Ahmad Yaghi",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 35,
+          "note": "احفظ كل اسم مع أداة التعريف.",
+          "url": "https://www.youtube.com/watch?v=pbAPxJKuTlE"
+        },
+        {
+          "id": "a1-03",
+          "module": "a1m1",
+          "order": 3,
+          "title": "الأرقام",
+          "provider": "Deutsch mit Ahmad Yaghi",
+          "skill": "المفردات",
+          "kind": "core",
+          "minutes": 25,
+          "note": "الأعداد والأساس للتواريخ والوقت.",
+          "url": "https://www.youtube.com/watch?v=2zDXUpcFkAA"
+        },
+        {
+          "id": "a1-04",
+          "module": "a1m1",
+          "order": 4,
+          "title": "التحيات",
+          "provider": "Deutsch mit Ahmad Yaghi",
+          "skill": "المحادثة",
+          "kind": "core",
+          "minutes": 25,
+          "note": "عبارات البداية والنهاية اليومية.",
+          "url": "https://www.youtube.com/watch?v=zvqyYvY8bBY"
+        },
+        {
+          "id": "a1-05",
+          "module": "a1m2",
+          "order": 5,
+          "title": "Personalpronomen",
+          "provider": "Deutsch mit Ahmad Yaghi",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 35,
+          "note": "ich, du, er, sie, es, wir, ihr, Sie.",
+          "url": "https://www.youtube.com/watch?v=VvOO5mIPAwA"
+        },
+        {
+          "id": "a1-06",
+          "module": "a1m2",
+          "order": 6,
+          "title": "التعريف بالنفس",
+          "provider": "Deutsch mit Ahmad Yaghi",
+          "skill": "المحادثة",
+          "kind": "core",
+          "minutes": 35,
+          "note": "الاسم، البلد، السكن، العمل والهوايات.",
+          "url": "https://www.youtube.com/watch?v=HI6fMXcDsQQ"
+        },
+        {
+          "id": "a1-07",
+          "module": "a1m2",
+          "order": 7,
+          "title": "الأفعال المنتظمة في Präsens",
+          "provider": "Deutsch mit Ahmad Yaghi",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 40,
+          "note": "الجذر والنهايات وبناء الجملة.",
+          "url": "https://www.youtube.com/watch?v=RnAjqnwYZ3w"
+        },
+        {
+          "id": "a1-08",
+          "module": "a1m3",
+          "order": 8,
+          "title": "Der Nominativ",
+          "provider": "Deutsch mit Ahmad Yaghi",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 35,
+          "note": "الفاعل والحالة الأساسية.",
+          "url": "https://www.youtube.com/watch?v=2nvLU2h5A9M"
+        },
+        {
+          "id": "a1-09",
+          "module": "a1m4",
+          "order": 9,
+          "title": "قراءة الساعة",
+          "provider": "Deutsch mit Ahmad Yaghi",
+          "skill": "المفردات",
+          "kind": "core",
+          "minutes": 30,
+          "note": "وقت رسمي ويومي.",
+          "url": "https://www.youtube.com/watch?v=WTLPMj59xGE"
+        },
+        {
+          "id": "a1-10",
+          "module": "a1m4",
+          "order": 10,
+          "title": "100 جملة أساسية",
+          "provider": "Deutsch mit Ahmad Yaghi",
+          "skill": "المحادثة",
+          "kind": "core",
+          "minutes": 40,
+          "note": "كرر وغير عناصر الجملة.",
+          "url": "https://www.youtube.com/watch?v=7XDHKxtP9yY"
+        }
+      ],
+      "resources": [
+        {
+          "id": "a1-r1",
+          "skill": "الاستماع",
+          "provider": "DW Deutsch lernen",
+          "title": "Nicos Weg A1",
+          "note": "استماع قصصي مناسب للمبتدئ.",
+          "url": "https://www.youtube.com/watch?v=4-eDoThe6qo"
+        },
+        {
+          "id": "a1-r2",
+          "skill": "القراءة",
+          "provider": "German.net",
+          "title": "قراءة A1",
+          "note": "نصوص A1 مع أسئلة فهم.",
+          "url": "https://german.net/reading/"
+        },
+        {
+          "id": "a1-r3",
+          "skill": "الكتابة",
+          "provider": "VHS-Lernportal",
+          "title": "A1 Deutschkurs",
+          "note": "دروس وتمارين كثيرة للقراءة والكتابة.",
+          "url": "https://a1.vhs-lernportal.de/"
+        },
+        {
+          "id": "a1-r4",
+          "skill": "الكتابة",
+          "provider": "LangCorrect",
+          "title": "كتابة وتصحيح",
+          "note": "اكتب 5–8 جمل وخذ تصحيحاً.",
+          "url": "https://langcorrect.com/"
+        },
+        {
+          "id": "a1-r5",
+          "skill": "اختبار",
+          "provider": "Goethe-Institut",
+          "title": "Goethe A1 Training",
+          "note": "Hören, Lesen, Schreiben, Sprechen.",
+          "url": "https://www.goethe.de/de/spr/prf/ueb/pa1.html"
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "label": "مبتدئ متقدم",
+      "title": "التواصل اليومي بثقة",
+      "goal": "Dativ، Perfekt، ترتيب الجملة، مفردات أوسع واستماع أسرع.",
+      "modules": [
+        {
+          "id": "a2m1",
+          "order": 1,
+          "title": "الحالات",
+          "goal": "Akkusativ وDativ."
+        },
+        {
+          "id": "a2m2",
+          "order": 2,
+          "title": "الماضي",
+          "goal": "Perfekt وPartizip II."
+        },
+        {
+          "id": "a2m3",
+          "order": 3,
+          "title": "ترتيب الجملة",
+          "goal": "الجمل الرئيسية والفرعية."
+        },
+        {
+          "id": "a2m4",
+          "order": 4,
+          "title": "التعرض والاستعمال",
+          "goal": "مفردات ونطق واستماع A2."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "a2-01",
+          "module": "a2m1",
+          "order": 1,
+          "title": "All German Cases Explained",
+          "provider": "Easy German",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 35,
+          "note": "صورة عامة للحالات الأربع.",
+          "url": "https://www.youtube.com/watch?v=_F_zkRPRX6A"
+        },
+        {
+          "id": "a2-02",
+          "module": "a2m1",
+          "order": 2,
+          "title": "12 Verbs + Accusative",
+          "provider": "Easy German",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 30,
+          "note": "اربط Akkusativ بأفعال حقيقية.",
+          "url": "https://www.youtube.com/watch?v=aZTUJm8O2Ds"
+        },
+        {
+          "id": "a2-03",
+          "module": "a2m1",
+          "order": 3,
+          "title": "Akkusativ und Dativ",
+          "provider": "Deutsch mit Ahmad Yaghi",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 40,
+          "note": "مقارنة مباشرة بين الحالتين.",
+          "url": "https://www.youtube.com/watch?v=chwkSIN-rw8"
+        },
+        {
+          "id": "a2-04",
+          "module": "a2m2",
+          "order": 4,
+          "title": "Das Perfekt",
+          "provider": "Deutsch mit Ahmad Yaghi",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 40,
+          "note": "haben/sein + Partizip II.",
+          "url": "https://www.youtube.com/watch?v=_NB97-EEPQ8"
+        },
+        {
+          "id": "a2-05",
+          "module": "a2m3",
+          "order": 5,
+          "title": "German Word Order",
+          "provider": "Easy German",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 35,
+          "note": "Verb position and subordinate clauses.",
+          "url": "https://www.youtube.com/watch?v=xoDpAtfnrAc"
+        },
+        {
+          "id": "a2-06",
+          "module": "a2m4",
+          "order": 6,
+          "title": "100 أفعال مهمة A1–A2",
+          "provider": "Deutsch mit Ahmad Yaghi",
+          "skill": "المفردات",
+          "kind": "core",
+          "minutes": 40,
+          "note": "خذ الأفعال مع مثال وحالة إعرابية.",
+          "url": "https://www.youtube.com/watch?v=LcVYhOqNp-Y"
+        },
+        {
+          "id": "a2-07",
+          "module": "a2m4",
+          "order": 7,
+          "title": "نطق R بالألمانية",
+          "provider": "Easy German",
+          "skill": "النطق",
+          "kind": "pronunciation",
+          "minutes": 25,
+          "note": "تدريب عملي على R.",
+          "url": "https://www.youtube.com/watch?v=3aJOsLVJp8U"
+        },
+        {
+          "id": "a2-08",
+          "module": "a2m4",
+          "order": 8,
+          "title": "Pronunciation Training",
+          "provider": "Easy German",
+          "skill": "النطق",
+          "kind": "pronunciation",
+          "minutes": 25,
+          "note": "Shadowing وتصحيح العادات الصوتية.",
+          "url": "https://www.youtube.com/watch?v=JE3LKSUFFTQ"
+        }
+      ],
+      "resources": [
+        {
+          "id": "a2-r1",
+          "skill": "الاستماع",
+          "provider": "Easy German",
+          "title": "Easy German A2",
+          "note": "محتوى مصنف A2.",
+          "url": "https://www.easygerman.org/"
+        },
+        {
+          "id": "a2-r2",
+          "skill": "الاستماع",
+          "provider": "DW Deutsch lernen",
+          "title": "Deutsch lernen A2",
+          "note": "دروس وتمارين استماع ومفردات.",
+          "url": "https://www.dw.com/de/deutsch-lernen/s-2055"
+        },
+        {
+          "id": "a2-r3",
+          "skill": "القراءة",
+          "provider": "German.net",
+          "title": "قراءة A2",
+          "note": "نصوص مع اختبار فهم.",
+          "url": "https://german.net/reading/"
+        },
+        {
+          "id": "a2-r4",
+          "skill": "الكتابة",
+          "provider": "LangCorrect",
+          "title": "كتابة A2",
+          "note": "رسائل ووصف تجارب مع تصحيح.",
+          "url": "https://langcorrect.com/"
+        },
+        {
+          "id": "a2-r5",
+          "skill": "اختبار",
+          "provider": "Goethe-Institut",
+          "title": "Goethe A2 Practice",
+          "note": "مواد تدريب رسمية.",
+          "url": "https://www.goethe.de/de/spr/prf/ueb.html"
+        }
+      ]
+    },
+    {
+      "id": "B1",
+      "label": "متوسط",
+      "title": "الاستقلال في اللغة",
+      "goal": "الرأي، السرد، Relativsätze، Konjunktiv II، استماع طبيعي وكتابة منظمة.",
+      "modules": [
+        {
+          "id": "b1m1",
+          "order": 1,
+          "title": "لغة الرأي والسرد",
+          "goal": "مفردات وجمل أطول."
+        },
+        {
+          "id": "b1m2",
+          "order": 2,
+          "title": "ربط الجمل",
+          "goal": "Relativsätze وروابط."
+        },
+        {
+          "id": "b1m3",
+          "order": 3,
+          "title": "الاحتمال واللباقة",
+          "goal": "Konjunktiv II."
+        },
+        {
+          "id": "b1m4",
+          "order": 4,
+          "title": "الاستماع الحقيقي",
+          "goal": "سرعة طبيعية وقصص يومية."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "b1-01",
+          "module": "b1m1",
+          "order": 1,
+          "title": "100 كلمة مهمة B1",
+          "provider": "Deutsch mit Ahmad Yaghi",
+          "skill": "المفردات",
+          "kind": "core",
+          "minutes": 35,
+          "note": "مفردات للرأي والعمل والمجتمع.",
+          "url": "https://www.youtube.com/watch?v=a9TXqT2wSW0"
+        },
+        {
+          "id": "b1-02",
+          "module": "b1m2",
+          "order": 2,
+          "title": "Relativsätze",
+          "provider": "Easy German",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 35,
+          "note": "جمل موصولة أطول.",
+          "url": "https://www.youtube.com/watch?v=XchW3E0kTPk"
+        },
+        {
+          "id": "b1-03",
+          "module": "b1m2",
+          "order": 3,
+          "title": "OBWOHL vs TROTZDEM",
+          "provider": "Easy German",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 30,
+          "note": "ربط الأفكار المتعارضة.",
+          "url": "https://www.youtube.com/watch?v=X6XwtaL_4fE"
+        },
+        {
+          "id": "b1-04",
+          "module": "b1m3",
+          "order": 4,
+          "title": "Konjunktiv II",
+          "provider": "Easy German",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 35,
+          "note": "الطلبات والأمنيات والافتراضات.",
+          "url": "https://www.youtube.com/watch?v=uMlagwZP9dw"
+        },
+        {
+          "id": "b1-05",
+          "module": "b1m4",
+          "order": 5,
+          "title": "Real German Conversations",
+          "provider": "Easy German",
+          "skill": "الاستماع",
+          "kind": "listening",
+          "minutes": 35,
+          "note": "قصص ومحادثات طبيعية.",
+          "url": "https://www.youtube.com/watch?v=gw_BUDk610w"
+        },
+        {
+          "id": "b1-06",
+          "module": "b1m4",
+          "order": 6,
+          "title": "Understand Fast Spoken German",
+          "provider": "Easy German",
+          "skill": "الاستماع",
+          "kind": "listening",
+          "minutes": 30,
+          "note": "التقاط الكلام السريع.",
+          "url": "https://www.youtube.com/watch?v=nOAg4xyScmI"
+        }
+      ],
+      "resources": [
+        {
+          "id": "b1-r1",
+          "skill": "الاستماع",
+          "provider": "Slow German",
+          "title": "Slow German B1/B2",
+          "note": "بودكاست واضح لمواضيع ألمانية.",
+          "url": "https://slowgerman.com/"
+        },
+        {
+          "id": "b1-r2",
+          "skill": "القراءة",
+          "provider": "German.net",
+          "title": "قراءة B1",
+          "note": "نصوص أطول وأسئلة فهم.",
+          "url": "https://german.net/reading/"
+        },
+        {
+          "id": "b1-r3",
+          "skill": "الكتابة",
+          "provider": "LangCorrect",
+          "title": "كتابة B1",
+          "note": "نصوص رأي وتجارب مع تصحيح.",
+          "url": "https://langcorrect.com/"
+        },
+        {
+          "id": "b1-r4",
+          "skill": "القواعد",
+          "provider": "DeutschAkademie",
+          "title": "تمارين B1",
+          "note": "تمارين حسب المستوى والموضوع.",
+          "url": "https://www.deutschakademie.de/online-deutschkurs/nach-level/"
+        },
+        {
+          "id": "b1-r5",
+          "skill": "اختبار",
+          "provider": "Goethe-Institut",
+          "title": "Goethe B1 Practice",
+          "note": "تدريب امتحان رسمي.",
+          "url": "https://www.goethe.de/de/spr/prf/ueb.html"
+        }
+      ]
+    },
+    {
+      "id": "B2",
+      "label": "فوق المتوسط",
+      "title": "لغة دقيقة وطبيعية",
+      "goal": "جمل معقدة، حجج، Passiv، Konjunktiv II متقدم واستماع قريب من السرعة الطبيعية.",
+      "modules": [
+        {
+          "id": "b2m1",
+          "order": 1,
+          "title": "بنية متقدمة",
+          "goal": "روابط وجمل نسبية."
+        },
+        {
+          "id": "b2m2",
+          "order": 2,
+          "title": "Passiv وwerden",
+          "goal": "الأساليب الرسمية."
+        },
+        {
+          "id": "b2m3",
+          "order": 3,
+          "title": "الافتراض والحجاج",
+          "goal": "Konjunktiv II واستعمالات أعمق."
+        },
+        {
+          "id": "b2m4",
+          "order": 4,
+          "title": "الاستماع المتقدم",
+          "goal": "كلام سريع وقصص أصلية."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "b2-01",
+          "module": "b2m1",
+          "order": 1,
+          "title": "OBWOHL vs TROTZDEM",
+          "provider": "Easy German",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 30,
+          "note": "تثبيت الربط المتقدم.",
+          "url": "https://www.youtube.com/watch?v=X6XwtaL_4fE"
+        },
+        {
+          "id": "b2-02",
+          "module": "b2m1",
+          "order": 2,
+          "title": "Relativsätze Advanced",
+          "provider": "Easy German",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 35,
+          "note": "دقة أكبر مع الحالات.",
+          "url": "https://www.youtube.com/watch?v=XchW3E0kTPk"
+        },
+        {
+          "id": "b2-03",
+          "module": "b2m2",
+          "order": 3,
+          "title": "Werden: Futur, Passiv & Konjunktiv",
+          "provider": "Easy German",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 40,
+          "note": "استعمال werden في أنظمة مختلفة.",
+          "url": "https://www.youtube.com/watch?v=2axHWzwne34"
+        },
+        {
+          "id": "b2-04",
+          "module": "b2m3",
+          "order": 4,
+          "title": "Konjunktiv II Advanced",
+          "provider": "Easy German",
+          "skill": "القواعد",
+          "kind": "core",
+          "minutes": 35,
+          "note": "الندم والافتراض والمقارنة غير الواقعية.",
+          "url": "https://www.youtube.com/watch?v=uMlagwZP9dw"
+        },
+        {
+          "id": "b2-05",
+          "module": "b2m4",
+          "order": 5,
+          "title": "Real Stories from Berlin",
+          "provider": "Easy German",
+          "skill": "الاستماع",
+          "kind": "listening",
+          "minutes": 35,
+          "note": "كلام أصلي بسرعة طبيعية.",
+          "url": "https://www.youtube.com/watch?v=PkuuMLiItWQ"
+        },
+        {
+          "id": "b2-06",
+          "module": "b2m4",
+          "order": 6,
+          "title": "Fast Spoken German",
+          "provider": "Easy German",
+          "skill": "الاستماع",
+          "kind": "listening",
+          "minutes": 30,
+          "note": "فهم الاختصارات والسرعة.",
+          "url": "https://www.youtube.com/watch?v=nOAg4xyScmI"
+        }
+      ],
+      "resources": [
+        {
+          "id": "b2-r1",
+          "skill": "الاستماع",
+          "provider": "Easy German",
+          "title": "Easy German B2",
+          "note": "Street interviews وPodcast.",
+          "url": "https://www.easygerman.org/"
+        },
+        {
+          "id": "b2-r2",
+          "skill": "الاستماع",
+          "provider": "Slow German",
+          "title": "Slow German B1/B2",
+          "note": "جسر للمحتوى الأصلي.",
+          "url": "https://slowgerman.com/"
+        },
+        {
+          "id": "b2-r3",
+          "skill": "القراءة",
+          "provider": "German.net",
+          "title": "قراءة B2",
+          "note": "نصوص متقدمة مع فهم.",
+          "url": "https://german.net/reading/"
+        },
+        {
+          "id": "b2-r4",
+          "skill": "الكتابة",
+          "provider": "LangCorrect",
+          "title": "كتابة B2",
+          "note": "مقالات رأي وحجج مع تصحيح.",
+          "url": "https://langcorrect.com/"
+        },
+        {
+          "id": "b2-r5",
+          "skill": "اختبار",
+          "provider": "Goethe-Institut",
+          "title": "Goethe B2 Practice",
+          "note": "مواد امتحان رسمية.",
+          "url": "https://www.goethe.de/de/spr/prf/ueb.html"
+        }
+      ]
+    }
+  ]
+}
