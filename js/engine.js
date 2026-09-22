@@ -110,7 +110,7 @@ G.todayPlan=()=>{
   const daily=G.todayDaily();
   if(daily&&!daily.progress.complete){
     const min=Math.min(daily.minutes,Math.max(35,target-used));
-    tasks.push({type:"daily",title:"اليوم "+daily.day.day+" من 30: "+daily.day.theme,detail:daily.videos.length+" فيديو + قراءة + كتابة",minutes:min,view:"daily",dailyDay:daily.day.day});
+    tasks.push({type:"daily",title:"اليوم "+daily.day.day+" من 30: "+daily.day.theme,detail:daily.videos.length+" فيديو + استماع + قراءة + كتابة + تحدث",minutes:min,view:"daily",dailyDay:daily.day.day});
     used+=min;
   }
 
