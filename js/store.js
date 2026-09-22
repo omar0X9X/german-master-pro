@@ -5,11 +5,12 @@ const defaults={
   profile:{level:"A1",minutes:210,goal:"general",onboarded:false},
   completedLessons:{},completedResources:{},completedGrammar:{},grammarDrills:{},reviewRecords:{},quizResults:[],activity:[],
   lastView:"dashboard",practiceSkill:"الكل",
-  dailyChecks:{},dailyWriting:{},dailySpeaking:{},dailySelected:{A1:1,A2:1,B1:1,B2:1},zeroPathDone:{},zeroPathCurrent:1
+  dailyChecks:{},dailyWriting:{},dailySpeaking:{},dailySelected:{A1:1,A2:1,B1:1,B2:1},zeroPathDone:{},zeroPathCurrent:1,
+  errorAttempts:[],errorNotebook:[],errorManual:[]
 };
 const merge=(a,b)=>{Object.keys(b||{}).forEach(k=>{if(b[k]&&typeof b[k]==="object"&&!Array.isArray(b[k])){a[k]=merge(a[k]&&typeof a[k]==="object"?a[k]:{},b[k])}else a[k]=b[k]});return a};
 const load=()=>{try{return merge(JSON.parse(JSON.stringify(defaults)),JSON.parse(localStorage.getItem(KEY))||{})}catch{return JSON.parse(JSON.stringify(defaults))}};
-G.DAY=DAY;G.state=load();G.data={curriculum:null,quizzes:null,vocabulary:null,daily:null,videos:null,grammar:null,zero:null,studyMethod:null};G.runtime={view:"dashboard",roadmapLevel:"A1",dailyLevel:null,grammarSection:"alphabet",grammarSearch:"",zeroSelected:null,notebookSource:"video",toastTimer:null,mediaRecorder:null,mediaStream:null,mediaChunks:[],mediaUrl:null,speakingTimer:null,speakingStartedAt:null};
+G.DAY=DAY;G.state=load();G.data={curriculum:null,quizzes:null,vocabulary:null,daily:null,videos:null,grammar:null,zero:null,studyMethod:null,errorEngine:null};G.runtime={view:"dashboard",roadmapLevel:"A1",dailyLevel:null,grammarSection:"alphabet",grammarSearch:"",zeroSelected:null,notebookSource:"video",errorLevel:"A1",errorSkill:"all",errorExerciseId:null,errorTab:"train",errorReorder:[],toastTimer:null,mediaRecorder:null,mediaStream:null,mediaChunks:[],mediaUrl:null,speakingTimer:null,speakingStartedAt:null};
 G.save=()=>localStorage.setItem(KEY,JSON.stringify(G.state));
 G.reset=()=>{G.state=JSON.parse(JSON.stringify(defaults));G.save()};
 G.dateKey=(d=new Date())=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
