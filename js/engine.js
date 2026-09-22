@@ -94,8 +94,11 @@ G.todayDaily=()=>{
   const progress=G.dailyDayProgress(levelId,dayNo);
   const vids=day.videos.map(G.videoById).filter(Boolean);
   const videoMinutes=vids.reduce((sum,v)=>sum+(v.minutes||15),0);
-  const readingMinutes=15,writingMinutes=Math.max(15,Math.min(35,Math.round((day.writing.minWords||40)/4)));
-  return{levelId,day,progress,videos:vids,minutes:videoMinutes+readingMinutes+writingMinutes};
+  const listeningMinutes=day.listening?.targetMinutes||15;
+  const readingMinutes=15;
+  const writingMinutes=Math.max(15,Math.min(35,Math.round((day.writing.minWords||40)/4)));
+  const speakingMinutes=Math.max(5,Math.ceil((day.speaking?.targetSeconds||60)/60)+5);
+  return{levelId,day,progress,videos:vids,minutes:videoMinutes+listeningMinutes+readingMinutes+writingMinutes+speakingMinutes};
 };
 
 G.todayPlan=()=>{
