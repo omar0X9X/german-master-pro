@@ -139,7 +139,10 @@ jobs:
           grep -q 'MediaRecorder' js/ui.js
           grep -q 'daily-plan.json' js/app.js
           grep -q 'serviceWorker' js/app.js
-          if grep -q '\$("#daily[^"]*"\)\.forEach' js/ui.js; then
-            echo "Found incorrect single-element selector used with forEach"
-            exit 1
-          fi
+          node - <<'NODE'
+          const fs=require("fs");
+          const s=fs.readFileSync("js/ui.js","utf8");
+          if(/(^|[^$])\$\("#daily[^"]*"\)\.forEach/m.test(s)) {
+            throw new Error("Found incorrect single-element selector used with forEach");
+          }
+          NODE
