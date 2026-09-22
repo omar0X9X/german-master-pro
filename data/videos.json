@@ -1027,6 +1027,23 @@
         "verifiedAt": "2026-09-22",
         "source": "YouTube public metadata"
       }
+    },
+    {
+      "id": "ahmad-zero-alphabet",
+      "level": "A1",
+      "title": "درس شامل لنطق الحروف الألمانية ومقاطعها",
+      "provider": "Deutsch mit Ahmad Yaghi",
+      "url": "https://www.youtube.com/watch?v=Fx7BcYx7qEk",
+      "minutes": 18,
+      "skill": "النطق",
+      "core": true,
+      "quality": {
+        "views": 552334,
+        "likes": 20000,
+        "verifiedAt": "2026-09-22",
+        "source": "YouTube public metadata"
+      },
+      "note": "فيديو تأسيسي قوي: A–Z، ä/ö/ü، ß، ie، ei، sch."
     }
   ]
 }
