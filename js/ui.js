@@ -320,8 +320,76 @@ G.ui.renderZeroPath=()=>{
   const unlock=$("#unlockA1Now");if(unlock)unlock.onclick=()=>{G.completeZeroStep(step.id);G.state.dailySelected.A1=1;G.save();G.ui.setView("daily");toast("بدأنا A1 • اليوم 1")};
 };
 
+
+G.ui.renderNotebookAcademy=()=>{
+  const data=G.data.studyMethod;if(!data)return;
+  const sources=data.sources||[];
+  const active=sources.find(x=>x.id===G.runtime.notebookSource)||sources[0];
+  if(!active)return;
+  G.runtime.notebookSource=active.id;
+
+  $("#notebookSourceTabs").innerHTML=sources.map(x=>'<button class="'+(x.id===active.id?"active":"")+'" data-notebook-source="'+E(x.id)+'"><span>'+E(x.icon)+'</span>'+E(x.title)+'</button>').join("");
+  $("#notebookSourceTabs [data-notebook-source]").forEach(b=>b.onclick=()=>{G.runtime.notebookSource=b.dataset.notebookSource;G.ui.renderNotebookAcademy()});
+
+  const phase=(title,items)=>'<section><small>'+E(title)+'</small><ol>'+items.map(x=>'<li>'+E(x)+'</li>').join("")+'</ol></section>';
+  $("#notebookSourceContent").innerHTML=
+    '<div class="notebook-source-title"><span>'+E(active.icon)+'</span><div><h4>'+E(active.title)+'</h4><p>'+E(active.goal)+'</p></div></div>'+
+    '<div class="notebook-phases">'+
+      phase("قبل ما تبدأ",active.before||[])+
+      phase("أثناء الدراسة",active.during||[])+
+      phase("من بعد",active.after||[])+
+    '</div>'+
+    '<div class="notebook-template-box"><div><small>شنو تكتب فالدفتر؟</small><pre>'+E((active.template||[]).join("\n"))+'</pre></div><div class="notebook-avoid"><small>ما تديرش هاد الغلطة</small><p>'+E(active.avoid||"")+'</p></div></div>';
+
+  $("#notebookExampleTitle").textContent=data.pageExample?.title||"مثال";
+  $("#notebookExample").innerHTML=(data.pageExample?.lines||[]).map(x=>'<code>'+E(x)+'</code>').join("");
+  $("#notebookWeeklyTitle").textContent=data.weekly?.title||"نهاية الأسبوع";
+  $("#notebookWeeklyTasks").innerHTML=(data.weekly?.tasks||[]).map(x=>'<li>'+E(x)+'</li>').join("");
+
+  $("#copyMasterNotebookTemplate").onclick=async()=>{
+    const lines=[
+      "DEUTSCH — TAGESSEITE",
+      "Datum: ______   Tag: ______   Thema: ______",
+      "",
+      "1) REGEL / MUSTER",
+      "قاعدة في سطر: ______",
+      "Beispiel 1: ______",
+      "Beispiel 2: ______",
+      "",
+      "2) 7 WÖRTER",
+      "1. ______ = ______",
+      "2. ______ = ______",
+      "3. ______ = ______",
+      "4. ______ = ______",
+      "5. ______ = ______",
+      "6. ______ = ______",
+      "7. ______ = ______",
+      "",
+      "3) VIDEO / HÖREN",
+      "الفكرة العامة: ______",
+      "سمعت/لاحظت: ______",
+      "Shadowing-Satz: ______",
+      "",
+      "4) MEINE 3 SÄTZE",
+      "1. ______",
+      "2. ______",
+      "3. ______",
+      "",
+      "5) FEHLER DES TAGES",
+      "✕ ______",
+      "✓ ______",
+      "Warum? ______",
+      "",
+      "6) REVIEW",
+      "D+1 □   D+3 □   D+7 □"
+    ].join("\n");
+    try{await navigator.clipboard.writeText(lines);toast("تنسخ نموذج صفحة الدفتر ✓")}catch{toast("المتصفح منع النسخ التلقائي")}
+  };
+};
+
 G.ui.renderGrammar=()=>{
-  G.ui.renderZeroPath();
+  try{G.ui.renderZeroPath()}catch(err){console.error(err);const box=$("#zeroStepContent");if(box)box.innerHTML='<div class="empty"><b>وقع خطأ فإظهار الخطوة</b>حدّث الصفحة مرة واحدة. إذا بقى المشكل، الخطأ مسجل فالكونسول.</div>'}
+  G.ui.renderNotebookAcademy();
   const sections=G.data.grammar?.sections||[];
   const current=sections.find(x=>x.id===G.runtime.grammarSection)||sections[0];
   if(!current)return;
