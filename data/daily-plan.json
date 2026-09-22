@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "daysPerLevel": 30,
   "totalDays": 120,
   "levels": [
@@ -76,7 +76,8 @@
             "a1-vocab-05",
             "a1-vocab-06",
             "a1-vocab-07"
-          ]
+          ],
+          "grammarId": "alpha-01"
         },
         {
           "day": 2,
@@ -147,7 +148,8 @@
             "a1-vocab-12",
             "a1-vocab-13",
             "a1-vocab-14"
-          ]
+          ],
+          "grammarId": "alpha-02"
         },
         {
           "day": 3,
@@ -219,7 +221,8 @@
             "a1-vocab-19",
             "a1-vocab-20",
             "a1-vocab-021"
-          ]
+          ],
+          "grammarId": "alpha-03"
         },
         {
           "day": 4,
@@ -290,7 +293,8 @@
             "a1-vocab-026",
             "a1-vocab-027",
             "a1-vocab-028"
-          ]
+          ],
+          "grammarId": "alpha-04"
         },
         {
           "day": 5,
@@ -361,7 +365,8 @@
             "a1-vocab-033",
             "a1-vocab-034",
             "a1-vocab-035"
-          ]
+          ],
+          "grammarId": "alpha-05"
         },
         {
           "day": 6,
@@ -433,7 +438,8 @@
             "a1-vocab-040",
             "a1-vocab-041",
             "a1-vocab-042"
-          ]
+          ],
+          "grammarId": "alpha-06"
         },
         {
           "day": 7,
@@ -504,7 +510,8 @@
             "a1-vocab-047",
             "a1-vocab-048",
             "a1-vocab-049"
-          ]
+          ],
+          "grammarId": "alpha-07"
         },
         {
           "day": 8,
@@ -575,7 +582,8 @@
             "a1-vocab-054",
             "a1-vocab-055",
             "a1-vocab-056"
-          ]
+          ],
+          "grammarId": "alpha-08"
         },
         {
           "day": 9,
@@ -647,7 +655,8 @@
             "a1-vocab-061",
             "a1-vocab-062",
             "a1-vocab-063"
-          ]
+          ],
+          "grammarId": "alpha-09"
         },
         {
           "day": 10,
@@ -718,7 +727,8 @@
             "a1-vocab-068",
             "a1-vocab-069",
             "a1-vocab-070"
-          ]
+          ],
+          "grammarId": "alpha-10"
         },
         {
           "day": 11,
@@ -789,7 +799,8 @@
             "a1-vocab-075",
             "a1-vocab-076",
             "a1-vocab-077"
-          ]
+          ],
+          "grammarId": "a1-g01"
         },
         {
           "day": 12,
@@ -862,7 +873,8 @@
             "a1-vocab-082",
             "a1-vocab-083",
             "a1-vocab-01"
-          ]
+          ],
+          "grammarId": "a1-g02"
         },
         {
           "day": 13,
@@ -933,7 +945,8 @@
             "a1-vocab-06",
             "a1-vocab-07",
             "a1-vocab-08"
-          ]
+          ],
+          "grammarId": "a1-g03"
         },
         {
           "day": 14,
@@ -1004,7 +1017,8 @@
             "a1-vocab-13",
             "a1-vocab-14",
             "a1-vocab-15"
-          ]
+          ],
+          "grammarId": "a1-g04"
         },
         {
           "day": 15,
@@ -1076,7 +1090,8 @@
             "a1-vocab-20",
             "a1-vocab-021",
             "a1-vocab-022"
-          ]
+          ],
+          "grammarId": "a1-g05"
         },
         {
           "day": 16,
@@ -1147,7 +1162,8 @@
             "a1-vocab-027",
             "a1-vocab-028",
             "a1-vocab-029"
-          ]
+          ],
+          "grammarId": "a1-g06"
         },
         {
           "day": 17,
@@ -1218,7 +1234,8 @@
             "a1-vocab-034",
             "a1-vocab-035",
             "a1-vocab-036"
-          ]
+          ],
+          "grammarId": "a1-g07"
         },
         {
           "day": 18,
@@ -1290,7 +1307,8 @@
             "a1-vocab-041",
             "a1-vocab-042",
             "a1-vocab-043"
-          ]
+          ],
+          "grammarId": "a1-g08"
         },
         {
           "day": 19,
@@ -1361,7 +1379,8 @@
             "a1-vocab-048",
             "a1-vocab-049",
             "a1-vocab-050"
-          ]
+          ],
+          "grammarId": "a1-g09"
         },
         {
           "day": 20,
@@ -1432,7 +1451,8 @@
             "a1-vocab-055",
             "a1-vocab-056",
             "a1-vocab-057"
-          ]
+          ],
+          "grammarId": "a1-g10"
         },
         {
           "day": 21,
@@ -1504,7 +1524,8 @@
             "a1-vocab-062",
             "a1-vocab-063",
             "a1-vocab-064"
-          ]
+          ],
+          "grammarId": "a1-g11"
         },
         {
           "day": 22,
@@ -1575,7 +1596,8 @@
             "a1-vocab-069",
             "a1-vocab-070",
             "a1-vocab-071"
-          ]
+          ],
+          "grammarId": "a1-g12"
         },
         {
           "day": 23,
@@ -1646,7 +1668,8 @@
             "a1-vocab-076",
             "a1-vocab-077",
             "a1-vocab-078"
-          ]
+          ],
+          "grammarId": "a1-g13"
         },
         {
           "day": 24,
@@ -1718,7 +1741,8 @@
             "a1-vocab-083",
             "a1-vocab-01",
             "a1-vocab-02"
-          ]
+          ],
+          "grammarId": "a1-g14"
         },
         {
           "day": 25,
@@ -1789,7 +1813,8 @@
             "a1-vocab-07",
             "a1-vocab-08",
             "a1-vocab-09"
-          ]
+          ],
+          "grammarId": "a1-g15"
         },
         {
           "day": 26,
@@ -1860,7 +1885,8 @@
             "a1-vocab-14",
             "a1-vocab-15",
             "a1-vocab-16"
-          ]
+          ],
+          "grammarId": "a1-g16"
         },
         {
           "day": 27,
@@ -1932,7 +1958,8 @@
             "a1-vocab-021",
             "a1-vocab-022",
             "a1-vocab-023"
-          ]
+          ],
+          "grammarId": "a1-g17"
         },
         {
           "day": 28,
@@ -2003,7 +2030,8 @@
             "a1-vocab-028",
             "a1-vocab-029",
             "a1-vocab-030"
-          ]
+          ],
+          "grammarId": "a1-g18"
         },
         {
           "day": 29,
@@ -2074,7 +2102,8 @@
             "a1-vocab-035",
             "a1-vocab-036",
             "a1-vocab-037"
-          ]
+          ],
+          "grammarId": "a1-g19"
         },
         {
           "day": 30,
@@ -2146,7 +2175,8 @@
             "a1-vocab-042",
             "a1-vocab-043",
             "a1-vocab-044"
-          ]
+          ],
+          "grammarId": "a1-g20"
         }
       ]
     },
@@ -2223,7 +2253,8 @@
             "a2-vocab-05",
             "a2-vocab-06",
             "a2-vocab-07"
-          ]
+          ],
+          "grammarId": "alpha-11"
         },
         {
           "day": 2,
@@ -2294,7 +2325,8 @@
             "a2-vocab-12",
             "a2-vocab-13",
             "a2-vocab-14"
-          ]
+          ],
+          "grammarId": "alpha-12"
         },
         {
           "day": 3,
@@ -2366,7 +2398,8 @@
             "a2-vocab-19",
             "a2-vocab-20",
             "a2-vocab-021"
-          ]
+          ],
+          "grammarId": "a2-g01"
         },
         {
           "day": 4,
@@ -2437,7 +2470,8 @@
             "a2-vocab-026",
             "a2-vocab-027",
             "a2-vocab-028"
-          ]
+          ],
+          "grammarId": "a2-g02"
         },
         {
           "day": 5,
@@ -2508,7 +2542,8 @@
             "a2-vocab-033",
             "a2-vocab-034",
             "a2-vocab-035"
-          ]
+          ],
+          "grammarId": "a2-g03"
         },
         {
           "day": 6,
@@ -2580,7 +2615,8 @@
             "a2-vocab-040",
             "a2-vocab-041",
             "a2-vocab-042"
-          ]
+          ],
+          "grammarId": "a2-g04"
         },
         {
           "day": 7,
@@ -2651,7 +2687,8 @@
             "a2-vocab-047",
             "a2-vocab-048",
             "a2-vocab-049"
-          ]
+          ],
+          "grammarId": "a2-g05"
         },
         {
           "day": 8,
@@ -2722,7 +2759,8 @@
             "a2-vocab-054",
             "a2-vocab-055",
             "a2-vocab-056"
-          ]
+          ],
+          "grammarId": "a2-g06"
         },
         {
           "day": 9,
@@ -2794,7 +2832,8 @@
             "a2-vocab-061",
             "a2-vocab-062",
             "a2-vocab-063"
-          ]
+          ],
+          "grammarId": "a2-g07"
         },
         {
           "day": 10,
@@ -2865,7 +2904,8 @@
             "a2-vocab-068",
             "a2-vocab-069",
             "a2-vocab-070"
-          ]
+          ],
+          "grammarId": "a2-g08"
         },
         {
           "day": 11,
@@ -2936,7 +2976,8 @@
             "a2-vocab-075",
             "a2-vocab-076",
             "a2-vocab-077"
-          ]
+          ],
+          "grammarId": "a2-g09"
         },
         {
           "day": 12,
@@ -3008,7 +3049,8 @@
             "a2-vocab-04",
             "a2-vocab-05",
             "a2-vocab-06"
-          ]
+          ],
+          "grammarId": "a2-g10"
         },
         {
           "day": 13,
@@ -3079,7 +3121,8 @@
             "a2-vocab-11",
             "a2-vocab-12",
             "a2-vocab-13"
-          ]
+          ],
+          "grammarId": "a2-g11"
         },
         {
           "day": 14,
@@ -3150,7 +3193,8 @@
             "a2-vocab-18",
             "a2-vocab-19",
             "a2-vocab-20"
-          ]
+          ],
+          "grammarId": "a2-g12"
         },
         {
           "day": 15,
@@ -3222,7 +3266,8 @@
             "a2-vocab-025",
             "a2-vocab-026",
             "a2-vocab-027"
-          ]
+          ],
+          "grammarId": "a2-g13"
         },
         {
           "day": 16,
@@ -3293,7 +3338,8 @@
             "a2-vocab-032",
             "a2-vocab-033",
             "a2-vocab-034"
-          ]
+          ],
+          "grammarId": "a2-g14"
         },
         {
           "day": 17,
@@ -3364,7 +3410,8 @@
             "a2-vocab-039",
             "a2-vocab-040",
             "a2-vocab-041"
-          ]
+          ],
+          "grammarId": "a2-g15"
         },
         {
           "day": 18,
@@ -3436,7 +3483,8 @@
             "a2-vocab-046",
             "a2-vocab-047",
             "a2-vocab-048"
-          ]
+          ],
+          "grammarId": "a2-g16"
         },
         {
           "day": 19,
@@ -3507,7 +3555,8 @@
             "a2-vocab-053",
             "a2-vocab-054",
             "a2-vocab-055"
-          ]
+          ],
+          "grammarId": "a2-g17"
         },
         {
           "day": 20,
@@ -3578,7 +3627,8 @@
             "a2-vocab-060",
             "a2-vocab-061",
             "a2-vocab-062"
-          ]
+          ],
+          "grammarId": "a2-g18"
         },
         {
           "day": 21,
@@ -3650,7 +3700,8 @@
             "a2-vocab-067",
             "a2-vocab-068",
             "a2-vocab-069"
-          ]
+          ],
+          "grammarId": "a2-g01"
         },
         {
           "day": 22,
@@ -3721,7 +3772,8 @@
             "a2-vocab-074",
             "a2-vocab-075",
             "a2-vocab-076"
-          ]
+          ],
+          "grammarId": "a2-g02"
         },
         {
           "day": 23,
@@ -3792,7 +3844,8 @@
             "a2-vocab-03",
             "a2-vocab-04",
             "a2-vocab-05"
-          ]
+          ],
+          "grammarId": "a2-g03"
         },
         {
           "day": 24,
@@ -3864,7 +3917,8 @@
             "a2-vocab-10",
             "a2-vocab-11",
             "a2-vocab-12"
-          ]
+          ],
+          "grammarId": "a2-g04"
         },
         {
           "day": 25,
@@ -3935,7 +3989,8 @@
             "a2-vocab-17",
             "a2-vocab-18",
             "a2-vocab-19"
-          ]
+          ],
+          "grammarId": "a2-g05"
         },
         {
           "day": 26,
@@ -4006,7 +4061,8 @@
             "a2-vocab-024",
             "a2-vocab-025",
             "a2-vocab-026"
-          ]
+          ],
+          "grammarId": "a2-g06"
         },
         {
           "day": 27,
@@ -4078,7 +4134,8 @@
             "a2-vocab-031",
             "a2-vocab-032",
             "a2-vocab-033"
-          ]
+          ],
+          "grammarId": "a2-g07"
         },
         {
           "day": 28,
@@ -4149,7 +4206,8 @@
             "a2-vocab-038",
             "a2-vocab-039",
             "a2-vocab-040"
-          ]
+          ],
+          "grammarId": "a2-g08"
         },
         {
           "day": 29,
@@ -4220,7 +4278,8 @@
             "a2-vocab-045",
             "a2-vocab-046",
             "a2-vocab-047"
-          ]
+          ],
+          "grammarId": "a2-g09"
         },
         {
           "day": 30,
@@ -4292,7 +4351,8 @@
             "a2-vocab-052",
             "a2-vocab-053",
             "a2-vocab-054"
-          ]
+          ],
+          "grammarId": "a2-g10"
         }
       ]
     },
@@ -4369,7 +4429,8 @@
             "b1-vocab-05",
             "b1-vocab-06",
             "b1-vocab-07"
-          ]
+          ],
+          "grammarId": "b1-g01"
         },
         {
           "day": 2,
@@ -4440,7 +4501,8 @@
             "b1-vocab-12",
             "b1-vocab-13",
             "b1-vocab-14"
-          ]
+          ],
+          "grammarId": "b1-g02"
         },
         {
           "day": 3,
@@ -4512,7 +4574,8 @@
             "b1-vocab-19",
             "b1-vocab-20",
             "b1-vocab-021"
-          ]
+          ],
+          "grammarId": "b1-g03"
         },
         {
           "day": 4,
@@ -4583,7 +4646,8 @@
             "b1-vocab-026",
             "b1-vocab-027",
             "b1-vocab-028"
-          ]
+          ],
+          "grammarId": "b1-g04"
         },
         {
           "day": 5,
@@ -4654,7 +4718,8 @@
             "b1-vocab-033",
             "b1-vocab-034",
             "b1-vocab-035"
-          ]
+          ],
+          "grammarId": "b1-g05"
         },
         {
           "day": 6,
@@ -4726,7 +4791,8 @@
             "b1-vocab-040",
             "b1-vocab-041",
             "b1-vocab-042"
-          ]
+          ],
+          "grammarId": "b1-g06"
         },
         {
           "day": 7,
@@ -4797,7 +4863,8 @@
             "b1-vocab-047",
             "b1-vocab-048",
             "b1-vocab-049"
-          ]
+          ],
+          "grammarId": "b1-g07"
         },
         {
           "day": 8,
@@ -4868,7 +4935,8 @@
             "b1-vocab-054",
             "b1-vocab-055",
             "b1-vocab-056"
-          ]
+          ],
+          "grammarId": "b1-g08"
         },
         {
           "day": 9,
@@ -4940,7 +5008,8 @@
             "b1-vocab-061",
             "b1-vocab-062",
             "b1-vocab-063"
-          ]
+          ],
+          "grammarId": "b1-g09"
         },
         {
           "day": 10,
@@ -5011,7 +5080,8 @@
             "b1-vocab-068",
             "b1-vocab-069",
             "b1-vocab-070"
-          ]
+          ],
+          "grammarId": "b1-g10"
         },
         {
           "day": 11,
@@ -5082,7 +5152,8 @@
             "b1-vocab-075",
             "b1-vocab-076",
             "b1-vocab-077"
-          ]
+          ],
+          "grammarId": "b1-g11"
         },
         {
           "day": 12,
@@ -5154,7 +5225,8 @@
             "b1-vocab-03",
             "b1-vocab-04",
             "b1-vocab-05"
-          ]
+          ],
+          "grammarId": "b1-g12"
         },
         {
           "day": 13,
@@ -5225,7 +5297,8 @@
             "b1-vocab-10",
             "b1-vocab-11",
             "b1-vocab-12"
-          ]
+          ],
+          "grammarId": "b1-g13"
         },
         {
           "day": 14,
@@ -5296,7 +5369,8 @@
             "b1-vocab-17",
             "b1-vocab-18",
             "b1-vocab-19"
-          ]
+          ],
+          "grammarId": "b1-g14"
         },
         {
           "day": 15,
@@ -5368,7 +5442,8 @@
             "b1-vocab-024",
             "b1-vocab-025",
             "b1-vocab-026"
-          ]
+          ],
+          "grammarId": "b1-g15"
         },
         {
           "day": 16,
@@ -5439,7 +5514,8 @@
             "b1-vocab-031",
             "b1-vocab-032",
             "b1-vocab-033"
-          ]
+          ],
+          "grammarId": "b1-g16"
         },
         {
           "day": 17,
@@ -5510,7 +5586,8 @@
             "b1-vocab-038",
             "b1-vocab-039",
             "b1-vocab-040"
-          ]
+          ],
+          "grammarId": "b1-g01"
         },
         {
           "day": 18,
@@ -5582,7 +5659,8 @@
             "b1-vocab-045",
             "b1-vocab-046",
             "b1-vocab-047"
-          ]
+          ],
+          "grammarId": "b1-g02"
         },
         {
           "day": 19,
@@ -5653,7 +5731,8 @@
             "b1-vocab-052",
             "b1-vocab-053",
             "b1-vocab-054"
-          ]
+          ],
+          "grammarId": "b1-g03"
         },
         {
           "day": 20,
@@ -5724,7 +5803,8 @@
             "b1-vocab-059",
             "b1-vocab-060",
             "b1-vocab-061"
-          ]
+          ],
+          "grammarId": "b1-g04"
         },
         {
           "day": 21,
@@ -5796,7 +5876,8 @@
             "b1-vocab-066",
             "b1-vocab-067",
             "b1-vocab-068"
-          ]
+          ],
+          "grammarId": "b1-g05"
         },
         {
           "day": 22,
@@ -5867,7 +5948,8 @@
             "b1-vocab-073",
             "b1-vocab-074",
             "b1-vocab-075"
-          ]
+          ],
+          "grammarId": "b1-g06"
         },
         {
           "day": 23,
@@ -5938,7 +6020,8 @@
             "b1-vocab-01",
             "b1-vocab-02",
             "b1-vocab-03"
-          ]
+          ],
+          "grammarId": "b1-g07"
         },
         {
           "day": 24,
@@ -6010,7 +6093,8 @@
             "b1-vocab-08",
             "b1-vocab-09",
             "b1-vocab-10"
-          ]
+          ],
+          "grammarId": "b1-g08"
         },
         {
           "day": 25,
@@ -6081,7 +6165,8 @@
             "b1-vocab-15",
             "b1-vocab-16",
             "b1-vocab-17"
-          ]
+          ],
+          "grammarId": "b1-g09"
         },
         {
           "day": 26,
@@ -6152,7 +6237,8 @@
             "b1-vocab-022",
             "b1-vocab-023",
             "b1-vocab-024"
-          ]
+          ],
+          "grammarId": "b1-g10"
         },
         {
           "day": 27,
@@ -6224,7 +6310,8 @@
             "b1-vocab-029",
             "b1-vocab-030",
             "b1-vocab-031"
-          ]
+          ],
+          "grammarId": "b1-g11"
         },
         {
           "day": 28,
@@ -6295,7 +6382,8 @@
             "b1-vocab-036",
             "b1-vocab-037",
             "b1-vocab-038"
-          ]
+          ],
+          "grammarId": "b1-g12"
         },
         {
           "day": 29,
@@ -6366,7 +6454,8 @@
             "b1-vocab-043",
             "b1-vocab-044",
             "b1-vocab-045"
-          ]
+          ],
+          "grammarId": "b1-g13"
         },
         {
           "day": 30,
@@ -6438,7 +6527,8 @@
             "b1-vocab-050",
             "b1-vocab-051",
             "b1-vocab-052"
-          ]
+          ],
+          "grammarId": "b1-g14"
         }
       ]
     },
@@ -6515,7 +6605,8 @@
             "b2-vocab-05",
             "b2-vocab-06",
             "b2-vocab-07"
-          ]
+          ],
+          "grammarId": "b2-g01"
         },
         {
           "day": 2,
@@ -6586,7 +6677,8 @@
             "b2-vocab-12",
             "b2-vocab-13",
             "b2-vocab-14"
-          ]
+          ],
+          "grammarId": "b2-g02"
         },
         {
           "day": 3,
@@ -6658,7 +6750,8 @@
             "b2-vocab-19",
             "b2-vocab-20",
             "b2-vocab-021"
-          ]
+          ],
+          "grammarId": "b2-g03"
         },
         {
           "day": 4,
@@ -6729,7 +6822,8 @@
             "b2-vocab-026",
             "b2-vocab-027",
             "b2-vocab-028"
-          ]
+          ],
+          "grammarId": "b2-g04"
         },
         {
           "day": 5,
@@ -6800,7 +6894,8 @@
             "b2-vocab-033",
             "b2-vocab-034",
             "b2-vocab-035"
-          ]
+          ],
+          "grammarId": "b2-g05"
         },
         {
           "day": 6,
@@ -6872,7 +6967,8 @@
             "b2-vocab-040",
             "b2-vocab-041",
             "b2-vocab-042"
-          ]
+          ],
+          "grammarId": "b2-g06"
         },
         {
           "day": 7,
@@ -6943,7 +7039,8 @@
             "b2-vocab-047",
             "b2-vocab-048",
             "b2-vocab-049"
-          ]
+          ],
+          "grammarId": "b2-g07"
         },
         {
           "day": 8,
@@ -7014,7 +7111,8 @@
             "b2-vocab-054",
             "b2-vocab-055",
             "b2-vocab-056"
-          ]
+          ],
+          "grammarId": "b2-g08"
         },
         {
           "day": 9,
@@ -7086,7 +7184,8 @@
             "b2-vocab-061",
             "b2-vocab-062",
             "b2-vocab-063"
-          ]
+          ],
+          "grammarId": "b2-g09"
         },
         {
           "day": 10,
@@ -7157,7 +7256,8 @@
             "b2-vocab-068",
             "b2-vocab-069",
             "b2-vocab-070"
-          ]
+          ],
+          "grammarId": "b2-g10"
         },
         {
           "day": 11,
@@ -7228,7 +7328,8 @@
             "b2-vocab-075",
             "b2-vocab-076",
             "b2-vocab-077"
-          ]
+          ],
+          "grammarId": "b2-g11"
         },
         {
           "day": 12,
@@ -7300,7 +7401,8 @@
             "b2-vocab-02",
             "b2-vocab-03",
             "b2-vocab-04"
-          ]
+          ],
+          "grammarId": "b2-g12"
         },
         {
           "day": 13,
@@ -7371,7 +7473,8 @@
             "b2-vocab-09",
             "b2-vocab-10",
             "b2-vocab-11"
-          ]
+          ],
+          "grammarId": "b2-g13"
         },
         {
           "day": 14,
@@ -7442,7 +7545,8 @@
             "b2-vocab-16",
             "b2-vocab-17",
             "b2-vocab-18"
-          ]
+          ],
+          "grammarId": "b2-g14"
         },
         {
           "day": 15,
@@ -7514,7 +7618,8 @@
             "b2-vocab-023",
             "b2-vocab-024",
             "b2-vocab-025"
-          ]
+          ],
+          "grammarId": "b2-g15"
         },
         {
           "day": 16,
@@ -7585,7 +7690,8 @@
             "b2-vocab-030",
             "b2-vocab-031",
             "b2-vocab-032"
-          ]
+          ],
+          "grammarId": "b2-g16"
         },
         {
           "day": 17,
@@ -7656,7 +7762,8 @@
             "b2-vocab-037",
             "b2-vocab-038",
             "b2-vocab-039"
-          ]
+          ],
+          "grammarId": "b2-g01"
         },
         {
           "day": 18,
@@ -7728,7 +7835,8 @@
             "b2-vocab-044",
             "b2-vocab-045",
             "b2-vocab-046"
-          ]
+          ],
+          "grammarId": "b2-g02"
         },
         {
           "day": 19,
@@ -7799,7 +7907,8 @@
             "b2-vocab-051",
             "b2-vocab-052",
             "b2-vocab-053"
-          ]
+          ],
+          "grammarId": "b2-g03"
         },
         {
           "day": 20,
@@ -7870,7 +7979,8 @@
             "b2-vocab-058",
             "b2-vocab-059",
             "b2-vocab-060"
-          ]
+          ],
+          "grammarId": "b2-g04"
         },
         {
           "day": 21,
@@ -7942,7 +8052,8 @@
             "b2-vocab-065",
             "b2-vocab-066",
             "b2-vocab-067"
-          ]
+          ],
+          "grammarId": "b2-g05"
         },
         {
           "day": 22,
@@ -8013,7 +8124,8 @@
             "b2-vocab-072",
             "b2-vocab-073",
             "b2-vocab-074"
-          ]
+          ],
+          "grammarId": "b2-g06"
         },
         {
           "day": 23,
@@ -8084,7 +8196,8 @@
             "b2-vocab-079",
             "b2-vocab-080",
             "b2-vocab-01"
-          ]
+          ],
+          "grammarId": "b2-g07"
         },
         {
           "day": 24,
@@ -8156,7 +8269,8 @@
             "b2-vocab-06",
             "b2-vocab-07",
             "b2-vocab-08"
-          ]
+          ],
+          "grammarId": "b2-g08"
         },
         {
           "day": 25,
@@ -8227,7 +8341,8 @@
             "b2-vocab-13",
             "b2-vocab-14",
             "b2-vocab-15"
-          ]
+          ],
+          "grammarId": "b2-g09"
         },
         {
           "day": 26,
@@ -8298,7 +8413,8 @@
             "b2-vocab-20",
             "b2-vocab-021",
             "b2-vocab-022"
-          ]
+          ],
+          "grammarId": "b2-g10"
         },
         {
           "day": 27,
@@ -8370,7 +8486,8 @@
             "b2-vocab-027",
             "b2-vocab-028",
             "b2-vocab-029"
-          ]
+          ],
+          "grammarId": "b2-g11"
         },
         {
           "day": 28,
@@ -8441,7 +8558,8 @@
             "b2-vocab-034",
             "b2-vocab-035",
             "b2-vocab-036"
-          ]
+          ],
+          "grammarId": "b2-g12"
         },
         {
           "day": 29,
@@ -8512,7 +8630,8 @@
             "b2-vocab-041",
             "b2-vocab-042",
             "b2-vocab-043"
-          ]
+          ],
+          "grammarId": "b2-g13"
         },
         {
           "day": 30,
@@ -8584,7 +8703,8 @@
             "b2-vocab-048",
             "b2-vocab-049",
             "b2-vocab-050"
-          ]
+          ],
+          "grammarId": "b2-g14"
         }
       ]
     }
@@ -8596,6 +8716,7 @@
     "writing",
     "speaking",
     "daily-vocabulary",
-    "spaced-review"
+    "spaced-review",
+    "daily-grammar"
   ]
 }
