@@ -270,7 +270,7 @@ G.ui.renderZeroPath=()=>{
     const n=i+1,done=G.zeroDone(x.id),locked=n>currentMax;
     return '<button class="zero-step '+(done?"done ":"")+(selected===n?"active ":"")+(locked?"locked":"")+'" data-zero-index="'+n+'" '+(locked?"disabled":"")+'><span>'+String(n).padStart(2,"0")+'</span><div><b>'+E(x.title)+'</b><small>'+E(x.goal||"")+'</small></div><em>'+(done?"✓":locked?"🔒":"→")+'</em></button>';
   }).join("");
-  $("#zeroStepList [data-zero-index]").forEach(b=>b.onclick=()=>{G.runtime.zeroSelected=Number(b.dataset.zeroIndex);G.ui.renderZeroPath()});
+  $$("#zeroStepList [data-zero-index]").forEach(b=>b.onclick=()=>{G.runtime.zeroSelected=Number(b.dataset.zeroIndex);G.ui.renderZeroPath()});
 
   let body='';
   if(step.type==="orientation"){
@@ -300,7 +300,7 @@ G.ui.renderZeroPath=()=>{
   }else body='<div class="zero-explain"><p>'+E(step.body||"")+'</p></div>';
 
   $("#zeroStepContent").innerHTML='<header class="zero-step-head"><div><small>الخطوة '+selected+' من '+steps.length+' • ≈ '+(step.minutes||15)+' د</small><h2>'+E(step.title)+'</h2><p>'+E(step.goal||"")+'</p></div><span class="zero-type">'+E(step.type)+'</span></header>'+body+'<footer class="zero-step-footer"><button class="ghost" id="zeroPrev" '+(selected<=1?"disabled":"")+'>→ السابق</button><button class="primary" id="zeroComplete">'+(G.zeroDone(step.id)?"✓ مكتملة — التالي":"كملت هاد الخطوة ←")+'</button></footer>';
-  $("#zeroStepContent [data-speak]").forEach(b=>b.onclick=()=>G.ui.speakGerman(b.dataset.speak));
+  $$("#zeroStepContent [data-speak]").forEach(b=>b.onclick=()=>G.ui.speakGerman(b.dataset.speak));
   const prev=$("#zeroPrev");if(prev)prev.onclick=()=>{if(selected>1){G.runtime.zeroSelected=selected-1;G.ui.renderZeroPath()}};
   const complete=$("#zeroComplete");
   if(complete)complete.onclick=()=>{
