@@ -32,6 +32,7 @@ jobs:
           const d=JSON.parse(fs.readFileSync("data/daily-plan.json","utf8"));
           const videos=JSON.parse(fs.readFileSync("data/videos.json","utf8"));
           const grammar=JSON.parse(fs.readFileSync("data/grammar.json","utf8"));
+          const zero=JSON.parse(fs.readFileSync("data/zero-path.json","utf8"));
           const expected=["A1","A2","B1","B2"];
 
           if(c.levels.map(x=>x.id).join(",")!==expected.join(",")) throw new Error("Bad curriculum level order");
@@ -96,6 +97,25 @@ jobs:
           if(videos.videos.length<75) throw new Error("Video library too small");
           if(verifiedMetrics<20) throw new Error("Not enough verified engagement snapshots");
 
+          if(!Array.isArray(zero.letters)||zero.letters.length<30) throw new Error("Foundation alphabet must have 30 letters/symbols");
+          if(!Array.isArray(zero.clusters)||zero.clusters.length<18) throw new Error("Foundation sound clusters too small");
+          if(!Array.isArray(zero.steps)||zero.steps.length<18) throw new Error("Foundation path must have at least 18 steps");
+          const zeroStepIds=new Set();
+          zero.steps.forEach((step,index)=>{
+            if(step.id!==("zero-"+String(index+1).padStart(2,"0"))) throw new Error("Foundation step order mismatch "+step.id);
+            if(zeroStepIds.has(step.id)) throw new Error("Duplicate foundation step "+step.id);
+            zeroStepIds.add(step.id);
+            if(!step.title||!step.goal||!Number.isFinite(step.minutes)) throw new Error("Incomplete foundation step "+step.id);
+            if(step.videoId&&!videoIds.has(step.videoId)) throw new Error("Unknown foundation video "+step.videoId);
+            if(step.grammarIds) for(const id of step.grammarIds) if(!grammarIds.has(id)) throw new Error("Unknown foundation grammar "+id);
+            if(step.type==="checkpoint"){
+              if(!Array.isArray(step.quiz)||step.quiz.length<6) throw new Error("Checkpoint too small "+step.id);
+              step.quiz.forEach(q=>{
+                if(!Array.isArray(q.o)||q.o.length<3||q.a<0||q.a>=q.o.length) throw new Error("Bad checkpoint question "+step.id);
+              });
+            }
+          });
+
           const vocabIds=new Set(v.cards.map(x=>x.id));
           let dailyCount=0,readingChars=0,speakingTasks=0,listeningTasks=0,grammarDaily=0;
           for(const level of d.levels){
@@ -157,14 +177,24 @@ jobs:
           test -f data/daily-plan.json
           test -f data/videos.json
           test -f data/grammar.json
+          test -f data/zero-path.json
           grep -q 'data-panel="daily"' index.html
           grep -q 'data-panel="grammar"' index.html
           grep -q 'id="dailyGrammarDone"' index.html
           grep -q 'id="grammarSearch"' index.html
           grep -q 'id="grammarTopics"' index.html
+          grep -q 'id="zeroStepList"' index.html
+          grep -q 'id="zeroStepContent"' index.html
+          grep -q 'id="dailyNotebookGuide"' index.html
+          grep -q 'id="copyNotebookTemplate"' index.html
           grep -q 'G.grammarProgress' js/store.js
           grep -q 'G.ui.renderGrammar' js/ui.js
+          grep -q 'G.ui.renderZeroPath' js/ui.js
+          grep -q 'speechSynthesis' js/ui.js
+          grep -q 'G.zeroProgress' js/store.js
           grep -q 'G.ui.renderDaily' js/ui.js
           grep -q 'grammar.json' js/app.js
+          grep -q 'zero-path.json' js/app.js
           grep -q 'grammar.json' sw.js
+          grep -q 'zero-path.json' sw.js
           grep -q 'serviceWorker' js/app.js

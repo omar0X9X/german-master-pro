@@ -1,0 +1,711 @@
+{
+  "version": 1,
+  "title": "من الصفر إلى أول يوم A1",
+  "description": "مسار تأسيسي قصير ومرتب حتى تعرف الحروف والأصوات الأساسية وتقدر تبدأ الاستماع والقراءة بدون تخربيق.",
+  "principle": "ما نحاولوش نتقنو النطق 100% قبل الاستماع. نبني الأساس أولاً، ثم ندخل استماعاً وقراءة مضبوطين بالتدريج.",
+  "letters": [
+    {
+      "g": "A",
+      "name": "آ",
+      "sound": "a / aː",
+      "example": "Apfel",
+      "meaning": "تفاحة"
+    },
+    {
+      "g": "B",
+      "name": "بيه",
+      "sound": "b",
+      "example": "Ball",
+      "meaning": "كرة"
+    },
+    {
+      "g": "C",
+      "name": "تسيه",
+      "sound": "يتغيّر حسب الكلمة",
+      "example": "Café",
+      "meaning": "مقهى"
+    },
+    {
+      "g": "D",
+      "name": "ديه",
+      "sound": "d",
+      "example": "danke",
+      "meaning": "شكراً"
+    },
+    {
+      "g": "E",
+      "name": "إيه",
+      "sound": "eː / ɛ",
+      "example": "Essen",
+      "meaning": "أكل"
+    },
+    {
+      "g": "F",
+      "name": "إف",
+      "sound": "f",
+      "example": "Fisch",
+      "meaning": "سمك"
+    },
+    {
+      "g": "G",
+      "name": "گيه",
+      "sound": "g",
+      "example": "gut",
+      "meaning": "جيد"
+    },
+    {
+      "g": "H",
+      "name": "ها",
+      "sound": "h أو يطوّل الحركة",
+      "example": "Haus",
+      "meaning": "بيت"
+    },
+    {
+      "g": "I",
+      "name": "إي",
+      "sound": "iː / ɪ",
+      "example": "ich",
+      "meaning": "أنا"
+    },
+    {
+      "g": "J",
+      "name": "يوت",
+      "sound": "ي / j",
+      "example": "ja",
+      "meaning": "نعم"
+    },
+    {
+      "g": "K",
+      "name": "كا",
+      "sound": "k",
+      "example": "Kind",
+      "meaning": "طفل"
+    },
+    {
+      "g": "L",
+      "name": "إل",
+      "sound": "l",
+      "example": "lernen",
+      "meaning": "يتعلم"
+    },
+    {
+      "g": "M",
+      "name": "إم",
+      "sound": "m",
+      "example": "Mann",
+      "meaning": "رجل"
+    },
+    {
+      "g": "N",
+      "name": "إن",
+      "sound": "n",
+      "example": "Name",
+      "meaning": "اسم"
+    },
+    {
+      "g": "O",
+      "name": "أو",
+      "sound": "oː / ɔ",
+      "example": "offen",
+      "meaning": "مفتوح"
+    },
+    {
+      "g": "P",
+      "name": "پيه",
+      "sound": "p",
+      "example": "Park",
+      "meaning": "حديقة"
+    },
+    {
+      "g": "Q",
+      "name": "كو",
+      "sound": "غالباً kv مع u",
+      "example": "Quelle",
+      "meaning": "منبع"
+    },
+    {
+      "g": "R",
+      "name": "إر",
+      "sound": "له نطق إقليمي متنوع",
+      "example": "rot",
+      "meaning": "أحمر"
+    },
+    {
+      "g": "S",
+      "name": "إس",
+      "sound": "s أو z حسب الموقع",
+      "example": "Sonne",
+      "meaning": "شمس"
+    },
+    {
+      "g": "T",
+      "name": "تيه",
+      "sound": "t",
+      "example": "Tag",
+      "meaning": "يوم"
+    },
+    {
+      "g": "U",
+      "name": "أوو",
+      "sound": "uː / ʊ",
+      "example": "Uhr",
+      "meaning": "ساعة"
+    },
+    {
+      "g": "V",
+      "name": "فاو",
+      "sound": "غالباً f، وأحياناً v",
+      "example": "Vater",
+      "meaning": "أب"
+    },
+    {
+      "g": "W",
+      "name": "ڤيه",
+      "sound": "v",
+      "example": "Wasser",
+      "meaning": "ماء"
+    },
+    {
+      "g": "X",
+      "name": "إكس",
+      "sound": "ks",
+      "example": "Taxi",
+      "meaning": "طاكسي"
+    },
+    {
+      "g": "Y",
+      "name": "أُپسيلون",
+      "sound": "يختلف في الكلمات الدخيلة",
+      "example": "Typ",
+      "meaning": "نوع/شخص"
+    },
+    {
+      "g": "Z",
+      "name": "تسِت",
+      "sound": "ts",
+      "example": "Zeit",
+      "meaning": "وقت"
+    },
+    {
+      "g": "Ä",
+      "name": "إيه مفتوحة",
+      "sound": "ɛ / ɛː",
+      "example": "Äpfel",
+      "meaning": "تفاح"
+    },
+    {
+      "g": "Ö",
+      "name": "أُه مدوّرة",
+      "sound": "øː / œ",
+      "example": "schön",
+      "meaning": "جميل"
+    },
+    {
+      "g": "Ü",
+      "name": "إي مدوّرة",
+      "sound": "yː / ʏ",
+      "example": "Tür",
+      "meaning": "باب"
+    },
+    {
+      "g": "ß",
+      "name": "إس-تسِت",
+      "sound": "s",
+      "example": "Straße",
+      "meaning": "شارع"
+    }
+  ],
+  "clusters": [
+    {
+      "g": "sch",
+      "cue": "ش",
+      "ipa": "/ʃ/",
+      "example": "Schule",
+      "meaning": "مدرسة",
+      "note": "قاعدة ثابتة تقريباً."
+    },
+    {
+      "g": "ch (بعد i/e/ä/ö/ü)",
+      "cue": "خ خفيفة أمامية؛ ما عندهاش تطابق عربي دقيق",
+      "ipa": "/ç/",
+      "example": "ich",
+      "meaning": "أنا",
+      "note": "ما تنطقهاش ش ولا ك."
+    },
+    {
+      "g": "ch (بعد a/o/u/au)",
+      "cue": "خ",
+      "ipa": "/x/",
+      "example": "Buch",
+      "meaning": "كتاب",
+      "note": "صوت حلقي أقرب للخاء."
+    },
+    {
+      "g": "sp (بداية كلمة/مقطع)",
+      "cue": "شپ",
+      "ipa": "/ʃp/",
+      "example": "sprechen",
+      "meaning": "يتكلم",
+      "note": "في البداية غالباً تتحول s إلى ش."
+    },
+    {
+      "g": "st (بداية كلمة/مقطع)",
+      "cue": "شت",
+      "ipa": "/ʃt/",
+      "example": "Straße",
+      "meaning": "شارع",
+      "note": "نفس الفكرة في بداية المقطع."
+    },
+    {
+      "g": "ei",
+      "cue": "آي",
+      "ipa": "/aɪ̯/",
+      "example": "mein",
+      "meaning": "ديالي/لي",
+      "note": "لا تقرأها إي."
+    },
+    {
+      "g": "ie",
+      "cue": "يي طويلة",
+      "ipa": "/iː/",
+      "example": "Liebe",
+      "meaning": "حب",
+      "note": "عادة صوت i طويل."
+    },
+    {
+      "g": "eu / äu",
+      "cue": "أوي",
+      "ipa": "/ɔʏ̯/",
+      "example": "heute",
+      "meaning": "اليوم",
+      "note": "eu وäu غالباً نفس الصوت."
+    },
+    {
+      "g": "au",
+      "cue": "آو",
+      "ipa": "/aʊ̯/",
+      "example": "Haus",
+      "meaning": "بيت",
+      "note": "صوت مزدوج."
+    },
+    {
+      "g": "z",
+      "cue": "تس",
+      "ipa": "/ts/",
+      "example": "Zeit",
+      "meaning": "وقت",
+      "note": "Z الألمانية ليست ز العربية."
+    },
+    {
+      "g": "w",
+      "cue": "ڤ",
+      "ipa": "/v/",
+      "example": "Wasser",
+      "meaning": "ماء",
+      "note": "لا تنطقها w الإنجليزية."
+    },
+    {
+      "g": "v",
+      "cue": "غالباً ف في الكلمات الألمانية",
+      "ipa": "/f/ أو /v/",
+      "example": "Vater",
+      "meaning": "أب",
+      "note": "في كلمات دخيلة مثل Video قد تسمع v."
+    },
+    {
+      "g": "j",
+      "cue": "ي",
+      "ipa": "/j/",
+      "example": "ja",
+      "meaning": "نعم",
+      "note": "مثل y في yes."
+    },
+    {
+      "g": "qu",
+      "cue": "كڤ",
+      "ipa": "/kv/",
+      "example": "Quelle",
+      "meaning": "منبع",
+      "note": "q تأتي تقريباً دائماً مع u."
+    },
+    {
+      "g": "pf",
+      "cue": "پ + ف بسرعة",
+      "ipa": "/pf/",
+      "example": "Pferd",
+      "meaning": "حصان",
+      "note": "حاول تسمع الحرفين معاً."
+    },
+    {
+      "g": "tsch",
+      "cue": "تش",
+      "ipa": "/tʃ/",
+      "example": "Deutsch",
+      "meaning": "ألماني",
+      "note": "مثل ch الإنجليزية في chair تقريباً."
+    },
+    {
+      "g": "ck",
+      "cue": "ك",
+      "ipa": "/k/",
+      "example": "backen",
+      "meaning": "يخبز",
+      "note": "غالباً بعد حركة قصيرة."
+    },
+    {
+      "g": "ng",
+      "cue": "نْغ أنفية بدون g منفصلة",
+      "ipa": "/ŋ/",
+      "example": "singen",
+      "meaning": "يغني",
+      "note": "لا تضف g قوية في النهاية."
+    },
+    {
+      "g": "ss / ß",
+      "cue": "س",
+      "ipa": "/s/",
+      "example": "Straße",
+      "meaning": "شارع",
+      "note": "الفرق إملائي مرتبط بطول الحركة أكثر من الصوت."
+    }
+  ],
+  "steps": [
+    {
+      "id": "zero-01",
+      "type": "orientation",
+      "title": "افهم الخطة قبل ما تبدأ",
+      "minutes": 8,
+      "goal": "تعرف شنو غادي تتعلم وشنو ما خاصكش تحفظه دفعة وحدة.",
+      "body": "أول هدف ماشي تكون ناطق ألماني مثالي. الهدف تعرف الرموز والأصوات الأكثر تكراراً وتقدر تقرا كلمة بسيطة وتسمعها بلا ما تكون الحروف غريبة عليك."
+    },
+    {
+      "id": "zero-02",
+      "type": "video",
+      "title": "الفيديو التأسيسي: الحروف والمقاطع",
+      "minutes": 20,
+      "goal": "خذ صورة كاملة على A–Z وä/ö/ü/ß وei/ie/sch.",
+      "videoId": "ahmad-zero-alphabet",
+      "body": "شاهد فقط حتى القسم الخاص بالحروف والمقاطع. وقف بعد كل مجموعة وردد بصوتك."
+    },
+    {
+      "id": "zero-03",
+      "type": "letters",
+      "title": "أسماء الحروف A–Z",
+      "minutes": 25,
+      "goal": "تعرف اسم كل حرف وتفرّق بين اسم الحرف وصوته داخل الكلمة.",
+      "body": "اضغط 🔊 على كلمة المثال، ورددها. ما تحفظش قواعد النطق من اسم الحرف فقط."
+    },
+    {
+      "id": "zero-04",
+      "type": "letters-special",
+      "title": "Ä Ö Ü و ß",
+      "minutes": 20,
+      "goal": "تميّز الأصوات الخاصة اللي كتبدل المعنى.",
+      "body": "ركز على وضع الشفتين، واستعمل كلمات المثال بدل ترجمة الصوت حرفياً للعربية."
+    },
+    {
+      "id": "zero-05",
+      "type": "clusters",
+      "title": "المقاطع اللي كتقرا بطريقة مختلفة",
+      "minutes": 30,
+      "goal": "تتقن sch/ch/sp/st/ei/ie/eu/au/z/w/v/j/qu/pf/tsch.",
+      "body": "هذه أهم خطوة باش ما تقراش الألمانية بحروف عربية أو إنجليزية."
+    },
+    {
+      "id": "zero-06",
+      "type": "video",
+      "title": "تثبيت النطق مع Easy German",
+      "minutes": 25,
+      "goal": "تسمع نطقاً طبيعياً بعد ما فهمت القواعد.",
+      "videoId": "a1-v01",
+      "body": "ركز على الفرق بين الأصوات، ما تحاولش تحفظ كل كلمة."
+    },
+    {
+      "id": "zero-07",
+      "type": "words",
+      "title": "اقرأ أول 20 كلمة بصوتك",
+      "minutes": 20,
+      "goal": "تطبق القواعد على كلمات قصيرة.",
+      "words": [
+        "Schule",
+        "Straße",
+        "ich",
+        "Buch",
+        "heute",
+        "mein",
+        "Liebe",
+        "Haus",
+        "Wasser",
+        "Zeit",
+        "ja",
+        "Vater",
+        "sprechen",
+        "Tür",
+        "schön",
+        "Deutsch",
+        "Pferd",
+        "Quelle",
+        "singen",
+        "backen"
+      ]
+    },
+    {
+      "id": "zero-08",
+      "type": "checkpoint",
+      "title": "اختبار النطق الأول",
+      "minutes": 12,
+      "goal": "تأكد أن الرموز ما بقاوش غريبين عليك.",
+      "body": "المطلوب 80% على الأقل. إذا نقصت، رجع للمقاطع فقط وما تعاودش كلشي.",
+      "quiz": [
+        {
+          "q": "كيفاش غالباً كتقرا sch؟",
+          "o": [
+            "ش",
+            "سخ",
+            "ك"
+          ],
+          "a": 0
+        },
+        {
+          "q": "في كلمة Zeit، Z كتبدأ بأي صوت؟",
+          "o": [
+            "ز",
+            "تس",
+            "س"
+          ],
+          "a": 1
+        },
+        {
+          "q": "ei في mein كتقرا تقريباً:",
+          "o": [
+            "إي",
+            "آي",
+            "أوي"
+          ],
+          "a": 1
+        },
+        {
+          "q": "ie في Liebe كتقرا غالباً:",
+          "o": [
+            "i طويلة",
+            "آي",
+            "إه"
+          ],
+          "a": 0
+        },
+        {
+          "q": "بداية sprechen كتكون تقريباً:",
+          "o": [
+            "سپ",
+            "شپ",
+            "تس"
+          ],
+          "a": 1
+        },
+        {
+          "q": "ch في Buch أقرب إلى:",
+          "o": [
+            "خ",
+            "ش",
+            "ك"
+          ],
+          "a": 0
+        },
+        {
+          "q": "W في Wasser أقرب إلى:",
+          "o": [
+            "w الإنجليزية",
+            "v / ڤ",
+            "ف دائماً"
+          ],
+          "a": 1
+        },
+        {
+          "q": "J في ja أقرب إلى:",
+          "o": [
+            "ج",
+            "ي",
+            "خ"
+          ],
+          "a": 1
+        }
+      ],
+      "passScore": 80
+    },
+    {
+      "id": "zero-09",
+      "type": "grammar",
+      "title": "أول قاعدة: الضمائر + sein",
+      "minutes": 20,
+      "goal": "تقدر تقول أنا/أنت/هو… وتبني أول جملة.",
+      "grammarIds": [
+        "a1-g01",
+        "a1-g02"
+      ]
+    },
+    {
+      "id": "zero-10",
+      "type": "grammar",
+      "title": "الفعل في الجملة الألمانية",
+      "minutes": 20,
+      "goal": "تفهم أن الفعل المصرف غالباً في المركز الثاني.",
+      "grammarIds": [
+        "a1-g04",
+        "a1-g06"
+      ]
+    },
+    {
+      "id": "zero-11",
+      "type": "video",
+      "title": "ترتيب الجملة في 10 دقائق",
+      "minutes": 15,
+      "goal": "تشوف القاعدة في أمثلة كثيرة.",
+      "videoId": "eg-a1-sentence",
+      "body": "كتب غير 3 أمثلة من الفيديو، ما تنسخش كلشي."
+    },
+    {
+      "id": "zero-12",
+      "type": "sentences",
+      "title": "اقرأ وقل أول 10 جمل",
+      "minutes": 20,
+      "goal": "تربط النطق بالقواعد الأساسية.",
+      "sentences": [
+        "Ich heiße Omar.",
+        "Ich komme aus Marokko.",
+        "Ich wohne in Fès.",
+        "Ich lerne Deutsch.",
+        "Ich bin müde.",
+        "Du bist hier.",
+        "Heute lerne ich Deutsch.",
+        "Ich trinke Wasser.",
+        "Das ist ein Buch.",
+        "Ich habe Zeit."
+      ]
+    },
+    {
+      "id": "zero-13",
+      "type": "video",
+      "title": "أول استماع بطيء: عرّف بنفسك",
+      "minutes": 35,
+      "goal": "تسمع لغة مفهومة مرتبطة بجمل تقدر تستعملها.",
+      "videoId": "a1-v12",
+      "body": "المرة 1 بلا ترجمة، المرة 2 مع subtitles ألمانية، المرة 3 وقف وكرر 5 جمل."
+    },
+    {
+      "id": "zero-14",
+      "type": "listen-read",
+      "title": "استماع + قراءة معاً",
+      "minutes": 30,
+      "goal": "تربط الصوت بالنص بدل ما تحفظ النطق وحده.",
+      "videoId": "eg-a1-morning",
+      "body": "شاهد دقيقة، أعدها مع subtitles، ثم اقرأ 5 جمل بصوتك."
+    },
+    {
+      "id": "zero-15",
+      "type": "reading",
+      "title": "أول نص قصير",
+      "minutes": 15,
+      "goal": "تقرأ دون ترجمة كل كلمة.",
+      "text": "Ich heiße Sami. Ich wohne in Fès. Jeden Morgen trinke ich Tee und lerne zehn Minuten Deutsch. Danach gehe ich zur Arbeit. Am Abend höre ich einen kurzen Dialog und wiederhole neue Wörter."
+    },
+    {
+      "id": "zero-16",
+      "type": "notebook",
+      "title": "رتّب دفتر الألمانية",
+      "minutes": 20,
+      "goal": "تخلي الدفتر أداة مراجعة، ماشي مخزن نسخ.",
+      "body": "استعمل قالب دفتر اليوم الموجود داخل الموقع. صفحة واحدة لليوم تكفي."
+    },
+    {
+      "id": "zero-17",
+      "type": "checkpoint",
+      "title": "اختبار الجاهزية لـA1",
+      "minutes": 15,
+      "goal": "تأكد أنك جاهز تبدأ اليوم 1 من A1.",
+      "body": "إذا قدرت تقرا الكلمات، تعرف sch/ch/ei/ie، وتقول 5 جمل عن نفسك، انت جاهز.",
+      "quiz": [
+        {
+          "q": "اختر الجملة الصحيحة:",
+          "o": [
+            "Ich Deutsch lerne.",
+            "Ich lerne Deutsch.",
+            "Ich lernen Deutsch."
+          ],
+          "a": 1
+        },
+        {
+          "q": "sein مع ich:",
+          "o": [
+            "bin",
+            "bist",
+            "ist"
+          ],
+          "a": 0
+        },
+        {
+          "q": "sein مع du:",
+          "o": [
+            "bin",
+            "bist",
+            "seid"
+          ],
+          "a": 1
+        },
+        {
+          "q": "Heute ___ ich Deutsch.",
+          "o": [
+            "lerne",
+            "ich lerne",
+            "lernen"
+          ],
+          "a": 0
+        },
+        {
+          "q": "كيف تقرا sch في Schule؟",
+          "o": [
+            "ش",
+            "س",
+            "ك"
+          ],
+          "a": 0
+        },
+        {
+          "q": "كيف تقرا ei في mein؟",
+          "o": [
+            "آي",
+            "إي",
+            "أو"
+          ],
+          "a": 0
+        },
+        {
+          "q": "الجملة المناسبة للتعريف بالنفس:",
+          "o": [
+            "Ich heiße Omar.",
+            "Ich Omar heißen.",
+            "Heiße Omar ich."
+          ],
+          "a": 0
+        },
+        {
+          "q": "شنو الأفضل فبداية الاستماع؟",
+          "o": [
+            "نترجم كل كلمة",
+            "نفهم الفكرة العامة أولاً",
+            "نوقف كل ثانية"
+          ],
+          "a": 1
+        }
+      ],
+      "passScore": 80
+    },
+    {
+      "id": "zero-18",
+      "type": "unlock",
+      "title": "افتح برنامج A1 اليوم 1",
+      "minutes": 5,
+      "goal": "تدخل الآن للمسار اليومي بدون قفزة عشوائية.",
+      "body": "من هنا البرنامج اليومي هو الطريق الرئيسي، وقسم القواعد يبقى مرجعك عند الحاجة."
+    }
+  ]
+}

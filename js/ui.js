@@ -5,6 +5,13 @@ const E=G.escape,U=G.url;
 const titles={dashboard:["مسارك اليوم","الرئيسية"],daily:["120 يوم","30 يوم"],grammar:["82 درساً","القواعد والحروف"],roadmap:["A1 → B2","المسار"],review:["Spaced Review","المراجعة"],practice:["المهارات","التطبيق"],stats:["Progress","الإحصائيات"]};
 const toast=msg=>{const el=$("#toast");el.textContent=msg;el.classList.add("show");clearTimeout(G.runtime.toastTimer);G.runtime.toastTimer=setTimeout(()=>el.classList.remove("show"),1900)};
 G.ui={toast};
+G.ui.speakGerman=text=>{
+  if(!("speechSynthesis" in window)){toast("المتصفح ما كيدعمش النطق الصوتي");return}
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(String(text||""));u.lang="de-DE";u.rate=.82;u.pitch=1;
+  const voices=speechSynthesis.getVoices(),de=voices.find(v=>v.lang?.toLowerCase().startsWith("de"));
+  if(de)u.voice=de;speechSynthesis.speak(u);
+};
 
 G.ui.setView=view=>{
   if(!titles[view])view="dashboard";G.runtime.view=view;G.state.lastView=view;G.save();
@@ -15,10 +22,11 @@ G.ui.setView=view=>{
 };
 
 G.ui.renderDashboard=()=>{
-  const level=G.currentLevel(),p=G.levelProgress(level),next=G.nextLesson(),due=G.dueReviews().length,avg=G.quizAvg(),plan=G.todayPlan(),coach=G.coach();
+  const level=G.currentLevel(),p=G.levelProgress(level),next=G.nextLesson(),due=G.dueReviews().length,avg=G.quizAvg(),plan=G.todayPlan(),coach=G.coach(),zero=G.zeroProgress(),zeroStep=G.zeroCurrentStep();
   $("#levelChip").textContent=level.id;$("#progressLevel").textContent=level.id;$("#progressPct").textContent=p.pct+"%";$("#progressRing").style.setProperty("--p",(p.pct*3.6)+"deg");
-  $("#heroTitle").textContent=next?"كمّل "+level.id+" خطوة بخطوة.":"كملت مسار "+level.id+" الحالي.";
-  $("#heroText").textContent=due?("عندك "+due+" مراجعات مستحقة، وبعدها الدرس التالي."):"المحرك رتب لك درساً وتطبيقاً حسب تقدمك.";
+  const foundation=level.id==="A1"&&zero.total&&zero.pct<100;
+  $("#heroTitle").textContent=foundation?("ابدأ من الصفر • الخطوة "+G.state.zeroPathCurrent):next?"كمّل "+level.id+" خطوة بخطوة.":"كملت مسار "+level.id+" الحالي.";
+  $("#heroText").textContent=foundation?(zeroStep?.title+" — الموقع غادي يدوزك تلقائياً للخطوة اللي بعدها."):due?("عندك "+due+" مراجعات مستحقة، وبعدها الدرس التالي."):"المحرك رتب لك درساً وتطبيقاً حسب تقدمك.";
   $("#nextLessonMetric").textContent=next?("درس "+String(next.order).padStart(2,"0")):"مكتمل";$("#nextLessonName").textContent=next?next.title:"راجع الاختبارات";
   $("#dueMetric").textContent=due;$("#streakMetric").textContent=G.streak();$("#quizMetric").textContent=avg==null?"—":avg+"%";$("#reviewBadge").hidden=!due;$("#reviewBadge").textContent=due;
   $("#coachTitle").textContent=coach.title;$("#coachText").textContent=coach.text;
@@ -35,6 +43,7 @@ G.ui.startTask=t=>{
   if(!t)return;
   if(t.type==="quiz"){G.ui.openQuiz(t.quizId);return}
   if(t.type==="review"){G.ui.setView("review");return}
+  if(t.type==="zero"){G.runtime.zeroSelected=t.zeroIndex||G.state.zeroPathCurrent;G.ui.setView("grammar");return}
   if(t.type==="daily"){
     const levelId=G.state.profile.level;
     G.runtime.dailyLevel=levelId;
@@ -217,6 +226,22 @@ G.ui.renderDaily=()=>{
   const dailyCards=ids.map(id=>G.data.vocabulary.cards.find(v=>v.id===id)).filter(Boolean);
   $("#dailyVocab").innerHTML=dailyCards.map(v=>'<article class="vocab-mini"><b>'+E(v.de)+'</b><span>'+E(v.ar)+'</span><small>'+E(v.example||"")+'</small></article>').join("");
 
+  const rule=G.grammarTopic(day.grammarId);
+  const notebookItems=[
+    {n:"01",title:"رأس الصفحة",text:"Datum: "+new Date().toLocaleDateString("de-DE")+" • Tag "+day.day+" • Thema: "+day.theme},
+    {n:"02",title:"قاعدة اليوم",text:(rule?rule.title+": "+rule.summary:"كتب القاعدة في سطر واحد")+" — زيد جوج أمثلة فقط."},
+    {n:"03",title:"7 كلمات",text:"كتب الكلمات الألمانية أولاً. المعنى بالعربية صغير، ومن بعد مثال واحد لكل كلمة صعيبة فقط."},
+    {n:"04",title:"3 جمل من راسك",text:"ما تنسخش أمثلة الموقع. استعمل قاعدة اليوم و3 من كلمات اليوم في جمل ديالك."},
+    {n:"05",title:"خطأ اليوم",text:"خصص سطر: ✕ الجملة الغلط → ✓ التصحيح → السبب بكلمتين."},
+    {n:"06",title:"مراجعة ذكية",text:"فأسفل الصفحة كتب مربعات: غداً D+1 □ • بعد 3 أيام D+3 □ • بعد 7 أيام D+7 □."}
+  ];
+  $("#dailyNotebookGuide").innerHTML=notebookItems.map(x=>'<article><span>'+x.n+'</span><div><b>'+E(x.title)+'</b><p>'+E(x.text)+'</p></div></article>').join("");
+  $("#copyNotebookTemplate").onclick=async()=>{
+    const vocabText=dailyCards.map(v=>v.de+" = "+v.ar).join("\n");
+    const text="DEUTSCH • Tag "+day.day+"\nDatum: "+new Date().toLocaleDateString("de-DE")+"\nThema: "+day.theme+"\n\n1) REGEL\n"+(rule?rule.title+" — "+rule.summary:"")+"\nBeispiel 1: ______\nBeispiel 2: ______\n\n2) WÖRTER\n"+vocabText+"\n\n3) MEINE 3 SÄTZE\n1. ______\n2. ______\n3. ______\n\n4) FEHLER DES TAGES\n✕ ______\n✓ ______\nWarum? ______\n\n5) REVIEW\nD+1 □   D+3 □   D+7 □";
+    try{await navigator.clipboard.writeText(text);toast("تنسخ قالب دفتر اليوم")}catch{toast("المتصفح منع النسخ التلقائي")}
+  };
+
   $("#dailyDayStatus").textContent=progress.done+"/"+progress.total;
   $("#prevDailyDay").disabled=day.day<=1;
   $("#nextDailyDay").disabled=day.day>=30;
@@ -225,7 +250,78 @@ G.ui.renderDaily=()=>{
 };
 
 
+
+const zeroVideoCard=step=>{
+  const v=G.videoById(step.videoId);if(!v)return '<div class="empty">الفيديو غير موجود في المكتبة.</div>';
+  const q=v.quality||{},metrics=[q.views?fmtNumber(q.views)+" مشاهدة":null,q.likes?fmtNumber(q.likes)+" إعجاب":null].filter(Boolean);
+  return '<div class="zero-video-card"><div><small>'+E(v.provider)+'</small><h3>'+E(v.title)+'</h3><p>'+E(step.body||"")+'</p><div class="video-meta">'+metrics.map(x=>'<span>'+E(x)+'</span>').join("")+'<span>مختار لأنه مناسب لهاد الخطوة</span></div></div><a href="'+U(v.url)+'" target="_blank" rel="noopener">▶ فتح الفيديو</a></div>';
+};
+
+G.ui.renderZeroPath=()=>{
+  const data=G.data.zero;if(!data)return;
+  const p=G.zeroProgress(),steps=data.steps,currentMax=Math.max(1,Number(G.state.zeroPathCurrent)||1);
+  const selected=Math.max(1,Math.min(steps.length,Number(G.runtime.zeroSelected)||currentMax));
+  G.runtime.zeroSelected=selected;
+  const step=steps[selected-1];
+  $("#zeroPrinciple").textContent=data.principle;
+  $("#zeroProgressPct").textContent=p.pct+"%";
+  $("#zeroProgressText").textContent=p.done+"/"+p.total+" خطوة";
+  $("#zeroStepList").innerHTML=steps.map((x,i)=>{
+    const n=i+1,done=G.zeroDone(x.id),locked=n>currentMax;
+    return '<button class="zero-step '+(done?"done ":"")+(selected===n?"active ":"")+(locked?"locked":"")+'" data-zero-index="'+n+'" '+(locked?"disabled":"")+'><span>'+String(n).padStart(2,"0")+'</span><div><b>'+E(x.title)+'</b><small>'+E(x.goal||"")+'</small></div><em>'+(done?"✓":locked?"🔒":"→")+'</em></button>';
+  }).join("");
+  $("#zeroStepList [data-zero-index]").forEach(b=>b.onclick=()=>{G.runtime.zeroSelected=Number(b.dataset.zeroIndex);G.ui.renderZeroPath()});
+
+  let body='';
+  if(step.type==="orientation"){
+    body='<div class="zero-explain"><p>'+E(step.body)+'</p><div class="zero-order"><span>1 الحروف</span><span>2 الأصوات</span><span>3 المقاطع</span><span>4 كلمات</span><span>5 قواعد بسيطة</span><span>6 استماع بطيء</span><span>7 قراءة</span></div></div>';
+  }else if(step.type==="video"||step.type==="listen-read"){
+    body=zeroVideoCard(step);
+  }else if(step.type==="letters"||step.type==="letters-special"){
+    const list=step.type==="letters-special"?data.letters.filter(x=>["Ä","Ö","Ü","ß"].includes(x.g)):data.letters.filter(x=>!["Ä","Ö","Ü","ß"].includes(x.g));
+    body='<p class="zero-note">الكتابة بالعربية هنا غير تقريب للصوت. زر 🔊 هو المرجع الأفضل للكلمة.</p><div class="letter-grid">'+list.map(x=>'<article class="letter-card"><b>'+E(x.g)+'</b><span>اسم الحرف: '+E(x.name)+'</span><span>صوت شائع: <code>'+E(x.sound)+'</code></span><button data-speak="'+E(x.example)+'">🔊 '+E(x.example)+'</button><small>'+E(x.meaning)+'</small></article>').join("")+'</div>';
+  }else if(step.type==="clusters"){
+    body='<p class="zero-note">هاد التركيبات أهم من حفظ أسماء الحروف بوحدها. اسمع كلمة المثال ورددها.</p><div class="cluster-grid">'+data.clusters.map(x=>'<article class="cluster-card"><div><b>'+E(x.g)+'</b><code>'+E(x.ipa)+'</code></div><strong>'+E(x.cue)+'</strong><button data-speak="'+E(x.example)+'">🔊 '+E(x.example)+'</button><span>'+E(x.meaning)+'</span><small>'+E(x.note)+'</small></article>').join("")+'</div>';
+  }else if(step.type==="words"){
+    body='<div class="zero-word-grid">'+step.words.map(w=>'<button data-speak="'+E(w)+'">🔊 <b>'+E(w)+'</b></button>').join("")+'</div><p class="zero-note">قرا الكلمة بوحدك أولاً، من بعد اضغط الصوت وقارن.</p>';
+  }else if(step.type==="grammar"){
+    const list=(step.grammarIds||[]).map(G.grammarTopic).filter(Boolean);
+    body='<div class="zero-mini-rules">'+list.map(t=>'<article><small>'+E(t.level)+'</small><h4>'+E(t.title)+'</h4><p>'+E(t.summary)+'</p><div class="grammar-examples">'+t.examples.map(x=>'<code>'+E(x)+'</code>').join("")+'</div></article>').join("")+'</div>';
+  }else if(step.type==="sentences"){
+    body='<div class="zero-sentence-list">'+step.sentences.map(x=>'<article><span lang="de">'+E(x)+'</span><button data-speak="'+E(x)+'">🔊</button></article>').join("")+'</div><p class="zero-note">قرا الجملة → سمعها → عاودها من غير ما تشوف.</p>';
+  }else if(step.type==="reading"){
+    body='<article class="reading-text" lang="de">'+E(step.text||"")+'</article><p class="zero-note">المرة الأولى بلا قاموس. من بعد فقط علّم الكلمات اللي منعتك من فهم المعنى العام.</p>';
+  }else if(step.type==="notebook"){
+    body='<div class="notebook-method"><article><b>① العنوان</b><span>Datum + Tag + Thema</span></article><article><b>② القاعدة</b><span>سطر واحد فقط + جوج أمثلة</span></article><article><b>③ 7 كلمات</b><span>الكلمة + المعنى + مثال واحد</span></article><article><b>④ إنتاجك</b><span>3 جمل من راسك</span></article><article><b>⑤ خطأ اليوم</b><span>الخطأ → التصحيح → علاش</span></article><article><b>⑥ المراجعة</b><span>D+1 / D+3 / D+7</span></article></div>';
+  }else if(step.type==="checkpoint"){
+    body='<form class="zero-checkpoint" id="zeroCheckpoint">'+(step.quiz||[]).map((q,qi)=>'<section><h4>'+(qi+1)+'. '+E(q.q)+'</h4><div>'+q.o.map((o,oi)=>'<label><input type="radio" name="zq'+qi+'" value="'+oi+'"> <span>'+E(o)+'</span></label>').join("")+'</div></section>').join("")+'<button class="primary" type="submit">صحّح الاختبار</button><p id="zeroCheckpointResult" class="muted"></p></form>';
+  }else if(step.type==="unlock"){
+    body='<div class="zero-unlock"><b>🎉 الأساس جاهز</b><p>'+E(step.body)+'</p><button class="primary" id="unlockA1Now">افتح اليوم 1 من A1</button></div>';
+  }else body='<div class="zero-explain"><p>'+E(step.body||"")+'</p></div>';
+
+  $("#zeroStepContent").innerHTML='<header class="zero-step-head"><div><small>الخطوة '+selected+' من '+steps.length+' • ≈ '+(step.minutes||15)+' د</small><h2>'+E(step.title)+'</h2><p>'+E(step.goal||"")+'</p></div><span class="zero-type">'+E(step.type)+'</span></header>'+body+'<footer class="zero-step-footer"><button class="ghost" id="zeroPrev" '+(selected<=1?"disabled":"")+'>→ السابق</button><button class="primary" id="zeroComplete">'+(G.zeroDone(step.id)?"✓ مكتملة — التالي":"كملت هاد الخطوة ←")+'</button></footer>';
+  $("#zeroStepContent [data-speak]").forEach(b=>b.onclick=()=>G.ui.speakGerman(b.dataset.speak));
+  const prev=$("#zeroPrev");if(prev)prev.onclick=()=>{if(selected>1){G.runtime.zeroSelected=selected-1;G.ui.renderZeroPath()}};
+  const complete=$("#zeroComplete");
+  if(complete)complete.onclick=()=>{
+    if(step.type==="checkpoint"){
+      const form=$("#zeroCheckpoint");if(form)form.requestSubmit();return;
+    }
+    G.completeZeroStep(step.id);G.runtime.zeroSelected=Math.min(steps.length,selected+1);G.ui.renderAll();toast("تفتحات الخطوة الجاية ✓");
+  };
+  const cp=$("#zeroCheckpoint");
+  if(cp)cp.onsubmit=e=>{
+    e.preventDefault();let good=0,answered=0;(step.quiz||[]).forEach((q,qi)=>{const el=cp.querySelector('input[name="zq'+qi+'"]:checked');if(el){answered++;if(Number(el.value)===q.a)good++}});
+    if(answered!==(step.quiz||[]).length){toast("جاوب على الأسئلة كاملة");return}
+    const score=Math.round(good/(step.quiz.length||1)*100),pass=score>=(step.passScore||80);
+    $("#zeroCheckpointResult").textContent=score+"% — "+(pass?"ممتاز، تقدر تدوز للخطوة الجاية.":"رجع غير للنقاط اللي غلطتي فيها وحاول مرة أخرى.");
+    if(pass){G.completeZeroStep(step.id);setTimeout(()=>{G.runtime.zeroSelected=Math.min(steps.length,selected+1);G.ui.renderAll()},500)}
+  };
+  const unlock=$("#unlockA1Now");if(unlock)unlock.onclick=()=>{G.completeZeroStep(step.id);G.state.dailySelected.A1=1;G.save();G.ui.setView("daily");toast("بدأنا A1 • اليوم 1")};
+};
+
 G.ui.renderGrammar=()=>{
+  G.ui.renderZeroPath();
   const sections=G.data.grammar?.sections||[];
   const current=sections.find(x=>x.id===G.runtime.grammarSection)||sections[0];
   if(!current)return;
