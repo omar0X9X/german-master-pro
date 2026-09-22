@@ -104,6 +104,11 @@ G.todayDaily=()=>{
 
 G.todayPlan=()=>{
   const target=Number(G.state.profile.minutes)||210,tasks=[];let used=0;
+  const zero=G.zeroProgress(),zeroStep=G.zeroCurrentStep();
+  if(G.state.profile.level==="A1"&&zero.total&&zero.pct<100&&zeroStep){
+    tasks.push({type:"zero",title:"من الصفر • الخطوة "+G.state.zeroPathCurrent+": "+zeroStep.title,detail:zeroStep.goal||"أساس النطق والقراءة",minutes:zeroStep.minutes||20,view:"grammar",zeroIndex:G.state.zeroPathCurrent});
+    return{tasks,minutes:zeroStep.minutes||20,target,daily:null,foundation:true};
+  }
   const due=G.dueReviews();
   if(due.length){const n=Math.min(due.length,12),min=Math.min(25,8+n);tasks.push({type:"review",title:n+" مراجعات مستحقة",detail:"مفردات وأخطاء سابقة",minutes:min,view:"review"});used+=min}
   else if(G.newVocab(1).length){tasks.push({type:"review",title:"مفردات جديدة",detail:"ابدأ 5 بطاقات فقط",minutes:12,view:"review"});used+=12}
@@ -128,6 +133,8 @@ G.todayPlan=()=>{
 };
 
 G.coach=()=>{
+  const zero=G.zeroProgress(),zeroStep=G.zeroCurrentStep();
+  if(G.state.profile.level==="A1"&&zero.total&&zero.pct<100)return{title:"دابا: "+(zeroStep?.title||"مسار البداية"),text:"ما تحتاجش تختار شنو تقرا. كمّل الخطوة الحالية من مسار الصفر، والموقع يفتح لك اللي بعدها تلقائياً. التقدم: "+zero.done+"/"+zero.total+"."};
   const p=G.levelProgress(),coverage=G.skillCoverage(),weak=coverage[0],avg=G.quizAvg(),due=G.dueReviews().length;
   if(p.lessonDone===0)return{title:"ابدأ بالدرس الأول",text:"ما عندناش بيانات كافية عليك بعد. كمّل أول درس ثم اختبر نفسك باش يبدأ التشخيص."};
   if(due>8)return{title:"المراجعة أولاً",text:"عندك "+due+" بطاقات مستحقة. راجعها قبل ما تزيد معلومات جديدة."};
