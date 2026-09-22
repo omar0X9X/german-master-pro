@@ -330,7 +330,7 @@ G.ui.renderNotebookAcademy=()=>{
 
   $("#notebookGoldenRules").innerHTML=(data.rules||[]).map((x,i)=>'<article><span>'+String(i+1).padStart(2,"0")+'</span><p>'+E(x)+'</p></article>').join("");
   $("#notebookSourceTabs").innerHTML=sources.map(x=>'<button class="'+(x.id===active.id?"active":"")+'" data-notebook-source="'+E(x.id)+'"><span>'+E(x.icon)+'</span>'+E(x.title)+'</button>').join("");
-  $("#notebookSourceTabs [data-notebook-source]").forEach(b=>b.onclick=()=>{G.runtime.notebookSource=b.dataset.notebookSource;G.ui.renderNotebookAcademy()});
+  $$("#notebookSourceTabs [data-notebook-source]").forEach(b=>b.onclick=()=>{G.runtime.notebookSource=b.dataset.notebookSource;G.ui.renderNotebookAcademy()});
 
   const phase=(title,items)=>'<section><small>'+E(title)+'</small><ol>'+items.map(x=>'<li>'+E(x)+'</li>').join("")+'</ol></section>';
   $("#notebookSourceContent").innerHTML=
@@ -398,7 +398,7 @@ G.ui.renderGrammar=()=>{
   $("#grammarOverallPct").textContent=overall.pct+"%";
   $("#grammarOverallDone").textContent=overall.done+"/"+overall.total+" قاعدة";
   $("#grammarTabs").innerHTML=sections.map(sec=>'<button class="'+(sec.id===current.id?"active":"")+'" data-grammar-tab="'+E(sec.id)+'">'+E(sec.label)+' <small>'+sec.topics.length+'</small></button>').join("");
-  $("#grammarTabs [data-grammar-tab]").forEach(b=>b.onclick=()=>{G.runtime.grammarSection=b.dataset.grammarTab;G.runtime.grammarSearch="";G.ui.renderGrammar()});
+  $$("#grammarTabs [data-grammar-tab]").forEach(b=>b.onclick=()=>{G.runtime.grammarSection=b.dataset.grammarTab;G.runtime.grammarSearch="";G.ui.renderGrammar()});
 
   const input=$("#grammarSearch");
   if(document.activeElement!==input)input.value=G.runtime.grammarSearch||"";
@@ -432,12 +432,12 @@ G.ui.renderGrammarTopics=()=>{
     '</article>';
   }).join(""):'<div class="empty"><b>ما لقيناش هاد الموضوع</b>جرّب كلمة أخرى مثل Dativ أو Perfekt أو weil.</div>';
 
-  $("#grammarTopics [data-expand-grammar]").forEach(b=>b.onclick=()=>{
+  $$("#grammarTopics [data-expand-grammar]").forEach(b=>b.onclick=()=>{
     const detail=$("#grammar-detail-"+CSS.escape(b.dataset.expandGrammar));
     if(detail){detail.hidden=!detail.hidden;b.textContent=detail.hidden?"شرح":"إغلاق"}
   });
-  $("#grammarTopics [data-complete-grammar]").forEach(b=>b.onclick=()=>{G.toggleGrammar(b.dataset.completeGrammar);G.ui.renderGrammar();toast(G.grammarDone(b.dataset.completeGrammar)?"تسجلت القاعدة":"تلغى الإنجاز")});
-  $("#grammarTopics [data-grammar-answer]").forEach(b=>b.onclick=()=>{
+  $$("#grammarTopics [data-complete-grammar]").forEach(b=>b.onclick=()=>{G.toggleGrammar(b.dataset.completeGrammar);G.ui.renderGrammar();toast(G.grammarDone(b.dataset.completeGrammar)?"تسجلت القاعدة":"تلغى الإنجاز")});
+  $$("#grammarTopics [data-grammar-answer]").forEach(b=>b.onclick=()=>{
     const id=b.dataset.grammarId,t=G.grammarTopic(id),choice=Number(b.dataset.grammarAnswer);
     if(!t)return;
     G.saveGrammarDrill(id,choice===t.drill.answer,choice);
