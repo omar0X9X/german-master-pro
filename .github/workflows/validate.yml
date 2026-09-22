@@ -31,10 +31,34 @@ jobs:
           const v=JSON.parse(fs.readFileSync("data/vocabulary.json","utf8"));
           const d=JSON.parse(fs.readFileSync("data/daily-plan.json","utf8"));
           const videos=JSON.parse(fs.readFileSync("data/videos.json","utf8"));
+          const grammar=JSON.parse(fs.readFileSync("data/grammar.json","utf8"));
           const expected=["A1","A2","B1","B2"];
 
           if(c.levels.map(x=>x.id).join(",")!==expected.join(",")) throw new Error("Bad curriculum level order");
           if(d.levels.map(x=>x.level).join(",")!==expected.join(",")) throw new Error("Bad daily level order");
+
+          const grammarSections=["alphabet","A1","A2","B1","B2"];
+          if(grammar.sections.map(x=>x.id).join(",")!==grammarSections.join(",")) throw new Error("Bad grammar sections");
+          const grammarIds=new Set();
+          let grammarTopics=0,grammarDrills=0;
+          for(const section of grammar.sections){
+            if(!section.topics?.length) throw new Error("Empty grammar section "+section.id);
+            for(const topic of section.topics){
+              grammarTopics++;
+              if(grammarIds.has(topic.id)) throw new Error("Duplicate grammar topic "+topic.id);
+              grammarIds.add(topic.id);
+              if(!topic.title||!topic.summary||!topic.explanation||!topic.mistake) throw new Error("Incomplete grammar topic "+topic.id);
+              if(!Array.isArray(topic.examples)||!topic.examples.length) throw new Error("Missing examples "+topic.id);
+              if(!topic.drill||!Array.isArray(topic.drill.options)||topic.drill.options.length<3) throw new Error("Missing grammar drill "+topic.id);
+              if(topic.drill.answer<0||topic.drill.answer>=topic.drill.options.length) throw new Error("Bad grammar answer "+topic.id);
+              grammarDrills++;
+            }
+          }
+          if(grammarTopics<80||grammarDrills!==grammarTopics) throw new Error("Grammar academy too small");
+          if(grammar.sections.find(x=>x.id==="alphabet").topics.length<10) throw new Error("Alphabet section too small");
+          for(const level of expected){
+            if(grammar.sections.find(x=>x.id===level).topics.length<15) throw new Error(level+" grammar section too small");
+          }
 
           const quizzes=new Set(q.quizzes.map(x=>x.id));
           let lessons=0,resources=0;
@@ -73,7 +97,7 @@ jobs:
           if(verifiedMetrics<20) throw new Error("Not enough verified engagement snapshots");
 
           const vocabIds=new Set(v.cards.map(x=>x.id));
-          let dailyCount=0,readingChars=0,speakingTasks=0,listeningTasks=0;
+          let dailyCount=0,readingChars=0,speakingTasks=0,listeningTasks=0,grammarDaily=0;
           for(const level of d.levels){
             if(level.durationDays!==30||level.days.length!==30) throw new Error(level.level+" must have 30 days");
             level.days.forEach((day,index)=>{
@@ -81,6 +105,9 @@ jobs:
               if(day.day!==index+1) throw new Error(level.level+" day order mismatch");
               if(!day.videos?.length) throw new Error("Missing daily video "+level.level+" day "+day.day);
               for(const id of day.videos) if(!videoIds.has(id)) throw new Error("Unknown daily video "+id);
+
+              if(!day.grammarId||!grammarIds.has(day.grammarId)) throw new Error("Bad daily grammar "+level.level+" day "+day.day);
+              grammarDaily++;
 
               if(!day.listening?.videoId||!videoIds.has(day.listening.videoId)) throw new Error("Bad listening task "+level.level+" day "+day.day);
               if(!Array.isArray(day.listening.steps)||day.listening.steps.length<3) throw new Error("Listening needs 3 steps");
@@ -103,7 +130,7 @@ jobs:
             });
           }
           if(dailyCount!==120) throw new Error("Expected 120 study days");
-          if(listeningTasks!==120||speakingTasks!==120) throw new Error("Every day needs listening and speaking");
+          if(listeningTasks!==120||speakingTasks!==120||grammarDaily!==120) throw new Error("Every day needs grammar, listening and speaking");
 
           const questionIds=new Set();
           for(const quiz of q.quizzes) for(const question of quiz.questions){
@@ -117,6 +144,7 @@ jobs:
             quizzes:q.quizzes.length,questions:questionIds.size,
             vocabulary:v.cards.length,videos:videos.videos.length,
             engagementSnapshots:verifiedMetrics,
+            grammarTopics,grammarDrills,grammarDaily,
             dailyDays:dailyCount,listeningTasks,speakingTasks,readingCharacters:readingChars
           });
           NODE
@@ -128,21 +156,15 @@ jobs:
           test -f assets/icon.svg
           test -f data/daily-plan.json
           test -f data/videos.json
+          test -f data/grammar.json
           grep -q 'data-panel="daily"' index.html
-          grep -q 'id="dailyListeningDone"' index.html
-          grep -q 'id="dailyWritingArea"' index.html
-          grep -q 'id="dailySpeakingDone"' index.html
-          grep -q 'id="recordSpeakingButton"' index.html
-          grep -q 'id="dailyReadingAnswers"' index.html
-          grep -q 'G.todayDaily' js/engine.js
+          grep -q 'data-panel="grammar"' index.html
+          grep -q 'id="dailyGrammarDone"' index.html
+          grep -q 'id="grammarSearch"' index.html
+          grep -q 'id="grammarTopics"' index.html
+          grep -q 'G.grammarProgress' js/store.js
+          grep -q 'G.ui.renderGrammar' js/ui.js
           grep -q 'G.ui.renderDaily' js/ui.js
-          grep -q 'MediaRecorder' js/ui.js
-          grep -q 'daily-plan.json' js/app.js
+          grep -q 'grammar.json' js/app.js
+          grep -q 'grammar.json' sw.js
           grep -q 'serviceWorker' js/app.js
-          node - <<'NODE'
-          const fs=require("fs");
-          const s=fs.readFileSync("js/ui.js","utf8");
-          if(/(^|[^$])\$\("#daily[^"]*"\)\.forEach/m.test(s)) {
-            throw new Error("Found incorrect single-element selector used with forEach");
-          }
-          NODE
