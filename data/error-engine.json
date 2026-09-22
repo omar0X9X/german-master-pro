@@ -1,0 +1,1203 @@
+{
+  "version": 1,
+  "title": "Error Engine Academy",
+  "unlockPolicy": {
+    "global": "Zero→A1 + A1 grammar 100%",
+    "levels": {
+      "A1": "global",
+      "A2": "A2 grammar 100%",
+      "B1": "B1 grammar 100%",
+      "B2": "B2 grammar 100%"
+    }
+  },
+  "levels": [
+    {
+      "level": "A1",
+      "skills": [
+        {
+          "id": "artikel",
+          "title": "Artikel & Gender",
+          "description": "der/die/das و ein/eine"
+        },
+        {
+          "id": "wordorder",
+          "title": "Wortstellung",
+          "description": "الفعل في المركز الثاني والأسئلة"
+        },
+        {
+          "id": "verbs",
+          "title": "Präsens",
+          "description": "تصريف sein/haben والأفعال"
+        },
+        {
+          "id": "cases",
+          "title": "Nominativ & Akkusativ",
+          "description": "الفاعل والمفعول المباشر"
+        },
+        {
+          "id": "negation",
+          "title": "Negation",
+          "description": "kein / nicht"
+        },
+        {
+          "id": "possessive",
+          "title": "Possessiv",
+          "description": "mein/dein/sein/ihr..."
+        },
+        {
+          "id": "modal",
+          "title": "Modal & Trennbar",
+          "description": "Modalverben والأفعال المنفصلة"
+        },
+        {
+          "id": "spelling",
+          "title": "Schreiben & Hören",
+          "description": "إملاء وأصوات أساسية"
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "skills": [
+        {
+          "id": "dativ",
+          "title": "Dativ",
+          "description": "المقالات وأفعال Dativ"
+        },
+        {
+          "id": "wechsel",
+          "title": "Wechselpräpositionen",
+          "description": "wo / wohin"
+        },
+        {
+          "id": "perfekt",
+          "title": "Perfekt",
+          "description": "haben/sein + Partizip II"
+        },
+        {
+          "id": "nebensatz",
+          "title": "Nebensätze",
+          "description": "weil/dass/wenn/obwohl"
+        },
+        {
+          "id": "adjective",
+          "title": "Adjektive",
+          "description": "نهايات الصفات الأساسية"
+        },
+        {
+          "id": "comparison",
+          "title": "Vergleich",
+          "description": "Komparativ/Superlativ"
+        },
+        {
+          "id": "reflexive",
+          "title": "Reflexiv & Präposition",
+          "description": "sich + Verben mit Präpositionen"
+        },
+        {
+          "id": "timeprep",
+          "title": "Zeit & Präposition",
+          "description": "seit/vor/in/für/ab/bis"
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "skills": [
+        {
+          "id": "relative",
+          "title": "Relativsätze",
+          "description": "der/die/das/den/dem/deren"
+        },
+        {
+          "id": "passive",
+          "title": "Passiv",
+          "description": "werden + Partizip II"
+        },
+        {
+          "id": "k2",
+          "title": "Konjunktiv II",
+          "description": "würde/hätte/wäre/könnte"
+        },
+        {
+          "id": "genitive",
+          "title": "Genitiv",
+          "description": "ملكية وحروف جر"
+        },
+        {
+          "id": "connectors",
+          "title": "Konnektoren",
+          "description": "obwohl/trotzdem/damit/um...zu"
+        },
+        {
+          "id": "infinitive",
+          "title": "Infinitivstrukturen",
+          "description": "um/ohne/statt + zu"
+        },
+        {
+          "id": "pronadv",
+          "title": "Pronominaladverbien",
+          "description": "darauf/woran/damit..."
+        },
+        {
+          "id": "ndecl",
+          "title": "N-Deklination & Ordnung",
+          "description": "Studenten + TeKaMoLo"
+        }
+      ]
+    },
+    {
+      "level": "B2",
+      "skills": [
+        {
+          "id": "k1",
+          "title": "Konjunktiv I",
+          "description": "الكلام المنقول"
+        },
+        {
+          "id": "passive2",
+          "title": "Passiv & Alternativen",
+          "description": "Zustandspassiv / sein zu / lassen"
+        },
+        {
+          "id": "nominal",
+          "title": "Nominalisierung",
+          "description": "تحويل الفعل/الصفة إلى اسم"
+        },
+        {
+          "id": "participle",
+          "title": "Partizipialattribute",
+          "description": "Partizip I/II كصفات"
+        },
+        {
+          "id": "connectors2",
+          "title": "Konnektoren B2",
+          "description": "je...desto / indem / sodass / sofern"
+        },
+        {
+          "id": "collocation",
+          "title": "Nomen-Verb-Verbindungen",
+          "description": "تراكيب رسمية شائعة"
+        },
+        {
+          "id": "reported",
+          "title": "Berichtssprache",
+          "description": "soll/muss/will + Distanz"
+        },
+        {
+          "id": "style",
+          "title": "Präzision & Stil",
+          "description": "صياغة رسمية ودقيقة"
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-artikel-01",
+      "level": "A1",
+      "skill": "artikel",
+      "type": "cloze",
+      "prompt": "___ Tisch ist neu.",
+      "answer": "der",
+      "hint": "اسم Tisch مذكر.",
+      "explain": "Tisch مذكر، لذلك Nominativ: der Tisch."
+    },
+    {
+      "id": "a1-artikel-02",
+      "level": "A1",
+      "skill": "artikel",
+      "type": "cloze",
+      "prompt": "Ich kaufe ___ Lampe.",
+      "answer": "eine",
+      "hint": "Lampe مؤنث.",
+      "explain": "مع اسم مؤنث غير معرف نستعمل eine."
+    },
+    {
+      "id": "a1-artikel-03",
+      "level": "A1",
+      "skill": "artikel",
+      "type": "dictation",
+      "prompt": "اسمع واكتب الجملة.",
+      "answer": "Das Kind spielt im Park.",
+      "hint": "ركز على das Kind.",
+      "explain": "المقال المحايد هنا das.",
+      "audio": "Das Kind spielt im Park."
+    },
+    {
+      "id": "a1-wordorder-01",
+      "level": "A1",
+      "skill": "wordorder",
+      "type": "reorder",
+      "prompt": "رتب الجملة.",
+      "answer": "Heute lerne ich Deutsch.",
+      "hint": "الفعل المصرف في المركز الثاني.",
+      "explain": "إذا بدأنا بـHeute، يأتي lerne ثانياً.",
+      "words": [
+        "Deutsch",
+        "ich",
+        "Heute",
+        "lerne"
+      ]
+    },
+    {
+      "id": "a1-wordorder-02",
+      "level": "A1",
+      "skill": "wordorder",
+      "type": "correct",
+      "prompt": "صحح: Morgen ich gehe zur Schule.",
+      "answer": "Morgen gehe ich zur Schule.",
+      "hint": "بعد عنصر أول، يأتي الفعل مباشرة.",
+      "explain": "الفعل المصرف يجب أن يبقى في الموقع الثاني."
+    },
+    {
+      "id": "a1-wordorder-03",
+      "level": "A1",
+      "skill": "wordorder",
+      "type": "reorder",
+      "prompt": "كوّن سؤال نعم/لا.",
+      "answer": "Kommst du heute?",
+      "hint": "الفعل أولاً في Ja/Nein-Frage.",
+      "explain": "Kommst + du + heute?",
+      "words": [
+        "heute",
+        "du",
+        "Kommst"
+      ]
+    },
+    {
+      "id": "a1-verbs-01",
+      "level": "A1",
+      "skill": "verbs",
+      "type": "cloze",
+      "prompt": "Ich ___ müde. (sein)",
+      "answer": "bin",
+      "hint": "sein مع ich = bin.",
+      "explain": "تصريف sein غير منتظم."
+    },
+    {
+      "id": "a1-verbs-02",
+      "level": "A1",
+      "skill": "verbs",
+      "type": "cloze",
+      "prompt": "Du ___ eine Frage. (haben)",
+      "answer": "hast",
+      "hint": "haben مع du = hast.",
+      "explain": "du hast وليس habst."
+    },
+    {
+      "id": "a1-verbs-03",
+      "level": "A1",
+      "skill": "verbs",
+      "type": "correct",
+      "prompt": "صحح: Er lernen Deutsch.",
+      "answer": "Er lernt Deutsch.",
+      "hint": "er يأخذ -t غالباً.",
+      "explain": "الفعل المنتظم مع er/sie/es ينتهي غالباً بـ-t."
+    },
+    {
+      "id": "a1-cases-01",
+      "level": "A1",
+      "skill": "cases",
+      "type": "cloze",
+      "prompt": "Ich sehe ___ Mann.",
+      "answer": "den",
+      "hint": "مفعول مباشر مذكر.",
+      "explain": "der يصبح den في Akkusativ."
+    },
+    {
+      "id": "a1-cases-02",
+      "level": "A1",
+      "skill": "cases",
+      "type": "cloze",
+      "prompt": "___ Frau arbeitet hier.",
+      "answer": "Die",
+      "hint": "الاسم هو الفاعل.",
+      "explain": "Nominativ مؤنث = die."
+    },
+    {
+      "id": "a1-cases-03",
+      "level": "A1",
+      "skill": "cases",
+      "type": "correct",
+      "prompt": "صحح: Ich habe ein Bruder.",
+      "answer": "Ich habe einen Bruder.",
+      "hint": "Bruder مذكر ومفعول مباشر.",
+      "explain": "ein يصبح einen في Akkusativ المذكر."
+    },
+    {
+      "id": "a1-negation-01",
+      "level": "A1",
+      "skill": "negation",
+      "type": "cloze",
+      "prompt": "Ich habe ___ Auto.",
+      "answer": "kein",
+      "hint": "اسم محايد مع ein.",
+      "explain": "kein ينفي الاسم هنا."
+    },
+    {
+      "id": "a1-negation-02",
+      "level": "A1",
+      "skill": "negation",
+      "type": "cloze",
+      "prompt": "Das ist ___ teuer.",
+      "answer": "nicht",
+      "hint": "نفي صفة.",
+      "explain": "nicht ينفي teuer."
+    },
+    {
+      "id": "a1-negation-03",
+      "level": "A1",
+      "skill": "negation",
+      "type": "correct",
+      "prompt": "صحح: Ich habe nicht Zeit.",
+      "answer": "Ich habe keine Zeit.",
+      "hint": "Zeit اسم مؤنث بدون أداة.",
+      "explain": "مع الاسم نستعمل keine هنا."
+    },
+    {
+      "id": "a1-possessive-01",
+      "level": "A1",
+      "skill": "possessive",
+      "type": "cloze",
+      "prompt": "Das ist ___ Mutter. (ich)",
+      "answer": "meine",
+      "hint": "Mutter مؤنث.",
+      "explain": "mein تتغير إلى meine مع المؤنث."
+    },
+    {
+      "id": "a1-possessive-02",
+      "level": "A1",
+      "skill": "possessive",
+      "type": "cloze",
+      "prompt": "Wo ist ___ Buch? (du)",
+      "answer": "dein",
+      "hint": "Buch محايد.",
+      "explain": "dein Buch."
+    },
+    {
+      "id": "a1-possessive-03",
+      "level": "A1",
+      "skill": "possessive",
+      "type": "correct",
+      "prompt": "صحح: Er besucht seine Bruder.",
+      "answer": "Er besucht seinen Bruder.",
+      "hint": "Akkusativ مذكر.",
+      "explain": "sein → seinen مع Bruder كمفعول."
+    },
+    {
+      "id": "a1-modal-01",
+      "level": "A1",
+      "skill": "modal",
+      "type": "reorder",
+      "prompt": "رتب: أستطيع التحدث بالألمانية.",
+      "answer": "Ich kann Deutsch sprechen.",
+      "hint": "Modal في المركز الثاني والمصدر في النهاية.",
+      "explain": "kann ... sprechen",
+      "words": [
+        "sprechen",
+        "Deutsch",
+        "kann",
+        "Ich"
+      ]
+    },
+    {
+      "id": "a1-modal-02",
+      "level": "A1",
+      "skill": "modal",
+      "type": "correct",
+      "prompt": "صحح: Ich muss arbeite heute.",
+      "answer": "Ich muss heute arbeiten.",
+      "hint": "بعد Modal يأتي المصدر غير مصروف في النهاية.",
+      "explain": "muss ... arbeiten."
+    },
+    {
+      "id": "a1-modal-03",
+      "level": "A1",
+      "skill": "modal",
+      "type": "reorder",
+      "prompt": "رتب فعل منفصل.",
+      "answer": "Ich stehe um sieben Uhr auf.",
+      "hint": "البادئة تذهب للنهاية.",
+      "explain": "stehe ... auf",
+      "words": [
+        "auf",
+        "um sieben Uhr",
+        "Ich",
+        "stehe"
+      ]
+    },
+    {
+      "id": "a1-spelling-01",
+      "level": "A1",
+      "skill": "spelling",
+      "type": "dictation",
+      "prompt": "اسمع واكتب.",
+      "answer": "Ich heiße Omar.",
+      "hint": "انتبه لـ ß في heiße.",
+      "explain": "heißen يكتب بـ ß.",
+      "audio": "Ich heiße Omar."
+    },
+    {
+      "id": "a1-spelling-02",
+      "level": "A1",
+      "skill": "spelling",
+      "type": "dictation",
+      "prompt": "اسمع واكتب.",
+      "answer": "Heute spreche ich Deutsch.",
+      "hint": "انتبه eu و sp و ch.",
+      "explain": "الجملة تدرب أصواتاً متكررة.",
+      "audio": "Heute spreche ich Deutsch."
+    },
+    {
+      "id": "a1-spelling-03",
+      "level": "A1",
+      "skill": "spelling",
+      "type": "correct",
+      "prompt": "صحح الإملاء: Ich lerne Doitsch.",
+      "answer": "Ich lerne Deutsch.",
+      "hint": "Deutsch فيها eu.",
+      "explain": "الكتابة الصحيحة Deutsch."
+    },
+    {
+      "id": "a2-dativ-01",
+      "level": "A2",
+      "skill": "dativ",
+      "type": "cloze",
+      "prompt": "Ich spreche mit ___ Lehrer.",
+      "answer": "dem",
+      "hint": "mit دائماً Dativ.",
+      "explain": "der Lehrer → dem Lehrer."
+    },
+    {
+      "id": "a2-dativ-02",
+      "level": "A2",
+      "skill": "dativ",
+      "type": "cloze",
+      "prompt": "Das gefällt ___. (ich)",
+      "answer": "mir",
+      "hint": "gefallen يأخذ Dativ للشخص.",
+      "explain": "ich → mir."
+    },
+    {
+      "id": "a2-dativ-03",
+      "level": "A2",
+      "skill": "dativ",
+      "type": "correct",
+      "prompt": "صحح: Ich helfe den Mann.",
+      "answer": "Ich helfe dem Mann.",
+      "hint": "helfen يأخذ Dativ.",
+      "explain": "der Mann → dem Mann."
+    },
+    {
+      "id": "a2-wechsel-01",
+      "level": "A2",
+      "skill": "wechsel",
+      "type": "cloze",
+      "prompt": "Ich gehe in ___ Küche.",
+      "answer": "die",
+      "hint": "حركة إلى مكان = Akkusativ.",
+      "explain": "wohin? → in die Küche."
+    },
+    {
+      "id": "a2-wechsel-02",
+      "level": "A2",
+      "skill": "wechsel",
+      "type": "cloze",
+      "prompt": "Ich bin in ___ Küche.",
+      "answer": "der",
+      "hint": "مكان ثابت = Dativ.",
+      "explain": "wo? → in der Küche."
+    },
+    {
+      "id": "a2-wechsel-03",
+      "level": "A2",
+      "skill": "wechsel",
+      "type": "correct",
+      "prompt": "صحح: Das Buch liegt auf den Tisch.",
+      "answer": "Das Buch liegt auf dem Tisch.",
+      "hint": "liegen = مكان ثابت.",
+      "explain": "Dativ بعد auf هنا."
+    },
+    {
+      "id": "a2-perfekt-01",
+      "level": "A2",
+      "skill": "perfekt",
+      "type": "cloze",
+      "prompt": "Wir ___ nach Berlin gefahren.",
+      "answer": "sind",
+      "hint": "fahren هنا حركة.",
+      "explain": "Perfekt مع sein."
+    },
+    {
+      "id": "a2-perfekt-02",
+      "level": "A2",
+      "skill": "perfekt",
+      "type": "cloze",
+      "prompt": "Ich habe viel ___. (lernen)",
+      "answer": "gelernt",
+      "hint": "فعل منتظم.",
+      "explain": "ge + lern + t."
+    },
+    {
+      "id": "a2-perfekt-03",
+      "level": "A2",
+      "skill": "perfekt",
+      "type": "correct",
+      "prompt": "صحح: Ich bin gearbeitet.",
+      "answer": "Ich habe gearbeitet.",
+      "hint": "arbeiten يأخذ haben.",
+      "explain": "ليس فعل حركة/تغير حالة."
+    },
+    {
+      "id": "a2-nebensatz-01",
+      "level": "A2",
+      "skill": "nebensatz",
+      "type": "reorder",
+      "prompt": "رتب بعد weil.",
+      "answer": "Ich bleibe zu Hause, weil ich krank bin.",
+      "hint": "الفعل في نهاية Nebensatz.",
+      "explain": "weil ich krank bin",
+      "words": [
+        "Ich bleibe zu Hause,",
+        "krank",
+        "weil",
+        "ich",
+        "bin"
+      ]
+    },
+    {
+      "id": "a2-nebensatz-02",
+      "level": "A2",
+      "skill": "nebensatz",
+      "type": "cloze",
+      "prompt": "Ich glaube, ___ er heute kommt.",
+      "answer": "dass",
+      "hint": "جملة مضمون.",
+      "explain": "dass + الفعل في النهاية."
+    },
+    {
+      "id": "a2-nebensatz-03",
+      "level": "A2",
+      "skill": "nebensatz",
+      "type": "correct",
+      "prompt": "صحح: Obwohl es regnet, wir gehen raus.",
+      "answer": "Obwohl es regnet, gehen wir raus.",
+      "hint": "بعد Nebensatz يبدأ Hauptsatz بالفعل.",
+      "explain": "gehen wir."
+    },
+    {
+      "id": "a2-adjective-01",
+      "level": "A2",
+      "skill": "adjective",
+      "type": "cloze",
+      "prompt": "Ich kaufe einen ___ Pullover. (rot)",
+      "answer": "roten",
+      "hint": "Akkusativ مذكر بعد einen.",
+      "explain": "الصفة تأخذ -en."
+    },
+    {
+      "id": "a2-adjective-02",
+      "level": "A2",
+      "skill": "adjective",
+      "type": "cloze",
+      "prompt": "Das ist eine ___ Idee. (gut)",
+      "answer": "gute",
+      "hint": "مؤنث Nominativ بعد eine.",
+      "explain": "gute Idee."
+    },
+    {
+      "id": "a2-adjective-03",
+      "level": "A2",
+      "skill": "adjective",
+      "type": "correct",
+      "prompt": "صحح: ein schönen Tag",
+      "answer": "ein schöner Tag",
+      "hint": "Nominativ مذكر بعد ein.",
+      "explain": "الصفة تحمل -er."
+    },
+    {
+      "id": "a2-comparison-01",
+      "level": "A2",
+      "skill": "comparison",
+      "type": "cloze",
+      "prompt": "Berlin ist größer ___ Bonn.",
+      "answer": "als",
+      "hint": "مقارنة غير متساوية.",
+      "explain": "Komparativ + als."
+    },
+    {
+      "id": "a2-comparison-02",
+      "level": "A2",
+      "skill": "comparison",
+      "type": "cloze",
+      "prompt": "Das ist ___ besten.",
+      "answer": "am",
+      "hint": "Superlativ adverbial.",
+      "explain": "am besten."
+    },
+    {
+      "id": "a2-comparison-03",
+      "level": "A2",
+      "skill": "comparison",
+      "type": "correct",
+      "prompt": "صحح: Er ist mehr schnell als ich.",
+      "answer": "Er ist schneller als ich.",
+      "hint": "schnell → schneller.",
+      "explain": "لا نستعمل mehr مع هذه الصفة."
+    },
+    {
+      "id": "a2-reflexive-01",
+      "level": "A2",
+      "skill": "reflexive",
+      "type": "cloze",
+      "prompt": "Ich interessiere ___ für Musik.",
+      "answer": "mich",
+      "hint": "sich interessieren.",
+      "explain": "ich → mich."
+    },
+    {
+      "id": "a2-reflexive-02",
+      "level": "A2",
+      "skill": "reflexive",
+      "type": "cloze",
+      "prompt": "Wir warten ___ den Bus.",
+      "answer": "auf",
+      "hint": "warten auf + Akk.",
+      "explain": "احفظ الفعل مع حرف الجر."
+    },
+    {
+      "id": "a2-reflexive-03",
+      "level": "A2",
+      "skill": "reflexive",
+      "type": "correct",
+      "prompt": "صحح: Ich denke auf die Prüfung.",
+      "answer": "Ich denke an die Prüfung.",
+      "hint": "denken an.",
+      "explain": "حرف الجر جزء من الفعل."
+    },
+    {
+      "id": "a2-timeprep-01",
+      "level": "A2",
+      "skill": "timeprep",
+      "type": "cloze",
+      "prompt": "Ich wohne hier ___ zwei Jahren.",
+      "answer": "seit",
+      "hint": "بدأ في الماضي ومستمر.",
+      "explain": "seit + Dativ."
+    },
+    {
+      "id": "a2-timeprep-02",
+      "level": "A2",
+      "skill": "timeprep",
+      "type": "cloze",
+      "prompt": "Wir fahren ___ drei Tagen.",
+      "answer": "in",
+      "hint": "بعد مدة من الآن.",
+      "explain": "in drei Tagen."
+    },
+    {
+      "id": "a2-timeprep-03",
+      "level": "A2",
+      "skill": "timeprep",
+      "type": "correct",
+      "prompt": "صحح: Ich bleibe seit einen Monat.",
+      "answer": "Ich bleibe seit einem Monat.",
+      "hint": "seit + Dativ.",
+      "explain": "ein Monat → einem Monat."
+    },
+    {
+      "id": "b1-relative-01",
+      "level": "B1",
+      "skill": "relative",
+      "type": "cloze",
+      "prompt": "Der Mann, ___ ich kenne, kommt.",
+      "answer": "den",
+      "hint": "مفعول داخل الجملة الموصولة.",
+      "explain": "مذكر Akkusativ = den."
+    },
+    {
+      "id": "b1-relative-02",
+      "level": "B1",
+      "skill": "relative",
+      "type": "cloze",
+      "prompt": "Die Frau, mit ___ ich spreche, ist nett.",
+      "answer": "der",
+      "hint": "mit + Dativ.",
+      "explain": "مؤنث Dativ = der."
+    },
+    {
+      "id": "b1-relative-03",
+      "level": "B1",
+      "skill": "relative",
+      "type": "correct",
+      "prompt": "صحح: Das Buch, der ich lese, ist spannend.",
+      "answer": "Das Buch, das ich lese, ist spannend.",
+      "hint": "Buch محايد.",
+      "explain": "الضمير النسبي das."
+    },
+    {
+      "id": "b1-passive-01",
+      "level": "B1",
+      "skill": "passive",
+      "type": "cloze",
+      "prompt": "Das Haus ___ gebaut.",
+      "answer": "wird",
+      "hint": "Passiv Präsens.",
+      "explain": "werden + Partizip II."
+    },
+    {
+      "id": "b1-passive-02",
+      "level": "B1",
+      "skill": "passive",
+      "type": "cloze",
+      "prompt": "Die E-Mail ist geschickt ___.",
+      "answer": "worden",
+      "hint": "Perfekt Passiv.",
+      "explain": "worden وليس geworden."
+    },
+    {
+      "id": "b1-passive-03",
+      "level": "B1",
+      "skill": "passive",
+      "type": "correct",
+      "prompt": "صحح: Die Tür wird geöffnet sein. (عملية الآن)",
+      "answer": "Die Tür wird geöffnet.",
+      "hint": "عملية الآن = wird + Partizip.",
+      "explain": "لا نحتاج sein."
+    },
+    {
+      "id": "b1-k2-01",
+      "level": "B1",
+      "skill": "k2",
+      "type": "cloze",
+      "prompt": "Wenn ich Zeit ___, würde ich kommen.",
+      "answer": "hätte",
+      "hint": "افتراض غير واقعي.",
+      "explain": "haben → hätte."
+    },
+    {
+      "id": "b1-k2-02",
+      "level": "B1",
+      "skill": "k2",
+      "type": "cloze",
+      "prompt": "Ich ___ gern mehr reisen.",
+      "answer": "würde",
+      "hint": "رغبة/افتراض.",
+      "explain": "würde + Infinitiv."
+    },
+    {
+      "id": "b1-k2-03",
+      "level": "B1",
+      "skill": "k2",
+      "type": "correct",
+      "prompt": "صحح: Wenn ich reich bin, würde ich reisen.",
+      "answer": "Wenn ich reich wäre, würde ich reisen.",
+      "hint": "شرط غير واقعي.",
+      "explain": "sein → wäre."
+    },
+    {
+      "id": "b1-genitive-01",
+      "level": "B1",
+      "skill": "genitive",
+      "type": "cloze",
+      "prompt": "die Tür ___ Hauses",
+      "answer": "des",
+      "hint": "Genitiv محايد.",
+      "explain": "das Haus → des Hauses."
+    },
+    {
+      "id": "b1-genitive-02",
+      "level": "B1",
+      "skill": "genitive",
+      "type": "cloze",
+      "prompt": "wegen ___ Regens",
+      "answer": "des",
+      "hint": "wegen + Genitiv القياسي.",
+      "explain": "der Regen → des Regens."
+    },
+    {
+      "id": "b1-genitive-03",
+      "level": "B1",
+      "skill": "genitive",
+      "type": "correct",
+      "prompt": "صحح: die Farbe von der Tasche (صياغة Genitiv)",
+      "answer": "die Farbe der Tasche",
+      "hint": "ملكية رسمية/قياسية.",
+      "explain": "die Tasche → der Tasche."
+    },
+    {
+      "id": "b1-connectors-01",
+      "level": "B1",
+      "skill": "connectors",
+      "type": "cloze",
+      "prompt": "___ es regnet, gehen wir raus.",
+      "answer": "Obwohl",
+      "hint": "تناقض.",
+      "explain": "obwohl + Nebensatz."
+    },
+    {
+      "id": "b1-connectors-02",
+      "level": "B1",
+      "skill": "connectors",
+      "type": "cloze",
+      "prompt": "Ich lerne viel, ___ ich die Prüfung bestehe.",
+      "answer": "damit",
+      "hint": "هدف مع فاعلين ممكن يختلفو.",
+      "explain": "damit + Verb am Ende."
+    },
+    {
+      "id": "b1-connectors-03",
+      "level": "B1",
+      "skill": "connectors",
+      "type": "correct",
+      "prompt": "صحح: Es regnet, obwohl gehe ich raus.",
+      "answer": "Es regnet, trotzdem gehe ich raus.",
+      "hint": "trotzdem يربط Hauptsatz.",
+      "explain": "obwohl يحتاج Nebensatz."
+    },
+    {
+      "id": "b1-infinitive-01",
+      "level": "B1",
+      "skill": "infinitive",
+      "type": "cloze",
+      "prompt": "Ich lerne, ___ die Prüfung zu bestehen.",
+      "answer": "um",
+      "hint": "نفس الفاعل + هدف.",
+      "explain": "um ... zu."
+    },
+    {
+      "id": "b1-infinitive-02",
+      "level": "B1",
+      "skill": "infinitive",
+      "type": "cloze",
+      "prompt": "Er ging, ___ etwas zu sagen.",
+      "answer": "ohne",
+      "hint": "بدون أن.",
+      "explain": "ohne ... zu."
+    },
+    {
+      "id": "b1-infinitive-03",
+      "level": "B1",
+      "skill": "infinitive",
+      "type": "correct",
+      "prompt": "صحح: Ich lerne um ich bestehe die Prüfung.",
+      "answer": "Ich lerne, um die Prüfung zu bestehen.",
+      "hint": "نفس الفاعل.",
+      "explain": "استعمل um...zu."
+    },
+    {
+      "id": "b1-pronadv-01",
+      "level": "B1",
+      "skill": "pronadv",
+      "type": "cloze",
+      "prompt": "___ wartest du? — Auf den Bus.",
+      "answer": "Worauf",
+      "hint": "سؤال عن شيء.",
+      "explain": "wo(r)+Präposition."
+    },
+    {
+      "id": "b1-pronadv-02",
+      "level": "B1",
+      "skill": "pronadv",
+      "type": "cloze",
+      "prompt": "Ich denke oft ___. (an die Prüfung)",
+      "answer": "daran",
+      "hint": "عن شيء.",
+      "explain": "da(r)+Präposition."
+    },
+    {
+      "id": "b1-pronadv-03",
+      "level": "B1",
+      "skill": "pronadv",
+      "type": "correct",
+      "prompt": "صحح: Woran wartest du? — Auf den Bus.",
+      "answer": "Worauf wartest du? — Auf den Bus.",
+      "hint": "warten auf.",
+      "explain": "نفس حرف الجر لازم يبقى."
+    },
+    {
+      "id": "b1-ndecl-01",
+      "level": "B1",
+      "skill": "ndecl",
+      "type": "cloze",
+      "prompt": "Ich sehe den ___. (Student)",
+      "answer": "Studenten",
+      "hint": "N-Deklination.",
+      "explain": "كل الحالات عدا Nom مفرد تأخذ -en."
+    },
+    {
+      "id": "b1-ndecl-02",
+      "level": "B1",
+      "skill": "ndecl",
+      "type": "reorder",
+      "prompt": "رتب TeKaMoLo.",
+      "answer": "Ich fahre morgen wegen eines Termins mit dem Zug nach Berlin.",
+      "hint": "زمان → سبب → طريقة → مكان.",
+      "explain": "TeKaMoLo",
+      "words": [
+        "nach Berlin",
+        "mit dem Zug",
+        "morgen",
+        "Ich fahre",
+        "wegen eines Termins"
+      ]
+    },
+    {
+      "id": "b1-ndecl-03",
+      "level": "B1",
+      "skill": "ndecl",
+      "type": "correct",
+      "prompt": "صحح: Ich spreche mit dem Student.",
+      "answer": "Ich spreche mit dem Studenten.",
+      "hint": "Dativ + N-Deklination.",
+      "explain": "Student → Studenten."
+    },
+    {
+      "id": "b2-k1-01",
+      "level": "B2",
+      "skill": "k1",
+      "type": "cloze",
+      "prompt": "Er sagt, er ___ krank.",
+      "answer": "sei",
+      "hint": "كلام منقول.",
+      "explain": "sein → sei."
+    },
+    {
+      "id": "b2-k1-02",
+      "level": "B2",
+      "skill": "k1",
+      "type": "cloze",
+      "prompt": "Sie erklärt, sie ___ keine Zeit.",
+      "answer": "habe",
+      "hint": "Konjunktiv I من haben.",
+      "explain": "habe."
+    },
+    {
+      "id": "b2-k1-03",
+      "level": "B2",
+      "skill": "k1",
+      "type": "correct",
+      "prompt": "حوّل إلى كلام منقول: Er sagt: „Ich kann kommen.“",
+      "answer": "Er sagt, er könne kommen.",
+      "hint": "Konjunktiv I مع können.",
+      "explain": "könne."
+    },
+    {
+      "id": "b2-passive2-01",
+      "level": "B2",
+      "skill": "passive2",
+      "type": "cloze",
+      "prompt": "Die Tür ___ geschlossen. (حالة)",
+      "answer": "ist",
+      "hint": "Zustandspassiv.",
+      "explain": "sein + Partizip II."
+    },
+    {
+      "id": "b2-passive2-02",
+      "level": "B2",
+      "skill": "passive2",
+      "type": "cloze",
+      "prompt": "Das Problem lässt sich leicht ___.",
+      "answer": "lösen",
+      "hint": "بديل Passiv.",
+      "explain": "sich lassen + Infinitiv."
+    },
+    {
+      "id": "b2-passive2-03",
+      "level": "B2",
+      "skill": "passive2",
+      "type": "correct",
+      "prompt": "صحح: Die Regeln sind beachten.",
+      "answer": "Die Regeln sind zu beachten.",
+      "hint": "sein + zu + Infinitiv.",
+      "explain": "لازم zu."
+    },
+    {
+      "id": "b2-nominal-01",
+      "level": "B2",
+      "skill": "nominal",
+      "type": "cloze",
+      "prompt": "entscheiden → die ___",
+      "answer": "Entscheidung",
+      "hint": "Nominalisierung.",
+      "explain": "الاسم الشائع Entscheidung."
+    },
+    {
+      "id": "b2-nominal-02",
+      "level": "B2",
+      "skill": "nominal",
+      "type": "cloze",
+      "prompt": "analysieren → die ___",
+      "answer": "Analyse",
+      "hint": "صيغة اسمية.",
+      "explain": "Analyse."
+    },
+    {
+      "id": "b2-nominal-03",
+      "level": "B2",
+      "skill": "nominal",
+      "type": "correct",
+      "prompt": "حوّل: Nachdem man die Daten geprüft hatte...",
+      "answer": "Nach der Prüfung der Daten...",
+      "hint": "Nominalstil.",
+      "explain": "prüfen → Prüfung."
+    },
+    {
+      "id": "b2-participle-01",
+      "level": "B2",
+      "skill": "participle",
+      "type": "cloze",
+      "prompt": "die ___ Preise (steigen)",
+      "answer": "steigenden",
+      "hint": "Partizip I = نشط/مستمر.",
+      "explain": "steigend + Adjektivendung."
+    },
+    {
+      "id": "b2-participle-02",
+      "level": "B2",
+      "skill": "participle",
+      "type": "cloze",
+      "prompt": "die gestern ___ Entscheidung (treffen)",
+      "answer": "getroffene",
+      "hint": "Partizip II كصفة.",
+      "explain": "getroffen → getroffene."
+    },
+    {
+      "id": "b2-participle-03",
+      "level": "B2",
+      "skill": "participle",
+      "type": "correct",
+      "prompt": "صحح: die veröffentlichen Daten (تم نشرها)",
+      "answer": "die veröffentlichten Daten",
+      "hint": "Partizip II للنتيجة.",
+      "explain": "veröffentlichten."
+    },
+    {
+      "id": "b2-connectors2-01",
+      "level": "B2",
+      "skill": "connectors2",
+      "type": "cloze",
+      "prompt": "___ mehr man übt, ___ sicherer wird man.",
+      "answer": "Je desto",
+      "hint": "تركيب مزدوج.",
+      "explain": "Je ..., desto ..."
+    },
+    {
+      "id": "b2-connectors2-02",
+      "level": "B2",
+      "skill": "connectors2",
+      "type": "cloze",
+      "prompt": "Man verbessert sich, ___ man täglich spricht.",
+      "answer": "indem",
+      "hint": "طريقة/وسيلة.",
+      "explain": "indem + Nebensatz."
+    },
+    {
+      "id": "b2-connectors2-03",
+      "level": "B2",
+      "skill": "connectors2",
+      "type": "correct",
+      "prompt": "صحح: Es war spät, damit wir gingen.",
+      "answer": "Es war spät, sodass wir gingen.",
+      "hint": "نتيجة لا هدف.",
+      "explain": "sodass للنتيجة."
+    },
+    {
+      "id": "b2-collocation-01",
+      "level": "B2",
+      "skill": "collocation",
+      "type": "cloze",
+      "prompt": "eine Entscheidung ___",
+      "answer": "treffen",
+      "hint": "Nomen-Verb-Verbindung.",
+      "explain": "Entscheidung treffen."
+    },
+    {
+      "id": "b2-collocation-02",
+      "level": "B2",
+      "skill": "collocation",
+      "type": "cloze",
+      "prompt": "Maßnahmen ___",
+      "answer": "ergreifen",
+      "hint": "تركيب رسمي.",
+      "explain": "Maßnahmen ergreifen."
+    },
+    {
+      "id": "b2-collocation-03",
+      "level": "B2",
+      "skill": "collocation",
+      "type": "correct",
+      "prompt": "صحح: Einfluss machen auf",
+      "answer": "Einfluss nehmen auf",
+      "hint": "Collocation ثابتة.",
+      "explain": "Einfluss nehmen auf."
+    },
+    {
+      "id": "b2-reported-01",
+      "level": "B2",
+      "skill": "reported",
+      "type": "cloze",
+      "prompt": "Er ___ sehr reich sein. (يُقال)",
+      "answer": "soll",
+      "hint": "مصدر منقول.",
+      "explain": "soll + Infinitiv."
+    },
+    {
+      "id": "b2-reported-02",
+      "level": "B2",
+      "skill": "reported",
+      "type": "cloze",
+      "prompt": "Er ___ krank sein. (استنتاج قوي)",
+      "answer": "muss",
+      "hint": "استنتاج المتكلم.",
+      "explain": "muss هنا epistemisch."
+    },
+    {
+      "id": "b2-reported-03",
+      "level": "B2",
+      "skill": "reported",
+      "type": "correct",
+      "prompt": "صحح المعنى: Er will es gesehen haben = هو يريد أن يراه.",
+      "answer": "Er will es gesehen haben = هو يدّعي أنه رآه.",
+      "hint": "subjektives Modalverb.",
+      "explain": "will هنا = يدعي عن نفسه."
+    },
+    {
+      "id": "b2-style-01",
+      "level": "B2",
+      "skill": "style",
+      "type": "correct",
+      "prompt": "حسّن الأسلوب: Man muss viele Dinge beachten.",
+      "answer": "Mehrere Aspekte sind zu berücksichtigen.",
+      "hint": "أسلوب رسمي مختصر.",
+      "explain": "استعمل بديل Passiv/صياغة رسمية."
+    },
+    {
+      "id": "b2-style-02",
+      "level": "B2",
+      "skill": "style",
+      "type": "cloze",
+      "prompt": "Die Aussage ist ohne Belege nicht ___.",
+      "answer": "nachvollziehbar",
+      "hint": "دقة أسلوبية.",
+      "explain": "صفة شائعة في النقاش."
+    },
+    {
+      "id": "b2-style-03",
+      "level": "B2",
+      "skill": "style",
+      "type": "reorder",
+      "prompt": "رتب جملة حجاجية.",
+      "answer": "Grundsätzlich ist der Vorschlag sinnvoll, allerdings bleibt die Finanzierung unklar.",
+      "hint": "موقف + تقييد.",
+      "explain": "allerdings",
+      "words": [
+        "allerdings",
+        "Grundsätzlich",
+        "bleibt die Finanzierung unklar.",
+        "ist der Vorschlag sinnvoll,"
+      ]
+    }
+  ]
+}
