@@ -1,0 +1,565 @@
+{
+  "version": 1,
+  "cards": [
+    {
+      "id": "a1-vocab-01",
+      "level": "A1",
+      "de": "Hallo",
+      "ar": "مرحباً",
+      "example": "Hallo! Wie geht es dir?"
+    },
+    {
+      "id": "a1-vocab-02",
+      "level": "A1",
+      "de": "der Morgen",
+      "ar": "الصباح",
+      "example": "Guten Morgen!"
+    },
+    {
+      "id": "a1-vocab-03",
+      "level": "A1",
+      "de": "der Name",
+      "ar": "الاسم",
+      "example": "Mein Name ist Omar."
+    },
+    {
+      "id": "a1-vocab-04",
+      "level": "A1",
+      "de": "kommen",
+      "ar": "يأتي / ينحدر من",
+      "example": "Ich komme aus Marokko."
+    },
+    {
+      "id": "a1-vocab-05",
+      "level": "A1",
+      "de": "wohnen",
+      "ar": "يسكن",
+      "example": "Ich wohne in Fès."
+    },
+    {
+      "id": "a1-vocab-06",
+      "level": "A1",
+      "de": "lernen",
+      "ar": "يتعلم",
+      "example": "Ich lerne Deutsch."
+    },
+    {
+      "id": "a1-vocab-07",
+      "level": "A1",
+      "de": "sprechen",
+      "ar": "يتحدث",
+      "example": "Ich spreche ein bisschen Deutsch."
+    },
+    {
+      "id": "a1-vocab-08",
+      "level": "A1",
+      "de": "arbeiten",
+      "ar": "يعمل",
+      "example": "Ich arbeite heute."
+    },
+    {
+      "id": "a1-vocab-09",
+      "level": "A1",
+      "de": "die Familie",
+      "ar": "العائلة",
+      "example": "Meine Familie ist groß."
+    },
+    {
+      "id": "a1-vocab-10",
+      "level": "A1",
+      "de": "der Freund",
+      "ar": "الصديق",
+      "example": "Das ist mein Freund."
+    },
+    {
+      "id": "a1-vocab-11",
+      "level": "A1",
+      "de": "essen",
+      "ar": "يأكل",
+      "example": "Ich esse Brot."
+    },
+    {
+      "id": "a1-vocab-12",
+      "level": "A1",
+      "de": "trinken",
+      "ar": "يشرب",
+      "example": "Ich trinke Wasser."
+    },
+    {
+      "id": "a1-vocab-13",
+      "level": "A1",
+      "de": "heute",
+      "ar": "اليوم",
+      "example": "Heute lerne ich Deutsch."
+    },
+    {
+      "id": "a1-vocab-14",
+      "level": "A1",
+      "de": "morgen",
+      "ar": "غداً / الصباح حسب السياق",
+      "example": "Morgen arbeite ich nicht."
+    },
+    {
+      "id": "a1-vocab-15",
+      "level": "A1",
+      "de": "die Zeit",
+      "ar": "الوقت",
+      "example": "Ich habe keine Zeit."
+    },
+    {
+      "id": "a1-vocab-16",
+      "level": "A1",
+      "de": "die Uhr",
+      "ar": "الساعة",
+      "example": "Es ist drei Uhr."
+    },
+    {
+      "id": "a1-vocab-17",
+      "level": "A1",
+      "de": "kaufen",
+      "ar": "يشتري",
+      "example": "Ich kaufe Milch."
+    },
+    {
+      "id": "a1-vocab-18",
+      "level": "A1",
+      "de": "brauchen",
+      "ar": "يحتاج",
+      "example": "Ich brauche Hilfe."
+    },
+    {
+      "id": "a1-vocab-19",
+      "level": "A1",
+      "de": "die Frage",
+      "ar": "السؤال",
+      "example": "Ich habe eine Frage."
+    },
+    {
+      "id": "a1-vocab-20",
+      "level": "A1",
+      "de": "die Antwort",
+      "ar": "الجواب",
+      "example": "Die Antwort ist richtig."
+    },
+    {
+      "id": "a2-vocab-01",
+      "level": "A2",
+      "de": "der Termin",
+      "ar": "الموعد",
+      "example": "Ich habe morgen einen Termin."
+    },
+    {
+      "id": "a2-vocab-02",
+      "level": "A2",
+      "de": "vereinbaren",
+      "ar": "يحدد / يرتب",
+      "example": "Wir vereinbaren einen Termin."
+    },
+    {
+      "id": "a2-vocab-03",
+      "level": "A2",
+      "de": "sich erinnern",
+      "ar": "يتذكر",
+      "example": "Ich erinnere mich daran."
+    },
+    {
+      "id": "a2-vocab-04",
+      "level": "A2",
+      "de": "vergessen",
+      "ar": "ينسى",
+      "example": "Ich habe den Schlüssel vergessen."
+    },
+    {
+      "id": "a2-vocab-05",
+      "level": "A2",
+      "de": "die Erfahrung",
+      "ar": "التجربة / الخبرة",
+      "example": "Das war eine gute Erfahrung."
+    },
+    {
+      "id": "a2-vocab-06",
+      "level": "A2",
+      "de": "die Reise",
+      "ar": "الرحلة",
+      "example": "Die Reise war schön."
+    },
+    {
+      "id": "a2-vocab-07",
+      "level": "A2",
+      "de": "gesund",
+      "ar": "صحي",
+      "example": "Gemüse ist gesund."
+    },
+    {
+      "id": "a2-vocab-08",
+      "level": "A2",
+      "de": "krank",
+      "ar": "مريض",
+      "example": "Ich bin heute krank."
+    },
+    {
+      "id": "a2-vocab-09",
+      "level": "A2",
+      "de": "deshalb",
+      "ar": "لذلك",
+      "example": "Ich bin müde, deshalb gehe ich schlafen."
+    },
+    {
+      "id": "a2-vocab-10",
+      "level": "A2",
+      "de": "trotzdem",
+      "ar": "مع ذلك",
+      "example": "Es regnet. Trotzdem gehe ich raus."
+    },
+    {
+      "id": "a2-vocab-11",
+      "level": "A2",
+      "de": "früher",
+      "ar": "سابقاً",
+      "example": "Früher wohnte ich in Rabat."
+    },
+    {
+      "id": "a2-vocab-12",
+      "level": "A2",
+      "de": "letzte",
+      "ar": "الماضي / الأخير",
+      "example": "Letzte Woche war ich in Berlin."
+    },
+    {
+      "id": "a2-vocab-13",
+      "level": "A2",
+      "de": "besuchen",
+      "ar": "يزور",
+      "example": "Ich besuche meine Familie."
+    },
+    {
+      "id": "a2-vocab-14",
+      "level": "A2",
+      "de": "bestellen",
+      "ar": "يطلب",
+      "example": "Ich bestelle einen Kaffee."
+    },
+    {
+      "id": "a2-vocab-15",
+      "level": "A2",
+      "de": "empfehlen",
+      "ar": "ينصح / يوصي",
+      "example": "Ich empfehle dieses Buch."
+    },
+    {
+      "id": "a2-vocab-16",
+      "level": "A2",
+      "de": "umziehen",
+      "ar": "ينتقل للسكن",
+      "example": "Wir ziehen nächsten Monat um."
+    },
+    {
+      "id": "a2-vocab-17",
+      "level": "A2",
+      "de": "die Prüfung",
+      "ar": "الامتحان",
+      "example": "Die Prüfung beginnt um neun."
+    },
+    {
+      "id": "a2-vocab-18",
+      "level": "A2",
+      "de": "die Nachricht",
+      "ar": "الرسالة / الخبر",
+      "example": "Ich schreibe dir eine Nachricht."
+    },
+    {
+      "id": "a2-vocab-19",
+      "level": "A2",
+      "de": "möglich",
+      "ar": "ممكن",
+      "example": "Ist das morgen möglich?"
+    },
+    {
+      "id": "a2-vocab-20",
+      "level": "A2",
+      "de": "wichtig",
+      "ar": "مهم",
+      "example": "Deutsch ist für mich wichtig."
+    },
+    {
+      "id": "b1-vocab-01",
+      "level": "B1",
+      "de": "die Meinung",
+      "ar": "الرأي",
+      "example": "Meiner Meinung nach ist das sinnvoll."
+    },
+    {
+      "id": "b1-vocab-02",
+      "level": "B1",
+      "de": "der Grund",
+      "ar": "السبب",
+      "example": "Was ist der Grund dafür?"
+    },
+    {
+      "id": "b1-vocab-03",
+      "level": "B1",
+      "de": "der Vorteil",
+      "ar": "الميزة",
+      "example": "Ein Vorteil ist die Flexibilität."
+    },
+    {
+      "id": "b1-vocab-04",
+      "level": "B1",
+      "de": "der Nachteil",
+      "ar": "العيب",
+      "example": "Der Nachteil ist der Preis."
+    },
+    {
+      "id": "b1-vocab-05",
+      "level": "B1",
+      "de": "obwohl",
+      "ar": "رغم أن",
+      "example": "Obwohl es regnet, gehe ich spazieren."
+    },
+    {
+      "id": "b1-vocab-06",
+      "level": "B1",
+      "de": "deswegen",
+      "ar": "لذلك",
+      "example": "Ich bin krank, deswegen bleibe ich zu Hause."
+    },
+    {
+      "id": "b1-vocab-07",
+      "level": "B1",
+      "de": "erklären",
+      "ar": "يشرح",
+      "example": "Kannst du das bitte erklären?"
+    },
+    {
+      "id": "b1-vocab-08",
+      "level": "B1",
+      "de": "entscheiden",
+      "ar": "يقرر",
+      "example": "Ich muss mich heute entscheiden."
+    },
+    {
+      "id": "b1-vocab-09",
+      "level": "B1",
+      "de": "vergleichen",
+      "ar": "يقارن",
+      "example": "Wir vergleichen zwei Angebote."
+    },
+    {
+      "id": "b1-vocab-10",
+      "level": "B1",
+      "de": "die Umwelt",
+      "ar": "البيئة",
+      "example": "Wir müssen die Umwelt schützen."
+    },
+    {
+      "id": "b1-vocab-11",
+      "level": "B1",
+      "de": "die Bildung",
+      "ar": "التعليم",
+      "example": "Bildung ist sehr wichtig."
+    },
+    {
+      "id": "b1-vocab-12",
+      "level": "B1",
+      "de": "das Verhalten",
+      "ar": "السلوك",
+      "example": "Sein Verhalten war höflich."
+    },
+    {
+      "id": "b1-vocab-13",
+      "level": "B1",
+      "de": "die Möglichkeit",
+      "ar": "الإمكانية",
+      "example": "Es gibt mehrere Möglichkeiten."
+    },
+    {
+      "id": "b1-vocab-14",
+      "level": "B1",
+      "de": "das Ergebnis",
+      "ar": "النتيجة",
+      "example": "Das Ergebnis war überraschend."
+    },
+    {
+      "id": "b1-vocab-15",
+      "level": "B1",
+      "de": "wahrscheinlich",
+      "ar": "على الأرجح",
+      "example": "Er kommt wahrscheinlich später."
+    },
+    {
+      "id": "b1-vocab-16",
+      "level": "B1",
+      "de": "eigentlich",
+      "ar": "في الحقيقة / في الأصل",
+      "example": "Was möchtest du eigentlich?"
+    },
+    {
+      "id": "b1-vocab-17",
+      "level": "B1",
+      "de": "erreichen",
+      "ar": "يحقق / يصل",
+      "example": "Ich möchte mein Ziel erreichen."
+    },
+    {
+      "id": "b1-vocab-18",
+      "level": "B1",
+      "de": "verbessern",
+      "ar": "يحسن",
+      "example": "Ich möchte mein Deutsch verbessern."
+    },
+    {
+      "id": "b1-vocab-19",
+      "level": "B1",
+      "de": "die Erfahrung",
+      "ar": "الخبرة / التجربة",
+      "example": "Ich habe viel Erfahrung gesammelt."
+    },
+    {
+      "id": "b1-vocab-20",
+      "level": "B1",
+      "de": "die Zukunft",
+      "ar": "المستقبل",
+      "example": "In Zukunft möchte ich in Deutschland arbeiten."
+    },
+    {
+      "id": "b2-vocab-01",
+      "level": "B2",
+      "de": "einerseits",
+      "ar": "من جهة",
+      "example": "Einerseits ist die Idee günstig."
+    },
+    {
+      "id": "b2-vocab-02",
+      "level": "B2",
+      "de": "andererseits",
+      "ar": "من جهة أخرى",
+      "example": "Andererseits kostet sie viel Zeit."
+    },
+    {
+      "id": "b2-vocab-03",
+      "level": "B2",
+      "de": "hinsichtlich",
+      "ar": "فيما يتعلق بـ",
+      "example": "Hinsichtlich der Kosten gibt es Fragen."
+    },
+    {
+      "id": "b2-vocab-04",
+      "level": "B2",
+      "de": "dennoch",
+      "ar": "ومع ذلك",
+      "example": "Es war schwierig, dennoch haben wir weitergemacht."
+    },
+    {
+      "id": "b2-vocab-05",
+      "level": "B2",
+      "de": "vermutlich",
+      "ar": "على الأرجح",
+      "example": "Er wird vermutlich später kommen."
+    },
+    {
+      "id": "b2-vocab-06",
+      "level": "B2",
+      "de": "behaupten",
+      "ar": "يدعي",
+      "example": "Er behauptet, dass die Methode funktioniert."
+    },
+    {
+      "id": "b2-vocab-07",
+      "level": "B2",
+      "de": "begründen",
+      "ar": "يبرر",
+      "example": "Bitte begründen Sie Ihre Meinung."
+    },
+    {
+      "id": "b2-vocab-08",
+      "level": "B2",
+      "de": "die Auswirkung",
+      "ar": "الأثر / التأثير",
+      "example": "Die Maßnahme hat große Auswirkungen."
+    },
+    {
+      "id": "b2-vocab-09",
+      "level": "B2",
+      "de": "die Voraussetzung",
+      "ar": "الشرط المسبق",
+      "example": "Gute Sprachkenntnisse sind eine Voraussetzung."
+    },
+    {
+      "id": "b2-vocab-10",
+      "level": "B2",
+      "de": "der Zusammenhang",
+      "ar": "الترابط / العلاقة",
+      "example": "Ich sehe einen Zusammenhang zwischen beiden Themen."
+    },
+    {
+      "id": "b2-vocab-11",
+      "level": "B2",
+      "de": "die Maßnahme",
+      "ar": "الإجراء",
+      "example": "Die Regierung plant neue Maßnahmen."
+    },
+    {
+      "id": "b2-vocab-12",
+      "level": "B2",
+      "de": "die Entwicklung",
+      "ar": "التطور",
+      "example": "Die Entwicklung ist deutlich sichtbar."
+    },
+    {
+      "id": "b2-vocab-13",
+      "level": "B2",
+      "de": "berücksichtigen",
+      "ar": "يراعي",
+      "example": "Wir müssen alle Faktoren berücksichtigen."
+    },
+    {
+      "id": "b2-vocab-14",
+      "level": "B2",
+      "de": "überzeugen",
+      "ar": "يقنع",
+      "example": "Das Argument hat mich überzeugt."
+    },
+    {
+      "id": "b2-vocab-15",
+      "level": "B2",
+      "de": "nachweisen",
+      "ar": "يثبت بالدليل",
+      "example": "Die Studie konnte den Effekt nachweisen."
+    },
+    {
+      "id": "b2-vocab-16",
+      "level": "B2",
+      "de": "beziehungsweise",
+      "ar": "أو بالأحرى / على التوالي",
+      "example": "Wir treffen uns Montag beziehungsweise Dienstag."
+    },
+    {
+      "id": "b2-vocab-17",
+      "level": "B2",
+      "de": "infolgedessen",
+      "ar": "ونتيجة لذلك",
+      "example": "Die Preise stiegen; infolgedessen sank die Nachfrage."
+    },
+    {
+      "id": "b2-vocab-18",
+      "level": "B2",
+      "de": "wesentlich",
+      "ar": "جوهري / أساسي",
+      "example": "Das ist ein wesentlicher Unterschied."
+    },
+    {
+      "id": "b2-vocab-19",
+      "level": "B2",
+      "de": "umfangreich",
+      "ar": "واسع / شامل",
+      "example": "Der Bericht ist sehr umfangreich."
+    },
+    {
+      "id": "b2-vocab-20",
+      "level": "B2",
+      "de": "die Stellungnahme",
+      "ar": "بيان الرأي",
+      "example": "Bitte schreiben Sie eine kurze Stellungnahme."
+    }
+  ]
+}

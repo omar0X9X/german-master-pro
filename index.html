@@ -1,126 +1,124 @@
 <!doctype html>
-<html lang="ar" dir="rtl" data-theme="dark">
+<html lang="ar" dir="rtl" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0b0d12">
-  <meta name="description" content="تعلّم الألمانية من الصفر إلى B2 بخطة ذكية، فيديوهات مرتبة، مراجعة، قراءة، كتابة واختبارات.">
-  <title>Deutsch Road — تعلّم الألمانية</title>
-  <link rel="stylesheet" href="./assets/styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="German Master Pro: مسار ذكي لتعلم الألمانية A1-B2 بالفيديو والاختبارات والمراجعة المتباعدة.">
+<meta name="theme-color" content="#111827">
+<title>German Master Pro</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./styles/base.css">
+<link rel="stylesheet" href="./styles/components.css">
+<link rel="stylesheet" href="./styles/responsive.css">
 </head>
 <body>
-<header class="topbar">
-  <a class="brand" href="#dashboard"><span class="flag" aria-hidden="true"></span><span>Deutsch Road</span></a>
-  <nav class="nav" aria-label="التنقل">
-    <button class="nav-btn active" data-view="dashboard">اليوم</button>
-    <button class="nav-btn" data-view="path">المسار</button>
-    <button class="nav-btn" data-view="practice">المهارات</button>
-    <button class="nav-btn" data-view="tests">الاختبارات</button>
-  </nav>
-  <button id="themeToggle" class="icon-btn" type="button" aria-label="تبديل المظهر">☀</button>
-</header>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="#" data-go="dashboard"><span class="flag"><i></i><i></i><i></i></span><span><b>German Master Pro</b><small>تعلّم الألمانية بذكاء</small></span></a>
+    <nav>
+      <button class="nav active" data-view="dashboard">⌂ <span>الرئيسية</span></button>
+      <button class="nav" data-view="roadmap">▤ <span>المسار</span></button>
+      <button class="nav" data-view="review">↻ <span>المراجعة</span><em id="reviewBadge" hidden>0</em></button>
+      <button class="nav" data-view="practice">▣ <span>التطبيق</span></button>
+      <button class="nav" data-view="stats">▥ <span>الإحصائيات</span></button>
+    </nav>
+    <div class="side-bottom">
+      <button id="themeToggle">◐ <span>الوضع الليلي</span></button>
+      <button id="settingsButton">⚙ <span>الإعدادات</span></button>
+    </div>
+  </aside>
 
-<main class="shell">
-  <section id="dashboard" class="view active">
-    <div class="hero">
-      <div>
-        <p class="eyebrow">A1 → B2 • خطة شخصية محلية</p>
-        <h1>ما تبقاش تسول: شنو نقرا اليوم؟</h1>
-        <p class="lead">الموقع يرتب لك الدرس التالي، المراجعات المستحقة، الاستماع والقراءة والكتابة حسب وقتك وتقدمك.</p>
-        <div class="hero-actions">
-          <button id="startToday" class="primary-btn" type="button">ابدأ خطة اليوم</button>
-          <label class="time-select">وقت الدراسة
-            <select id="dailyMinutes">
-              <option value="60">1 ساعة</option>
-              <option value="90">1س 30د</option>
-              <option value="120">2 ساعات</option>
-              <option value="180">3 ساعات</option>
-              <option value="210" selected>3س 30د</option>
-              <option value="240">4 ساعات</option>
-            </select>
-          </label>
+  <div class="workspace">
+    <header class="topbar">
+      <div><small id="topEyebrow">مسارك اليوم</small><h1 id="topTitle">الرئيسية</h1></div>
+      <div class="top-actions"><span class="level-pill">المستوى <b id="levelChip">A1</b></span><button id="quickTheme">◐</button></div>
+    </header>
+
+    <main>
+      <section class="view active" data-panel="dashboard">
+        <section class="hero">
+          <div><span class="kicker">STUDY ENGINE</span><h2 id="heroTitle">خطة اليوم جاهزة.</h2><p id="heroText">درس جديد + تطبيق + مراجعات مستحقة بدون تخمين.</p><div class="actions"><button class="primary" id="startToday">ابدأ خطة اليوم</button><button class="ghost" data-go="roadmap">المسار كامل</button></div></div>
+          <div class="ring" id="progressRing"><b id="progressPct">0%</b><small id="progressLevel">A1</small></div>
+        </section>
+
+        <section class="metrics">
+          <article><small>الدرس التالي</small><b id="nextLessonMetric">—</b><span id="nextLessonName">ابدأ المسار</span></article>
+          <article><small>مراجعات اليوم</small><b id="dueMetric">0</b><span>حسب الذاكرة</span></article>
+          <article><small>السلسلة</small><b id="streakMetric">0</b><span>أيام متواصلة</span></article>
+          <article><small>متوسط الاختبارات</small><b id="quizMetric">—</b><span>محاولاتك</span></article>
+        </section>
+
+        <div class="two-col">
+          <section class="card"><header><div><small>خطة اليوم</small><h3>شنو غادي تدير؟</h3></div><span class="time"><b id="planMinutes">0</b> د</span></header><div id="todayPlan" class="tasks"></div></section>
+          <section class="card"><header><div><small>تشخيص المسار</small><h3 id="coachTitle">نحتاج أول بيانات</h3></div></header><p id="coachText" class="muted">كمّل درس واختبار باش يبدأ التشخيص.</p><div id="skillBars" class="skill-bars"></div></section>
         </div>
-      </div>
-      <aside class="hero-progress">
-        <div class="ring" id="overallRing"><span id="overallPct">0%</span></div>
-        <div><strong id="overallDone">0</strong><span>عنصر مكتمل</span></div>
-      </aside>
-    </div>
 
-    <div class="stat-grid">
-      <article><span>المستوى الحالي</span><strong id="currentLevelStat">A1</strong></article>
-      <article><span>الدرس التالي</span><strong id="nextLessonStat">—</strong></article>
-      <article><span>مراجعات اليوم</span><strong id="dueStat">0</strong></article>
-      <article><span>سلسلة الدراسة</span><strong id="streakStat">0 يوم</strong></article>
-    </div>
-
-    <section class="panel">
-      <div class="section-head">
-        <div><p class="eyebrow">خطة اليوم</p><h2 id="todayTitle">نبني لك الخطة…</h2></div>
-        <span class="pill" id="todayTime">0 دقيقة</span>
-      </div>
-      <div id="todayPlan" class="task-list"></div>
-    </section>
-
-    <div class="two-col">
-      <section class="panel">
-        <div class="section-head"><div><p class="eyebrow">توازن المهارات</p><h2>فين كتدرب أكثر؟</h2></div></div>
-        <div id="skillBars" class="skill-bars"></div>
+        <section class="card continue"><header><div><small>أكمل من هنا</small><h3>الدرس التالي</h3></div><button class="link-btn" data-go="roadmap">كل الدروس ←</button></header><div id="continueLesson"></div></section>
       </section>
-      <section class="panel coach">
-        <p class="eyebrow">المدرب</p>
-        <h2 id="coachTitle">ابدأ من A1</h2>
-        <p id="coachText" class="muted"></p>
-        <button id="goNextLesson" class="secondary-btn" type="button">اذهب للدرس التالي</button>
+
+      <section class="view" data-panel="roadmap">
+        <div class="page-head"><div><small>A1 → B2</small><h2>المسار الكامل</h2><p>فيديوهات منفصلة مرتبة داخل وحدات، ومع كل وحدة اختبار قصير.</p></div><div id="levelTabs" class="tabs"></div></div>
+        <section id="levelOverview" class="level-overview"></section>
+        <div id="moduleList" class="modules"></div>
       </section>
-    </div>
-  </section>
 
-  <section id="path" class="view">
-    <div class="page-head">
-      <div><p class="eyebrow">Curriculum</p><h1>المسار الكامل</h1><p class="muted">كل مستوى مقسم لوحدات، وكل وحدة فيها فيديوهات أساسية وتطبيق.</p></div>
-      <div id="levelTabs" class="level-tabs"></div>
-    </div>
-    <div id="levelSummary" class="level-summary"></div>
-    <div id="modules" class="module-list"></div>
-  </section>
+      <section class="view" data-panel="review">
+        <div class="page-head"><div><small>SPACED REVIEW</small><h2>المراجعة الذكية</h2><p>المفردات والأخطاء يرجعو قبل ما تنساهم.</p></div></div>
+        <div id="reviewSummary" class="review-summary"></div>
+        <section id="reviewWorkspace" class="review-box"></section>
+      </section>
 
-  <section id="practice" class="view">
-    <div class="page-head">
-      <div><p class="eyebrow">Practice</p><h1>تدريب المهارات</h1><p class="muted">موارد منفصلة للاستماع، القراءة، الكتابة، النطق والاختبارات حسب مستواك.</p></div>
-      <div id="practiceFilters" class="filters"></div>
-    </div>
-    <div id="practiceGrid" class="resource-grid"></div>
-  </section>
+      <section class="view" data-panel="practice">
+        <div class="page-head"><div><small>المهارات</small><h2>القراءة والكتابة والاستماع والاختبارات</h2><p>مصادر خارجية حسب المستوى، باش التطبيق ما يبقاش مجرد مشاهدة.</p></div></div>
+        <div id="practiceFilters" class="filters"></div>
+        <div id="practiceGrid" class="practice-grid"></div>
+      </section>
 
-  <section id="tests" class="view">
-    <div class="page-head">
-      <div><p class="eyebrow">Tests</p><h1>اختبر نفسك</h1><p class="muted">الإنجاز لا يعني الإتقان. الاختبارات هي اللي تعطينا إشارة أقرب لمستواك.</p></div>
-    </div>
-    <div class="test-grid">
-      <article class="panel test-card">
-        <span class="badge">تحديد المستوى</span>
-        <h2>Placement Check</h2>
-        <p class="muted">اختبار قصير من A1 إلى B2. نتيجته إرشادية وليست شهادة رسمية.</p>
-        <button class="primary-btn" data-test="placement" type="button">ابدأ الاختبار</button>
-      </article>
-      <article class="panel test-card">
-        <span class="badge">المستوى الحالي</span>
-        <h2 id="levelTestTitle">اختبار A1</h2>
-        <p class="muted">أسئلة قواعد ومفردات قصيرة مرتبطة بالمستوى الحالي.</p>
-        <button class="secondary-btn" id="levelTestBtn" type="button">اختبر مستواي</button>
-      </article>
-    </div>
-    <div id="quizBox" class="panel quiz-box hidden"></div>
-    <div id="testHistory" class="panel history"></div>
-  </section>
-</main>
+      <section class="view" data-panel="stats">
+        <div class="page-head"><div><small>PROGRESS</small><h2>إحصائياتك</h2><p>كتقيس العمل داخل التطبيق، ماشي شهادة CEFR رسمية.</p></div></div>
+        <div id="statsGrid" class="metrics"></div>
+        <section class="card"><header><div><small>حسب المستوى</small><h3>A1 → B2</h3></div></header><div id="levelStats"></div></section>
+        <section class="card history-card"><header><div><small>الاختبارات</small><h3>آخر النتائج</h3></div></header><div id="quizHistory"></div></section>
+      </section>
+    </main>
+  </div>
+</div>
 
-<footer>
-  <span>Deutsch Road • البيانات والتقدم محفوظان في جهازك</span>
-  <button id="resetAll" class="text-btn" type="button">مسح بياناتي</button>
-</footer>
+<nav class="mobile-nav">
+  <button class="active" data-view="dashboard">⌂<span>الرئيسية</span></button>
+  <button data-view="roadmap">▤<span>المسار</span></button>
+  <button data-view="review">↻<span>مراجعة</span></button>
+  <button data-view="practice">▣<span>تطبيق</span></button>
+  <button data-view="stats">▥<span>إحصائيات</span></button>
+</nav>
 
+<dialog id="setupDialog" class="modal">
+<form id="setupForm" method="dialog">
+  <small>أول تشغيل</small><h2>خلّي الخطة تناسبك</h2>
+  <label>منين غادي تبدأ؟<select id="setupLevel"><option>A1</option><option>A2</option><option>B1</option><option>B2</option></select></label>
+  <label>وقت الدراسة اليومي<select id="setupMinutes"><option value="60">1 ساعة</option><option value="90">1س 30د</option><option value="120">2 ساعات</option><option value="180">3 ساعات</option><option value="210" selected>3س 30د</option><option value="240">4 ساعات</option></select></label>
+  <label>الهدف<select id="setupGoal"><option value="general">لغة عامة قوية</option><option value="exam">امتحان</option><option value="conversation">محادثة واستماع</option><option value="work">العمل/ألمانيا</option></select></label>
+  <p class="note">كل التقدم يتحفظ محلياً في المتصفح.</p><button class="primary full" type="submit">ابدأ</button>
+</form>
+</dialog>
+
+<dialog id="settingsDialog" class="modal">
+<form id="settingsForm" method="dialog">
+  <button class="x" value="cancel">×</button><small>الإعدادات</small><h2>تخصيص الخطة</h2>
+  <label>المستوى<select id="settingsLevel"><option>A1</option><option>A2</option><option>B1</option><option>B2</option></select></label>
+  <label>وقت الدراسة<select id="settingsMinutes"><option value="60">1 ساعة</option><option value="90">1س 30د</option><option value="120">2 ساعات</option><option value="180">3 ساعات</option><option value="210">3س 30د</option><option value="240">4 ساعات</option></select></label>
+  <label>الهدف<select id="settingsGoal"><option value="general">لغة عامة قوية</option><option value="exam">امتحان</option><option value="conversation">محادثة واستماع</option><option value="work">العمل/ألمانيا</option></select></label>
+  <div class="actions"><button class="primary" type="submit">حفظ</button><button id="resetButton" class="danger" type="button">مسح البيانات</button></div>
+</form>
+</dialog>
+
+<dialog id="quizDialog" class="modal quiz-modal"><div class="quiz-shell"><button id="closeQuiz" class="x">×</button><small>اختبار الوحدة</small><h2 id="quizTitle">اختبار</h2><div id="quizBody"></div></div></dialog>
+<div id="toast" class="toast"></div>
+
+<script src="./js/store.js" defer></script>
+<script src="./js/engine.js" defer></script>
+<script src="./js/ui.js" defer></script>
 <script src="./js/app.js" defer></script>
 </body>
 </html>

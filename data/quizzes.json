@@ -1,327 +1,765 @@
 {
-  "A1": {
-    "title": "اختبار A1",
-    "questions": [
-      {
-        "q": "اختر الضمير المناسب: ___ komme aus Marokko.",
-        "options": [
-          "Ich",
-          "Du",
-          "Er",
-          "Wir"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "الأداة الصحيحة لكلمة Mann:",
-        "options": [
-          "die",
-          "das",
-          "der",
-          "den"
-        ],
-        "answer": 2
-      },
-      {
-        "q": "Wir ___ Deutsch.",
-        "options": [
-          "lernt",
-          "lerne",
-          "lernen",
-          "lernst"
-        ],
-        "answer": 2
-      },
-      {
-        "q": "Was ist richtig?",
-        "options": [
-          "Ich wohne in Fès.",
-          "Ich in Fès wohne.",
-          "Wohne ich Fès in.",
-          "Ich Fès wohnen."
-        ],
-        "answer": 0
-      },
-      {
-        "q": "العدد 20 بالألمانية:",
-        "options": [
-          "zwölf",
-          "zwanzig",
-          "zwei",
-          "zweihundert"
-        ],
-        "answer": 1
-      }
-    ]
-  },
-  "A2": {
-    "title": "اختبار A2",
-    "questions": [
-      {
-        "q": "Ich habe ___ Mann gesehen.",
-        "options": [
-          "der",
-          "den",
-          "dem",
-          "des"
-        ],
-        "answer": 1
-      },
-      {
-        "q": "Ich helfe ___ Mann.",
-        "options": [
-          "den",
-          "dem",
-          "der",
-          "des"
-        ],
-        "answer": 1
-      },
-      {
-        "q": "Perfekt von machen:",
-        "options": [
-          "hat gemacht",
-          "ist gemacht",
-          "hat machen",
-          "ist machen"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "Weil ich krank bin, ___ ich zu Hause.",
-        "options": [
-          "bleibe",
-          "ich bleibe",
-          "bleiben",
-          "bleibt"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "صح: Ich fahre ___ dem Bus.",
-        "options": [
-          "mit",
-          "für",
-          "ohne",
-          "durch"
-        ],
-        "answer": 0
-      }
-    ]
-  },
-  "B1": {
-    "title": "اختبار B1",
-    "questions": [
-      {
-        "q": "Ich kenne den Mann, ___ dort steht.",
-        "options": [
-          "der",
-          "den",
-          "dem",
-          "dessen"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "___ es regnet, gehe ich spazieren.",
-        "options": [
-          "Obwohl",
-          "Trotzdem",
-          "Denn",
-          "Oder"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "Ich ___ gern mehr reisen, wenn ich Zeit hätte.",
-        "options": [
-          "würde",
-          "werde",
-          "wurde",
-          "war"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "اختر الأفضل للرأي:",
-        "options": [
-          "Meiner Meinung nach…",
-          "Ich Name…",
-          "Guten Tag…",
-          "Wie alt…"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "Trotz des Regens ___ wir raus.",
-        "options": [
-          "gehen",
-          "weil",
-          "obwohl",
-          "dass"
-        ],
-        "answer": 0
-      }
-    ]
-  },
-  "B2": {
-    "title": "اختبار B2",
-    "questions": [
-      {
-        "q": "Die Aufgabe ___ morgen erledigt.",
-        "options": [
-          "wird",
-          "hat",
-          "ist werden",
-          "würde hat"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "Wenn ich das gewusst hätte, ___ ich anders gehandelt.",
-        "options": [
-          "hätte",
-          "würde",
-          "wäre",
-          "werde"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "اختر الرابط الأنسب: Er lernt viel, ___ er die Prüfung besteht.",
-        "options": [
-          "damit",
-          "obwohl",
-          "trotzdem",
-          "während"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "Der Kollege, mit ___ ich gesprochen habe…",
-        "options": [
-          "dem",
-          "den",
-          "der",
-          "dessen"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "الأسلوب الأكثر رسمية:",
-        "options": [
-          "Es wird empfohlen, dass…",
-          "Ich sag dir…",
-          "Na ja…",
-          "Mach mal…"
-        ],
-        "answer": 0
-      }
-    ]
-  },
-  "placement": {
-    "title": "تحديد المستوى",
-    "questions": [
-      {
-        "q": "Ich ___ Omar.",
-        "options": [
-          "heiße",
-          "heißt",
-          "heißen",
-          "bist"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "Ich sehe ___ Hund.",
-        "options": [
-          "der",
-          "den",
-          "dem",
-          "des"
-        ],
-        "answer": 1
-      },
-      {
-        "q": "Gestern ___ ich gearbeitet.",
-        "options": [
-          "habe",
-          "bin",
-          "werde",
-          "würde"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "Weil ich müde bin, ___ ich früh schlafen.",
-        "options": [
-          "gehe",
-          "ich gehe",
-          "gehen",
-          "ginge ich"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "Der Mann, ___ dort wartet, ist mein Lehrer.",
-        "options": [
-          "der",
-          "den",
-          "dem",
-          "dessen"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "Ich ___ gern mehr Zeit haben.",
-        "options": [
-          "würde",
-          "werde",
-          "wurde",
-          "bin"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "Die Dokumente ___ gestern geschickt.",
-        "options": [
-          "wurden",
-          "haben",
-          "würden",
-          "sind schicken"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "Wenn ich mehr gelernt hätte, ___ ich bestanden.",
-        "options": [
-          "hätte",
-          "werde",
-          "bin",
-          "wurde"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "اختر الرابط الأنسب للغرض:",
-        "options": [
-          "damit",
-          "obwohl",
-          "trotzdem",
-          "denn"
-        ],
-        "answer": 0
-      },
-      {
-        "q": "الأسلوب الرسمي الأنسب:",
-        "options": [
-          "Es lässt sich feststellen, dass…",
-          "Na klar!",
-          "Mach das!",
-          "Was geht?"
-        ],
-        "answer": 0
-      }
-    ]
-  }
+  "version": 1,
+  "quizzes": [
+    {
+      "id": "a1-foundation",
+      "level": "A1",
+      "title": "النطق والأساس",
+      "questions": [
+        {
+          "id": "a1f1",
+          "prompt": "اختر أداة التعريف الصحيحة: ___ Mann",
+          "options": [
+            "der",
+            "die",
+            "das"
+          ],
+          "answer": 0,
+          "explain": "Mann اسم مذكر: der Mann."
+        },
+        {
+          "id": "a1f2",
+          "prompt": "كيف نكتب الرقم 13 بالألمانية؟",
+          "options": [
+            "dreißig",
+            "dreizehn",
+            "drei"
+          ],
+          "answer": 1,
+          "explain": "13 = dreizehn."
+        },
+        {
+          "id": "a1f3",
+          "prompt": "أي رمز يُسمى Eszett؟",
+          "options": [
+            "ä",
+            "ß",
+            "ü"
+          ],
+          "answer": 1,
+          "explain": "ß يسمى Eszett أو scharfes S."
+        }
+      ]
+    },
+    {
+      "id": "a1-basics",
+      "level": "A1",
+      "title": "التواصل الأول",
+      "questions": [
+        {
+          "id": "a1b1",
+          "prompt": "أكمل: Ich ___ aus Marokko.",
+          "options": [
+            "komme",
+            "kommt",
+            "kommen"
+          ],
+          "answer": 0,
+          "explain": "مع ich نستعمل komme."
+        },
+        {
+          "id": "a1b2",
+          "prompt": "كيف تقول: اسمي عمر؟",
+          "options": [
+            "Ich heiße Omar.",
+            "Ich heißt Omar.",
+            "Du heiße Omar."
+          ],
+          "answer": 0,
+          "explain": "Ich heiße ... هي الصيغة الصحيحة."
+        },
+        {
+          "id": "a1b3",
+          "prompt": "أي تحية مناسبة في الصباح؟",
+          "options": [
+            "Guten Morgen",
+            "Gute Nacht",
+            "Tschüss"
+          ],
+          "answer": 0,
+          "explain": "Guten Morgen = صباح الخير."
+        }
+      ]
+    },
+    {
+      "id": "a1-sentence",
+      "level": "A1",
+      "title": "بناء الجملة",
+      "questions": [
+        {
+          "id": "a1s1",
+          "prompt": "أكمل: Ich ___ Deutsch.",
+          "options": [
+            "lerne",
+            "lernst",
+            "lernt"
+          ],
+          "answer": 0,
+          "explain": "ich lerne."
+        },
+        {
+          "id": "a1s2",
+          "prompt": "في الجملة: Der Mann arbeitet. ما حالة Der Mann؟",
+          "options": [
+            "Nominativ",
+            "Akkusativ",
+            "Dativ"
+          ],
+          "answer": 0,
+          "explain": "هو الفاعل، إذن Nominativ."
+        },
+        {
+          "id": "a1s3",
+          "prompt": "أي جملة صحيحة؟",
+          "options": [
+            "Heute ich lerne Deutsch.",
+            "Heute lerne ich Deutsch.",
+            "Heute Deutsch ich lerne."
+          ],
+          "answer": 1,
+          "explain": "الفعل المصرف يأتي في المرتبة الثانية في الجملة الرئيسية."
+        }
+      ]
+    },
+    {
+      "id": "a1-vocab",
+      "level": "A1",
+      "title": "مفردات وجمل يومية",
+      "questions": [
+        {
+          "id": "a1v1",
+          "prompt": "ما معنى wohnen؟",
+          "options": [
+            "يسكن",
+            "يأكل",
+            "يكتب"
+          ],
+          "answer": 0,
+          "explain": "wohnen = يسكن."
+        },
+        {
+          "id": "a1v2",
+          "prompt": "كيف تسأل: كيف حالك؟",
+          "options": [
+            "Wie geht es dir?",
+            "Wo wohnst du?",
+            "Wie alt bist du?"
+          ],
+          "answer": 0,
+          "explain": "Wie geht es dir? = كيف حالك؟"
+        },
+        {
+          "id": "a1v3",
+          "prompt": "ما معنى heute؟",
+          "options": [
+            "غداً",
+            "اليوم",
+            "أمس"
+          ],
+          "answer": 1,
+          "explain": "heute = اليوم."
+        }
+      ]
+    },
+    {
+      "id": "a1-listening",
+      "level": "A1",
+      "title": "الأذن واللسان",
+      "questions": [
+        {
+          "id": "a1l1",
+          "prompt": "في أول استماع لمقطع A1، ما الهدف الأفضل؟",
+          "options": [
+            "فهم المعنى العام",
+            "ترجمة كل كلمة فوراً",
+            "حفظ النص حرفياً"
+          ],
+          "answer": 0,
+          "explain": "ابدأ بالفهم العام ثم التفاصيل."
+        },
+        {
+          "id": "a1l2",
+          "prompt": "ما هو Shadowing؟",
+          "options": [
+            "تقليد المتحدث مباشرة بعده",
+            "قراءة قواعد فقط",
+            "ترجمة النص للعربية"
+          ],
+          "answer": 0,
+          "explain": "Shadowing = سماع وتقليد الكلام قريباً من توقيته ونبرته."
+        },
+        {
+          "id": "a1l3",
+          "prompt": "أي مهارة تتدرب مباشرة مع التكرار بصوت مرتفع؟",
+          "options": [
+            "النطق",
+            "القراءة الصامتة",
+            "الإملاء فقط"
+          ],
+          "answer": 0,
+          "explain": "التكرار الصوتي يدرب النطق والإيقاع."
+        }
+      ]
+    },
+    {
+      "id": "a1-exam",
+      "level": "A1",
+      "title": "تثبيت A1",
+      "questions": [
+        {
+          "id": "a1e1",
+          "prompt": "أي مجموعة تمثل مهارات امتحان Goethe A1 الأساسية؟",
+          "options": [
+            "Hören, Lesen, Schreiben, Sprechen",
+            "رياضيات، تاريخ، لغة",
+            "قواعد فقط"
+          ],
+          "answer": 0,
+          "explain": "الامتحان يقيس الاستماع والقراءة والكتابة والكلام."
+        },
+        {
+          "id": "a1e2",
+          "prompt": "في Schreiben A1، الأفضل أن...",
+          "options": [
+            "تجيب عن المطلوب بجمل بسيطة صحيحة",
+            "تكتب كلمات منفصلة فقط",
+            "تستعمل B2 مهما كان الخطأ"
+          ],
+          "answer": 0,
+          "explain": "البساطة والدقة أهم من التعقيد."
+        },
+        {
+          "id": "a1e3",
+          "prompt": "قبل الانتقال لـA2، الأفضل أن...",
+          "options": [
+            "تختبر الاستماع والقراءة والكتابة والكلام",
+            "تشاهد فيديو جديد فقط",
+            "تحفظ قائمة كلمات بدون استعمال"
+          ],
+          "answer": 0,
+          "explain": "الانتقال يكون بعد تطبيق واختبار وليس مشاهدة فقط."
+        }
+      ]
+    },
+    {
+      "id": "a2-cases",
+      "level": "A2",
+      "title": "Akkusativ وDativ",
+      "questions": [
+        {
+          "id": "a2c1",
+          "prompt": "أكمل: Ich sehe ___ Mann.",
+          "options": [
+            "der",
+            "den",
+            "dem"
+          ],
+          "answer": 1,
+          "explain": "sehen يأخذ Akkusativ: den Mann."
+        },
+        {
+          "id": "a2c2",
+          "prompt": "أكمل: Ich helfe ___ Mann.",
+          "options": [
+            "der",
+            "den",
+            "dem"
+          ],
+          "answer": 2,
+          "explain": "helfen يأخذ Dativ: dem Mann."
+        },
+        {
+          "id": "a2c3",
+          "prompt": "أي فعل يرتبط غالباً بـDativ؟",
+          "options": [
+            "helfen",
+            "sehen",
+            "kaufen"
+          ],
+          "answer": 0,
+          "explain": "helfen + Dativ."
+        }
+      ]
+    },
+    {
+      "id": "a2-perfect-wordorder",
+      "level": "A2",
+      "title": "Perfekt وترتيب الجملة",
+      "questions": [
+        {
+          "id": "a2p1",
+          "prompt": "أكمل: Ich ___ meine Hausaufgaben gemacht.",
+          "options": [
+            "habe",
+            "bin",
+            "werde"
+          ],
+          "answer": 0,
+          "explain": "machen في Perfekt: ich habe gemacht."
+        },
+        {
+          "id": "a2p2",
+          "prompt": "مع weil، أين يذهب الفعل المصرف غالباً؟",
+          "options": [
+            "نهاية الجملة الفرعية",
+            "أول الجملة",
+            "يبقى دائماً في المركز الثاني"
+          ],
+          "answer": 0,
+          "explain": "في Nebensatz مع weil يذهب الفعل للنهاية."
+        },
+        {
+          "id": "a2p3",
+          "prompt": "أي جملة Perfekt صحيحة؟",
+          "options": [
+            "Ich bin nach Berlin gefahren.",
+            "Ich habe nach Berlin gefahren.",
+            "Ich gefahren bin Berlin."
+          ],
+          "answer": 0,
+          "explain": "أفعال الحركة مثل fahren تستعمل sein غالباً."
+        }
+      ]
+    },
+    {
+      "id": "a2-vocab",
+      "level": "A2",
+      "title": "توسيع المفردات",
+      "questions": [
+        {
+          "id": "a2v1",
+          "prompt": "ما معنى sich erinnern؟",
+          "options": [
+            "يتذكر",
+            "ينسى",
+            "يقرر"
+          ],
+          "answer": 0,
+          "explain": "sich erinnern = يتذكر."
+        },
+        {
+          "id": "a2v2",
+          "prompt": "ما معنى einen Termin vereinbaren؟",
+          "options": [
+            "تحديد موعد",
+            "إلغاء رحلة",
+            "شراء كتاب"
+          ],
+          "answer": 0,
+          "explain": "einen Termin vereinbaren = تحديد/ترتيب موعد."
+        },
+        {
+          "id": "a2v3",
+          "prompt": "trotzdem تعني تقريباً...",
+          "options": [
+            "مع ذلك",
+            "لأن",
+            "قبل"
+          ],
+          "answer": 0,
+          "explain": "trotzdem = مع ذلك / رغم ذلك."
+        }
+      ]
+    },
+    {
+      "id": "a2-listening",
+      "level": "A2",
+      "title": "النطق والاستماع",
+      "questions": [
+        {
+          "id": "a2l1",
+          "prompt": "إذا فهمت المعنى العام لكن فاتتك تفاصيل، شنو تدير؟",
+          "options": [
+            "تعيد المقطع وتركز على التفاصيل",
+            "توقف الاستماع نهائياً",
+            "تترجم كل كلمة قبل السماع"
+          ],
+          "answer": 0,
+          "explain": "الإعادة الموجهة للتفاصيل أفضل."
+        },
+        {
+          "id": "a2l2",
+          "prompt": "Shadowing في A2 يساعد خصوصاً على...",
+          "options": [
+            "الإيقاع والنطق والسرعة",
+            "حفظ قواعد مكتوبة فقط",
+            "تجنب الاستماع"
+          ],
+          "answer": 0,
+          "explain": "هو تدريب نطق واستماع نشط."
+        },
+        {
+          "id": "a2l3",
+          "prompt": "هل الفهم الجزئي في الاستماع مفيد؟",
+          "options": [
+            "نعم، إذا زاد تدريجياً",
+            "لا، لازم 100% من أول مرة",
+            "فقط في B2"
+          ],
+          "answer": 0,
+          "explain": "التعرض المفهوم يبني القدرة تدريجياً."
+        }
+      ]
+    },
+    {
+      "id": "a2-review",
+      "level": "A2",
+      "title": "تثبيت A2",
+      "questions": [
+        {
+          "id": "a2r1",
+          "prompt": "A2 خاصو يخليك قادر على...",
+          "options": [
+            "التعامل مع مواقف يومية شائعة",
+            "مناقشة فلسفة أكاديمية معقدة",
+            "فهم كل فيلم بلا صعوبة"
+          ],
+          "answer": 0,
+          "explain": "A2 مستوى تواصل يومي أساسي موسع."
+        },
+        {
+          "id": "a2r2",
+          "prompt": "أي زمن مهم جداً للماضي اليومي في الكلام؟",
+          "options": [
+            "Perfekt",
+            "Futur II فقط",
+            "Plusquamperfekt فقط"
+          ],
+          "answer": 0,
+          "explain": "Perfekt شائع جداً في المحادثة."
+        },
+        {
+          "id": "a2r3",
+          "prompt": "قبل B1، شنو الأفضل؟",
+          "options": [
+            "مراجعة أخطاء A2 وتثبيت المهارات",
+            "القفز مباشرة لـB2",
+            "حفظ قوائم فقط"
+          ],
+          "answer": 0,
+          "explain": "الثغرات القديمة تكبر إذا تجاهلتها."
+        }
+      ]
+    },
+    {
+      "id": "b1-vocab-speaking",
+      "level": "B1",
+      "title": "التعبير المستقل",
+      "questions": [
+        {
+          "id": "b1v1",
+          "prompt": "أي رابط مناسب لتقديم سبب؟",
+          "options": [
+            "weil",
+            "trotzdem",
+            "oder"
+          ],
+          "answer": 0,
+          "explain": "weil = لأن."
+        },
+        {
+          "id": "b1v2",
+          "prompt": "أي بداية مناسبة لإبداء الرأي؟",
+          "options": [
+            "Meiner Meinung nach...",
+            "Guten Appetit...",
+            "Bis morgen..."
+          ],
+          "answer": 0,
+          "explain": "Meiner Meinung nach = في رأيي."
+        },
+        {
+          "id": "b1v3",
+          "prompt": "في B1، الأفضل للمفردات هو...",
+          "options": [
+            "استعمالها في جمل ورأي",
+            "حفظ الترجمة فقط",
+            "عدم الكتابة بها"
+          ],
+          "answer": 0,
+          "explain": "الاستعمال النشط يثبت المفردات."
+        }
+      ]
+    },
+    {
+      "id": "b1-grammar",
+      "level": "B1",
+      "title": "قواعد B1 الأساسية",
+      "questions": [
+        {
+          "id": "b1g1",
+          "prompt": "Relativsatz يُستعمل أساساً لـ...",
+          "options": [
+            "إضافة معلومات عن اسم",
+            "عدّ الأرقام",
+            "قول الساعة فقط"
+          ],
+          "answer": 0,
+          "explain": "الجملة النسبية تصف اسماً أو تضيف معلومات عنه."
+        },
+        {
+          "id": "b1g2",
+          "prompt": "أي صيغة مناسبة لطلب مهذب؟",
+          "options": [
+            "Ich hätte gern...",
+            "Ich habe gern... فقط",
+            "Ich sein..."
+          ],
+          "answer": 0,
+          "explain": "Konjunktiv II: Ich hätte gern..."
+        },
+        {
+          "id": "b1g3",
+          "prompt": "obwohl تعبر عن...",
+          "options": [
+            "تناقض/رغم أن",
+            "سبب مباشر",
+            "زمن المستقبل فقط"
+          ],
+          "answer": 0,
+          "explain": "obwohl = رغم أن."
+        }
+      ]
+    },
+    {
+      "id": "b1-listening",
+      "level": "B1",
+      "title": "الاستماع الطبيعي",
+      "questions": [
+        {
+          "id": "b1l1",
+          "prompt": "كيف تتعامل مع الكلام السريع؟",
+          "options": [
+            "تكرر مقاطع قصيرة وتلتقط الكلمات المفتاحية",
+            "توقف نهائياً",
+            "تقرأ ترجمة عربية فقط"
+          ],
+          "answer": 0,
+          "explain": "التكرار القصير والكلمات المفتاحية يبنيان الفهم."
+        },
+        {
+          "id": "b1l2",
+          "prompt": "في B1، الاستماع الجيد يعني...",
+          "options": [
+            "فهم الفكرة والتفاصيل المهمة",
+            "فهم كل كلمة 100% دائماً",
+            "عدم الحاجة لإعادة أي مقطع"
+          ],
+          "answer": 0,
+          "explain": "الفهم الوظيفي لا يتطلب كل كلمة."
+        },
+        {
+          "id": "b1l3",
+          "prompt": "بعد الاستماع، تمرين مفيد هو...",
+          "options": [
+            "تلخيص ما فهمت بالألمانية",
+            "نسيان المقطع فوراً",
+            "ترجمة العنوان فقط"
+          ],
+          "answer": 0,
+          "explain": "التلخيص يحول الفهم إلى إنتاج."
+        }
+      ]
+    },
+    {
+      "id": "b1-exam-review",
+      "level": "B1",
+      "title": "الإنتاج والامتحان",
+      "questions": [
+        {
+          "id": "b1e1",
+          "prompt": "لبداية وصف صورة، صيغة مناسبة هي...",
+          "options": [
+            "Auf dem Bild sehe ich...",
+            "Ich bin ein Bild...",
+            "Das Bild gehen..."
+          ],
+          "answer": 0,
+          "explain": "Auf dem Bild sehe ich... بداية طبيعية."
+        },
+        {
+          "id": "b1e2",
+          "prompt": "نص B1 القوي يحتاج...",
+          "options": [
+            "تنظيم وروابط وأسباب",
+            "كلمات منفصلة",
+            "جملة واحدة طويلة بلا ترقيم"
+          ],
+          "answer": 0,
+          "explain": "التنظيم والروابط أساسيان."
+        },
+        {
+          "id": "b1e3",
+          "prompt": "بعد اختبار ضعيف، شنو تدير؟",
+          "options": [
+            "ترجع للأخطاء وتراجعها",
+            "تعيد نفس الجواب بدون تحليل",
+            "تقفز للمستوى التالي"
+          ],
+          "answer": 0,
+          "explain": "تحليل الأخطاء هو أهم جزء في الاختبار."
+        }
+      ]
+    },
+    {
+      "id": "b2-connectors",
+      "level": "B2",
+      "title": "ربط الأفكار",
+      "questions": [
+        {
+          "id": "b2c1",
+          "prompt": "أي أداة تدخل جملة فرعية والفعل غالباً في النهاية؟",
+          "options": [
+            "obwohl",
+            "trotzdem",
+            "deshalb"
+          ],
+          "answer": 0,
+          "explain": "obwohl Subjunktion وتدفع الفعل للنهاية."
+        },
+        {
+          "id": "b2c2",
+          "prompt": "trotzdem تُستعمل عادة كـ...",
+          "options": [
+            "Konjunktionaladverb",
+            "Artikel",
+            "Pronomen شخصي"
+          ],
+          "answer": 0,
+          "explain": "trotzdem أداة ربط ظرفية في الجملة الرئيسية."
+        },
+        {
+          "id": "b2c3",
+          "prompt": "Relativsätze في B2 تساعد على...",
+          "options": [
+            "بناء نصوص أكثر كثافة ودقة",
+            "تجنب وصف الأسماء",
+            "حذف الروابط"
+          ],
+          "answer": 0,
+          "explain": "تسمح بدمج معلومات إضافية بسلاسة."
+        }
+      ]
+    },
+    {
+      "id": "b2-passive-konj",
+      "level": "B2",
+      "title": "Passiv وKonjunktiv II",
+      "questions": [
+        {
+          "id": "b2p1",
+          "prompt": "أي جملة Passiv صحيحة؟",
+          "options": [
+            "Das Haus wird gebaut.",
+            "Das Haus baut wird.",
+            "Das Haus hat bauen."
+          ],
+          "answer": 0,
+          "explain": "Passiv Präsens: werden + Partizip II."
+        },
+        {
+          "id": "b2p2",
+          "prompt": "أي صيغة مناسبة لافتراض غير واقعي؟",
+          "options": [
+            "Wenn ich mehr Zeit hätte, würde ich...",
+            "Wenn ich Zeit habe gestern...",
+            "Ich werde hatte..."
+          ],
+          "answer": 0,
+          "explain": "Konjunktiv II: hätte/würde."
+        },
+        {
+          "id": "b2p3",
+          "prompt": "Konjunktiv II يُستعمل في...",
+          "options": [
+            "الافتراضات والأمنيات والتهذيب",
+            "جمع الأسماء فقط",
+            "كتابة الأرقام"
+          ],
+          "answer": 0,
+          "explain": "هذه من وظائفه الأساسية."
+        }
+      ]
+    },
+    {
+      "id": "b2-listening",
+      "level": "B2",
+      "title": "اللغة الطبيعية",
+      "questions": [
+        {
+          "id": "b2l1",
+          "prompt": "للتأقلم مع السرعة الطبيعية، الأفضل...",
+          "options": [
+            "محتوى أصلي متكرر مع تقليل الاعتماد على الترجمة",
+            "إبطاء كل شيء دائماً",
+            "قراءة قواعد فقط"
+          ],
+          "answer": 0,
+          "explain": "التعرض المتدرج للسرعة الطبيعية ضروري."
+        },
+        {
+          "id": "b2l2",
+          "prompt": "متى تستعمل Transcript؟",
+          "options": [
+            "بعد محاولة فهم أولى",
+            "قبل أن تسمع أي شيء دائماً",
+            "ما تستعملوش أبداً"
+          ],
+          "answer": 0,
+          "explain": "المحاولة الأولى بدون نص تكشف مستوى الفهم الحقيقي."
+        },
+        {
+          "id": "b2l3",
+          "prompt": "Shadowing في B2 يركز أكثر على...",
+          "options": [
+            "الإيقاع والجمل الطويلة والربط",
+            "تعلم الأبجدية من جديد فقط",
+            "ترجمة كلمة بكلمة"
+          ],
+          "answer": 0,
+          "explain": "في B2 الهدف هو الطلاقة والإيقاع الطبيعي."
+        }
+      ]
+    },
+    {
+      "id": "b2-review",
+      "level": "B2",
+      "title": "تثبيت B2",
+      "questions": [
+        {
+          "id": "b2r1",
+          "prompt": "الحجة الجيدة في B2 تحتاج...",
+          "options": [
+            "رأي + أسباب + أمثلة + روابط",
+            "رأي بلا تفسير",
+            "كلمات صعبة عشوائية"
+          ],
+          "answer": 0,
+          "explain": "التنظيم والدعم أهم من تعقيد الكلمات وحده."
+        },
+        {
+          "id": "b2r2",
+          "prompt": "تقييم B2 الحقيقي خاصو يشمل...",
+          "options": [
+            "القراءة والاستماع والكتابة والكلام",
+            "القواعد فقط",
+            "الفيديوهات المشاهدة فقط"
+          ],
+          "answer": 0,
+          "explain": "CEFR متعدد المهارات."
+        },
+        {
+          "id": "b2r3",
+          "prompt": "إذا التطبيق قال 100%، هذا يعني...",
+          "options": [
+            "كملت عناصر المسار داخل التطبيق",
+            "عندك شهادة B2 رسمية",
+            "فهمت كل ألمانية ممكنة"
+          ],
+          "answer": 0,
+          "explain": "نسبة التطبيق تتبع الإنجاز، ليست شهادة كفاءة رسمية."
+        }
+      ]
+    }
+  ]
 }

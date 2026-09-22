@@ -1,0 +1,28 @@
+window.GMP=window.GMP||{};
+(()=>{
+const G=window.GMP,KEY="gmp.state.v1",THEME="gmp.theme.v1",DAY=86400000;
+const defaults={profile:{level:"A1",minutes:210,goal:"general",onboarded:false},completedLessons:{},completedResources:{},reviewRecords:{},quizResults:[],activity:[],lastView:"dashboard",practiceSkill:"الكل"};
+const merge=(a,b)=>{Object.keys(b||{}).forEach(k=>{if(b[k]&&typeof b[k]==="object"&&!Array.isArray(b[k])){a[k]=merge(a[k]&&typeof a[k]==="object"?a[k]:{},b[k])}else a[k]=b[k]});return a};
+const load=()=>{try{return merge(JSON.parse(JSON.stringify(defaults)),JSON.parse(localStorage.getItem(KEY))||{})}catch{return JSON.parse(JSON.stringify(defaults))}};
+G.DAY=DAY;G.state=load();G.data={curriculum:null,quizzes:null,vocabulary:null};G.runtime={view:"dashboard",roadmapLevel:"A1",toastTimer:null};
+G.save=()=>localStorage.setItem(KEY,JSON.stringify(G.state));
+G.reset=()=>{G.state=JSON.parse(JSON.stringify(defaults));G.save()};
+G.dateKey=(d=new Date())=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+G.touch=()=>{const d=G.dateKey();if(!G.state.activity.includes(d))G.state.activity.push(d);G.state.activity=[...new Set(G.state.activity)].sort().slice(-500)};
+G.streak=()=>{const set=new Set(G.state.activity);let d=new Date();if(!set.has(G.dateKey(d)))d.setDate(d.getDate()-1);let n=0;while(set.has(G.dateKey(d))){n++;d.setDate(d.getDate()-1)}return n};
+G.level=id=>G.data.curriculum.levels.find(x=>x.id===id)||G.data.curriculum.levels[0];
+G.currentLevel=()=>G.level(G.state.profile.level);
+G.lessons=(level=G.currentLevel())=>level.modules.flatMap(m=>m.lessons.map(l=>({...l,moduleId:m.id,moduleTitle:m.title,quizId:m.quizId})));
+G.resources=(level=G.currentLevel())=>level.resources||[];
+G.lessonDone=id=>Boolean(G.state.completedLessons[id]);G.resourceDone=id=>Boolean(G.state.completedResources[id]);
+G.toggleLesson=id=>{if(G.lessonDone(id))delete G.state.completedLessons[id];else{G.state.completedLessons[id]=Date.now();G.touch()}G.save()};
+G.toggleResource=id=>{if(G.resourceDone(id))delete G.state.completedResources[id];else{G.state.completedResources[id]=Date.now();G.touch()}G.save()};
+G.nextLesson=(level=G.currentLevel())=>G.lessons(level).find(l=>!G.lessonDone(l.id))||null;
+G.bestQuiz=id=>{const s=G.state.quizResults.filter(x=>x.quizId===id).map(x=>x.score);return s.length?Math.max(...s):null};
+G.quizAvg=()=>G.state.quizResults.length?Math.round(G.state.quizResults.reduce((a,b)=>a+b.score,0)/G.state.quizResults.length):null;
+G.moduleProgress=m=>{const total=m.lessons.length,done=m.lessons.filter(l=>G.lessonDone(l.id)).length;return{total,done,pct:total?Math.round(done/total*100):0}};
+G.levelProgress=(level=G.currentLevel())=>{const ls=G.lessons(level),rs=G.resources(level),ld=ls.filter(x=>G.lessonDone(x.id)).length,rd=rs.filter(x=>G.resourceDone(x.id)).length;const lp=ls.length?ld/ls.length:0,rp=rs.length?rd/rs.length:0;const qs=level.modules.map(m=>G.bestQuiz(m.quizId)).filter(v=>v!=null);const qp=level.modules.length?qs.reduce((s,v)=>s+v/100,0)/level.modules.length:0;return{pct:Math.round((lp*.65+rp*.2+qp*.15)*100),lessonDone:ld,lessonTotal:ls.length,practiceDone:rd,practiceTotal:rs.length}};
+G.escape=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
+G.url=v=>{try{const u=new URL(v);return["https:","http:"].includes(u.protocol)?u.href:"#"}catch{return"#"}};
+G.theme={init(){const s=localStorage.getItem(THEME),d=matchMedia?.("(prefers-color-scheme: dark)").matches;this.set(s||(d?"dark":"light"))},set(t){document.documentElement.dataset.theme=t;localStorage.setItem(THEME,t)},toggle(){this.set(document.documentElement.dataset.theme==="dark"?"light":"dark")}};
+})();

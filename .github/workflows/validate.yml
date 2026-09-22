@@ -1,36 +1,70 @@
-name: Validate site
+name: Validate German Master Pro
+
 on:
   push:
     branches: ["main"]
   pull_request:
+
 permissions:
   contents: read
+
 jobs:
-  verify:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: JavaScript syntax
-        run: node --check js/app.js
-      - name: Validate JSON and curriculum
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check js/store.js
+          node --check js/engine.js
+          node --check js/ui.js
+          node --check js/app.js
+          node --check sw.js
+
+      - name: Validate learning data
         run: |
           node - <<'NODE'
-          const fs=require('fs');
-          const c=JSON.parse(fs.readFileSync('data/curriculum.json','utf8'));
-          const q=JSON.parse(fs.readFileSync('data/quizzes.json','utf8'));
-          if(c.levels.map(x=>x.id).join(',')!=='A1,A2,B1,B2') throw new Error('levels');
-          for(const l of c.levels){
-            if(!l.modules?.length||!l.lessons?.length||!l.resources?.length) throw new Error('empty '+l.id);
-            l.lessons.forEach((x,i)=>{if(x.order!==i+1) throw new Error('order '+l.id); if(!/^https:/.test(x.url)) throw new Error('url')});
-            if(!q[l.id]) throw new Error('quiz '+l.id);
+          const fs=require("fs");
+          const c=JSON.parse(fs.readFileSync("data/curriculum.json","utf8"));
+          const q=JSON.parse(fs.readFileSync("data/quizzes.json","utf8"));
+          const v=JSON.parse(fs.readFileSync("data/vocabulary.json","utf8"));
+          const expected=["A1","A2","B1","B2"];
+          if(c.levels.map(x=>x.id).join(",")!==expected.join(",")) throw new Error("Bad level order");
+          const quizzes=new Set(q.quizzes.map(x=>x.id));
+          let lessons=0,resources=0;
+          for(const level of c.levels){
+            for(const m of level.modules){
+              if(!quizzes.has(m.quizId)) throw new Error("Missing quiz "+m.quizId);
+              m.lessons.forEach((l,i)=>{
+                lessons++;
+                if(!/^https:\/\//.test(l.url)) throw new Error("Bad lesson URL "+l.id);
+                if(!Number.isFinite(l.minutes)) throw new Error("Missing minutes "+l.id);
+              });
+            }
+            level.resources.forEach(r=>{resources++;if(!/^https:\/\//.test(r.url)) throw new Error("Bad resource URL "+r.id)});
           }
-          if(!q.placement) throw new Error('placement');
-          console.log('OK',c.levels.map(l=>[l.id,l.lessons.length,l.resources.length]));
+          if(lessons<40) throw new Error("Too few lessons");
+          if(resources<30) throw new Error("Too few resources");
+          if(q.quizzes.length<16) throw new Error("Too few quizzes");
+          if(v.cards.length<60) throw new Error("Too few vocabulary cards");
+          const ids=new Set();
+          for(const quiz of q.quizzes) for(const question of quiz.questions){
+            if(ids.has(question.id)) throw new Error("Duplicate question "+question.id);
+            ids.add(question.id);
+            if(question.answer<0||question.answer>=question.options.length) throw new Error("Bad answer "+question.id);
+          }
+          console.log({levels:expected,lessons,resources,quizzes:q.quizzes.length,questions:ids.size,vocabulary:v.cards.length});
           NODE
-      - name: Required files
+
+      - name: Validate app contract
         run: |
           test -f index.html
-          test -f assets/styles.css
-          test -f js/app.js
-          test -f data/curriculum.json
-          test -f data/quizzes.json
+          test -f manifest.webmanifest
+          test -f assets/icon.svg
+          grep -q 'data-panel="dashboard"' index.html
+          grep -q 'data-panel="roadmap"' index.html
+          grep -q 'data-panel="review"' index.html
+          grep -q 'G.todayPlan' js/engine.js
+          grep -q 'G.ui.openQuiz' js/ui.js
+          grep -q 'serviceWorker' js/app.js

@@ -1,0 +1,19 @@
+{
+  "name": "German Master Pro — تعلم الألمانية بذكاء",
+  "short_name": "German Master",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f5f7",
+  "theme_color": "#111827",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
