@@ -19,6 +19,7 @@
     <nav>
       <button class="nav active" data-view="dashboard">⌂ <span>الرئيسية</span></button>
       <button class="nav" data-view="daily">▦ <span>30 يوم</span></button>
+      <button class="nav" data-view="grammar">Aa <span>القواعد والحروف</span></button>
       <button class="nav" data-view="roadmap">▤ <span>المسار</span></button>
       <button class="nav" data-view="review">↻ <span>المراجعة</span><em id="reviewBadge" hidden>0</em></button>
       <button class="nav" data-view="practice">▣ <span>التطبيق</span></button>
@@ -85,6 +86,11 @@
             <div id="dailyVideos" class="daily-videos"></div>
           </section>
 
+          <section class="card daily-grammar-card">
+            <header><div><small>GRAMMAR</small><h3>قاعدة اليوم</h3></div><button id="dailyGrammarDone" class="ghost">علّم القاعدة مكتملة</button></header>
+            <div id="dailyGrammarContent" class="daily-grammar-content"></div>
+          </section>
+
           <section class="card daily-listening-card">
             <header><div><small>LISTEN</small><h3>استماع 3 مراحل</h3></div><button id="dailyListeningDone" class="ghost">علّم الاستماع مكتمل</button></header>
             <div id="dailyListeningSource" class="listening-source"></div>
@@ -140,6 +146,32 @@
         </section>
       </section>
 
+
+      <section class="view" data-panel="grammar">
+        <div class="page-head grammar-page-head">
+          <div>
+            <small>GRAMMAR ACADEMY</small>
+            <h2>القواعد والحروف من الصفر إلى B2</h2>
+            <p>مرجع مرتب + كورس عملي: شرح بالعربية، أمثلة ألمانية، أخطاء شائعة وتمرين فوري لكل قاعدة.</p>
+          </div>
+          <div class="grammar-progress-box">
+            <b id="grammarOverallPct">0%</b>
+            <span id="grammarOverallDone">0/0 قاعدة</span>
+          </div>
+        </div>
+
+        <section class="grammar-tools">
+          <div id="grammarTabs" class="tabs"></div>
+          <label class="grammar-search">
+            <span>بحث</span>
+            <input id="grammarSearch" type="search" placeholder="مثلاً: Akkusativ, weil, Perfekt, الحروف...">
+          </label>
+        </section>
+
+        <section id="grammarSectionIntro" class="grammar-section-intro"></section>
+        <div id="grammarTopics" class="grammar-topic-list"></div>
+      </section>
+
       <section class="view" data-panel="roadmap">
         <div class="page-head"><div><small>A1 → B2</small><h2>المسار الكامل</h2><p>فيديوهات منفصلة مرتبة داخل وحدات، ومع كل وحدة اختبار قصير.</p></div><div id="levelTabs" class="tabs"></div></div>
         <section id="levelOverview" class="level-overview"></section>
@@ -171,6 +203,7 @@
 <nav class="mobile-nav">
   <button class="active" data-view="dashboard">⌂<span>الرئيسية</span></button>
   <button data-view="daily">▦<span>30 يوم</span></button>
+  <button data-view="grammar">Aa<span>قواعد</span></button>
   <button data-view="roadmap">▤<span>المسار</span></button>
   <button data-view="review">↻<span>مراجعة</span></button>
   <button data-view="practice">▣<span>تطبيق</span></button>
