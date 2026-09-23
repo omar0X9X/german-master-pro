@@ -58,6 +58,25 @@ G.missionVideo=(level,day)=>{
   return null;
 };
 
+G.missionListeningVideo=(level,day)=>{
+  const days=G.dailyProgram(level)?.days||[],used=new Set();
+  const main=G.missionVideo(level,day);
+  for(const d of days){
+    if(d.day>day)break;
+    const id=d.listening?.videoId,v=id?G.videoById(id):null;
+    if(v&&v.id!==main?.id&&!used.has(v.id)){
+      used.add(v.id);
+      if(d.day===day)return{mode:"direct",id:v.id,title:v.title,provider:v.provider,url:v.url,minutes:Math.min(20,v.minutes||15),why:"هذا فيديو الاستماع المرتبط باليوم ولم يُستخدم قبل ذلك كاستماع في المسار."};
+    }
+    if(d.day===day){
+      const p=G.data.mission?.videoPlaylists?.[level];if(!p)return null;
+      const position=30+Number(day);
+      return{mode:"playlist",id:"listen-playlist-"+level+"-"+day,title:"فيديو الاستماع الجديد رقم "+position+" من Playlist "+level,provider:p.provider,url:p.url,minutes:15,position,why:"مصدر الاستماع المخصص تكرر أو يساوي فيديو الدرس؛ لذلك نختار عنصراً آخر جديداً من Playlist الرسمية."};
+    }
+  }
+  return null;
+};
+
 G.missionCartoon=(level,day)=>{
   const feeds=G.data.mission?.cartoonFeeds?.[level]||[];
   let n=Number(day);
@@ -93,6 +112,7 @@ G.missionDayData=(level,day)=>{
   return{
     level,day,daily,
     video:G.missionVideo(level,day),
+    listeningVideo:G.missionListeningVideo(level,day),
     dialogue:G.missionDialogue(level,day),
     cartoon:G.missionCartoon(level,day),
     notes:G.getMissionNotes(level,day),
