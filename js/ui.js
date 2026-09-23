@@ -90,7 +90,7 @@ G.ui.renderRoute=()=>{
   const progress=G.routeProgress(level,dayNo),lp=G.routeLevelProgress(level);
 
   $("#routeLevelTabs").innerHTML=levels.map(id=>'<button class="'+(id===level?"active":"")+'" data-route-level="'+id+'">'+id+' <small>'+G.routeLevelProgress(id).done+'/30</small></button>').join("");
-  $("#routeLevelTabs [data-route-level]").forEach(b=>b.onclick=()=>{
+  $$("#routeLevelTabs [data-route-level]").forEach(b=>b.onclick=()=>{
     G.runtime.routeLevel=b.dataset.routeLevel;
     if(!G.state.routeSelected[b.dataset.routeLevel])G.state.routeSelected[b.dataset.routeLevel]=G.nextRouteDay(b.dataset.routeLevel);
     G.runtime.routeDialogueTextVisible=false;G.ui.renderRoute();
@@ -161,14 +161,14 @@ G.ui.renderRoute=()=>{
     });
   };
   ["routeHeardWords","routeShadowing","routeReflection"].forEach(id=>{const n=$("#"+id);if(n)n.oninput=saveNotes});
-  $("#routeSteps [data-route-speak]").forEach(b=>b.onclick=()=>G.ui.speakGerman(b.dataset.routeSpeak));
+  $$("#routeSteps [data-route-speak]").forEach(b=>b.onclick=()=>G.ui.speakGerman(b.dataset.routeSpeak));
   const toggle=$("#toggleRouteTranscript");if(toggle)toggle.onclick=()=>{G.runtime.routeDialogueTextVisible=!G.runtime.routeDialogueTextVisible;G.ui.renderRoute()};
   const play=$("#playRouteDialogue");if(play)play.onclick=()=>{
     if(!("speechSynthesis" in window)){toast("المتصفح ما كيدعمش الصوت");return}
     speechSynthesis.cancel();let i=0;
     const next=()=>{if(i>=dialogueLines.length)return;const u=new SpeechSynthesisUtterance(dialogueLines[i++].text);u.lang="de-DE";u.rate=.82;u.onend=next;speechSynthesis.speak(u)};next();
   };
-  $("#routeSteps [data-route-complete]").forEach(b=>b.onclick=()=>{
+  $$("#routeSteps [data-route-complete]").forEach(b=>b.onclick=()=>{
     const key=b.dataset.routeComplete,was=G.routeStepDone(level,dayNo,key);
     if(key==="dialogue")saveNotes();
     if(key==="reflection"&&!($("#routeReflection")?.value||"").trim()&&!was){toast("كتب سطر واحد على الأقل: شنو تعلمت اليوم؟");return}
