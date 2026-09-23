@@ -39,43 +39,41 @@ G.missionCurrentStage=(level,day)=>{
   return stages.find(x=>!G.missionDone(level,day,x.id))||stages[stages.length-1]||null;
 };
 
-G.missionVideo=(level,day)=>{
-  const days=G.dailyProgram(level)?.days||[],used=new Set();
+G.missionVideoPair=(level,targetDay)=>{
+  const days=G.dailyProgram(level)?.days||[],used=new Set(),playlist=G.data.mission?.videoPlaylists?.[level];
+  let result={main:null,listening:null};
   for(const d of days){
-    if(d.day>day)break;
-    const candidates=(d.videos||[]).map(G.videoById).filter(Boolean);
-    const direct=candidates.find(v=>!used.has(v.id));
-    if(direct){
-      used.add(direct.id);
-      if(d.day===day)return{mode:"direct",id:direct.id,title:direct.title,provider:direct.provider,url:direct.url,minutes:direct.minutes||20,skill:direct.skill,why:"مختار لأنه مربوط مباشرة بموضوع اليوم وما استعملناهش في يوم سابق من نفس المسار."};
+    if(d.day>targetDay)break;
+    const mainCandidates=(d.videos||[]).map(G.videoById).filter(Boolean);
+    const mainDirect=mainCandidates.find(v=>!used.has("video::"+v.id));
+    let main;
+    if(mainDirect){
+      used.add("video::"+mainDirect.id);
+      main={mode:"direct",id:mainDirect.id,title:mainDirect.title,provider:mainDirect.provider,url:mainDirect.url,minutes:mainDirect.minutes||20,skill:mainDirect.skill,why:"مختار لأنه مربوط مباشرة بموضوع اليوم وما استعملناهش قبل كدرس أو استماع في هاد المسار."};
+    }else if(playlist){
+      const position=d.day;
+      used.add("playlist::"+position);
+      main={mode:"playlist",id:"playlist-"+level+"-"+position,title:"الفيديو الجديد رقم "+position+" من Playlist "+level,provider:playlist.provider,url:playlist.url,minutes:20,skill:"استماع/فهم",position,why:"الفيديوهات المخصصة تكررت؛ لذلك ننتقل لعنصر جديد من Playlist الرسمية للمستوى."};
     }
-    if(d.day===day){
-      const p=G.data.mission?.videoPlaylists?.[level];
-      if(!p)return null;
-      return{mode:"playlist",id:"playlist-"+level+"-"+day,title:"الفيديو الجديد رقم "+day+" من Playlist "+level,provider:p.provider,url:p.url,minutes:20,skill:"استماع/فهم",position:day,why:"الفيديوهات المخصصة لهذا اليوم تكررت سابقاً، لذلك ننتقل تلقائياً إلى عنصر جديد من Playlist الرسمية للمستوى."};
+
+    const listenId=d.listening?.videoId,listenDirect=listenId?G.videoById(listenId):null;
+    let listening;
+    if(listenDirect&&!used.has("video::"+listenDirect.id)){
+      used.add("video::"+listenDirect.id);
+      listening={mode:"direct",id:listenDirect.id,title:listenDirect.title,provider:listenDirect.provider,url:listenDirect.url,minutes:Math.min(20,listenDirect.minutes||15),why:"فيديو استماع مرتبط باليوم ولم يُستعمل قبل كدرس أو استماع."};
+    }else if(playlist){
+      const position=30+d.day;
+      used.add("playlist::"+position);
+      listening={mode:"playlist",id:"listen-playlist-"+level+"-"+position,title:"فيديو الاستماع الجديد رقم "+position+" من Playlist "+level,provider:playlist.provider,url:playlist.url,minutes:15,position,why:"مصدر الاستماع المخصص سبق استعماله؛ لذلك نأخذ عنصراً آخر جديداً من جزء مختلف من Playlist الرسمية."};
     }
+
+    if(d.day===targetDay){result={main,listening};break}
   }
-  return null;
+  return result;
 };
 
-G.missionListeningVideo=(level,day)=>{
-  const days=G.dailyProgram(level)?.days||[],used=new Set();
-  const main=G.missionVideo(level,day);
-  for(const d of days){
-    if(d.day>day)break;
-    const id=d.listening?.videoId,v=id?G.videoById(id):null;
-    if(v&&v.id!==main?.id&&!used.has(v.id)){
-      used.add(v.id);
-      if(d.day===day)return{mode:"direct",id:v.id,title:v.title,provider:v.provider,url:v.url,minutes:Math.min(20,v.minutes||15),why:"هذا فيديو الاستماع المرتبط باليوم ولم يُستخدم قبل ذلك كاستماع في المسار."};
-    }
-    if(d.day===day){
-      const p=G.data.mission?.videoPlaylists?.[level];if(!p)return null;
-      const position=30+Number(day);
-      return{mode:"playlist",id:"listen-playlist-"+level+"-"+day,title:"فيديو الاستماع الجديد رقم "+position+" من Playlist "+level,provider:p.provider,url:p.url,minutes:15,position,why:"مصدر الاستماع المخصص تكرر أو يساوي فيديو الدرس؛ لذلك نختار عنصراً آخر جديداً من Playlist الرسمية."};
-    }
-  }
-  return null;
-};
+G.missionVideo=(level,day)=>G.missionVideoPair(level,day).main;
+G.missionListeningVideo=(level,day)=>G.missionVideoPair(level,day).listening;
 
 G.missionCartoon=(level,day)=>{
   const feeds=G.data.mission?.cartoonFeeds?.[level]||[];
