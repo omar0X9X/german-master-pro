@@ -123,8 +123,21 @@ G.todayPlan=()=>{
     }
   }
 
+  let missionActive=false;
+  const missionUnlock=G.missionUnlockStatus?.(G.state.profile.level);
+  if(missionUnlock?.levelUnlocked){
+    const md=G.missionNextDay(G.state.profile.level),mp=G.missionDayProgress(G.state.profile.level,md);
+    if(!mp.complete){
+      const dayData=G.dailyDay(G.state.profile.level,md),stage=G.missionCurrentStage(G.state.profile.level,md);
+      const remaining=G.missionStages().filter(x=>!G.missionDone(G.state.profile.level,md,x.id)).reduce((n,x)=>n+(x.minutes||10),0);
+      const min=Math.min(remaining,Math.max(25,target-used));
+      tasks.push({type:"mission",title:"طريق اليوم "+md+": "+(dayData?.theme||""),detail:"المرحلة الحالية: "+(stage?.title||"ابدأ المهمة"),minutes:min,view:"mission",level:G.state.profile.level,day:md});
+      used+=min;missionActive=true;
+    }
+  }
+
   const daily=G.todayDaily();
-  if(daily&&!daily.progress.complete){
+  if(!missionActive&&daily&&!daily.progress.complete){
     const min=Math.min(daily.minutes,Math.max(35,target-used));
     tasks.push({type:"daily",title:"اليوم "+daily.day.day+" من 30: "+daily.day.theme,detail:daily.videos.length+" فيديو + قاعدة + استماع + قراءة + كتابة + تحدث",minutes:min,view:"daily",dailyDay:daily.day.day});
     used+=min;
@@ -153,6 +166,11 @@ G.todayPlan=()=>{
 G.coach=()=>{
   const zero=G.zeroProgress(),zeroStep=G.zeroCurrentStep();
   if(G.state.profile.level==="A1"&&zero.total&&zero.pct<100)return{title:"دابا: "+(zeroStep?.title||"مسار البداية"),text:"ما تحتاجش تختار شنو تقرا. كمّل الخطوة الحالية من مسار الصفر، والموقع يفتح لك اللي بعدها تلقائياً. التقدم: "+zero.done+"/"+zero.total+"."};
+  const mu=G.missionUnlockStatus?.(G.state.profile.level);
+  if(mu?.levelUnlocked){
+    const md=G.missionNextDay(G.state.profile.level),mp=G.missionDayProgress(G.state.profile.level,md),ms=G.missionCurrentStage(G.state.profile.level,md);
+    if(!mp.complete)return{title:"طريق اليوم "+md+" • "+(ms?.title||"كمّل المهمة"),text:"ما تختارش بين الموارد دابا. تبع مراحل طريق اليوم بالترتيب؛ كل مرحلة كتفتح اللي من بعدها."};
+  }
   const p=G.levelProgress(),coverage=G.skillCoverage(),weak=coverage[0],avg=G.quizAvg(),due=G.dueReviews().length;
   if(p.lessonDone===0)return{title:"ابدأ بالدرس الأول",text:"ما عندناش بيانات كافية عليك بعد. كمّل أول درس ثم اختبر نفسك باش يبدأ التشخيص."};
   if(due>8)return{title:"المراجعة أولاً",text:"عندك "+due+" بطاقات مستحقة. راجعها قبل ما تزيد معلومات جديدة."};
