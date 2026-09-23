@@ -18,6 +18,7 @@
     <a class="brand" href="#" data-go="dashboard"><span class="flag"><i></i><i></i><i></i></span><span><b>German Master Pro</b><small>تعلّم الألمانية بذكاء</small></span></a>
     <nav>
       <button class="nav active" data-view="dashboard">⌂ <span>الرئيسية</span></button>
+      <button class="nav" data-view="route">➜ <span>طريق اليوم</span><em id="routeLockBadge">🔒</em></button>
       <button class="nav" data-view="daily">▦ <span>30 يوم</span></button>
       <button class="nav" data-view="grammar">Aa <span>القواعد والحروف</span></button>
       <button class="nav" data-view="notebook">✎ <span>الدفتر الذكي</span></button>
@@ -62,6 +63,48 @@
         <section class="card continue"><header><div><small>أكمل من هنا</small><h3>الدرس التالي</h3></div><button class="link-btn" data-go="roadmap">كل الدروس ←</button></header><div id="continueLesson"></div></section>
       </section>
 
+
+
+      <section class="view" data-panel="route">
+        <section id="routeLockPanel" class="route-lock-panel">
+          <div class="route-lock-icon">🔒</div>
+          <small>DAILY ROUTE • LOCKED</small>
+          <h2>طريق اليوم مقفول دابا</h2>
+          <p id="routeLockReason">كمّل الحروف والقواعد الأساسية أولاً، ومن بعد الموقع هو اللي غادي يقودك خطوة بخطوة كل يوم.</p>
+          <div class="route-unlock-grid">
+            <article><b>Zero → A1</b><span id="routeZeroText">0/18</span><div class="track"><i id="routeZeroBar"></i></div></article>
+            <article><b>قواعد A1</b><span id="routeA1Text">0/20</span><div class="track"><i id="routeA1Bar"></i></div></article>
+          </div>
+          <button class="primary" data-go="grammar">كمّل الحروف والقواعد</button>
+        </section>
+
+        <div id="routeContent" hidden>
+          <section class="route-hero">
+            <div>
+              <span class="kicker">TAGESROUTE • NO CONFUSION</span>
+              <h2>الموقع يقول لك شنو تدير دابا.</h2>
+              <p>كل يوم عندك ترتيب واحد واضح: فيديو → كتابة ذكية → محادثة → 7 كلمات → كرتون → Reflection.</p>
+            </div>
+            <div class="route-progress-box"><b id="routeTodayPct">0%</b><span id="routeTodayCount">0/6</span></div>
+          </section>
+
+          <div class="route-toolbar">
+            <div id="routeLevelTabs" class="tabs"></div>
+            <div class="route-day-nav">
+              <button id="routePrevDay" class="ghost">→ اليوم السابق</button>
+              <span id="routeDayLabel">اليوم 1</span>
+              <button id="routeNextDay" class="ghost">اليوم التالي ←</button>
+            </div>
+          </div>
+
+          <section class="route-overview card">
+            <div><small id="routeLevelLabel">A1</small><h3 id="routeTheme">—</h3><p id="routeObjective">—</p></div>
+            <div class="route-meta"><span id="routeEstimated">≈ 0 د</span><span id="routeLevelProgress">0/30 يوم</span></div>
+          </section>
+
+          <div id="routeSteps" class="route-steps"></div>
+        </div>
+      </section>
 
       <section class="view" data-panel="daily">
         <div class="page-head daily-page-head">
@@ -433,6 +476,7 @@
 
 <nav class="mobile-nav">
   <button class="active" data-view="dashboard">⌂<span>الرئيسية</span></button>
+  <button data-view="route">➜<span>طريق اليوم</span></button>
   <button data-view="daily">▦<span>30 يوم</span></button>
   <button data-view="grammar">Aa<span>قواعد</span></button>
   <button data-view="notebook">✎<span>دفتر</span></button>
