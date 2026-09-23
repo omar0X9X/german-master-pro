@@ -605,10 +605,13 @@ G.ui.renderMissionStage=(level,day,stage,m)=>{
       '<label class="mission-input-label">من الذاكرة: عاود كتب جوج أو أكثر من الجمل/الأفكار اللي بقاو معاك<textarea id="missionTextRecall" rows="5" placeholder="Schreib aus dem Gedächtnis...">'+E(notes.textRecall||"")+'</textarea></label>'+
       '<div class="mission-method"><b>ممنوع النسخ الأعمى:</b><span>إلى بغيتي تكتب النص فالدفتر، قراه ثم غطيه واكتب اللي تذكرت، ومن بعد قارن وصحح.</span></div>';
   }else if(stage.id==="dialogue"){
-    body='<div class="mission-dialogue-controls"><button id="missionPlayDialogue" class="primary">🔊 اسمع المحادثة بلا نص</button><button id="missionRevealDialogue" class="ghost">أظهر Transcript</button></div>'+
+    const lv=m.listeningVideo;
+    body=(lv?'<div class="mission-resource-box listening"><div><small>'+E(lv.provider)+' • فيديو استماع جديد</small><h4>'+E(lv.title)+'</h4><p>'+E(lv.why)+'</p>'+(lv.mode==="playlist"?'<div class="mission-warning">من Playlist الرسمية: خذ العنصر رقم '+lv.position+' أو أول فيديو جديد ما شاهدتيهش، وسجل عنوانه.</div>':'')+'</div><a href="'+U(lv.url)+'" target="_blank" rel="noopener">▶ فتح فيديو الاستماع</a></div>':'')+
+      (lv?.mode==="playlist"?'<label class="mission-input-label">عنوان فيديو الاستماع اللي شاهدت<input id="missionListeningVideoTitle" value="'+E(notes.listeningVideoTitle||"")+'" placeholder="عنوان مختلف عن فيديو الدرس"></label>':'')+
+      '<div class="mission-dialogue-controls"><button id="missionPlayDialogue" class="primary">🔊 اسمع محادثة اليوم بلا نص</button><button id="missionRevealDialogue" class="ghost">أظهر Transcript</button></div>'+
       '<div id="missionDialogueTranscript" class="mission-dialogue" hidden>'+m.dialogue.map(line=>'<article><span>'+E(line.speaker)+'</span><p lang="de">'+E(line.text)+'</p></article>').join("")+'</div>'+
       '<label class="mission-input-label">شنو سمعت؟ كتب 3 كلمات/عبارات قبل ما تشوف Transcript<textarea id="missionDialogueNotes" rows="3">'+E(notes.dialogueNotes||"")+'</textarea></label>'+
-      '<div class="mission-method"><b>3 passes:</b><span>1) الفكرة العامة 2) الكلمات والتفاصيل 3) Shadowing جملة بجملة.</span></div>';
+      '<div class="mission-method"><b>3 passes:</b><span>فيديو الاستماع للفهم الطبيعي، ثم المحادثة: 1) الفكرة العامة 2) الكلمات والتفاصيل 3) Shadowing.</span></div>';
   }else if(stage.id==="cartoon"){
     const c=m.cartoon;
     body=c?'<div class="mission-resource-box cartoon"><div><small>'+E(c.provider)+' • '+E(c.subtitles)+'</small><h4>'+E(c.title)+' — الحلقة الجديدة رقم '+c.slot+' في خطتك</h4><p>'+E(c.why)+'</p><div class="mission-warning">افتح صفحة الحلقات الرسمية واختر الحلقة التالية غير المشاهدة. ما تعاودش عنوان سبق سجلتيه.</div></div><a href="'+U(c.url)+'" target="_blank" rel="noopener">★ فتح الحلقات الرسمية</a></div>'+
@@ -639,6 +642,7 @@ G.ui.renderMissionStage=(level,day,stage,m)=>{
     $("#missionTextRecall").oninput=e=>G.setMissionNotes(level,day,{textRecall:e.target.value});
   }
   if(stage.id==="dialogue"){
+    const listenTitle=$("#missionListeningVideoTitle");if(listenTitle)listenTitle.oninput=()=>G.setMissionNotes(level,day,{listeningVideoTitle:listenTitle.value});
     $("#missionPlayDialogue").onclick=()=>G.ui.playMissionDialogue(m.dialogue);
     const transcript=$("#missionDialogueTranscript"),btn=$("#missionRevealDialogue");
     btn.onclick=()=>{transcript.hidden=!transcript.hidden;btn.textContent=transcript.hidden?"أظهر Transcript":"اخف Transcript"};
@@ -664,7 +668,16 @@ G.ui.renderMissionStage=(level,day,stage,m)=>{
       if(duplicate){toast("هاد عنوان الفيديو سبق تسجل؛ اختار فيديو جديد");return}
     }
     if(stage.id==="text"&&wordCount(fresh.textRecall)<(level==="A1"?8:level==="A2"?15:20)){toast("كتب شوية من الذاكرة قبل ما تكمل");return}
-    if(stage.id==="dialogue"&&wordCount(fresh.dialogueNotes)<3){toast("كتب على الأقل 3 كلمات/عبارات سمعتيهم");return}
+    if(stage.id==="dialogue"){
+      if(m.listeningVideo?.mode==="playlist"){
+        const title=String(fresh.listeningVideoTitle||"").trim();
+        if(!title){toast("كتب عنوان فيديو الاستماع الجديد");return}
+        const titleLc=title.toLowerCase();
+        const duplicate=Object.entries(G.state.missionNotes).some(([k,n])=>k.startsWith(level+"::")&&!k.endsWith("::"+day)&&[n.videoTitle,n.listeningVideoTitle].some(x=>String(x||"").trim().toLowerCase()===titleLc));
+        if(duplicate||String(fresh.videoTitle||"").trim().toLowerCase()===titleLc){toast("هاد الفيديو سبق استعملتيه؛ اختار فيديو استماع جديد");return}
+      }
+      if(wordCount(fresh.dialogueNotes)<3){toast("كتب على الأقل 3 كلمات/عبارات سمعتيهم");return}
+    }
     if(stage.id==="cartoon"){
       const title=String(fresh.cartoonTitle||"").trim(),summary=wordCount(fresh.cartoonSummary||"");
       if(!title){toast("كتب اسم الحلقة اللي شاهدت");return}
