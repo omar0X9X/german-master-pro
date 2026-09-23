@@ -123,8 +123,19 @@ G.todayPlan=()=>{
     }
   }
 
+  const routeUnlock=G.routeUnlockStatus?.();
+  let routeTask=null;
+  if(routeUnlock?.unlocked){
+    const routeLevel=G.state.profile.level,routeDay=G.nextRouteDay(routeLevel),route=G.routeFor(routeLevel,routeDay),rp=G.routeProgress(routeLevel,routeDay);
+    if(route&&!rp.complete){
+      const min=Math.min(route.estimatedMinutes||120,Math.max(45,target-used));
+      routeTask={type:"route",title:"طريق اليوم "+routeDay+": "+route.theme,detail:"فيديو → كتابة → محادثة → كلمات → كرتون → إغلاق",minutes:min,view:"route",routeDay};
+      tasks.push(routeTask);used+=min;
+    }
+  }
+
   const daily=G.todayDaily();
-  if(daily&&!daily.progress.complete){
+  if(!routeTask&&daily&&!daily.progress.complete){
     const min=Math.min(daily.minutes,Math.max(35,target-used));
     tasks.push({type:"daily",title:"اليوم "+daily.day.day+" من 30: "+daily.day.theme,detail:daily.videos.length+" فيديو + قاعدة + استماع + قراءة + كتابة + تحدث",minutes:min,view:"daily",dailyDay:daily.day.day});
     used+=min;

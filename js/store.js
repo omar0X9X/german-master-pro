@@ -7,11 +7,11 @@ const defaults={
   lastView:"dashboard",practiceSkill:"الكل",
   dailyChecks:{},dailyWriting:{},dailySpeaking:{},dailySelected:{A1:1,A2:1,B1:1,B2:1},zeroPathDone:{},zeroPathCurrent:1,
   errorAttempts:[],errorNotebook:[],errorManual:[],
-  notebookPages:{},cartoonProgress:{},cartoonNotes:{}
+  notebookPages:{},cartoonProgress:{},cartoonNotes:{},routeChecks:{},routeSelected:{A1:1,A2:1,B1:1,B2:1},routeNotes:{}
 };
 const merge=(a,b)=>{Object.keys(b||{}).forEach(k=>{if(b[k]&&typeof b[k]==="object"&&!Array.isArray(b[k])){a[k]=merge(a[k]&&typeof a[k]==="object"?a[k]:{},b[k])}else a[k]=b[k]});return a};
 const load=()=>{try{return merge(JSON.parse(JSON.stringify(defaults)),JSON.parse(localStorage.getItem(KEY))||{})}catch{return JSON.parse(JSON.stringify(defaults))}};
-G.DAY=DAY;G.state=load();G.data={curriculum:null,quizzes:null,vocabulary:null,daily:null,videos:null,grammar:null,zero:null,studyMethod:null,errorEngine:null,cartoons:null};G.runtime={view:"dashboard",roadmapLevel:"A1",dailyLevel:null,grammarSection:"alphabet",grammarSearch:"",zeroSelected:null,notebookSource:"video",notebookMode:"daily",cartoonLevel:null,cartoonItemId:null,errorLevel:"A1",errorSkill:"all",errorExerciseId:null,errorTab:"train",errorReorder:[],toastTimer:null,mediaRecorder:null,mediaStream:null,mediaChunks:[],mediaUrl:null,speakingTimer:null,speakingStartedAt:null};
+G.DAY=DAY;G.state=load();G.data={curriculum:null,quizzes:null,vocabulary:null,daily:null,videos:null,grammar:null,zero:null,studyMethod:null,errorEngine:null,cartoons:null,dailyRoute:null};G.runtime={view:"dashboard",roadmapLevel:"A1",dailyLevel:null,grammarSection:"alphabet",grammarSearch:"",zeroSelected:null,notebookSource:"video",notebookMode:"daily",cartoonLevel:null,cartoonItemId:null,routeLevel:null,routeDialogueTextVisible:false,errorLevel:"A1",errorSkill:"all",errorExerciseId:null,errorTab:"train",errorReorder:[],toastTimer:null,mediaRecorder:null,mediaStream:null,mediaChunks:[],mediaUrl:null,speakingTimer:null,speakingStartedAt:null};
 G.save=()=>localStorage.setItem(KEY,JSON.stringify(G.state));
 G.reset=()=>{G.state=JSON.parse(JSON.stringify(defaults));G.save()};
 G.dateKey=(d=new Date())=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
@@ -97,6 +97,23 @@ G.setCartoonDone=(id,done=true)=>{if(done)G.state.cartoonProgress[id]={...(G.sta
 G.getCartoonNotes=id=>G.state.cartoonNotes[id]||{summary:"",words:"",sentences:"",reflection:""};
 G.setCartoonNotes=(id,patch)=>{G.state.cartoonNotes[id]={...G.getCartoonNotes(id),...(patch||{}),updatedAt:Date.now()};G.save()};
 G.cartoonProgressForLevel=level=>{const items=G.cartoonLevelData(level)?.items||[],done=items.filter(x=>G.cartoonDone(x.id)).length;return{done,total:items.length,pct:items.length?Math.round(done/items.length*100):0}};
+G.routeUnlockStatus=()=>{
+  const zero=G.zeroProgress(),a1=G.grammarProgress("A1");
+  const unlocked=zero.total>0&&zero.pct===100&&a1.total>0&&a1.pct===100;
+  return{unlocked,zero,a1,reason:unlocked?"مفتوح":"كمّل مسار الحروف من الصفر وقواعد A1 بنسبة 100% باش يتحل طريق اليوم."};
+};
+G.routeFor=(level,day)=>G.data.dailyRoute?.routes?.find(x=>x.level===level&&x.day===Number(day))||null;
+G.routeKey=(level,day)=>level+"::"+day;
+G.routeStepDone=(level,day,step)=>Boolean(G.state.routeChecks[G.routeKey(level,day)+"::"+step]);
+G.setRouteStep=(level,day,step,done=true)=>{const k=G.routeKey(level,day)+"::"+step;if(done){G.state.routeChecks[k]=Date.now();G.touch()}else delete G.state.routeChecks[k];G.save()};
+G.routeProgress=(level,day)=>{const steps=G.data.dailyRoute?.sequence||[];const done=steps.filter(s=>G.routeStepDone(level,day,s)).length;return{done,total:steps.length,pct:steps.length?Math.round(done/steps.length*100):0,complete:steps.length>0&&done===steps.length}};
+G.routeLevelProgress=level=>{const routes=G.data.dailyRoute?.routes?.filter(x=>x.level===level)||[];const done=routes.filter(r=>G.routeProgress(level,r.day).complete).length;return{done,total:routes.length,pct:routes.length?Math.round(done/routes.length*100):0}};
+G.nextRouteDay=level=>{const routes=G.data.dailyRoute?.routes?.filter(x=>x.level===level)||[];return routes.find(r=>!G.routeProgress(level,r.day).complete)?.day||routes.length||1};
+G.routeCanOpen=(level,day)=>{if(!G.routeUnlockStatus().unlocked)return false;const max=G.nextRouteDay(level);return Number(day)<=max};
+G.routeNoteKey=(level,day)=>G.routeKey(level,day);
+G.getRouteNotes=(level,day)=>G.state.routeNotes[G.routeNoteKey(level,day)]||{heardWords:"",shadowing:"",reflection:""};
+G.setRouteNotes=(level,day,patch)=>{const k=G.routeNoteKey(level,day);G.state.routeNotes[k]={...G.getRouteNotes(level,day),...(patch||{}),updatedAt:Date.now()};G.save()};
+
 
 
 G.escape=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));

@@ -2,7 +2,7 @@ window.GMP=window.GMP||{};
 (()=>{
 const G=window.GMP,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const E=G.escape,U=G.url;
-const titles={dashboard:["مسارك اليوم","الرئيسية"],daily:["120 يوم","30 يوم"],grammar:["82 درساً","القواعد والحروف"],notebook:["SMART NOTEBOOK LAB","الدفتر الذكي"],cartoons:["GERMAN IMMERSION","كرتون ألماني"],errors:["PERSONAL ERROR ENGINE","محرك الأخطاء"],roadmap:["A1 → B2","المسار"],review:["Spaced Review","المراجعة"],practice:["المهارات","التطبيق"],stats:["Progress","الإحصائيات"]};
+const titles={dashboard:["مسارك اليوم","الرئيسية"],route:["TAGESROUTE","طريق اليوم"],daily:["120 يوم","30 يوم"],grammar:["82 درساً","القواعد والحروف"],notebook:["SMART NOTEBOOK LAB","الدفتر الذكي"],cartoons:["GERMAN IMMERSION","كرتون ألماني"],errors:["PERSONAL ERROR ENGINE","محرك الأخطاء"],roadmap:["A1 → B2","المسار"],review:["Spaced Review","المراجعة"],practice:["المهارات","التطبيق"],stats:["Progress","الإحصائيات"]};
 const toast=msg=>{const el=$("#toast");el.textContent=msg;el.classList.add("show");clearTimeout(G.runtime.toastTimer);G.runtime.toastTimer=setTimeout(()=>el.classList.remove("show"),1900)};
 G.ui={toast};
 G.ui.speakGerman=text=>{
@@ -44,6 +44,7 @@ G.ui.startTask=t=>{
   if(t.type==="quiz"){G.ui.openQuiz(t.quizId);return}
   if(t.type==="review"){G.ui.setView("review");return}
   if(t.type==="error"){G.ui.setView("errors");return}
+  if(t.type==="route"){G.runtime.routeLevel=G.state.profile.level;G.state.routeSelected[G.state.profile.level]=t.routeDay||G.nextRouteDay(G.state.profile.level);G.save();G.ui.setView("route");return}
   if(t.type==="cartoon"){G.runtime.cartoonLevel=G.state.profile.level;G.runtime.cartoonItemId=t.cartoonId||null;G.ui.setView("cartoons");return}
   if(t.type==="zero"){G.runtime.zeroSelected=t.zeroIndex||G.state.zeroPathCurrent;G.ui.setView("grammar");return}
   if(t.type==="daily"){
@@ -63,6 +64,121 @@ const fmtNumber=n=>{
   return new Intl.NumberFormat("en",{notation:"compact",maximumFractionDigits:1}).format(n);
 };
 const wordCount=text=>String(text||"").trim()?String(text).trim().split(/\s+/).filter(Boolean).length:0;
+
+
+G.ui.renderRoute=()=>{
+  const unlock=G.routeUnlockStatus();
+  $("#routeZeroText").textContent=unlock.zero.done+"/"+unlock.zero.total;
+  $("#routeA1Text").textContent=unlock.a1.done+"/"+unlock.a1.total;
+  $("#routeZeroBar").style.width=unlock.zero.pct+"%";
+  $("#routeA1Bar").style.width=unlock.a1.pct+"%";
+  $("#routeLockReason").textContent=unlock.reason;
+  $("#routeLockPanel").hidden=unlock.unlocked;
+  $("#routeContent").hidden=!unlock.unlocked;
+  const badge=$("#routeLockBadge");if(badge){badge.hidden=unlock.unlocked;badge.textContent="🔒"}
+  if(!unlock.unlocked)return;
+
+  const levels=["A1","A2","B1","B2"];
+  let level=G.runtime.routeLevel||G.state.profile.level;
+  if(!levels.includes(level))level="A1";
+  G.runtime.routeLevel=level;
+  if(!G.state.routeSelected[level])G.state.routeSelected[level]=G.nextRouteDay(level);
+  let dayNo=Number(G.state.routeSelected[level])||1;
+  const maxOpen=G.nextRouteDay(level);
+  if(dayNo>maxOpen)dayNo=maxOpen;
+  const route=G.routeFor(level,dayNo);if(!route)return;
+  const progress=G.routeProgress(level,dayNo),lp=G.routeLevelProgress(level);
+
+  $("#routeLevelTabs").innerHTML=levels.map(id=>'<button class="'+(id===level?"active":"")+'" data-route-level="'+id+'">'+id+' <small>'+G.routeLevelProgress(id).done+'/30</small></button>').join("");
+  $$("#routeLevelTabs [data-route-level]").forEach(b=>b.onclick=()=>{
+    G.runtime.routeLevel=b.dataset.routeLevel;
+    if(!G.state.routeSelected[b.dataset.routeLevel])G.state.routeSelected[b.dataset.routeLevel]=G.nextRouteDay(b.dataset.routeLevel);
+    G.runtime.routeDialogueTextVisible=false;G.ui.renderRoute();
+  });
+
+  $("#routeTodayPct").textContent=progress.pct+"%";
+  $("#routeTodayCount").textContent=progress.done+"/"+progress.total;
+  $("#routeLevelLabel").textContent=level+" • اليوم "+dayNo;
+  $("#routeTheme").textContent=route.theme;
+  $("#routeObjective").textContent=route.objective;
+  $("#routeEstimated").textContent="≈ "+route.estimatedMinutes+" د";
+  $("#routeLevelProgress").textContent=lp.done+"/30 يوم";
+  $("#routeDayLabel").textContent="اليوم "+dayNo+" من 30";
+  $("#routePrevDay").disabled=dayNo<=1;
+  $("#routeNextDay").disabled=dayNo>=30||dayNo>=maxOpen;
+  $("#routePrevDay").onclick=()=>{if(dayNo>1){G.state.routeSelected[level]=dayNo-1;G.save();G.runtime.routeDialogueTextVisible=false;G.ui.renderRoute()}};
+  $("#routeNextDay").onclick=()=>{if(dayNo<30&&dayNo<maxOpen){G.state.routeSelected[level]=dayNo+1;G.save();G.runtime.routeDialogueTextVisible=false;G.ui.renderRoute()}};
+
+  const video=G.videoById(route.videoId),grammar=G.grammarTopic(route.grammarId);
+  const words=(route.vocabIds||[]).map(id=>G.data.vocabulary.cards.find(x=>x.id===id)).filter(Boolean);
+  const cartoon=G.cartoonItem(route.cartoon?.sourceId);
+  const notes=G.getRouteNotes(level,dayNo);
+  const seq=G.data.dailyRoute.sequence||[];
+  const firstIncomplete=seq.findIndex(st=>!G.routeStepDone(level,dayNo,st));
+  const canStep=i=>i<=firstIncomplete||firstIncomplete===-1;
+  const wrap=(key,i,label,title,body)=>'<article class="route-step '+(G.routeStepDone(level,dayNo,key)?"done ":"")+(canStep(i)?"":"locked")+'">'+
+    '<div class="route-step-index"><span>'+String(i+1).padStart(2,"0")+'</span><small>'+E(label)+'</small></div>'+
+    '<div class="route-step-body"><h3>'+E(title)+'</h3>'+body+'</div>'+
+    '<div class="route-step-action">'+(canStep(i)?'<button data-route-complete="'+key+'" class="'+(G.routeStepDone(level,dayNo,key)?"done-btn":"primary")+'">'+(G.routeStepDone(level,dayNo,key)?"✓ مكتمل":"كملت ←")+'</button>':'<span>🔒 كمّل اللي قبل</span>')+'</div>'+
+  '</article>';
+
+  const videoBody=video?'<p>'+E(video.provider)+' • '+E(video.skill)+' • ≈ '+(video.minutes||15)+' د</p>'+
+    '<div class="route-resource"><a href="'+U(video.url)+'" target="_blank" rel="noopener">▶ شاهد الفيديو المطلوب</a><span>'+E(video.note||"ركز فقط على موضوع اليوم، ما تفتحش فيديو ثاني قبل ما تكمل الخطوة.")+'</span></div>'+
+    (grammar?'<div class="route-mini-rule"><b>'+E(grammar.title)+'</b><span>'+E(grammar.summary)+'</span></div>':''):'<p>الفيديو غير موجود.</p>';
+
+  const handBody='<p>'+E(route.handwriting.method)+'</p><div class="route-copy-text" lang="de">'+E(route.handwriting.text)+'</div>'+
+    '<div class="route-tip">✎ الهدف هنا ماشي النسخ: شوف جملة → غطيها → اكتبها → قارن الخطأ.</div>';
+
+  const dialogueLines=route.dialogue.lines||[];
+  const dialogueBody='<p>'+E(route.dialogue.passes[0])+'</p>'+
+    '<div class="route-dialogue-actions"><button id="playRouteDialogue" class="secondary-btn">🔊 اسمع الحوار كامل</button><button id="toggleRouteTranscript" class="ghost">'+(G.runtime.routeDialogueTextVisible?"إخفاء النص":"كشف النص بعد السماع")+'</button></div>'+
+    '<div id="routeTranscript" class="route-transcript" '+(G.runtime.routeDialogueTextVisible?"":"hidden")+'> '+dialogueLines.map(x=>'<article><b>'+E(x.speaker)+'</b><span lang="de">'+E(x.text)+'</span><button data-route-speak="'+E(x.text)+'">🔊</button></article>').join("")+'</div>'+
+    '<ol class="route-passes">'+route.dialogue.passes.map(x=>'<li>'+E(x)+'</li>').join("")+'</ol>'+
+    '<div class="route-note-fields"><label>شنو سمعت؟<textarea id="routeHeardWords" rows="2">'+E(notes.heardWords||"")+'</textarea></label><label>جمل Shadowing<textarea id="routeShadowing" rows="2">'+E(notes.shadowing||"")+'</textarea></label></div>';
+
+  const vocabBody='<p>راجع غير هاد 7 كلمات، وقل كل كلمة بصوتك ثم استعمل 3 منهم في جمل.</p><div class="route-vocab">'+words.map(v=>'<article><b lang="de">'+E(v.de)+'</b><span>'+E(v.ar)+'</span><small>'+E(v.example||"")+'</small><button data-route-speak="'+E(v.de)+'">🔊</button></article>').join("")+'</div>';
+
+  const cartoonBody=cartoon?'<p>'+E(route.cartoon.instruction)+'</p><div class="route-cartoon-box"><div><small>'+E(cartoon.provider)+'</small><h4>'+E(cartoon.title)+'</h4><p>'+E(cartoon.why)+'</p></div><a href="'+U(cartoon.url)+'" target="_blank" rel="noopener">▶ افتح المصدر الرسمي</a></div>'+
+    '<ol class="route-passes"><li>المرة 1: بلا ترجمة، فهم القصة فقط.</li><li>المرة 2: Untertitel ألمانية إذا متوفرة، خذ 5 كلمات.</li><li>المرة 3: بلا ترجمة + Shadowing لجوج جمل.</li></ol>':'<p>ما كاينش مصدر كرتون مربوط بهاد اليوم.</p>';
+
+  const reflectionBody='<div class="route-reflection"><section><small>WRITING</small><p>'+E(route.writingPrompt)+'</p></section><section><small>SPEAKING</small><p>'+E(route.speakingPrompt)+'</p></section></div>'+
+    '<label class="route-reflection-note">شنو تعلمت اليوم؟ شنو كان صعيب؟<textarea id="routeReflection" rows="4">'+E(notes.reflection||"")+'</textarea></label>'+
+    '<div class="route-tip">قبل ما تسالي: زيد أي خطأ مهم لدفتر الأخطاء، وخلي صفحة الدفتر فيها 3 جمل من راسك.</div>';
+
+  $("#routeSteps").innerHTML=
+    wrap("video",0,"WATCH","1. فيديو اليوم",videoBody)+
+    wrap("handwriting",1,"WRITE","2. اكتب النص بطريقة ذكية",handBody)+
+    wrap("dialogue",2,"LISTEN","3. محادثة اليوم",dialogueBody)+
+    wrap("vocabulary",3,"WORDS","4. كلمات اليوم",vocabBody)+
+    wrap("cartoon",4,"IMMERSION","5. كرتون اليوم",cartoonBody)+
+    wrap("reflection",5,"CLOSE","6. أغلق اليوم بذكاء",reflectionBody);
+
+  const saveNotes=()=>{
+    G.setRouteNotes(level,dayNo,{
+      heardWords:$("#routeHeardWords")?.value||notes.heardWords||"",
+      shadowing:$("#routeShadowing")?.value||notes.shadowing||"",
+      reflection:$("#routeReflection")?.value||notes.reflection||""
+    });
+  };
+  ["routeHeardWords","routeShadowing","routeReflection"].forEach(id=>{const n=$("#"+id);if(n)n.oninput=saveNotes});
+  $$("#routeSteps [data-route-speak]").forEach(b=>b.onclick=()=>G.ui.speakGerman(b.dataset.routeSpeak));
+  const toggle=$("#toggleRouteTranscript");if(toggle)toggle.onclick=()=>{G.runtime.routeDialogueTextVisible=!G.runtime.routeDialogueTextVisible;G.ui.renderRoute()};
+  const play=$("#playRouteDialogue");if(play)play.onclick=()=>{
+    if(!("speechSynthesis" in window)){toast("المتصفح ما كيدعمش الصوت");return}
+    speechSynthesis.cancel();let i=0;
+    const next=()=>{if(i>=dialogueLines.length)return;const u=new SpeechSynthesisUtterance(dialogueLines[i++].text);u.lang="de-DE";u.rate=.82;u.onend=next;speechSynthesis.speak(u)};next();
+  };
+  $$("#routeSteps [data-route-complete]").forEach(b=>b.onclick=()=>{
+    const key=b.dataset.routeComplete,was=G.routeStepDone(level,dayNo,key);
+    if(key==="dialogue")saveNotes();
+    if(key==="reflection"&&!($("#routeReflection")?.value||"").trim()&&!was){toast("كتب سطر واحد على الأقل: شنو تعلمت اليوم؟");return}
+    G.setRouteStep(level,dayNo,key,!was);
+    const now=G.routeProgress(level,dayNo);
+    if(now.complete&&dayNo<30){G.state.routeSelected[level]=dayNo+1;G.save();toast("اليوم كامل ✓ تفتح اليوم "+(dayNo+1))}
+    else toast(!was?"تسجلت الخطوة ✓":"تلغى الإنجاز");
+    G.ui.renderAll();
+  });
+};
 
 G.ui.renderDaily=()=>{
   const levels=G.data.daily.levels.map(x=>x.level);
@@ -787,6 +903,6 @@ G.ui.openQuiz=id=>{
   $("#quizDialog").showModal();
 };
 
-G.ui.renderView=v=>({dashboard:G.ui.renderDashboard,daily:G.ui.renderDaily,grammar:G.ui.renderGrammar,notebook:G.ui.renderNotebookLab,cartoons:G.ui.renderCartoons,errors:G.ui.renderErrorEngine,roadmap:G.ui.renderRoadmap,review:G.ui.renderReview,practice:G.ui.renderPractice,stats:G.ui.renderStats}[v]||(()=>{}))();
-G.ui.renderAll=()=>{G.ui.renderDashboard();G.ui.renderDaily();G.ui.renderGrammar();G.ui.renderNotebookLab();G.ui.renderCartoons();G.ui.renderErrorEngine();G.ui.renderRoadmap();G.ui.renderReview();G.ui.renderPractice();G.ui.renderStats();$("#levelChip").textContent=G.state.profile.level};
+G.ui.renderView=v=>({dashboard:G.ui.renderDashboard,route:G.ui.renderRoute,daily:G.ui.renderDaily,grammar:G.ui.renderGrammar,notebook:G.ui.renderNotebookLab,cartoons:G.ui.renderCartoons,errors:G.ui.renderErrorEngine,roadmap:G.ui.renderRoadmap,review:G.ui.renderReview,practice:G.ui.renderPractice,stats:G.ui.renderStats}[v]||(()=>{}))();
+G.ui.renderAll=()=>{G.ui.renderDashboard();G.ui.renderRoute();G.ui.renderDaily();G.ui.renderGrammar();G.ui.renderNotebookLab();G.ui.renderCartoons();G.ui.renderErrorEngine();G.ui.renderRoadmap();G.ui.renderReview();G.ui.renderPractice();G.ui.renderStats();$("#levelChip").textContent=G.state.profile.level};
 })();
