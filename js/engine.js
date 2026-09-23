@@ -150,14 +150,14 @@ G.todayPlan=()=>{
   if(quiz&&quiz.quiz&&used+15<=target+15){tasks.push({type:"quiz",title:"اختبار: "+quiz.module.title,detail:"قصير • يصنع مراجعات من الأخطاء",minutes:15,quizId:quiz.quiz.id,view:"roadmap"});used+=15}
   const cartoons=G.cartoonLevelData?.(G.state.profile.level)?.items||[];
   const nextCartoon=cartoons.find(x=>!G.cartoonDone(x.id));
-  if(nextCartoon&&target>=90&&used+15<=target+20){
+  if(!routeTask&&nextCartoon&&target>=90&&used+15<=target+20){
     const min=Math.min(20,nextCartoon.minutes||15);
     tasks.push({type:"cartoon",title:"Immersion: "+nextCartoon.title,detail:"كرتون ألماني • 3-pass listening",minutes:min,view:"cartoons",cartoonId:nextCartoon.id});
     used+=min;
   }
 
   const practice=G.nextPractice();
-  if(practice&&used+25<=target+20){const min=practice.skill==="اختبار"?35:practice.skill==="الكتابة"?30:25;tasks.push({type:"practice",title:practice.title,detail:practice.skill+" • "+practice.provider,minutes:min,url:practice.url,resourceId:practice.id,view:"practice"});used+=min}
+  if(!routeTask&&practice&&used+25<=target+20){const min=practice.skill==="اختبار"?35:practice.skill==="الكتابة"?30:25;tasks.push({type:"practice",title:practice.title,detail:practice.skill+" • "+practice.provider,minutes:min,url:practice.url,resourceId:practice.id,view:"practice"});used+=min}
   return{tasks,minutes:used,target,daily};
 };
 
