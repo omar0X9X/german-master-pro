@@ -37,6 +37,7 @@ jobs:
           const studyMethod=JSON.parse(fs.readFileSync("data/study-method.json","utf8"));
           const errorEngine=JSON.parse(fs.readFileSync("data/error-engine.json","utf8"));
           const cartoons=JSON.parse(fs.readFileSync("data/cartoons.json","utf8"));
+          const dailyRoute=JSON.parse(fs.readFileSync("data/daily-route.json","utf8"));
           const expected=["A1","A2","B1","B2"];
 
           if(c.levels.map(x=>x.id).join(",")!==expected.join(",")) throw new Error("Bad curriculum level order");
@@ -149,6 +150,28 @@ jobs:
             if(count<24) throw new Error(level+" needs at least 24 error exercises");
           }
 
+          if(dailyRoute.totalRoutes!==120||dailyRoute.daysPerLevel!==30) throw new Error("Daily Route must contain 120 routes");
+          if(dailyRoute.sequence.join(",")!=="video,handwriting,dialogue,vocabulary,cartoon,reflection") throw new Error("Bad Daily Route sequence");
+          const routeIds=new Set();
+          for(const level of expected){
+            const list=dailyRoute.routes.filter(x=>x.level===level);
+            if(list.length!==30) throw new Error(level+" must have 30 routes");
+            list.forEach((route,index)=>{
+              if(route.day!==index+1) throw new Error("Bad route day order "+level);
+              if(routeIds.has(route.id)) throw new Error("Duplicate route "+route.id);
+              routeIds.add(route.id);
+              if(!videoIds.has(route.videoId)) throw new Error("Unknown route video "+route.videoId);
+              if(!grammarIds.has(route.grammarId)) throw new Error("Unknown route grammar "+route.grammarId);
+              if(!route.handwriting?.text||route.handwriting.text.length<80) throw new Error("Route handwriting missing "+route.id);
+              if(!Array.isArray(route.dialogue?.lines)||route.dialogue.lines.length<6) throw new Error("Route dialogue too small "+route.id);
+              if(!Array.isArray(route.vocabIds)||route.vocabIds.length<7) throw new Error("Route vocab missing "+route.id);
+              for(const id of route.vocabIds) if(!vocabIds.has(id)) throw new Error("Unknown route vocab "+id);
+              const toon=cartoons.levels.flatMap(x=>x.items).find(x=>x.id===route.cartoon?.sourceId);
+              if(!toon) throw new Error("Unknown route cartoon "+route.id);
+              if(!route.writingPrompt||!route.speakingPrompt) throw new Error("Route closing task incomplete "+route.id);
+            });
+          }
+
           if(cartoons.levels.map(x=>x.level).join(",")!==expected.join(",")) throw new Error("Bad cartoon level order");
           let cartoonItems=0;
           for(const pack of cartoons.levels){
@@ -239,12 +262,17 @@ jobs:
           test -f data/study-method.json
           test -f data/error-engine.json
           test -f data/cartoons.json
+          test -f data/daily-route.json
           test -f js/error-engine.js
           grep -q 'data-panel="daily"' index.html
           grep -q 'data-panel="grammar"' index.html
           grep -q 'data-panel="errors"' index.html
           grep -q 'data-panel="notebook"' index.html
           grep -q 'data-panel="cartoons"' index.html
+          grep -q 'data-panel="route"' index.html
+          grep -q 'id="routeLockPanel"' index.html
+          grep -q 'id="routeSteps"' index.html
+          grep -q 'id="routeLevelTabs"' index.html
           grep -q 'id="notebookPageScore"' index.html
           grep -q 'id="importTodayNotebook"' index.html
           grep -q 'id="notebookPaperPreview"' index.html
@@ -271,6 +299,7 @@ jobs:
           grep -q 'G.ui.renderErrorEngine' js/ui.js
           grep -q 'G.ui.renderNotebookLab' js/ui.js
           grep -q 'G.ui.renderCartoons' js/ui.js
+          grep -q 'G.ui.renderRoute' js/ui.js
           grep -q 'G.captureQuizAnswer' js/ui.js
           grep -q 'G.ui.renderZeroPath' js/ui.js
           grep -q 'G.ui.renderNotebookAcademy' js/ui.js
@@ -279,6 +308,8 @@ jobs:
           grep -q 'G.errorUnlockStatus' js/error-engine.js
           grep -q 'G.saveNotebookPage' js/store.js
           grep -q 'G.cartoonProgressForLevel' js/store.js
+          grep -q 'G.routeUnlockStatus' js/store.js
+          grep -q 'G.routeProgress' js/store.js
           grep -q 'type:"cartoon"' js/engine.js
           grep -q 'G.errorLevelStats' js/error-engine.js
           grep -q 'G.recordErrorAttempt' js/error-engine.js
@@ -290,11 +321,13 @@ jobs:
           grep -q 'study-method.json' js/app.js
           grep -q 'error-engine.json' js/app.js
           grep -q 'cartoons.json' js/app.js
+          grep -q 'daily-route.json' js/app.js
           grep -q 'grammar.json' sw.js
           grep -q 'zero-path.json' sw.js
           grep -q 'study-method.json' sw.js
           grep -q 'error-engine.json' sw.js
           grep -q 'cartoons.json' sw.js
+          grep -q 'daily-route.json' sw.js
           grep -q 'error-engine.js' sw.js
           grep -q 'serviceWorker' js/app.js
           node - <<'NODE'
