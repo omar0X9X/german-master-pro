@@ -2,8 +2,8 @@ window.GMP=window.GMP||{};
 document.addEventListener("DOMContentLoaded",async()=>{
 const G=window.GMP,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 try{
-  const [c,q,v,daily,videos,grammar,zero,studyMethod,errorEngine,cartoons]=await Promise.all(["./data/curriculum.json","./data/quizzes.json","./data/vocabulary.json","./data/daily-plan.json","./data/videos.json","./data/grammar.json","./data/zero-path.json","./data/study-method.json","./data/error-engine.json","./data/cartoons.json"].map(async url=>{const r=await fetch(url,{cache:"no-store"});if(!r.ok)throw new Error(url+" "+r.status);return r.json()}));
-  G.data.curriculum=c;G.data.quizzes=q;G.data.vocabulary=v;G.data.daily=daily;G.data.videos=videos;G.data.grammar=grammar;G.data.zero=zero;G.data.studyMethod=studyMethod;G.data.errorEngine=errorEngine;G.data.cartoons=cartoons;
+  const [c,q,v,daily,videos,grammar,zero,studyMethod,errorEngine,cartoons,mission]=await Promise.all(["./data/curriculum.json","./data/quizzes.json","./data/vocabulary.json","./data/daily-plan.json","./data/videos.json","./data/grammar.json","./data/zero-path.json","./data/study-method.json","./data/error-engine.json","./data/cartoons.json","./data/daily-mission.json"].map(async url=>{const r=await fetch(url,{cache:"no-store"});if(!r.ok)throw new Error(url+" "+r.status);return r.json()}));
+  G.data.curriculum=c;G.data.quizzes=q;G.data.vocabulary=v;G.data.daily=daily;G.data.videos=videos;G.data.grammar=grammar;G.data.zero=zero;G.data.studyMethod=studyMethod;G.data.errorEngine=errorEngine;G.data.cartoons=cartoons;G.data.mission=mission;
 }catch(err){
   console.error(err);document.querySelector("main").innerHTML='<section class="card"><h2>تعذر تحميل بيانات المشروع</h2><p class="muted">شغّل الموقع عبر خادم HTTP، وليس file://، ثم أعد المحاولة.</p></section>';return;
 }
