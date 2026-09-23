@@ -153,6 +153,7 @@ jobs:
           if(dailyRoute.totalRoutes!==120||dailyRoute.daysPerLevel!==30) throw new Error("Daily Route must contain 120 routes");
           if(dailyRoute.sequence.join(",")!=="video,handwriting,dialogue,vocabulary,cartoon,reflection") throw new Error("Bad Daily Route sequence");
           const routeIds=new Set();
+          const routeVocabIds=new Set(v.cards.map(x=>x.id));
           for(const level of expected){
             const list=dailyRoute.routes.filter(x=>x.level===level);
             if(list.length!==30) throw new Error(level+" must have 30 routes");
@@ -165,7 +166,7 @@ jobs:
               if(!route.handwriting?.text||route.handwriting.text.length<80) throw new Error("Route handwriting missing "+route.id);
               if(!Array.isArray(route.dialogue?.lines)||route.dialogue.lines.length<6) throw new Error("Route dialogue too small "+route.id);
               if(!Array.isArray(route.vocabIds)||route.vocabIds.length<7) throw new Error("Route vocab missing "+route.id);
-              for(const id of route.vocabIds) if(!vocabIds.has(id)) throw new Error("Unknown route vocab "+id);
+              for(const id of route.vocabIds) if(!routeVocabIds.has(id)) throw new Error("Unknown route vocab "+id);
               const toon=cartoons.levels.flatMap(x=>x.items).find(x=>x.id===route.cartoon?.sourceId);
               if(!toon) throw new Error("Unknown route cartoon "+route.id);
               if(!route.writingPrompt||!route.speakingPrompt) throw new Error("Route closing task incomplete "+route.id);
