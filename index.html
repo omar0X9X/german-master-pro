@@ -20,6 +20,7 @@
       <button class="nav active" data-view="dashboard">⌂ <span>الرئيسية</span></button>
       <button class="nav" data-view="daily">▦ <span>30 يوم</span></button>
       <button class="nav" data-view="grammar">Aa <span>القواعد والحروف</span></button>
+      <button class="nav" data-view="mission">➜ <span>طريق اليوم</span><em id="missionLockBadge">🔒</em></button>
       <button class="nav" data-view="notebook">✎ <span>الدفتر الذكي</span></button>
       <button class="nav" data-view="cartoons">▶ <span>كرتون ألماني</span></button>
       <button class="nav" data-view="errors">⚠ <span>محرك الأخطاء</span><em id="errorLockBadge">🔒</em></button>
@@ -232,6 +233,69 @@
 
 
 
+
+      <section class="view" data-panel="mission">
+        <section id="missionLockPanel" class="mission-lock-panel">
+          <div class="mission-lock-icon">🔒</div>
+          <small>LOCKED • TAGESMISSION</small>
+          <h2>طريق اليوم مازال مقفول</h2>
+          <p id="missionLockReason">كمّل الحروف وقواعد A1 أولاً. من بعد الموقع هو اللي غادي يقودك كل نهار خطوة بخطوة.</p>
+          <div class="mission-unlock-grid">
+            <article><b>Zero → A1</b><span id="missionUnlockZero">0/18</span><div class="track"><i id="missionUnlockZeroBar"></i></div></article>
+            <article><b>قواعد A1</b><span id="missionUnlockGrammar">0/20</span><div class="track"><i id="missionUnlockGrammarBar"></i></div></article>
+          </div>
+          <button class="primary" data-go="grammar">كمّل القواعد والحروف</button>
+        </section>
+
+        <div id="missionAcademy" hidden>
+          <section class="mission-hero">
+            <div>
+              <span class="kicker">TAGESMISSION • NO CONFUSION</span>
+              <h2>اليوم عندك طريق واحد فقط.</h2>
+              <p>فيديو جديد → نص جديد → محادثة جديدة → كرتون جديد → إنتاج من راسك → مراجعة. ما تختارش، غير تبع الطريق.</p>
+            </div>
+            <div class="mission-hero-progress">
+              <b id="missionLevelPct">0%</b>
+              <span id="missionDaysDone">0/30 يوم</span>
+            </div>
+          </section>
+
+          <div id="missionLevelTabs" class="tabs mission-level-tabs"></div>
+
+          <section class="card mission-calendar-card">
+            <header>
+              <div><small>30-DAY ROAD</small><h3 id="missionLevelTitle">A1 • طريق 30 يوم</h3></div>
+              <span class="note">اليوم اللي قدامك يتحل غير من بعد ما تسالي اللي قبله</span>
+            </header>
+            <div id="missionDayGrid" class="mission-day-grid"></div>
+          </section>
+
+          <section class="mission-day-head">
+            <div>
+              <small id="missionDayLabel">DAY 01</small>
+              <h2 id="missionTheme">—</h2>
+              <p id="missionObjective">—</p>
+            </div>
+            <div class="mission-day-score"><b id="missionDayPct">0%</b><span id="missionStageCount">0/6 مراحل</span></div>
+          </section>
+
+          <section class="card mission-stage-map-card">
+            <header><div><small>STEP BY STEP</small><h3>مراحل اليوم</h3></div><span class="note">ما تقدرش تنط للمرحلة الموالية</span></header>
+            <div id="missionStages" class="mission-stages"></div>
+          </section>
+
+          <section class="card mission-stage-card">
+            <div id="missionStageContent" class="mission-stage-content"></div>
+          </section>
+
+          <section class="mission-footer-nav">
+            <button id="missionPrevDay" class="ghost">→ اليوم السابق</button>
+            <button id="missionOpenNotebook" class="ghost">✎ افتح دفتر اليوم</button>
+            <button id="missionNextDay" class="primary">اليوم التالي ←</button>
+          </section>
+        </div>
+      </section>
+
       <section class="view" data-panel="notebook">
         <section class="notebook-lab-hero">
           <div>
@@ -435,6 +499,7 @@
   <button class="active" data-view="dashboard">⌂<span>الرئيسية</span></button>
   <button data-view="daily">▦<span>30 يوم</span></button>
   <button data-view="grammar">Aa<span>قواعد</span></button>
+  <button data-view="mission">➜<span>طريق</span></button>
   <button data-view="notebook">✎<span>دفتر</span></button>
   <button data-view="cartoons">▶<span>كرتون</span></button>
   <button data-view="errors">⚠<span>أخطائي</span></button>
@@ -470,6 +535,7 @@
 <script src="./js/store.js" defer></script>
 <script src="./js/engine.js" defer></script>
 <script src="./js/error-engine.js" defer></script>
+<script src="./js/mission-engine.js" defer></script>
 <script src="./js/ui.js" defer></script>
 <script src="./js/app.js" defer></script>
 </body>
