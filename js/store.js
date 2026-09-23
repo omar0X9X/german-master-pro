@@ -6,11 +6,12 @@ const defaults={
   completedLessons:{},completedResources:{},completedGrammar:{},grammarDrills:{},reviewRecords:{},quizResults:[],activity:[],
   lastView:"dashboard",practiceSkill:"الكل",
   dailyChecks:{},dailyWriting:{},dailySpeaking:{},dailySelected:{A1:1,A2:1,B1:1,B2:1},zeroPathDone:{},zeroPathCurrent:1,
-  errorAttempts:[],errorNotebook:[],errorManual:[]
+  errorAttempts:[],errorNotebook:[],errorManual:[],
+  notebookPages:{},cartoonProgress:{},cartoonNotes:{}
 };
 const merge=(a,b)=>{Object.keys(b||{}).forEach(k=>{if(b[k]&&typeof b[k]==="object"&&!Array.isArray(b[k])){a[k]=merge(a[k]&&typeof a[k]==="object"?a[k]:{},b[k])}else a[k]=b[k]});return a};
 const load=()=>{try{return merge(JSON.parse(JSON.stringify(defaults)),JSON.parse(localStorage.getItem(KEY))||{})}catch{return JSON.parse(JSON.stringify(defaults))}};
-G.DAY=DAY;G.state=load();G.data={curriculum:null,quizzes:null,vocabulary:null,daily:null,videos:null,grammar:null,zero:null,studyMethod:null,errorEngine:null};G.runtime={view:"dashboard",roadmapLevel:"A1",dailyLevel:null,grammarSection:"alphabet",grammarSearch:"",zeroSelected:null,notebookSource:"video",errorLevel:"A1",errorSkill:"all",errorExerciseId:null,errorTab:"train",errorReorder:[],toastTimer:null,mediaRecorder:null,mediaStream:null,mediaChunks:[],mediaUrl:null,speakingTimer:null,speakingStartedAt:null};
+G.DAY=DAY;G.state=load();G.data={curriculum:null,quizzes:null,vocabulary:null,daily:null,videos:null,grammar:null,zero:null,studyMethod:null,errorEngine:null,cartoons:null};G.runtime={view:"dashboard",roadmapLevel:"A1",dailyLevel:null,grammarSection:"alphabet",grammarSearch:"",zeroSelected:null,notebookSource:"video",notebookMode:"daily",cartoonLevel:null,cartoonItemId:null,errorLevel:"A1",errorSkill:"all",errorExerciseId:null,errorTab:"train",errorReorder:[],toastTimer:null,mediaRecorder:null,mediaStream:null,mediaChunks:[],mediaUrl:null,speakingTimer:null,speakingStartedAt:null};
 G.save=()=>localStorage.setItem(KEY,JSON.stringify(G.state));
 G.reset=()=>{G.state=JSON.parse(JSON.stringify(defaults));G.save()};
 G.dateKey=(d=new Date())=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
@@ -86,6 +87,17 @@ G.setDailyWriting=(levelId,day,text)=>{G.state.dailyWriting[G.dailyWritingKey(le
 G.dailySpeakingKey=(levelId,day)=>levelId+"::"+day;
 G.getDailySpeaking=(levelId,day)=>G.state.dailySpeaking[G.dailySpeakingKey(levelId,day)]||{rating:null,seconds:0,note:""};
 G.setDailySpeaking=(levelId,day,patch)=>{const k=G.dailySpeakingKey(levelId,day);G.state.dailySpeaking[k]={...G.getDailySpeaking(levelId,day),...(patch||{})};G.save()};
+G.notebookKey=(level=G.state.profile.level,date=G.dateKey())=>level+"::"+date;
+G.getNotebookPage=(level=G.state.profile.level,date=G.dateKey())=>G.state.notebookPages[G.notebookKey(level,date)]||{level,date,theme:"",rule:"",examples:["",""],words:Array(7).fill(""),sentences:["","",""],mistakeWrong:"",mistakeRight:"",mistakeWhy:"",recall:"",summary:"",review:{d1:false,d3:false,d7:false}};
+G.saveNotebookPage=(level,date,page)=>{const k=G.notebookKey(level,date);G.state.notebookPages[k]={...G.getNotebookPage(level,date),...(page||{}),level,date,updatedAt:Date.now()};G.touch();G.save()};
+G.cartoonLevelData=level=>G.data.cartoons?.levels?.find(x=>x.level===level)||null;
+G.cartoonItem=id=>G.data.cartoons?.levels?.flatMap(x=>x.items).find(x=>x.id===id)||null;
+G.cartoonDone=id=>Boolean(G.state.cartoonProgress[id]?.doneAt);
+G.setCartoonDone=(id,done=true)=>{if(done)G.state.cartoonProgress[id]={...(G.state.cartoonProgress[id]||{}),doneAt:Date.now()};else delete G.state.cartoonProgress[id];if(done)G.touch();G.save()};
+G.getCartoonNotes=id=>G.state.cartoonNotes[id]||{summary:"",words:"",sentences:"",reflection:""};
+G.setCartoonNotes=(id,patch)=>{G.state.cartoonNotes[id]={...G.getCartoonNotes(id),...(patch||{}),updatedAt:Date.now()};G.save()};
+G.cartoonProgressForLevel=level=>{const items=G.cartoonLevelData(level)?.items||[],done=items.filter(x=>G.cartoonDone(x.id)).length;return{done,total:items.length,pct:items.length?Math.round(done/items.length*100):0}};
+
 
 G.escape=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
 G.url=v=>{try{const u=new URL(v);return["https:","http:"].includes(u.protocol)?u.href:"#"}catch{return"#"}};

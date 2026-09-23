@@ -36,6 +36,7 @@ jobs:
           const zero=JSON.parse(fs.readFileSync("data/zero-path.json","utf8"));
           const studyMethod=JSON.parse(fs.readFileSync("data/study-method.json","utf8"));
           const errorEngine=JSON.parse(fs.readFileSync("data/error-engine.json","utf8"));
+          const cartoons=JSON.parse(fs.readFileSync("data/cartoons.json","utf8"));
           const expected=["A1","A2","B1","B2"];
 
           if(c.levels.map(x=>x.id).join(",")!==expected.join(",")) throw new Error("Bad curriculum level order");
@@ -148,6 +149,21 @@ jobs:
             if(count<24) throw new Error(level+" needs at least 24 error exercises");
           }
 
+          if(cartoons.levels.map(x=>x.level).join(",")!==expected.join(",")) throw new Error("Bad cartoon level order");
+          let cartoonItems=0;
+          for(const pack of cartoons.levels){
+            if(!Array.isArray(pack.items)||pack.items.length<3) throw new Error(pack.level+" needs at least 3 cartoon items");
+            for(const item of pack.items){
+              cartoonItems++;
+              if(!item.id||!item.title||!item.provider||!item.official) throw new Error("Incomplete cartoon item "+item.id);
+              if(!/^https:\/\//.test(item.url)) throw new Error("Bad cartoon URL "+item.id);
+              if(!item.subtitles||!item.why||!item.arabicSummary) throw new Error("Missing cartoon learning metadata "+item.id);
+              if(!Array.isArray(item.vocab)||item.vocab.length<5) throw new Error("Cartoon vocab too small "+item.id);
+              if(!item.task?.listen||!item.task?.read||!item.task?.speak||!item.task?.write) throw new Error("Cartoon task incomplete "+item.id);
+            }
+          }
+          if(cartoonItems<12) throw new Error("Cartoon immersion library too small");
+
           if(!Array.isArray(studyMethod.sources)||studyMethod.sources.length<8) throw new Error("Smart notebook needs at least 8 source methods");
           const requiredMethods=["video","grammar","reading","listening","vocab","writing","speaking","review"];
           for(const id of requiredMethods){
@@ -222,10 +238,19 @@ jobs:
           test -f data/zero-path.json
           test -f data/study-method.json
           test -f data/error-engine.json
+          test -f data/cartoons.json
           test -f js/error-engine.js
           grep -q 'data-panel="daily"' index.html
           grep -q 'data-panel="grammar"' index.html
           grep -q 'data-panel="errors"' index.html
+          grep -q 'data-panel="notebook"' index.html
+          grep -q 'data-panel="cartoons"' index.html
+          grep -q 'id="notebookPageScore"' index.html
+          grep -q 'id="importTodayNotebook"' index.html
+          grep -q 'id="notebookPaperPreview"' index.html
+          grep -q 'id="cartoonLevelTabs"' index.html
+          grep -q 'id="cartoonCards"' index.html
+          grep -q 'id="cartoonSelectedTraining"' index.html
           grep -q 'id="errorLockPanel"' index.html
           grep -q 'id="errorSkillGrid"' index.html
           grep -q 'id="errorExerciseArea"' index.html
@@ -244,12 +269,17 @@ jobs:
           grep -q 'G.grammarProgress' js/store.js
           grep -q 'G.ui.renderGrammar' js/ui.js
           grep -q 'G.ui.renderErrorEngine' js/ui.js
+          grep -q 'G.ui.renderNotebookLab' js/ui.js
+          grep -q 'G.ui.renderCartoons' js/ui.js
           grep -q 'G.captureQuizAnswer' js/ui.js
           grep -q 'G.ui.renderZeroPath' js/ui.js
           grep -q 'G.ui.renderNotebookAcademy' js/ui.js
           grep -q 'speechSynthesis' js/ui.js
           grep -q 'G.zeroProgress' js/store.js
           grep -q 'G.errorUnlockStatus' js/error-engine.js
+          grep -q 'G.saveNotebookPage' js/store.js
+          grep -q 'G.cartoonProgressForLevel' js/store.js
+          grep -q 'type:"cartoon"' js/engine.js
           grep -q 'G.errorLevelStats' js/error-engine.js
           grep -q 'G.recordErrorAttempt' js/error-engine.js
           grep -q 'G.addManualError' js/error-engine.js
@@ -259,10 +289,12 @@ jobs:
           grep -q 'zero-path.json' js/app.js
           grep -q 'study-method.json' js/app.js
           grep -q 'error-engine.json' js/app.js
+          grep -q 'cartoons.json' js/app.js
           grep -q 'grammar.json' sw.js
           grep -q 'zero-path.json' sw.js
           grep -q 'study-method.json' sw.js
           grep -q 'error-engine.json' sw.js
+          grep -q 'cartoons.json' sw.js
           grep -q 'error-engine.js' sw.js
           grep -q 'serviceWorker' js/app.js
           node - <<'NODE'
