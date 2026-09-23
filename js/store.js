@@ -7,11 +7,12 @@ const defaults={
   lastView:"dashboard",practiceSkill:"الكل",
   dailyChecks:{},dailyWriting:{},dailySpeaking:{},dailySelected:{A1:1,A2:1,B1:1,B2:1},zeroPathDone:{},zeroPathCurrent:1,
   errorAttempts:[],errorNotebook:[],errorManual:[],
-  notebookPages:{},cartoonProgress:{},cartoonNotes:{}
+  notebookPages:{},cartoonProgress:{},cartoonNotes:{},
+  missionChecks:{},missionSelected:{A1:1,A2:1,B1:1,B2:1},missionNotes:{},missionVideoHistory:{A1:[],A2:[],B1:[],B2:[]}
 };
 const merge=(a,b)=>{Object.keys(b||{}).forEach(k=>{if(b[k]&&typeof b[k]==="object"&&!Array.isArray(b[k])){a[k]=merge(a[k]&&typeof a[k]==="object"?a[k]:{},b[k])}else a[k]=b[k]});return a};
 const load=()=>{try{return merge(JSON.parse(JSON.stringify(defaults)),JSON.parse(localStorage.getItem(KEY))||{})}catch{return JSON.parse(JSON.stringify(defaults))}};
-G.DAY=DAY;G.state=load();G.data={curriculum:null,quizzes:null,vocabulary:null,daily:null,videos:null,grammar:null,zero:null,studyMethod:null,errorEngine:null,cartoons:null};G.runtime={view:"dashboard",roadmapLevel:"A1",dailyLevel:null,grammarSection:"alphabet",grammarSearch:"",zeroSelected:null,notebookSource:"video",notebookMode:"daily",cartoonLevel:null,cartoonItemId:null,errorLevel:"A1",errorSkill:"all",errorExerciseId:null,errorTab:"train",errorReorder:[],toastTimer:null,mediaRecorder:null,mediaStream:null,mediaChunks:[],mediaUrl:null,speakingTimer:null,speakingStartedAt:null};
+G.DAY=DAY;G.state=load();G.data={curriculum:null,quizzes:null,vocabulary:null,daily:null,videos:null,grammar:null,zero:null,studyMethod:null,errorEngine:null,cartoons:null,mission:null};G.runtime={view:"dashboard",roadmapLevel:"A1",dailyLevel:null,grammarSection:"alphabet",grammarSearch:"",zeroSelected:null,notebookSource:"video",notebookMode:"daily",cartoonLevel:null,cartoonItemId:null,missionLevel:null,errorLevel:"A1",errorSkill:"all",errorExerciseId:null,errorTab:"train",errorReorder:[],toastTimer:null,mediaRecorder:null,mediaStream:null,mediaChunks:[],mediaUrl:null,speakingTimer:null,speakingStartedAt:null};
 G.save=()=>localStorage.setItem(KEY,JSON.stringify(G.state));
 G.reset=()=>{G.state=JSON.parse(JSON.stringify(defaults));G.save()};
 G.dateKey=(d=new Date())=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
@@ -97,6 +98,25 @@ G.setCartoonDone=(id,done=true)=>{if(done)G.state.cartoonProgress[id]={...(G.sta
 G.getCartoonNotes=id=>G.state.cartoonNotes[id]||{summary:"",words:"",sentences:"",reflection:""};
 G.setCartoonNotes=(id,patch)=>{G.state.cartoonNotes[id]={...G.getCartoonNotes(id),...(patch||{}),updatedAt:Date.now()};G.save()};
 G.cartoonProgressForLevel=level=>{const items=G.cartoonLevelData(level)?.items||[],done=items.filter(x=>G.cartoonDone(x.id)).length;return{done,total:items.length,pct:items.length?Math.round(done/items.length*100):0}};
+G.missionKey=(level,day,stage)=>level+"::"+day+"::"+stage;
+G.missionDone=(level,day,stage)=>Boolean(G.state.missionChecks[G.missionKey(level,day,stage)]);
+G.setMissionDone=(level,day,stage,done=true)=>{
+  const k=G.missionKey(level,day,stage);
+  if(done)G.state.missionChecks[k]=Date.now();else delete G.state.missionChecks[k];
+  if(done)G.touch();G.save();
+};
+G.getMissionNotes=(level,day)=>G.state.missionNotes[level+"::"+day]||{textRecall:"",dialogueNotes:"",cartoonTitle:"",cartoonSummary:"",production:"",reviewNote:""};
+G.setMissionNotes=(level,day,patch)=>{const k=level+"::"+day;G.state.missionNotes[k]={...G.getMissionNotes(level,day),...(patch||{}),updatedAt:Date.now()};G.save()};
+G.missionStages=()=>G.data.mission?.stages||[];
+G.missionDayProgress=(level,day)=>{
+  const stages=G.missionStages(),done=stages.filter(x=>G.missionDone(level,day,x.id)).length;
+  return{done,total:stages.length,pct:stages.length?Math.round(done/stages.length*100):0,complete:stages.length>0&&done===stages.length};
+};
+G.missionLevelProgress=level=>{
+  const days=G.dailyProgram(level)?.days||[],done=days.filter(x=>G.missionDayProgress(level,x.day).complete).length;
+  return{done,total:days.length,pct:days.length?Math.round(done/days.length*100):0};
+};
+
 
 
 G.escape=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
