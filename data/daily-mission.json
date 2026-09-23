@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "updatedAt": "2026-09-23",
+  "title": "طريق اليوم",
+  "subtitle": "مهمة واحدة مرتبة: فيديو → نص → محادثة → كرتون → إنتاج → مراجعة",
+  "unlockPolicy": {
+    "global": "Zero→A1 100% + قواعد A1 100%",
+    "levels": {
+      "A1": "global",
+      "A2": "قواعد A2 100%",
+      "B1": "قواعد B1 100%",
+      "B2": "قواعد B2 100%"
+    }
+  },
+  "stages": [
+    {
+      "id": "video",
+      "order": 1,
+      "title": "فيديو اليوم",
+      "icon": "▶",
+      "minutes": 20,
+      "rule": "شاهد للفهم أولاً. سجل 3 نقاط فقط، ثم قل جملتين من راسك."
+    },
+    {
+      "id": "text",
+      "order": 2,
+      "title": "نص اليوم",
+      "icon": "▤",
+      "minutes": 20,
+      "rule": "اقرأ مرة بلا قاموس، ثم اخف النص وحاول إعادة جملتين من الذاكرة قبل الكتابة."
+    },
+    {
+      "id": "dialogue",
+      "order": 3,
+      "title": "محادثة اليوم",
+      "icon": "◉",
+      "minutes": 15,
+      "rule": "اسمع مرة للفكرة، مرة للكلمات، ومرة Shadowing. ما تفتح النص أولاً."
+    },
+    {
+      "id": "cartoon",
+      "order": 4,
+      "title": "كرتون / Immersion",
+      "icon": "★",
+      "minutes": 20,
+      "rule": "3-pass: بلا ترجمة → UT ألمانية عند توفرها → Shadowing وملخص."
+    },
+    {
+      "id": "produce",
+      "order": 5,
+      "title": "استعمل اللغة",
+      "icon": "✎",
+      "minutes": 15,
+      "rule": "3 جمل + ملخص صغير من راسك باستعمال قاعدة وكلمات اليوم."
+    },
+    {
+      "id": "review",
+      "order": 6,
+      "title": "إغلاق اليوم",
+      "icon": "↻",
+      "minutes": 10,
+      "rule": "راجع الخطأ والكلمات، ثم حدد D+1 / D+3 / D+7."
+    }
+  ],
+  "videoPlaylists": {
+    "A1": {
+      "provider": "Easy German",
+      "title": "German A1 | For Absolute Beginners",
+      "url": "https://www.youtube.com/playlist?list=PLk1fjOl39-50kWobutO8NVFzbw9PHtbbg"
+    },
+    "A2": {
+      "provider": "Easy German",
+      "title": "German A2 | For Advanced Beginners",
+      "url": "https://www.youtube.com/playlist?list=PLk1fjOl39-5201BUdhtOM_x23poNvLouT"
+    },
+    "B1": {
+      "provider": "Easy German",
+      "title": "German B1 | For Intermediate Learners",
+      "url": "https://www.youtube.com/playlist?list=PLk1fjOl39-53yooogv6RaJAK29mx7nz1d"
+    },
+    "B2": {
+      "provider": "Easy German",
+      "title": "German B2 | For Upper Intermediate Learners",
+      "url": "https://www.youtube.com/playlist?list=PLk1fjOl39-51lvdiuQYsLW-0aGIdNNknA"
+    }
+  },
+  "cartoonFeeds": {
+    "A1": [
+      {
+        "id": "a1-odo",
+        "title": "Odo - Kleine Eule ganz groß",
+        "provider": "KiKA",
+        "url": "https://www.kika.de/kikaninchen/odo/videos/alle-folgen-982",
+        "slots": 12,
+        "subtitles": "UT في الحلقات المعروضة",
+        "why": "حلقات قصيرة جداً وسياق بصري واضح."
+      },
+      {
+        "id": "a1-hase",
+        "title": "Weißt du eigentlich, wie lieb ich dich hab?",
+        "provider": "KiKA",
+        "url": "https://www.kika.de/kikaninchen/weisst-du-eigentlich-wie-lieb-ich-dich-hab/videos/alle-folgen-772",
+        "slots": 12,
+        "subtitles": "UT في الحلقات المعروضة",
+        "why": "جمل يومية وقصص قصيرة وتكرار مفيد للمبتدئ."
+      },
+      {
+        "id": "a1-said",
+        "title": "Saïd und Anna",
+        "provider": "KiKA",
+        "url": "https://www.kika.de/kikaninchen/said-und-anna/videos/alle-folgen-1102",
+        "slots": 6,
+        "subtitles": "UT/AD في حلقات كثيرة",
+        "why": "حوارات قصيرة من الحياة اليومية."
+      }
+    ],
+    "A2": [
+      {
+        "id": "a2-maja",
+        "title": "Die Biene Maja",
+        "provider": "KiKA",
+        "url": "https://www.kika.de/kikaninchen/die-biene-maja/videos/alle-folgen-488",
+        "slots": 18,
+        "subtitles": "UT في حلقات كثيرة",
+        "why": "قصص واضحة وحوار أطول مع أفعال ووصف."
+      },
+      {
+        "id": "a2-findus",
+        "title": "Pettersson und Findus",
+        "provider": "KiKA",
+        "url": "https://www.kika.de/kikaninchen/pettersson-und-findus/videos/alle-folgen-798",
+        "slots": 12,
+        "subtitles": "UT/AD حسب الحلقة",
+        "why": "مواقف قصصية مناسبة للانتقال من الجمل القصيرة إلى السرد."
+      }
+    ],
+    "B1": [
+      {
+        "id": "b1-robin",
+        "title": "Robin Hood",
+        "provider": "KiKA",
+        "url": "https://www.kika.de/robin-hood/videos/alle-folgen-630",
+        "slots": 15,
+        "subtitles": "UT",
+        "why": "مشكلة وحل وحوار أسرع؛ جيد للتلخيص والروابط."
+      },
+      {
+        "id": "b1-stories",
+        "title": "Geschichten von überall",
+        "provider": "KiKA",
+        "url": "https://www.kika.de/geschichten-von-ueberall/videos/alle-folgen-226",
+        "slots": 15,
+        "subtitles": "UT في حلقات كثيرة",
+        "why": "قصص يومية أطول ومواقف اجتماعية ومفردات B1 مفيدة."
+      }
+    ],
+    "B2": [
+      {
+        "id": "b2-maus",
+        "title": "Die Sendung mit der Maus",
+        "provider": "KiKA / WDR",
+        "url": "https://www.kika.de/die-sendung-mit-der-maus/videos/alle-folgen-854",
+        "slots": 15,
+        "subtitles": "UT في عدد كبير من الحلقات",
+        "why": "شرح طبيعي وقصص ومفردات تفسيرية؛ نرفع صعوبة المهمة لا المحتوى فقط."
+      },
+      {
+        "id": "b2-robin",
+        "title": "Robin Hood — Advanced Listening",
+        "provider": "KiKA",
+        "url": "https://www.kika.de/robin-hood/videos/alle-folgen-630",
+        "slots": 15,
+        "subtitles": "UT",
+        "why": "في B2 تشاهده بلا UT أولاً ثم تعيد الصياغة والحجة بدقة أعلى."
+      }
+    ]
+  },
+  "dialoguePrompts": {
+    "A1": [
+      "Worum geht es heute?",
+      "Was ist noch wichtig?",
+      "Was machst du danach?"
+    ],
+    "A2": [
+      "Was ist heute passiert oder geplant?",
+      "Kannst du das genauer erklären?",
+      "Was würdest du danach machen?"
+    ],
+    "B1": [
+      "Wie würdest du das Thema kurz zusammenfassen?",
+      "Welche Ursache oder Folge ist wichtig?",
+      "Was ist deine eigene Meinung dazu?"
+    ],
+    "B2": [
+      "Welche zentrale Aussage erkennst du?",
+      "Wie lässt sich der zweite Punkt präziser formulieren?",
+      "Welche Schlussfolgerung würdest du daraus ziehen?"
+    ]
+  }
+}
