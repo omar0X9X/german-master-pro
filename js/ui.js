@@ -664,7 +664,7 @@ G.ui.renderMissionStage=(level,day,stage,m)=>{
     if(stage.id==="video"&&m.video?.mode==="playlist"){
       const title=String(fresh.videoTitle||"").trim();
       if(!title){toast("كتب عنوان الفيديو الجديد اللي شاهدت");return}
-      const duplicate=Object.entries(G.state.missionNotes).some(([k,n])=>k.startsWith(level+"::")&&!k.endsWith("::"+day)&&String(n.videoTitle||"").trim().toLowerCase()===title.toLowerCase());
+      const duplicate=Object.entries(G.state.missionNotes).some(([k,n])=>k.startsWith(level+"::")&&!k.endsWith("::"+day)&&[n.videoTitle,n.listeningVideoTitle].some(x=>String(x||"").trim().toLowerCase()===title.toLowerCase()));
       if(duplicate){toast("هاد عنوان الفيديو سبق تسجل؛ اختار فيديو جديد");return}
     }
     if(stage.id==="text"&&wordCount(fresh.textRecall)<(level==="A1"?8:level==="A2"?15:20)){toast("كتب شوية من الذاكرة قبل ما تكمل");return}
