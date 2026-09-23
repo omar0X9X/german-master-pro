@@ -2,7 +2,7 @@ window.GMP=window.GMP||{};
 (()=>{
 const G=window.GMP,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const E=G.escape,U=G.url;
-const titles={dashboard:["مسارك اليوم","الرئيسية"],daily:["120 يوم","30 يوم"],grammar:["82 درساً","القواعد والحروف"],notebook:["SMART NOTEBOOK LAB","الدفتر الذكي"],cartoons:["GERMAN IMMERSION","كرتون ألماني"],errors:["PERSONAL ERROR ENGINE","محرك الأخطاء"],roadmap:["A1 → B2","المسار"],review:["Spaced Review","المراجعة"],practice:["المهارات","التطبيق"],stats:["Progress","الإحصائيات"]};
+const titles={dashboard:["مسارك اليوم","الرئيسية"],daily:["120 يوم","30 يوم"],grammar:["82 درساً","القواعد والحروف"],mission:["TAGESMISSION","طريق اليوم"],notebook:["SMART NOTEBOOK LAB","الدفتر الذكي"],cartoons:["GERMAN IMMERSION","كرتون ألماني"],errors:["PERSONAL ERROR ENGINE","محرك الأخطاء"],roadmap:["A1 → B2","المسار"],review:["Spaced Review","المراجعة"],practice:["المهارات","التطبيق"],stats:["Progress","الإحصائيات"]};
 const toast=msg=>{const el=$("#toast");el.textContent=msg;el.classList.add("show");clearTimeout(G.runtime.toastTimer);G.runtime.toastTimer=setTimeout(()=>el.classList.remove("show"),1900)};
 G.ui={toast};
 G.ui.speakGerman=text=>{
@@ -45,6 +45,7 @@ G.ui.startTask=t=>{
   if(t.type==="review"){G.ui.setView("review");return}
   if(t.type==="error"){G.ui.setView("errors");return}
   if(t.type==="cartoon"){G.runtime.cartoonLevel=G.state.profile.level;G.runtime.cartoonItemId=t.cartoonId||null;G.ui.setView("cartoons");return}
+  if(t.type==="mission"){G.runtime.missionLevel=t.level||G.state.profile.level;G.state.missionSelected[G.runtime.missionLevel]=t.day||G.missionNextDay(G.runtime.missionLevel);G.runtime.missionStageId=null;G.save();G.ui.setView("mission");return}
   if(t.type==="zero"){G.runtime.zeroSelected=t.zeroIndex||G.state.zeroPathCurrent;G.ui.setView("grammar");return}
   if(t.type==="daily"){
     const levelId=G.state.profile.level;
@@ -487,6 +488,201 @@ const errorSkillName=(level,id)=>G.errorSkills(level).find(x=>x.id===id)?.title|
 const errorTypeName=t=>({cloze:"املأ الفراغ",reorder:"رتب الجملة",correct:"صحح الخطأ",dictation:"Dictation",quiz:"Quiz"}[t]||t);
 
 
+
+G.ui.playMissionDialogue=lines=>{
+  if(!("speechSynthesis" in window)){toast("المتصفح ما كيدعمش النطق الصوتي");return}
+  speechSynthesis.cancel();
+  const voices=speechSynthesis.getVoices().filter(v=>v.lang?.toLowerCase().startsWith("de"));
+  let i=0;
+  const next=()=>{
+    if(i>=lines.length)return;
+    const line=lines[i],u=new SpeechSynthesisUtterance(line.text);u.lang="de-DE";u.rate=.82;
+    if(voices.length)u.voice=voices[i%voices.length];
+    u.onend=()=>{i++;setTimeout(next,240)};
+    speechSynthesis.speak(u);
+  };
+  next();
+};
+
+G.ui.renderMission=()=>{
+  const global=G.missionUnlockStatus("A1");
+  const lock=$("#missionLockPanel"),academy=$("#missionAcademy"),badge=$("#missionLockBadge");
+  $("#missionUnlockZero").textContent=global.zero.done+"/"+global.zero.total;
+  $("#missionUnlockGrammar").textContent=global.a1.done+"/"+global.a1.total;
+  $("#missionUnlockZeroBar").style.width=global.zero.pct+"%";
+  $("#missionUnlockGrammarBar").style.width=global.a1.pct+"%";
+  $("#missionLockReason").textContent=global.reason;
+
+  if(!global.globalUnlocked){
+    lock.hidden=false;academy.hidden=true;if(badge){badge.hidden=false;badge.textContent="🔒"};return;
+  }
+  lock.hidden=true;academy.hidden=false;if(badge)badge.hidden=true;
+
+  const levels=["A1","A2","B1","B2"];
+  let level=levels.includes(G.runtime.missionLevel)?G.runtime.missionLevel:G.state.profile.level;
+  if(!G.missionUnlockStatus(level).levelUnlocked)level="A1";
+  G.runtime.missionLevel=level;
+
+  $("#missionLevelTabs").innerHTML=levels.map(id=>{
+    const u=G.missionUnlockStatus(id),gp=G.grammarProgress(id),mp=G.missionLevelProgress(id);
+    return '<button class="'+(id===level?"active":"")+'" data-mission-level="'+id+'" '+(!u.levelUnlocked?"disabled":"")+'>'+id+(u.levelUnlocked?"":" 🔒")+'<small>'+(u.levelUnlocked?mp.done+"/30":gp.pct+"% قواعد")+'</small></button>';
+  }).join("");
+  $("#missionLevelTabs [data-mission-level]").forEach(b=>b.onclick=()=>{
+    if(!G.missionUnlockStatus(b.dataset.missionLevel).levelUnlocked)return;
+    G.runtime.missionLevel=b.dataset.missionLevel;
+    G.state.missionSelected[b.dataset.missionLevel]=G.state.missionSelected[b.dataset.missionLevel]||G.missionNextDay(b.dataset.missionLevel);
+    G.runtime.missionStageId=null;G.save();G.ui.renderMission();
+  });
+
+  const program=G.dailyProgram(level),levelProgress=G.missionLevelProgress(level);
+  $("#missionLevelPct").textContent=levelProgress.pct+"%";
+  $("#missionDaysDone").textContent=levelProgress.done+"/"+levelProgress.total+" يوم";
+  $("#missionLevelTitle").textContent=level+" • طريق 30 يوم";
+
+  let day=Number(G.state.missionSelected[level])||G.missionNextDay(level);
+  if(!G.missionDayUnlocked(level,day))day=G.missionNextDay(level);
+  G.state.missionSelected[level]=day;G.save();
+
+  $("#missionDayGrid").innerHTML=program.days.map(d=>{
+    const p=G.missionDayProgress(level,d.day),unlocked=G.missionDayUnlocked(level,d.day);
+    return '<button class="'+(d.day===day?"active ":"")+(p.complete?"done ":"")+(!unlocked?"locked":"")+'" data-mission-day="'+d.day+'" '+(!unlocked?"disabled":"")+'><span>'+String(d.day).padStart(2,"0")+'</span><small>'+(p.complete?"✓":unlocked?p.pct+"%":"🔒")+'</small></button>';
+  }).join("");
+  $("#missionDayGrid [data-mission-day]").forEach(b=>b.onclick=()=>{
+    const d=Number(b.dataset.missionDay);if(!G.missionDayUnlocked(level,d))return;
+    G.state.missionSelected[level]=d;G.runtime.missionStageId=null;G.save();G.ui.renderMission();
+  });
+
+  const m=G.missionDayData(level,day);if(!m)return;
+  const notes=G.getMissionNotes(level,day),p=m.progress;
+  $("#missionDayLabel").textContent=level+" • DAY "+String(day).padStart(2,"0");
+  $("#missionTheme").textContent=m.daily.theme;
+  $("#missionObjective").textContent=m.daily.objective;
+  $("#missionDayPct").textContent=p.pct+"%";
+  $("#missionStageCount").textContent=p.done+"/"+p.total+" مراحل";
+
+  const stages=G.missionStages();
+  const current=G.missionCurrentStage(level,day);
+  let activeId=G.runtime.missionStageId;
+  const activeStage=stages.find(x=>x.id===activeId);
+  if(!activeStage||(!G.missionDone(level,day,activeId)&&!G.missionStageUnlocked(level,day,activeId)))activeId=current?.id||stages[0]?.id;
+  G.runtime.missionStageId=activeId;
+
+  $("#missionStages").innerHTML=stages.map(stage=>{
+    const done=G.missionDone(level,day,stage.id),unlocked=G.missionStageUnlocked(level,day,stage.id),active=stage.id===activeId;
+    return '<button class="mission-stage '+(done?"done ":"")+(active?"active ":"")+(!unlocked&&!done?"locked":"")+'" data-mission-stage="'+E(stage.id)+'" '+(!unlocked&&!done?"disabled":"")+'><span class="mission-stage-order">'+stage.order+'</span><div><b>'+E(stage.icon+" "+stage.title)+'</b><small>≈ '+stage.minutes+' د</small></div><em>'+(done?"✓":unlocked?"→":"🔒")+'</em></button>';
+  }).join("");
+  $("#missionStages [data-mission-stage]").forEach(b=>b.onclick=()=>{G.runtime.missionStageId=b.dataset.missionStage;G.ui.renderMission()});
+
+  const stage=stages.find(x=>x.id===activeId)||current||stages[0];
+  G.ui.renderMissionStage(level,day,stage,m);
+
+  $("#missionPrevDay").disabled=day<=1;
+  $("#missionPrevDay").onclick=()=>{if(day>1){G.state.missionSelected[level]=day-1;G.runtime.missionStageId=null;G.save();G.ui.renderMission()}};
+  $("#missionNextDay").disabled=!p.complete||day>=30;
+  $("#missionNextDay").onclick=()=>{if(p.complete&&day<30){G.state.missionSelected[level]=day+1;G.runtime.missionStageId=null;G.save();G.ui.renderMission()}};
+  $("#missionOpenNotebook").onclick=()=>{
+    const rule=G.grammarTopic(m.daily.grammarId),cards=(m.daily.vocabIds||[]).map(id=>G.data.vocabulary.cards.find(v=>v.id===id)).filter(Boolean).slice(0,7);
+    const date=G.dateKey(),page=G.getNotebookPage(level,date);
+    G.saveNotebookPage(level,date,{...page,theme:m.daily.theme,rule:rule?(rule.title+" — "+rule.summary):page.rule,words:[...cards.map(v=>v.de+" = "+v.ar),...Array(7).fill("")].slice(0,7)});
+    G.state.dailySelected[level]=day;G.save();G.ui.setView("notebook");toast("تجاب محتوى هاد اليوم للدفتر ✓");
+  };
+};
+
+G.ui.renderMissionStage=(level,day,stage,m)=>{
+  const box=$("#missionStageContent"),notes=G.getMissionNotes(level,day),done=G.missionDone(level,day,stage.id);
+  const head='<header class="mission-content-head"><div><small>STEP '+stage.order+' / 6</small><h3>'+E(stage.icon+" "+stage.title)+'</h3><p>'+E(stage.rule)+'</p></div><span class="time">≈ '+stage.minutes+' د</span></header>';
+  let body='';
+
+  if(stage.id==="video"){
+    const v=m.video;
+    body=v?'<div class="mission-resource-box"><div><small>'+E(v.provider)+(v.mode==="playlist"?" • Playlist الرسمية":" • "+E(v.skill||"درس"))+'</small><h4>'+E(v.title)+'</h4><p>'+E(v.why)+'</p>'+(v.mode==="playlist"?'<div class="mission-warning">افتح Playlist وخذ الفيديو رقم '+day+' أو أول فيديو مازال ما شفتوش. كتب عنوانه هنا باش نمنع التكرار.</div>':'')+'</div><a href="'+U(v.url)+'" target="_blank" rel="noopener">▶ فتح الفيديو</a></div>'+
+      (v.mode==="playlist"?'<label class="mission-input-label">عنوان الفيديو اللي شاهدت<input id="missionVideoTitle" value="'+E(notes.videoTitle||"")+'" placeholder="انسخ عنوان الفيديو الجديد"></label>':'')+
+      '<div class="mission-method"><b>طريقة ذكية:</b><span>المشاهدة 1 للفهم بلا كتابة → المشاهدة 2 سجل 3 نقاط → سد الفيديو وقل جوج جمل من راسك.</span></div>':
+      '<div class="empty">ما لقيناش فيديو لهاد اليوم.</div>';
+  }else if(stage.id==="text"){
+    body='<div class="mission-text-tools"><button id="missionToggleText" class="ghost">أظهر النص</button><span>اقراه مرة، من بعد خبيه.</span></div>'+
+      '<article id="missionReadingText" class="mission-reading-text" hidden lang="de">'+E(m.daily.reading?.text||"")+'</article>'+
+      '<label class="mission-input-label">من الذاكرة: عاود كتب جوج أو أكثر من الجمل/الأفكار اللي بقاو معاك<textarea id="missionTextRecall" rows="5" placeholder="Schreib aus dem Gedächtnis...">'+E(notes.textRecall||"")+'</textarea></label>'+
+      '<div class="mission-method"><b>ممنوع النسخ الأعمى:</b><span>إلى بغيتي تكتب النص فالدفتر، قراه ثم غطيه واكتب اللي تذكرت، ومن بعد قارن وصحح.</span></div>';
+  }else if(stage.id==="dialogue"){
+    body='<div class="mission-dialogue-controls"><button id="missionPlayDialogue" class="primary">🔊 اسمع المحادثة بلا نص</button><button id="missionRevealDialogue" class="ghost">أظهر Transcript</button></div>'+
+      '<div id="missionDialogueTranscript" class="mission-dialogue" hidden>'+m.dialogue.map(line=>'<article><span>'+E(line.speaker)+'</span><p lang="de">'+E(line.text)+'</p></article>').join("")+'</div>'+
+      '<label class="mission-input-label">شنو سمعت؟ كتب 3 كلمات/عبارات قبل ما تشوف Transcript<textarea id="missionDialogueNotes" rows="3">'+E(notes.dialogueNotes||"")+'</textarea></label>'+
+      '<div class="mission-method"><b>3 passes:</b><span>1) الفكرة العامة 2) الكلمات والتفاصيل 3) Shadowing جملة بجملة.</span></div>';
+  }else if(stage.id==="cartoon"){
+    const c=m.cartoon;
+    body=c?'<div class="mission-resource-box cartoon"><div><small>'+E(c.provider)+' • '+E(c.subtitles)+'</small><h4>'+E(c.title)+' — الحلقة الجديدة رقم '+c.slot+' في خطتك</h4><p>'+E(c.why)+'</p><div class="mission-warning">افتح صفحة الحلقات الرسمية واختر الحلقة التالية غير المشاهدة. ما تعاودش عنوان سبق سجلتيه.</div></div><a href="'+U(c.url)+'" target="_blank" rel="noopener">★ فتح الحلقات الرسمية</a></div>'+
+      '<label class="mission-input-label">اسم الحلقة اللي شاهدت<input id="missionCartoonTitle" value="'+E(notes.cartoonTitle||"")+'" placeholder="مثال: Der perfekte Tag"></label>'+
+      '<label class="mission-input-label">ملخص صغير بالألمانية<textarea id="missionCartoonSummary" rows="4">'+E(notes.cartoonSummary||"")+'</textarea></label>'+
+      '<div class="mission-method"><b>3-pass Cartoon:</b><span>مرة بلا ترجمة → مرة بـUT ألمانية إذا متوفرة → مرة بلا UT مع Shadowing.</span></div>':
+      '<div class="empty">ما لقيناش مصدر كرتون لهاد اليوم.</div>';
+  }else if(stage.id==="produce"){
+    const min={A1:20,A2:40,B1:70,B2:100}[level]||20;
+    body='<div class="mission-production-prompt"><b>مهمة اليوم:</b><p>'+E(m.daily.writing?.prompt||"اكتب على موضوع اليوم.")+'</p></div>'+
+      '<label class="mission-input-label">اكتب من راسك — الحد الأدنى '+min+' كلمة<textarea id="missionProduction" rows="8" placeholder="Deutsch...">'+E(notes.production||"")+'</textarea><span><b id="missionProductionCount">'+wordCount(notes.production||"")+'</b> / '+min+' كلمة</span></label>'+
+      '<div class="mission-method"><b>استعمل اللغة:</b><span>دخل قاعدة اليوم + 3 من كلمات اليوم. ما تترجمش فقرة عربية كلمة بكلمة.</span></div>';
+  }else if(stage.id==="review"){
+    const rule=G.grammarTopic(m.daily.grammarId),cards=(m.daily.vocabIds||[]).map(id=>G.data.vocabulary.cards.find(v=>v.id===id)).filter(Boolean).slice(0,7);
+    body='<div class="mission-review-grid"><article><small>قاعدة اليوم</small><b>'+E(rule?.title||"—")+'</b><p>'+E(rule?.summary||"")+'</p></article><article><small>7 كلمات</small><div>'+cards.map(v=>'<span><b>'+E(v.de)+'</b> '+E(v.ar)+'</span>').join("")+'</div></article></div>'+
+      '<label class="mission-input-label">شنو خاصك تراجع غداً؟<textarea id="missionReviewNote" rows="3">'+E(notes.reviewNote||"")+'</textarea></label>'+
+      '<div class="mission-method"><b>إغلاق اليوم:</b><span>جرب تسترجع القاعدة والكلمات بلا ما تشوف. الصعب دير ليه D+1، ثم D+3 وD+7 فالدفتر.</span></div>';
+  }
+
+  box.innerHTML=head+'<div class="mission-content-body">'+body+'</div><footer class="mission-stage-footer"><button id="missionCompleteStage" class="primary full">'+(done?"✓ المرحلة مكتملة":"كملت المرحلة — افتح اللي بعدها ←")+'</button></footer>';
+
+  if(stage.id==="video"){
+    const input=$("#missionVideoTitle");if(input)input.oninput=()=>G.setMissionNotes(level,day,{videoTitle:input.value});
+  }
+  if(stage.id==="text"){
+    const toggle=$("#missionToggleText"),text=$("#missionReadingText");
+    toggle.onclick=()=>{text.hidden=!text.hidden;toggle.textContent=text.hidden?"أظهر النص":"اخف النص واكتب من الذاكرة"};
+    $("#missionTextRecall").oninput=e=>G.setMissionNotes(level,day,{textRecall:e.target.value});
+  }
+  if(stage.id==="dialogue"){
+    $("#missionPlayDialogue").onclick=()=>G.ui.playMissionDialogue(m.dialogue);
+    const transcript=$("#missionDialogueTranscript"),btn=$("#missionRevealDialogue");
+    btn.onclick=()=>{transcript.hidden=!transcript.hidden;btn.textContent=transcript.hidden?"أظهر Transcript":"اخف Transcript"};
+    $("#missionDialogueNotes").oninput=e=>G.setMissionNotes(level,day,{dialogueNotes:e.target.value});
+  }
+  if(stage.id==="cartoon"){
+    $("#missionCartoonTitle").oninput=e=>G.setMissionNotes(level,day,{cartoonTitle:e.target.value});
+    $("#missionCartoonSummary").oninput=e=>G.setMissionNotes(level,day,{cartoonSummary:e.target.value});
+  }
+  if(stage.id==="produce"){
+    const ta=$("#missionProduction"),count=$("#missionProductionCount");
+    ta.oninput=()=>{count.textContent=wordCount(ta.value);G.setMissionNotes(level,day,{production:ta.value})};
+  }
+  if(stage.id==="review")$("#missionReviewNote").oninput=e=>G.setMissionNotes(level,day,{reviewNote:e.target.value});
+
+  $("#missionCompleteStage").onclick=()=>{
+    if(done){toast("هاد المرحلة مسجلة مكتملة");return}
+    const fresh=G.getMissionNotes(level,day);
+    if(stage.id==="video"&&m.video?.mode==="playlist"){
+      const title=String(fresh.videoTitle||"").trim();
+      if(!title){toast("كتب عنوان الفيديو الجديد اللي شاهدت");return}
+      const duplicate=Object.entries(G.state.missionNotes).some(([k,n])=>k.startsWith(level+"::")&&!k.endsWith("::"+day)&&String(n.videoTitle||"").trim().toLowerCase()===title.toLowerCase());
+      if(duplicate){toast("هاد عنوان الفيديو سبق تسجل؛ اختار فيديو جديد");return}
+    }
+    if(stage.id==="text"&&wordCount(fresh.textRecall)<(level==="A1"?8:level==="A2"?15:20)){toast("كتب شوية من الذاكرة قبل ما تكمل");return}
+    if(stage.id==="dialogue"&&wordCount(fresh.dialogueNotes)<3){toast("كتب على الأقل 3 كلمات/عبارات سمعتيهم");return}
+    if(stage.id==="cartoon"){
+      const title=String(fresh.cartoonTitle||"").trim(),summary=wordCount(fresh.cartoonSummary||"");
+      if(!title){toast("كتب اسم الحلقة اللي شاهدت");return}
+      const duplicate=Object.entries(G.state.missionNotes).some(([k,n])=>k.startsWith(level+"::")&&!k.endsWith("::"+day)&&String(n.cartoonTitle||"").trim().toLowerCase()===title.toLowerCase());
+      if(duplicate){toast("هاد الحلقة سبق شاهدتيها؛ اختار حلقة جديدة");return}
+      if(summary<(level==="A1"?3:level==="A2"?7:level==="B1"?12:18)){toast("كتب ملخص صغير بالألمانية قبل ما تكمل");return}
+    }
+    if(stage.id==="produce"){
+      const min={A1:20,A2:40,B1:70,B2:100}[level]||20;
+      if(wordCount(fresh.production||"")<min){toast("مازال ما وصلتيش للحد الأدنى ديال الكتابة");return}
+    }
+    if(stage.id==="review"&&!String(fresh.reviewNote||"").trim()){toast("كتب شنو غادي تراجع غداً");return}
+    G.completeMissionStage(level,day,stage.id);
+    const next=G.missionCurrentStage(level,day);G.runtime.missionStageId=next?.id||stage.id;
+    G.ui.renderAll();toast(G.missionDayProgress(level,day).complete?"تسالَى نهار اليوم ✓ تحل الغد":"تفتحات المرحلة اللي بعدها ✓");
+  };
+};
+
 G.ui.renderNotebookLab=()=>{
   const level=G.state.profile.level,date=G.dateKey(),data=G.data.studyMethod;if(!data)return;
   let page=G.getNotebookPage(level,date);
@@ -787,6 +983,6 @@ G.ui.openQuiz=id=>{
   $("#quizDialog").showModal();
 };
 
-G.ui.renderView=v=>({dashboard:G.ui.renderDashboard,daily:G.ui.renderDaily,grammar:G.ui.renderGrammar,notebook:G.ui.renderNotebookLab,cartoons:G.ui.renderCartoons,errors:G.ui.renderErrorEngine,roadmap:G.ui.renderRoadmap,review:G.ui.renderReview,practice:G.ui.renderPractice,stats:G.ui.renderStats}[v]||(()=>{}))();
-G.ui.renderAll=()=>{G.ui.renderDashboard();G.ui.renderDaily();G.ui.renderGrammar();G.ui.renderNotebookLab();G.ui.renderCartoons();G.ui.renderErrorEngine();G.ui.renderRoadmap();G.ui.renderReview();G.ui.renderPractice();G.ui.renderStats();$("#levelChip").textContent=G.state.profile.level};
+G.ui.renderView=v=>({dashboard:G.ui.renderDashboard,daily:G.ui.renderDaily,grammar:G.ui.renderGrammar,mission:G.ui.renderMission,notebook:G.ui.renderNotebookLab,cartoons:G.ui.renderCartoons,errors:G.ui.renderErrorEngine,roadmap:G.ui.renderRoadmap,review:G.ui.renderReview,practice:G.ui.renderPractice,stats:G.ui.renderStats}[v]||(()=>{}))();
+G.ui.renderAll=()=>{G.ui.renderDashboard();G.ui.renderDaily();G.ui.renderGrammar();G.ui.renderMission();G.ui.renderNotebookLab();G.ui.renderCartoons();G.ui.renderErrorEngine();G.ui.renderRoadmap();G.ui.renderReview();G.ui.renderPractice();G.ui.renderStats();$("#levelChip").textContent=G.state.profile.level};
 })();
