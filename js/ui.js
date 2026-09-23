@@ -44,6 +44,7 @@ G.ui.startTask=t=>{
   if(t.type==="quiz"){G.ui.openQuiz(t.quizId);return}
   if(t.type==="review"){G.ui.setView("review");return}
   if(t.type==="error"){G.ui.setView("errors");return}
+  if(t.type==="route"){G.runtime.routeLevel=G.state.profile.level;G.state.routeSelected[G.state.profile.level]=t.routeDay||G.nextRouteDay(G.state.profile.level);G.save();G.ui.setView("route");return}
   if(t.type==="cartoon"){G.runtime.cartoonLevel=G.state.profile.level;G.runtime.cartoonItemId=t.cartoonId||null;G.ui.setView("cartoons");return}
   if(t.type==="zero"){G.runtime.zeroSelected=t.zeroIndex||G.state.zeroPathCurrent;G.ui.setView("grammar");return}
   if(t.type==="daily"){
