@@ -508,7 +508,7 @@ G.ui.renderNotebookLab=()=>{
   if(active){
     G.runtime.notebookSource=active.id;
     $("#notebookLabTabs").innerHTML=sources.map(x=>'<button class="'+(x.id===active.id?"active":"")+'" data-nblab-source="'+E(x.id)+'">'+E(x.icon)+' '+E(x.title)+'</button>').join("");
-    $("#notebookLabTabs [data-nblab-source]").forEach(b=>b.onclick=()=>{G.runtime.notebookSource=b.dataset.nblabSource;G.ui.renderNotebookLab()});
+    $$("#notebookLabTabs [data-nblab-source]").forEach(b=>b.onclick=()=>{G.runtime.notebookSource=b.dataset.nblabSource;G.ui.renderNotebookLab()});
     $("#notebookLabMethod").innerHTML='<h4>'+E(active.goal)+'</h4>'+
       '<div class="nblab-method-grid"><section><small>قبل</small><ol>'+(active.before||[]).map(x=>'<li>'+E(x)+'</li>').join("")+'</ol></section>'+
       '<section><small>أثناء</small><ol>'+(active.during||[]).map(x=>'<li>'+E(x)+'</li>').join("")+'</ol></section>'+
@@ -539,8 +539,8 @@ G.ui.renderNotebookLab=()=>{
   Object.entries(fields).forEach(([key,id])=>{const node=el(id);if(node)node.oninput=()=>save({[key]:node.value})});
   if(el("nbEx1"))el("nbEx1").oninput=()=>save({examples:[el("nbEx1").value,page.examples?.[1]||""]});
   if(el("nbEx2"))el("nbEx2").oninput=()=>save({examples:[page.examples?.[0]||"",el("nbEx2").value]});
-  $("#nbWords [data-nb-word]").forEach(input=>input.oninput=()=>{const a=[...(page.words||Array(7).fill(""))];a[Number(input.dataset.nbWord)]=input.value;save({words:a})});
-  $("#nbSentences [data-nb-sentence]").forEach(input=>input.oninput=()=>{const a=[...(page.sentences||["","",""])];a[Number(input.dataset.nbSentence)]=input.value;save({sentences:a})});
+  $$("#nbWords [data-nb-word]").forEach(input=>input.oninput=()=>{const a=[...(page.words||Array(7).fill(""))];a[Number(input.dataset.nbWord)]=input.value;save({words:a})});
+  $$("#nbSentences [data-nb-sentence]").forEach(input=>input.oninput=()=>{const a=[...(page.sentences||["","",""])];a[Number(input.dataset.nbSentence)]=input.value;save({sentences:a})});
   ["d1","d3","d7"].forEach(k=>{const node=el("nb"+k.toUpperCase());if(node)node.onchange=()=>save({review:{...(page.review||{}),[k]:node.checked}})});
   $("#importTodayNotebook").onclick=()=>{
     const day=G.dailyDay(level,G.state.dailySelected[level]||G.nextDailyDay(level));
@@ -572,7 +572,7 @@ G.ui.renderCartoons=()=>{
   const pack=G.cartoonLevelData(G.runtime.cartoonLevel);if(!pack)return;
   const progress=G.cartoonProgressForLevel(pack.level);
   $("#cartoonLevelTabs").innerHTML=levels.map(id=>'<button class="'+(id===pack.level?"active":"")+'" data-cartoon-level="'+id+'">'+id+' <small>'+G.cartoonProgressForLevel(id).done+'/'+G.cartoonProgressForLevel(id).total+'</small></button>').join("");
-  $("#cartoonLevelTabs [data-cartoon-level]").forEach(b=>b.onclick=()=>{G.runtime.cartoonLevel=b.dataset.cartoonLevel;G.runtime.cartoonItemId=null;G.ui.renderCartoons()});
+  $$("#cartoonLevelTabs [data-cartoon-level]").forEach(b=>b.onclick=()=>{G.runtime.cartoonLevel=b.dataset.cartoonLevel;G.runtime.cartoonItemId=null;G.ui.renderCartoons()});
   $("#cartoonLevelIntro").innerHTML='<div><small>'+E(pack.level)+' • '+progress.pct+'%</small><h3>'+E(pack.goal)+'</h3></div><div><b>'+progress.done+'/'+progress.total+'</b><span>مكتمل</span></div>';
   $("#cartoonMethodSteps").innerHTML=(data.method?.steps||[]).map(x=>'<li>'+E(x)+'</li>').join("");
 
@@ -588,8 +588,8 @@ G.ui.renderCartoons=()=>{
       '<footer><a href="'+U(item.url)+'" target="_blank" rel="noopener">▶ شاهد من المصدر الرسمي</a><button data-cartoon-train="'+E(item.id)+'">تدريب الحلقة</button><button data-cartoon-done="'+E(item.id)+'">'+(done?"✓ مكتمل":"علّم مكتمل")+'</button></footer>'+
     '</article>';
   }).join("");
-  $("#cartoonCards [data-cartoon-train]").forEach(b=>b.onclick=()=>{G.runtime.cartoonItemId=b.dataset.cartoonTrain;G.ui.renderCartoons()});
-  $("#cartoonCards [data-cartoon-done]").forEach(b=>b.onclick=()=>{const id=b.dataset.cartoonDone;G.setCartoonDone(id,!G.cartoonDone(id));G.ui.renderCartoons();toast(G.cartoonDone(id)?"تسجلت الحلقة":"تلغى الإنجاز")});
+  $$("#cartoonCards [data-cartoon-train]").forEach(b=>b.onclick=()=>{G.runtime.cartoonItemId=b.dataset.cartoonTrain;G.ui.renderCartoons()});
+  $$("#cartoonCards [data-cartoon-done]").forEach(b=>b.onclick=()=>{const id=b.dataset.cartoonDone;G.setCartoonDone(id,!G.cartoonDone(id));G.ui.renderCartoons();toast(G.cartoonDone(id)?"تسجلت الحلقة":"تلغى الإنجاز")});
 
   if(!current){$("#cartoonSelectedTraining").innerHTML="";return}
   const n=G.getCartoonNotes(current.id),t=current.task||{};
