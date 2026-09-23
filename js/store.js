@@ -105,7 +105,7 @@ G.setMissionDone=(level,day,stage,done=true)=>{
   if(done)G.state.missionChecks[k]=Date.now();else delete G.state.missionChecks[k];
   if(done)G.touch();G.save();
 };
-G.getMissionNotes=(level,day)=>G.state.missionNotes[level+"::"+day]||{textRecall:"",dialogueNotes:"",cartoonTitle:"",cartoonSummary:"",production:"",reviewNote:""};
+G.getMissionNotes=(level,day)=>G.state.missionNotes[level+"::"+day]||{videoTitle:"",textRecall:"",dialogueNotes:"",cartoonTitle:"",cartoonSummary:"",production:"",reviewNote:""};
 G.setMissionNotes=(level,day,patch)=>{const k=level+"::"+day;G.state.missionNotes[k]={...G.getMissionNotes(level,day),...(patch||{}),updatedAt:Date.now()};G.save()};
 G.missionStages=()=>G.data.mission?.stages||[];
 G.missionDayProgress=(level,day)=>{
